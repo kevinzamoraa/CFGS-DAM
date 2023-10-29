@@ -1,6 +1,4 @@
-.container {
-    margin: 0 auto;
-}
+/* Header / Main Navbar */
 
 header {
     height: 2.5rem;
@@ -57,4 +55,28 @@ header h2 {
     color: azure;
     background-color: mediumpurple;
     padding: 0.75rem 0;
+}
+
+/* Second Navbar */
+
+.second-navbar {
+    width: fit-content;
+    border-radius: 0 0 1rem 0;
+    background-color: mediumpurple;
+}
+
+.second-navbar nav a h2 {
+    text-align: center;
+    color: azure;
+}
+
+/* .second-navbar nav a h2 :hover {
+    color:burlywood;
+    background-color: burlywood;
+} */
+
+/* Main Container */
+
+.container {
+    margin: 0 2.5rem;
 }
