@@ -1,0 +1,10 @@
+.container {
+    margin: 3rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container p {
+    text-align: justify;
+}
