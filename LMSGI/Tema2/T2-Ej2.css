@@ -17,6 +17,13 @@ header nav {
     z-index: 0.5rem;
 }
 
+header nav img {
+    border-radius: 50%;
+    height: 4rem;
+    width: auto;
+    margin: .5rem 1rem;
+}
+
 a {
     color: whitesmoke;
     text-decoration: none;
@@ -109,13 +116,31 @@ header h2 {
     text-decoration: dashed;
 }
 
-/* .second-navbar nav a h2 :hover {
-    color:burlywood;
-    background-color: burlywood;
-} */
-
 /* Main Container */
 
 .container {
-    margin: 0 2.5rem;
+    margin: 1.5rem 2.5rem;
+}
+
+article {
+    text-align: justify;
+}
+
+/* Footer */
+
+footer {
+    height: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color:midnightblue;
+    height: fit-content;
+}
+
+footer nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 8em;
+    z-index: 0.5rem;
 }
