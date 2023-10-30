@@ -11,17 +11,24 @@ header {
 
 header nav {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     height: 4em;
     z-index: 0.5rem;
 }
 
-header nav img {
+header nav div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+header nav div img {
     border-radius: 50%;
-    height: 4rem;
+    height: 7rem;
     width: auto;
-    margin: .5rem 1rem;
+    margin: .75rem 1rem;
+    z-index: 1;
 }
 
 a {
@@ -29,7 +36,7 @@ a {
     text-decoration: none;
 }
 
-nav h1 {
+nav div h1 {
     color: whitesmoke;
     margin-left: 1.5rem;
 }
@@ -49,12 +56,14 @@ header h2 {
     color: azure;
     background-color: mediumpurple;
     padding: 0.15rem 0 0 0;
+    margin-top: -3.95rem;
 }
 
 /* Second Navbar */
 
 .second-navbar {
     display: flex;
+    margin-top: 2.05rem;
 }
 
 .second-navbar nav {
