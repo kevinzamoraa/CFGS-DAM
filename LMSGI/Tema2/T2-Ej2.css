@@ -9,65 +9,104 @@ header {
     height: fit-content;
 }
 
-nav {
+header nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 1.5rem 2rem 0.35rem 2rem;
+    height: 4em;
     z-index: 0.5rem;
 }
 
 a {
-    color:mediumpurple;
+    color: whitesmoke;
     text-decoration: none;
 }
 
 nav h1 {
     color: whitesmoke;
+    margin-left: 1.5rem;
 }
 
-nav button {
-    border-radius: 1.5rem;
-    color: whitesmoke;
-    background-color: transparent;
-    border: 5px;
-    border-style: outset;
-    border-color: whitesmoke;
-    padding: 0.5rem;
+@media (max-width:450px) {
+    header nav {
+        justify-content: center;
+    }
+    nav h1 {
+        margin-left: 0;
+    }
 }
 
-nav button :active {
-    color: white;
-    background-color:mediumpurple;
-    text-decoration: dashed;
-    height: 3rem;
-}
-
-nav button :hover {
-    color: white;
-    background-color:mediumpurple;
-    text-decoration: dashed;
-    height: 3rem;
-}
 
 header h2 {
     text-align: center;
     color: azure;
     background-color: mediumpurple;
-    padding: 0.75rem 0;
+    padding: 0.15rem 0 0 0;
 }
 
 /* Second Navbar */
 
 .second-navbar {
+    display: flex;
+}
+
+.second-navbar nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.second-navbar nav div {
     width: fit-content;
-    border-radius: 0 0 1rem 0;
     background-color: mediumpurple;
 }
 
-.second-navbar nav a h2 {
+.second-navbar nav div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    vertical-align: middle;
+    height: 6.1rem;
+}
+
+.second-navbar nav .left-button a h2 {
     text-align: center;
-    color: azure;
+    color: white;
+}
+
+.left-button {
+    border-radius: 2.5rem;
+    padding: .03rem 0.4rem;
+    margin: 1rem;
+}
+
+.right-button {
+    border-radius: 2.5rem;
+    padding: .01rem .03rem;
+    margin: 1rem;
+}
+
+.second-navbar nav .right-button button {
+    border-radius: 2.5rem;
+    color: whitesmoke;
+    background-color: transparent;
+    border: 0px;
+    border-style: outset;
+    border-color: whitesmoke;
+    padding: 0.75rem;
+}
+
+.second-navbar nav .right-button button :active {
+    color: white;
+    background-color:mediumpurple;
+    text-decoration: dashed;
+}
+
+.second-navbar nav .right-button button :hover {
+    color: white;
+    background-color:mediumpurple;
+    text-decoration: dashed;
 }
 
 /* .second-navbar nav a h2 :hover {
