@@ -1,12 +1,11 @@
 /* Header / Main Navbar */
 
 header {
-    height: 2.5rem;
+    height: 4rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background-color:midnightblue;
-    height: fit-content;
 }
 
 header nav {
@@ -41,16 +40,6 @@ nav div h1 {
     margin-left: 1.5rem;
 }
 
-@media (max-width:450px) {
-    header nav {
-        justify-content: center;
-    }
-    nav h1 {
-        margin-left: 0;
-    }
-}
-
-
 header h2 {
     text-align: center;
     color: azure;
@@ -65,6 +54,7 @@ header h2 {
     display: flex;
     margin-top: 2.05rem;
 }
+
 
 .second-navbar nav {
     display: flex;
@@ -152,4 +142,51 @@ footer nav {
     justify-content: space-between;
     height: 8em;
     z-index: 0.5rem;
+}
+
+footer nav h1 {
+    color: white;
+    margin-left: 1.5rem;
+}
+
+/* Media Queries */
+
+@media (max-width: 370px) {
+    header nav div {
+        margin-top:10rem;
+    }
+    header nav div h1 {
+        font-size: 22pt;
+        text-align: center;
+    }
+    .second-navbar {
+        margin-top: 5rem;
+    }
+}
+
+@media (max-width:450px) {
+    header nav {
+        justify-content: center;
+    }
+    header nav div {
+        margin-top: 5.5rem;
+    }
+    nav h1 {
+        margin-left: 0;
+    }
+    .second-navbar {
+        margin-top: 3rem;
+    }
+}
+
+@media (max-width: 612px) {
+    .second-navbar {
+        margin-top: 3.75rem;
+    }
+}
+
+@media (max-width: 800px) {
+    footer nav {
+        justify-content: center;
+    }
 }
