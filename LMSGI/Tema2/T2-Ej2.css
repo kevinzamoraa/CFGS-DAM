@@ -1,3 +1,13 @@
+/* Index */
+/*
+- Header / Main Navbar
+- Second Navbar
+- Main Container
+- Aside Container
+- Footer
+- Media Queries
+*/
+
 /* Header / Main Navbar */
 
 header {
@@ -118,7 +128,7 @@ header h2 {
 /* Main Container */
 
 .container {
-    margin: 1.5rem 2.5rem;
+    margin: 1.75rem 2.5rem 3.5rem 2.5rem;
 }
 
 article {
