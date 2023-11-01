@@ -3,6 +3,7 @@
 - Header / Main Navbar
 - Second Navbar
 - Main Container
+- Right Section Container
 - Aside Container
 - Footer
 - Media Queries
@@ -129,10 +130,25 @@ header h2 {
 
 .container {
     margin: 1.75rem 2.5rem 3.5rem 2.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 article {
     text-align: justify;
+}
+
+/* Right Section Container */
+
+section {
+    width: 60%;
+}
+
+/* Aside Container */
+
+aside {
+    width: 36%;
 }
 
 /* Footer */
@@ -202,6 +218,21 @@ footer nav h1 {
     .second-navbar {
         margin-top: 3.75rem;
     }
+}
+
+@media (max-width: 720px) {
+    .container {
+        margin: 1.75rem 2.5rem 3.5rem 2.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    section {
+        width: 100%;
+    }
+    aside {
+        width: 100%;
+    }    
 }
 
 @media (max-width: 800px) {
