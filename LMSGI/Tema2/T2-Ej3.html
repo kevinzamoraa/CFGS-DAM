@@ -80,22 +80,45 @@
                         </select><br>
                     </div>
                 </div>
-                <div>
+                <div class="radioButtonContainer">
+                    <label>Selecciona el tipo de habitación:</label>
                     <div>
-                        <input type="checkbox" id="desayuno" name="desayuno" value="desayuno">
-                        <label for="desayuno"> Desayuno</label><br>
-                        <input type="checkbox" id="comida" name="comida" value="comida">
-                        <label for="comida"> Comida</label><br>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="cena" name="cena" value="cena">
-                        <label for="cena"> Cena</label><br>
-                        <input type="checkbox" id="camaSupletoria" name="camaSupletoria" value="camaSupletoria">
-                        <label for="camaSupletoria"> Cama Supletoria</label><br>
+                        <label for="habitacionSimple">Simple</label>
+                        <input type="radio" id="habitacionSimple" name="tipoHabitacion" value="Habitación Simple">
+                        <label for="habitacionDoble">Doble</label>
+                        <input type="radio" id="habitacionDoble" name="tipoHabitacion" value="Habitación Doble">
+                        <label for="habitacionMatrimonio">Matrimonio</label>
+                        <input type="radio" id="habitacionMatrimonio" name="tipoHabitacion" value="Habitación Matrimonio">
                     </div>
                 </div>
-
-                <button type="submit">Reservar</button>
+                <div class="checkboxColumns">
+                    <div class="checkboxGrid">
+                        <div>
+                            <input type="checkbox" id="desayuno" name="desayuno" value="desayuno">
+                            <label for="desayuno"> Desayuno</label><br>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="comida" name="comida" value="comida">
+                            <label for="comida"> Comida</label><br>
+                        </div>
+                    </div>
+                    <div class="checkboxGrid">
+                        <div>
+                            <input type="checkbox" id="cena" name="cena" value="cena">
+                            <label for="cena"> Cena</label><br>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="camaSupletoria" name="camaSupletoria" value="camaSupletoria">
+                            <label for="camaSupletoria"> Cama Supletoria</label><br>
+                        </div>
+                    </div>
+                </div>
+                <label for="comentarios">Déjanos tu comentario aquí:</label>
+                <textarea name="comentarios" id="" cols="30" rows="5"></textarea>
+                <div class="formButtons">
+                    <button class="clearButton" onclick="">Limpiar Formulario</button>
+                    <button class="submitButton" type="submit">Enviar</button>
+                </div>
             </form>
         </div>
     </div>

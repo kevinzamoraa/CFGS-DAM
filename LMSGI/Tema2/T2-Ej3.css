@@ -8,7 +8,7 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     width: 30em;
-    height: 40em;
+    height: 52em;
     padding: 2.5rem;
     border-radius:3em;
     display: flex;
@@ -47,7 +47,36 @@
 .card form div div {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content:left;
+}
+
+.radioButtonContainer {
+    flex-direction: column !important;
+    margin: 0 0 0.15rem 0;
+}
+
+.radioButtonContainer div {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    margin-top: 0.15rem;
+}
+
+.checkboxColumns {
+    margin: 0.5rem 0;
+}
+
+.checkboxGrid div {
+    flex-direction: row !important;
+    justify-content: left;
+}
+
+.checkboxGrid div label {
+    margin-left: 0.5rem;
+}
+
+textarea {
+    margin: 0.5rem 0;
+    border-radius: 0.5em;
 }
 
 select {
@@ -69,10 +98,23 @@ label {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
+.formButtons {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 button {
-    padding: 0.5rem;
+    padding: 0.75rem;
     border-width: 0.05em;
     border-radius: 2em;
     font-weight: bold;
+}
+
+.clearButton {
+    background-color: red;
+    color: white;
+}
+
+.submitButton {
     background-color:coral;
 }
