@@ -16,7 +16,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color:midnightblue;
+    background-color: midnightblue;
 }
 
 header nav {
@@ -120,13 +120,13 @@ header h2 {
 
 .second-navbar nav .right-button button :active {
     color: white;
-    background-color:mediumpurple;
+    background-color: mediumpurple;
     text-decoration: dashed;
 }
 
 .second-navbar nav .right-button button :hover {
     color: white;
-    background-color:mediumpurple;
+    background-color: mediumpurple;
     text-decoration: dashed;
 }
 
@@ -163,7 +163,7 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color:midnightblue;
+    background-color: midnightblue;
     height: fit-content;
 }
 
@@ -181,22 +181,45 @@ footer nav h1 {
     font-family: sans-serif;
 }
 
+/* Table Styles */
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
 /* Media Queries */
 
 @media (max-width: 370px) {
     header nav {
         height: 7em !important;
     }
+
     header nav div {
-        margin-top:10rem !important;
+        margin-top: 10rem !important;
     }
+
     header nav div h1 {
         font-size: 22pt;
         text-align: center;
     }
+
     header h2 {
         margin-top: -4rem !important;
     }
+
     .second-navbar {
         margin-top: 5.5rem !important;
     }
@@ -204,17 +227,21 @@ footer nav h1 {
 
 @media (max-width:450px) {
     header {
-        height:fit-content;
+        height: fit-content;
     }
+
     header nav {
         justify-content: center;
     }
+
     header nav div {
         margin-top: 5.5rem;
     }
+
     nav h1 {
         margin-left: 0;
     }
+
     .second-navbar {
         margin-top: 3rem;
     }
@@ -233,12 +260,14 @@ footer nav h1 {
         flex-direction: column;
         justify-content: space-between;
     }
+
     section {
         width: 100%;
     }
+
     aside {
         width: 100%;
-    }    
+    }
 }
 
 @media (max-width: 800px) {
