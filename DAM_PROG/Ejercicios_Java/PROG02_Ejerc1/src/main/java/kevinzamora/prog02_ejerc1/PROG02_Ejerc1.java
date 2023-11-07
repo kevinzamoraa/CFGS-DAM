@@ -28,16 +28,16 @@ public class PROG02_Ejerc1 {
         
         System.out.print("Valor máximo: " + valorMaximo);
         System.out.printf("\n ¿Tiene Carnet de Conducir: ?" + carnetConducir);
+        System.out.print("¿Quieres cambiar tu respues? ¿Tienes 'carnet'?");
         System.out.print("\n Mes del año: " + yearMonth);
         System.out.printf("\n Introduce un nuevo mes del año: \n");
         Scanner scanner = new Scanner(System.in);
         yearMonth = scanner.nextLine();
+
         System.out.printf("\n Nuevo mes del año: " + yearMonth);
         System.out.print("\n Introduce tu Sexo (V/M): ");
         String sexoIntroducido = scanner.nextLine();
-        if (null == sexoIntroducido) {
-           System.out.printf("El sexo introducido no se encuentra en nuestra base de datos");
-        } else switch (sexoIntroducido) {
+        switch (sexoIntroducido) {
            case "V":
                System.out.printf("Tu genero es 'Varón'");
                break;
