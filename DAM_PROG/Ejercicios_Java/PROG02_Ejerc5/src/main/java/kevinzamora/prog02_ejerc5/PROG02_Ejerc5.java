@@ -18,7 +18,7 @@ public class PROG02_Ejerc5 {
         Scanner scanner = new Scanner(System.in);
         
         System.out.print("Introduce un número de segundos:");
-        int segundosIntroducidos = scanner.nextInt();
+        float segundosIntroducidos = scanner.nextInt();
         
         if (segundosIntroducidos >= 60) {
             segundosIntroducidos = segundosIntroducidos/60;
