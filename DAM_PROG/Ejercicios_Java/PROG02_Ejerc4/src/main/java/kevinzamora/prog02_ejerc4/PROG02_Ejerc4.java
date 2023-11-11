@@ -15,6 +15,8 @@ public class PROG02_Ejerc4 {
 
         Scanner scanner = new Scanner(System.in);
         int edadIntroducida;
+        
+        System.out.print("El presente programa preguntará la edad en bucle hasta que se introduzca un valor superior a los 18 años \n");
 
         do {
 
@@ -82,6 +84,6 @@ public class PROG02_Ejerc4 {
 
             }
 
-        } while (edadIntroducida <= 18);
+        } while (18 >= edadIntroducida);
     }
 }
