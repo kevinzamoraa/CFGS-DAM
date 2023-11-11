@@ -33,7 +33,7 @@ public class PROG02_Ejerc1 {
         Scanner scanner = new Scanner(System.in);
         
         System.out.print("Valor máximo: " + valorMaximo);
-        System.out.print("¿Tienes Carnet de Conducir? (Introduce 'Y' para decir SÍ o 'N' para decir NO)");
+        System.out.print("\n ¿Tienes Carnet de Conducir? (Introduce 'Y' para decir SÍ o 'N' para decir NO)");
         String tieneCarnet = scanner.nextLine();
         switch (tieneCarnet) {
             case "Y":
@@ -44,6 +44,7 @@ public class PROG02_Ejerc1 {
                 break;
             default:
                 System.out.print("El valor introducido no es válido \n");
+                break;
         }
         
         System.out.print("\n Mes del año por defecto: " + yearMonth);
@@ -94,9 +95,10 @@ public class PROG02_Ejerc1 {
                 break;
         }
         
-        System.out.print("\n Introduce un nombre y apellidos: ");
+        System.out.print("// Llevo unos días depurando el código con netbeans y no veo por qué se salta este paso; antes funcionaba correctamente. La única forma de que pare sin encontrar el error causante radica en usar puntos de interrupción durante la depuración");
+        System.out.print("\n\n Introduce un nombre y apellidos: \n");
         nombreYapellidos = scanner.nextLine();
-        System.out.println("Nombre introducido: " + nombreYapellidos);
+        System.out.printf("\n Nombre introducido: " + nombreYapellidos);
         
         System.out.print("\n Introduce tu Sexo (V/M): ");
         String sexoIntroducido = scanner.nextLine();
@@ -114,9 +116,17 @@ public class PROG02_Ejerc1 {
         
         System.out.print("\n Fecha actual: " + fechaActual);
         System.out.print("\n Fecha de referéncia: " + fechaPasada.format(DateTimeFormatter.ISO_DATE));
-        
+        // LocalDate diferenciaFechas = fechaActual - fechaPasada;
+        // System.out.print(diferenciaFechas);
+        System.out.print("\n Hay aproximadamente 55.900.800 milisegundos entre medias. \n PD: Si disousiera de más tiempo/funcionalidad neurológica y/o me acordara de como operar entre varias fechas, lo haría; creo que no resultaba nada demasiado complicado, aunque la aproximación calculada viene justo a continuación");
         // TODO / To Fix - Only obtains the years of diference between both
-        int milisegundosDesdeLaFechaDada = fechaActual.compareTo(fechaPasada);
-        System.out.println("Han pasado " + milisegundosDesdeLaFechaDada + "milisegundos entre ambas fechas");
+        int aDesdeLaFechaDada = fechaActual.compareTo(fechaPasada);
+        int milisegundosDesdeLaFechaDada = aDesdeLaFechaDada*60*60*24*12;
+        System.out.printf("\n Han pasado " + milisegundosDesdeLaFechaDada + " milisegundos aproximádamente entre ambas fechas");
+        // Tampoco me acuerdo de cómo se podía intercalar variables dentro de un string, en java;
+        System.out.print("\n El saldo de la cuenta bancaria es: " + saldoCuentaBancaria + " €");
+        System.out.print("\n La distancia entre la Tierra y Jupiter es de aproximádamente " + distanciaTierraJupiter + " km");
+        
+        System.out.print("\n\n ¡Esperamos volverte a ver pronto por aquí!");
     }
 }
