@@ -27,27 +27,22 @@ public class PROG02_Ejerc8 {
         System.out.print("Introduce el número de estudiantes matriculadxs en Base de Datos: \n");
         int matriculadosBaseDatos = scanner.nextInt();
         
-        int total = matriculadosProgramacion + matriculadosEntornosDesarrollo + matriculadosBaseDatos;
-        System.out.println(total);
+        double totalAlumnxs = matriculadosProgramacion + matriculadosEntornosDesarrollo + matriculadosBaseDatos;
+        //System.out.println(total);
         
-        double porcionProgramacion = matriculadosProgramacion/total;
-        float porcionEntornosDesarrollo = (matriculadosEntornosDesarrollo/total);
-        float porcionBaseDatos = (matriculadosBaseDatos/total);
-        
-        System.out.println(porcionProgramacion);
-        
-        //int porcentajeProgramacion = (int) (porcionProgramacion*100);
-        //int porcentajeEntornosDesarrollo = *100;
-        //int porcentajeBaseDatos = *100;
+        double porcentajeProgramacion = matriculadosProgramacion * 100 / totalAlumnxs;
+        double porcentajeEntornosDesarrollo = matriculadosEntornosDesarrollo * 100 / totalAlumnxs;
+        double porcentajeBaseDatos = matriculadosBaseDatos * 100 / totalAlumnxs;
         
         //DecimalFormat dfResult = new DecimalFormat("%");
         //String porProgramacionFormateado = dfResult.format(total*porcentajeProgramacion);
-        //System.out.print(matriculadosProgramacion);
-        //System.out.print(matriculadosEntornosDesarrollo);
-        //System.out.print(matriculadosBaseDatos);
-
-        //System.out.println(porcentajeProgramacion);
-        // System.out.print("Porcentaje de estudiantes matriculadxs en Programación: " + porProgramacionFormateado);
         
+        System.out.println("En la asignatura de programación se encuentran matriculadxs: " + matriculadosProgramacion + " alumnxs");
+        System.out.println("En la asignatura de programación se encuentran matriculadxs: " + matriculadosEntornosDesarrollo + " alumnxs");;
+        System.out.println("En la asignatura de programación se encuentran matriculadxs: " + matriculadosBaseDatos + " alumnxs");
+
+        System.out.println("Porcentaje de estudiantes matriculadxs en Programación (Sin redondear a un decimal): " + porcentajeProgramacion);
+        System.out.println("Porcentaje de estudiantes matriculadxs en Entornos de Desarrollo (Sin redondear a un decimal): " + porcentajeEntornosDesarrollo);
+        System.out.println("Porcentaje de estudiantes matriculadxs en Base de Datos (Sin redondear a un decimal): " + porcentajeBaseDatos);
     }
 }
