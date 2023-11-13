@@ -34,15 +34,21 @@ public class PROG02_Ejerc8 {
         double porcentajeEntornosDesarrollo = matriculadosEntornosDesarrollo * 100 / totalAlumnxs;
         double porcentajeBaseDatos = matriculadosBaseDatos * 100 / totalAlumnxs;
         
-        //DecimalFormat dfResult = new DecimalFormat("%");
-        //String porProgramacionFormateado = dfResult.format(total*porcentajeProgramacion);
-        
         System.out.println("En la asignatura de programación se encuentran matriculadxs: " + matriculadosProgramacion + " alumnxs");
         System.out.println("En la asignatura de programación se encuentran matriculadxs: " + matriculadosEntornosDesarrollo + " alumnxs");;
         System.out.println("En la asignatura de programación se encuentran matriculadxs: " + matriculadosBaseDatos + " alumnxs");
 
-        System.out.println("Porcentaje de estudiantes matriculadxs en Programación (Sin redondear a un decimal): " + porcentajeProgramacion);
+        System.out.println("\n Porcentaje de estudiantes matriculadxs en Programación (Sin redondear a un decimal): " + porcentajeProgramacion);
         System.out.println("Porcentaje de estudiantes matriculadxs en Entornos de Desarrollo (Sin redondear a un decimal): " + porcentajeEntornosDesarrollo);
         System.out.println("Porcentaje de estudiantes matriculadxs en Base de Datos (Sin redondear a un decimal): " + porcentajeBaseDatos);
+        
+        DecimalFormat dfResult = new DecimalFormat("##.#");
+        String porcenProgramacionFormateado = dfResult.format(porcentajeProgramacion);
+        String porcenEntornosDesarrolloFormateado = dfResult.format(porcentajeEntornosDesarrollo);
+        String porcenBaseDatosFormateado = dfResult.format(porcentajeBaseDatos);
+        
+        System.out.println("\nPorcentaje de estudiantes matriculadxs en Programación (un decimal): " + porcenProgramacionFormateado);
+        System.out.println("Porcentaje de estudiantes matriculadxs en Entornos de Desarrollo (un decimal): " + porcenEntornosDesarrolloFormateado);
+        System.out.println("Porcentaje de estudiantes matriculadxs en Base de Datos (un decimal): " + porcenBaseDatosFormateado);
     }
 }
