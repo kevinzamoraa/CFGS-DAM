@@ -1,0 +1,2 @@
+SELECT * FROM all_users; 
+GRANT ALL PRIVILEGES TO c##kevin
