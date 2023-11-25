@@ -4,6 +4,9 @@
  */
 package nuevo_paquete.prog03_Ejerc1;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 /**
  *
  * @author kzdesigner
@@ -124,12 +127,15 @@ public class Fecha {
     
     public Fecha () {}
     
-    public Fecha (enumMes mes) {
+    //public Fecha (enumMes mes) {
     
-    }
+    //}
     
-    public Fecha (int dia, enumMes mes, int anio) {
-               
+    public Fecha (int dia, String mes, int anio) {
+        LocalDate resultDate = LocalDate.of(2023,9,1);
+        DateTimeFormatter myFormatDateRef= DateTimeFormatter.ofPattern("dd-MMM-yyyy");
+        String formattedResultDate = resultDate.format(myFormatDateRef);
+        System.out.println(formattedResultDate);
     }
     
     public void isSummer(String mes){

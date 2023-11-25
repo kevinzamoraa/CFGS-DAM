@@ -38,5 +38,8 @@ public class PROG03_Ejerc1 {
         
         fechaObj.isSummer(introducedMonth);
         System.out.println("El valor de la variable 'isSummer' de tipo 'boolean', es: " + fechaObj.getIsSummer());
+        
+        System.out.println("\n La fecha introducida es: ");
+        
     }
 }
