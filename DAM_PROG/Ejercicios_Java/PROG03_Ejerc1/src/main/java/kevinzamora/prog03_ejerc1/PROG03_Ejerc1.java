@@ -22,6 +22,7 @@ public class PROG03_Ejerc1 {
         
         int introducedDay;
         String introducedMonth;
+        int introducedMonthInt;
         int introducedYear;
                
         System.out.println("Introduce el día elegido (Número Entero):");
@@ -40,6 +41,48 @@ public class PROG03_Ejerc1 {
         System.out.println("El valor de la variable 'isSummer' de tipo 'boolean', es: " + fechaObj.getIsSummer());
         
         System.out.println("\n La fecha introducida es: ");
+        switch (introducedMonth) {
+            case "ENERO":
+                introducedMonthInt = 1;
+                break;
+            case "FEBRERO":
+                introducedMonthInt = 2;
+                break;
+            case "MARZO":
+                introducedMonthInt = 3;
+                break;
+            case "ABRIL":
+                introducedMonthInt = 4;
+                break;
+            case "MAYO":
+                introducedMonthInt = 5;
+                break;
+            case "JUNIO":
+                introducedMonthInt = 6;
+                break;
+            case "JULIO":
+                introducedMonthInt = 7;
+                break;
+            case "AGOSTO":
+                introducedMonthInt = 8;
+                break;
+            case "SEPTIEMBRE":
+                introducedMonthInt = 9;
+                break;
+            case "OCTUBRE":
+                introducedMonthInt = 10;
+                break;
+            case "NOVIEMBRE":
+                introducedMonthInt = 11;
+                break;
+            case "DICIEMBRE":
+                introducedMonthInt = 12;
+                break;
+            default:
+                introducedMonthInt = 0;
+                break;
+        }
+        fechaObj.Fecha(introducedDay, introducedMonthInt, introducedYear);
         
     }
 }

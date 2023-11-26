@@ -131,8 +131,8 @@ public class Fecha {
     
     //}
     
-    public Fecha (int dia, String mes, int anio) {
-        LocalDate resultDate = LocalDate.of(2023,9,1);
+    public void Fecha (int dia, int mes, int anio) {
+        LocalDate resultDate = LocalDate.of(anio,mes,dia);
         DateTimeFormatter myFormatDateRef= DateTimeFormatter.ofPattern("dd-MMM-yyyy");
         String formattedResultDate = resultDate.format(myFormatDateRef);
         System.out.println(formattedResultDate);
