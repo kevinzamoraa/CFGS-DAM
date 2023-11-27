@@ -4,8 +4,11 @@
  */
 package nuevo_paquete.prog03_Ejerc1;
 
+import java.text.DateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
+import java.util.Locale;
 
 /**
  *
@@ -36,6 +39,9 @@ public class Fecha {
     private int year;
     enumMes months[] = month.values();
     boolean isSummer;
+    
+    public Locale loc = new Locale("es", "ES");
+    DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.DEFAULT, loc);
     
     //////  MÉTODOS 'GETTERS'  //////
     
@@ -127,15 +133,20 @@ public class Fecha {
     
     public Fecha () {}
     
-    //public Fecha (enumMes mes) {
-    
-    //}
-    
     public void Fecha (int dia, int mes, int anio) {
-        LocalDate resultDate = LocalDate.of(anio,mes,dia);
-        DateTimeFormatter myFormatDateRef= DateTimeFormatter.ofPattern("dd-MMM-yyyy");
-        String formattedResultDate = resultDate.format(myFormatDateRef);
-        System.out.println(formattedResultDate);
+        LocalDate resultDate = LocalDate.of(anio, mes, dia);
+        System.out.println(resultDate);
+        //String formatedResultDate = dateFormat.format(resultDate);
+        //System.out.println(formatedResultDate);
+        
+        //DateTimeFormatter myFormatDateRef= DateTimeFormatter.ofPattern("dd-MMM-yyyy");
+        //String formattedResultDate = resultDate.
+        //System.out.println(formattedResultDate);
+        
+        //LocalDate resultDate = LocalDate.of(anio,mes,dia);
+        //DateTimeFormatter myFormatDateRef= DateTimeFormatter.ofPattern("dd-MMM-yyyy");
+        //String formattedResultDate = resultDate.format(myFormatDateRef);
+        //System.out.println(formattedResultDate);
     }
     
     public void isSummer(String mes){
