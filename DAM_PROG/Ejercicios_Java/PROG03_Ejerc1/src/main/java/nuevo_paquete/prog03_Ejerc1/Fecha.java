@@ -6,6 +6,7 @@ package nuevo_paquete.prog03_Ejerc1;
 
 import java.text.DateFormat;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Locale;
@@ -134,19 +135,10 @@ public class Fecha {
     public Fecha () {}
     
     public void Fecha (int dia, int mes, int anio) {
-        LocalDate resultDate = LocalDate.of(anio, mes, dia);
-        System.out.println(resultDate);
-        //String formatedResultDate = dateFormat.format(resultDate);
-        //System.out.println(formatedResultDate);
-        
-        //DateTimeFormatter myFormatDateRef= DateTimeFormatter.ofPattern("dd-MMM-yyyy");
-        //String formattedResultDate = resultDate.
-        //System.out.println(formattedResultDate);
-        
-        //LocalDate resultDate = LocalDate.of(anio,mes,dia);
-        //DateTimeFormatter myFormatDateRef= DateTimeFormatter.ofPattern("dd-MMM-yyyy");
-        //String formattedResultDate = resultDate.format(myFormatDateRef);
-        //System.out.println(formattedResultDate);
+        LocalDateTime resultDate = LocalDateTime.of(anio, mes, dia, 0, 00);
+        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String formatedResultDate = resultDate.format(myFormatObj);
+        System.out.println(formatedResultDate);
     }
     
     public void isSummer(String mes){
@@ -170,4 +162,9 @@ public class Fecha {
                 break;
         }
     }
+    
+    //public String toString(LocalDate fecha) {
+    //    String fechaModificada = fecha.toString().format(dateFormat);
+    //    return fechaModificada;
+    //}
 }
