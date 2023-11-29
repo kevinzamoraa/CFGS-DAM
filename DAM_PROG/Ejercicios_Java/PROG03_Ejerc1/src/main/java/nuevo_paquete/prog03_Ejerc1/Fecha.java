@@ -134,11 +134,16 @@ public class Fecha {
     
     public Fecha () {}
     
-    public void Fecha (int dia, int mes, int anio) {
+    public Fecha (enumMes mes) {
+    
+    }
+    
+    public LocalDateTime Fecha (int dia, int mes, int anio) {
         LocalDateTime resultDate = LocalDateTime.of(anio, mes, dia, 0, 00);
         DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         String formatedResultDate = resultDate.format(myFormatObj);
         System.out.println(formatedResultDate);
+        return resultDate;
     }
     
     public void isSummer(String mes){
