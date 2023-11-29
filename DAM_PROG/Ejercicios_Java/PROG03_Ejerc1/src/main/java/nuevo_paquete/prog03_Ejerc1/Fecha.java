@@ -40,9 +40,10 @@ public class Fecha {
     private int year;
     enumMes months[] = month.values();
     boolean isSummer;
+    String monthToString;
     
-    public Locale loc = new Locale("es", "ES");
-    DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.DEFAULT, loc);
+    //public Locale loc = new Locale("es", "ES");
+    //DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.DEFAULT, loc);
     
     //////  MÉTODOS 'GETTERS'  //////
     
@@ -135,15 +136,63 @@ public class Fecha {
     public Fecha () {}
     
     public Fecha (enumMes mes) {
-    
+        
     }
     
     public LocalDateTime Fecha (int dia, int mes, int anio) {
         LocalDateTime resultDate = LocalDateTime.of(anio, mes, dia, 0, 00);
-        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        String formatedResultDate = resultDate.format(myFormatObj);
-        System.out.println(formatedResultDate);
+        //DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        //String formatedResultDate = resultDate.format(myFormatObj);
+        //System.out.println(formatedResultDate);
+        System.out.println("La fecha 2 contiente el año " + anio);
+        monthToString = monthIntToString(mes);
+        toString(dia, monthToString, anio);
+        isSummer(monthToString.toUpperCase());
         return resultDate;
+    }
+    
+    public String monthIntToString(int month){
+        switch (month) {
+            case 1:
+                monthToString = "enero";
+                break;
+            case 2:
+                monthToString = "febrero";
+                break;
+            case 3:
+                monthToString = "marzo";
+                break;
+            case 4:
+                monthToString = "abril";
+                break;
+            case 5:
+                monthToString = "mayo";
+                break;
+            case 6:
+                monthToString = "junio";
+                break;
+            case 7:
+                monthToString = "julio";
+                break;
+            case 8:
+                monthToString = "agosto";
+                break;
+            case 9:
+                monthToString = "septiembre";
+                break;
+            case 10:
+                monthToString = "octubre";
+                break;
+            case 11:
+                monthToString = "noviembre";
+                break;
+            case 12:
+                monthToString = "diciembre";
+                break;
+            default:
+                monthToString = "Mes no válido";
+                break;
+        }
     }
     
     public void isSummer(String mes){
@@ -162,14 +211,15 @@ public class Fecha {
                 this.isSummer = true;
                 break;
             default:
-                System.out.println("¿¡Es Invierno!?");
+                System.out.println("¿¡No es verano!?");
                 this.isSummer = false;
                 break;
         }
     }
     
-    //public String toString(LocalDate fecha) {
-    //    String fechaModificada = fecha.toString().format(dateFormat);
-    //    return fechaModificada;
-    //}
+    public String toString(int day, String month, int year) {
+        String fechaFormateada = day + " de " + month + " del " + year;
+        System.out.println(fechaFormateada);
+        return fechaFormateada;
+    }
 }
