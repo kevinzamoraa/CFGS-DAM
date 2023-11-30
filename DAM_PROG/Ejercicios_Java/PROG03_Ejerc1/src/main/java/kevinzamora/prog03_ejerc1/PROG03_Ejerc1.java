@@ -27,14 +27,16 @@ public class PROG03_Ejerc1 {
         String introducedMonth;
         int introducedMonthInt;
         int introducedYear;
-               
+        
+        System.out.println("\n Añadimos esta parte previa, en forma de 'imputs', como médodo de prueba y para poder verificar que, el formato de fecha requerido en el primer ejercicio, también se aplica a la fecha introducida");
         System.out.println("\n Introduce el día elegido (Número Entero):");
         introducedDay = scanner.nextInt();
         fechaObj.setDay(introducedDay);
-        System.out.println("\n Elige un mes contenido en la siguiente lista (escríbelo exactamente igual)");
+        System.out.println("\n Elige un mes contenido en la siguiente lista");
         fechaObj.getPrintedMonths();
         System.out.println("\n Introduce el mes deseado (Escribe el nombre de un mes)");
         introducedMonth = scanner2.nextLine();
+        introducedMonth = introducedMonth.toUpperCase();
         fechaObj.setMonth(introducedMonth);
         System.out.println("\n Introduce el año deseado (número entero de 4 digitos)");
         introducedYear = scanner.nextInt();
@@ -90,7 +92,7 @@ public class PROG03_Ejerc1 {
         System.out.println("\n Primera fecha, inicializada con el primer constructor");
         fechaObj.setDay(20);
         int day1 = fechaObj.getDay();
-        fechaObj.setMonth("FEBRERO");
+        //fechaObj.setMonth("FEBRERO");
         introducedMonthInt = 2;
         fechaObj.setYear(2000);
         int anio1 = fechaObj.getYear();

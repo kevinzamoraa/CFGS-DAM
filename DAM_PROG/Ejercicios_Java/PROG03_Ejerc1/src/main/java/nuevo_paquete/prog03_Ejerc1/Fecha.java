@@ -136,7 +136,10 @@ public class Fecha {
     public Fecha () {}
     
     public Fecha (enumMes mes) {
-        
+        System.out.println("La fecha es: " + year);
+        String month = mes.toString().toLowerCase();
+        toString(this.day, monthToString, this.year);
+        isSummer(month.toUpperCase());
     }
     
     public LocalDateTime Fecha (int dia, int mes, int anio) {
@@ -155,43 +158,43 @@ public class Fecha {
         switch (month) {
             case 1:
                 monthToString = "enero";
-                break;
+                return monthToString;
             case 2:
                 monthToString = "febrero";
-                break;
+                return monthToString;
             case 3:
                 monthToString = "marzo";
-                break;
+                return monthToString;
             case 4:
                 monthToString = "abril";
-                break;
+                return monthToString;
             case 5:
                 monthToString = "mayo";
-                break;
+                return monthToString;
             case 6:
                 monthToString = "junio";
-                break;
+                return monthToString;
             case 7:
                 monthToString = "julio";
-                break;
+                return monthToString;
             case 8:
                 monthToString = "agosto";
-                break;
+                return monthToString;
             case 9:
                 monthToString = "septiembre";
-                break;
+                return monthToString;
             case 10:
                 monthToString = "octubre";
-                break;
+                return monthToString;
             case 11:
                 monthToString = "noviembre";
-                break;
+                return monthToString;
             case 12:
                 monthToString = "diciembre";
-                break;
+                return monthToString;
             default:
                 monthToString = "Mes no válido";
-                break;
+                return "";
         }
     }
     
