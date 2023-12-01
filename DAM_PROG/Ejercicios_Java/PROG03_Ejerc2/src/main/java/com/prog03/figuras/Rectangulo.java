@@ -11,8 +11,8 @@ package com.prog03.figuras;
 public class Rectangulo {
     
     // Declaración de variables
-    float base;
-    float altura;
+    double base;
+    double altura;
     
     // Inicialización de variables / Constructores
     public Rectangulo() {
@@ -20,36 +20,36 @@ public class Rectangulo {
         altura = 0;
     }
     
-    public Rectangulo(float base, float altura) {
+    public Rectangulo(double base, double altura) {
         this.base = base;
         this.altura = altura;
     }
     
     // Métodos 'Getter' y 'Setter'
-    public float getBase() {
+    public double getBase() {
         return base;
     }
     
-    public float getAltura() {
+    public double getAltura() {
         return altura;
     }
     
-    public void setBase(float base) {
+    public void setBase(double base) {
         this.base = base;
     }
     
-    public void setAltura(float altura) {
+    public void setAltura(double altura) {
         this.altura = altura;
     }
     
     // Métodos de la clase
-    public float getArea(float base, float altura) {
-        float area = base * altura;
+    public double getArea(double base, double altura) {
+        double area = base * altura;
         return area;
     }
     
-    public String toString(float result) {
-        String toText = Float.toString(result);
+    public String toString(Double result) {
+        String toText = Double.toString(result);
         return toText;
     }
     
@@ -65,11 +65,5 @@ public class Rectangulo {
             isSquare = false;
             return isSquare;
         }
-    }
-
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
-    }
-    
-    
+    }    
 }
