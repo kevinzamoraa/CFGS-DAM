@@ -147,7 +147,7 @@ public class Fecha {
         //DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         //String formatedResultDate = resultDate.format(myFormatObj);
         //System.out.println(formatedResultDate);
-        System.out.println("La fecha 2 contiente el año " + anio);
+        System.out.println("La fecha contiente el año " + anio);
         monthToString = monthIntToString(mes);
         toString(dia, monthToString, anio);
         isSummer(monthToString.toUpperCase());
