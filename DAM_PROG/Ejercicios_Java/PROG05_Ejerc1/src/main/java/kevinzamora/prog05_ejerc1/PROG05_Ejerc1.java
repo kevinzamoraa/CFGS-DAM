@@ -11,6 +11,13 @@ package kevinzamora.prog05_ejerc1;
 public class PROG05_Ejerc1 {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        
+//        Vehiculo vehiculoObj = new Vehiculo();
+//        float antiguedad = vehiculoObj.get_Anios(2015);
+//        System.out.println("Antiguedad: " + antiguedad);
+
+        Principal principalObj = new Principal();
+        principalObj.loadMainMenu();
+        
     }
 }
