@@ -102,6 +102,7 @@ public class Vehiculo {
         this.precio = precio;
     }
     
+    // Funciones
     public float get_Anios(int anioFabricacion) {
         int antiguedad = 0;
         LocalDate anioActual = LocalDate.now();
@@ -112,5 +113,14 @@ public class Vehiculo {
         System.out.println(antiguedad);
         return antiguedad;
     }
+    
+//    public Vehiculo encontrarVehiculoPorId(int id) {
+//        Vehiculo vehiculoEncontrado;
+//        
+//        return vehiculoEncontrado;
+//    }
+    
+    // Colección de Vehículos
+    public Vehiculo[] vehiculos;
     
 }

@@ -13,6 +13,7 @@ import java.util.Scanner;
 public class Principal {
     
     int idVehiculoSeleccionado;
+    Vehiculo vehiculoSeleccionado;
     
     public void loadMainMenu() {
         
@@ -23,6 +24,7 @@ public class Principal {
                 + "5. Ver años de antiguedad \n 6. Mostrar propietario. \n "
                 + "7. Mostrar descripción. \n 8. Mostrar Precio. \n 9. Salir \n");
         
+        System.out.println("SELECCIONA UNA OPCIÓN (Introduce un nº entero):");
         Scanner scanner = new Scanner(System.in);
         int opcion = scanner.nextInt();
         
@@ -41,7 +43,7 @@ public class Principal {
                 break;
             case 2:
                 System.out.println("VER MATRICULA DEL VEHICULO: \n");
-                
+                                
                 loadMainMenu();
                 break;
             case 3:
