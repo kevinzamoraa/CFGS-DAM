@@ -197,12 +197,26 @@ public class Vehiculo {
         String propietario1 = scanner.nextLine();
         System.out.println("DNI del propietario: ");
         String dniPropietario1 = scanner.nextLine();
+        
+        System.out.println("\nSE VA A INSERTAR EL SIGUIENTE ELEMENTO EN NUESTRA BASE DE DATOS \n"
+                + "¿ES CORRECTO? RESPONDE 'Y' PARA DECIR 'SÍ' O 'N' PARA DECIR 'NO'");
         Vehiculo nuevoVehiculo = new Vehiculo(nuevoId, fabricante1, modelo1,
                 matricula1, numKms, fechaFabricacion,
                 propietario1, descripcion1, precio1, dniPropietario1);
-        
         System.out.println(nuevoVehiculo.toString());
-        // vehiculos[nuevoId] = nuevoVehiculo;
+        
+        String confirmacion = scanner.nextLine();
+        switch (confirmacion) {
+            case "Y":
+                try {
+                    vehiculos[nuevoId] = nuevoVehiculo;
+                    System.out.println("EL NUEVO VEHÍCULO HA SIDO INTRODUCIDO CORRECTAMENTE");
+                } catch (Exception e) {};
+                break;
+            case "N":
+                System.out.println("HA DECIDIDO DESISTIR DURANTE LA CREACIÓN DE ESTE "
+                        + "NUEVO VEHÍCULO EN NUESTRA BASE DE DATOS");
+        }
     }
 
     public void actualizarKms(int kms, Vehiculo vehiculo) {

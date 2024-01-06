@@ -64,7 +64,7 @@ public class Principal {
                 System.out.println("INTRODUCIR DATOS - CREAR NUEVO VEHÍCULO: \n");
                 
                 vehiculoObj.creaUnVehiculo(vehiculos);
-                
+                vehiculoObj.imprimeVehiculos(vehiculos);
                 // System.out.print("PULSE CUALQUIER TECLA PARA CONTINUAR");
                 /* System.in.read(); // Probando a implementar una interrupción; 
                 en .NET podemos usar: Console.ReadKey()*/
