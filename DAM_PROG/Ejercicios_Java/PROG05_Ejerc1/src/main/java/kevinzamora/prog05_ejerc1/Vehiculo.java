@@ -5,12 +5,15 @@
 package kevinzamora.prog05_ejerc1;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
 
 /**
  *
  * @author kzdesigner // Autor y nombre del equipo de Kevin Zamora Amela
  */
 public class Vehiculo {
+    
+    Scanner scanner = new Scanner(System.in);
     
     // Propiedades
     int id;
@@ -22,11 +25,13 @@ public class Vehiculo {
     private String propietario;
     private String descripcion;
     private double precio;
+    private String dniPropietario;
 
     // Constructores
     public Vehiculo() {}
     
-    public Vehiculo(int id, String fabricante, String modelo, String matricula, int numKilometros, int anioFabricacion, String propietario, String descripcion, double precio) {
+    public Vehiculo(int id, String fabricante, String modelo, String matricula, int numKilometros, 
+            int anioFabricacion, String propietario, String descripcion, double precio, String dniPropietario) {
         this.id = id;
         this.fabricante = fabricante;
         this.modelo = modelo;
@@ -36,6 +41,7 @@ public class Vehiculo {
         this.propietario = propietario;
         this.descripcion = descripcion;
         this.precio = precio;
+        this.dniPropietario = dniPropietario;
     }
     
     // Métodos GETTER
@@ -152,11 +158,28 @@ public class Vehiculo {
         System.out.println("\n");
     }
     
-    public void creaUnVehiculo(String fabricante, String modelo, String matricula, int numKilometros, 
-            int antiguedad, String propietario, String descripcion, double precio, Vehiculo[] vehiculos) {
+    public void creaUnVehiculo(Vehiculo[] vehiculos) {
         int nuevoId = vehiculos.length + 1;
-        Vehiculo nuevoVehiculo = new Vehiculo(nuevoId, fabricante, modelo, matricula, numKilometros, 
-                antiguedad, propietario, descripcion, precio);
+        System.out.println("Fabricante/Marca: ");
+                String fabricante = scanner.nextLine();
+                System.out.println("Modelo: ");
+                String modelo = scanner.nextLine();
+                System.out.println("Matrícula: ");
+                String matricula = scanner.nextLine();
+                System.out.println("Nº de Kilometros: ");
+                int numKms = scanner.nextInt();
+                System.out.println("Año de Matriculación: ");
+                int fechaFabricacion = scanner.nextInt();
+                System.out.println("Descripción: ");
+                String descripcion = scanner.nextLine();
+                System.out.println("Precio: ");
+                double precio = scanner.nextDouble();
+                System.out.println("Nombre del propietario: ");
+                String propietario = scanner.nextLine();
+                System.out.println("DNI del propietario: ");
+                String dniPropietario = scanner.nextLine();
+        Vehiculo nuevoVehiculo = new Vehiculo(nuevoId, fabricante, modelo, matricula, numKms, 
+                fechaFabricacion, propietario, descripcion, precio, dniPropietario);
         vehiculos[nuevoId] = nuevoVehiculo;
     }
     

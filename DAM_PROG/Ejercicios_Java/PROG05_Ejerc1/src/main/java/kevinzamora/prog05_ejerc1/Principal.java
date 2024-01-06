@@ -19,13 +19,13 @@ public class Principal {
     // Declaración e Inicialización de los "Coches ejemplo"
     Vehiculo coche1 = new Vehiculo(1, "Audi", "A6", "12345ABC",
             10000, 2015, "Manolo",
-            "Coche 'largo' de gama media-alta", 70000.50);
+            "Coche 'largo' de gama media-alta", 70000.50, "12345678M");
     Vehiculo coche2 = new Vehiculo(2, "Ford", "Focus", "12345CBA",
             7000, 2017, "Conchi",
-            "Coche 'corto' de gama media", 25000);
+            "Coche 'corto' de gama media", 25000, "12345678N");
     Vehiculo coche3 = new Vehiculo(3, "Fiat", "Punto", "12346ABC",
             200000, 2005, "Blai",
-            "Coche 'corto' de gama media-baja", 6000);
+            "Coche 'corto' de gama media-baja", 6000, "12345678O");
 
     // Colección de Vehículos
     public Vehiculo[] vehiculos = {
@@ -61,11 +61,13 @@ public class Principal {
                 loadMainMenu();
                 break;
             case 1:
-                System.out.println("INTRODUCIR DATOS - NUEVO VEHÍCULO: \n");
-
+                System.out.println("INTRODUCIR DATOS - CREAR NUEVO VEHÍCULO: \n");
+                
+                vehiculoObj.creaUnVehiculo(vehiculos);
+                
                 // System.out.print("PULSE CUALQUIER TECLA PARA CONTINUAR");
-                /* System.in.read(); // Probando a implementar una interrupción; en .NET podemos usar:
-                Console.ReadKey()*/
+                /* System.in.read(); // Probando a implementar una interrupción; 
+                en .NET podemos usar: Console.ReadKey()*/
                 loadMainMenu();
                 break;
             case 2:
@@ -116,8 +118,8 @@ public class Principal {
                 break;
             case 7:
                 System.out.println("DESCRIPCIÓN: \n");
-                String descripcion = vehiculoSeleccionado.getDescripcion();
-                System.out.println(descripcion + "\n");
+                String descripcionS = vehiculoSeleccionado.getDescripcion();
+                System.out.println(descripcionS + "\n");
                 // System.out.print("PULSE CUALQUIER TECLA PARA CONTINUAR");
                 /* System.in.read(); // Probando a implementar una interrupción; en .NET podemos usar:
                 Console.ReadKey()*/
@@ -125,8 +127,8 @@ public class Principal {
                 break;
             case 8:
                 System.out.println("PRECIO: \n");
-                double precio = vehiculoSeleccionado.getPrecio();
-                System.out.println(precio + " € \n");
+                double precioS = vehiculoSeleccionado.getPrecio();
+                System.out.println(precioS + " € \n");
                 // System.out.print("PULSE CUALQUIER TECLA PARA CONTINUAR");
                 /* System.in.read(); // Probando a implementar una interrupción; en .NET podemos usar:
                 Console.ReadKey()*/
