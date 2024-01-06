@@ -8,84 +8,139 @@ import java.util.Scanner;
 
 /**
  *
- * @author kzdesigner  // Autor y nombre del equipo de Kevin Zamora Amela
+ * @author kzdesigner // Autor y nombre del equipo de Kevin Zamora Amela
  */
 public class Principal {
-    
+
     int idVehiculoSeleccionado;
     Vehiculo vehiculoSeleccionado;
+    Vehiculo vehiculoObj = new Vehiculo();
     
+    // Declaración e Inicialización de los "Coches ejemplo"
+    Vehiculo coche1 = new Vehiculo(1, "Audi", "A6", "12345ABC",
+            10000, 2015, "Manolo",
+            "Coche 'largo' de gama media-alta", 70000.50);
+    Vehiculo coche2 = new Vehiculo(2, "Ford", "Focus", "12345CBA",
+            7000, 2017, "Conchi",
+            "Coche 'corto' de gama media", 25000);
+    Vehiculo coche3 = new Vehiculo(3, "Fiat", "Punto", "12346ABC",
+            200000, 2005, "Blai",
+            "Coche 'corto' de gama media-baja", 6000);
+
+    // Colección de Vehículos
+    public Vehiculo[] vehiculos = {
+        coche1, coche2, coche3};
+    
+
     public void loadMainMenu() {
-        
+
         System.out.println("BIENVENID@S A NUESTRO INVENTARIO DE VEHICULOS: \n");
         System.out.println("NUESTRAS OPCIONES: \n 0. Busca un Vehiculo. \n "
                 + "1. Nuevo Vehiculo. \n 2. Ver Matrícula. \n "
                 + "3. Ver Número de Kilometros. \n 4. Actualizar Kilometros. \n "
                 + "5. Ver años de antiguedad \n 6. Mostrar propietario. \n "
                 + "7. Mostrar descripción. \n 8. Mostrar Precio. \n 9. Salir \n");
-        
+
         System.out.println("SELECCIONA UNA OPCIÓN (Introduce un nº entero):");
         Scanner scanner = new Scanner(System.in);
         int opcion = scanner.nextInt();
-        
+
         switch (opcion) {
-            
+
             case 0:
                 System.out.println("BÚSCA UN VEHÍCULO: \n ");
-                System.out.println("INTRODUCE EL NÚMERO ID A BUSCAR: \n ");
+                // Lista de vehiculos
+                vehiculoObj.imprimeVehiculos(vehiculos);
+                System.out.println("INTRODUCE EL NÚMERO ID A BUSCAR: ");
                 idVehiculoSeleccionado = scanner.nextInt();
-                
+                vehiculoSeleccionado = vehiculoObj.encontrarVehiculoPorID(idVehiculoSeleccionado, vehiculos);
+                System.out.print("El vehiculo se ha guardado correctamente \n\n");
+                // System.out.print("PULSE CUALQUIER TECLA PARA CONTINUAR");
+                /* System.in.read(); // Probando a implementar una interrupción; en .NET podemos usar:
+                Console.ReadKey()*/
+                loadMainMenu();
                 break;
             case 1:
                 System.out.println("INTRODUCIR DATOS - NUEVO VEHÍCULO: \n");
-                
+
+                // System.out.print("PULSE CUALQUIER TECLA PARA CONTINUAR");
+                /* System.in.read(); // Probando a implementar una interrupción; en .NET podemos usar:
+                Console.ReadKey()*/
                 loadMainMenu();
                 break;
             case 2:
-                System.out.println("VER MATRICULA DEL VEHICULO: \n");
-                                
+                System.out.println("MATRICULA DEL VEHICULO: \n");
+                System.out.println(vehiculoSeleccionado.getMatricula() + "\n");
+                // System.out.print("PULSE CUALQUIER TECLA PARA CONTINUAR");
+                /* System.in.read(); // Probando a implementar una interrupción; en .NET podemos usar:
+                Console.ReadKey()*/
                 loadMainMenu();
                 break;
             case 3:
-                System.out.println("VER NÚMERO DE KILÓMETROS: \n");
-                
+                System.out.println("NÚMERO DE KILÓMETROS: \n");
+                System.out.println(vehiculoSeleccionado.getNumKilometros() + "\n");
+                // System.out.print("PULSE CUALQUIER TECLA PARA CONTINUAR");
+                /* System.in.read(); // Probando a implementar una interrupción; en .NET podemos usar:
+                Console.ReadKey()*/
                 loadMainMenu();
                 break;
             case 4:
-                System.out.println("ACTUALIZAR KILÓMETROS: \n");
-                
+                System.out.println("ACTUALIZAR KILÓMETROS: \n Introduce su nuevo kilometraje: ");
+                int nuevoKilometraje = scanner.nextInt();
+                vehiculoObj.actualizarKms(nuevoKilometraje, vehiculoSeleccionado);
+                int kmsVehiculoSeleccionado = vehiculoSeleccionado.getNumKilometros();
+                System.out.println("Los kilometros del coche has sido actualizados correctamente; ahora tiene "
+                        + kmsVehiculoSeleccionado + " kilometros \n");
+                // System.out.print("PULSE CUALQUIER TECLA PARA CONTINUAR");
+                /* System.in.read(); // Probando a implementar una interrupción; en .NET podemos usar:
+                Console.ReadKey()*/
                 loadMainMenu();
                 break;
             case 5:
-                System.out.println("VER AÑOS DE ANTIGUEDAD: \n");
-                
+                System.out.println("AÑOS DE ANTIGUEDAD DEL VEHÍCULO: \n");
+                int anioFabricacion = vehiculoSeleccionado.getAnioFabricacion();
+                int antiguedad = vehiculoObj.get_Anios(anioFabricacion);            
+                System.out.println(antiguedad + " años \n");
+                // System.out.print("PULSE CUALQUIER TECLA PARA CONTINUAR");
+                /* System.in.read(); // Probando a implementar una interrupción; en .NET podemos usar:
+                Console.ReadKey()*/
                 loadMainMenu();
                 break;
             case 6:
-                System.out.println("MOSTRAR PROPIETARIO: \n");
-                
+                System.out.println("PROPIETARIO: \n");
+                System.out.println(vehiculoSeleccionado.getPropietario() + "\n");
+                // System.out.print("PULSE CUALQUIER TECLA PARA CONTINUAR");
+                /* System.in.read(); // Probando a implementar una interrupción; en .NET podemos usar:
+                Console.ReadKey()*/
                 loadMainMenu();
                 break;
             case 7:
-                System.out.println("MOSTRAR DESCRIPCIÓN: \n");
-                
+                System.out.println("DESCRIPCIÓN: \n");
+                String descripcion = vehiculoSeleccionado.getDescripcion();
+                System.out.println(descripcion + "\n");
+                // System.out.print("PULSE CUALQUIER TECLA PARA CONTINUAR");
+                /* System.in.read(); // Probando a implementar una interrupción; en .NET podemos usar:
+                Console.ReadKey()*/
                 loadMainMenu();
                 break;
             case 8:
-                System.out.println("MOSTRAR PRECIO: \n");
-                
+                System.out.println("PRECIO: \n");
+                double precio = vehiculoSeleccionado.getPrecio();
+                System.out.println(precio + " € \n");
+                // System.out.print("PULSE CUALQUIER TECLA PARA CONTINUAR");
+                /* System.in.read(); // Probando a implementar una interrupción; en .NET podemos usar:
+                Console.ReadKey()*/
                 loadMainMenu();
                 break;
             case 9:
                 System.out.println("¡HASTA PRONTO!");
                 break;
             default:
-                System.out.println("LA OPCIÓN INTRODUCIDA NO ES VÁLIDA");
-                loadMainMenu();
+                System.out.println("LA OPCIÓN INTRODUCIDA NO ES VÁLIDA \n");
+                // System.out.print("PULSE CUALQUIER TECLA PARA CONTINUAR");
+                /* System.in.read(); // Probando a implementar una interrupción; en .NET podemos usar:
+                Console.ReadKey()*/
                 break;
-            
         }
-    
     }
-    
 }
