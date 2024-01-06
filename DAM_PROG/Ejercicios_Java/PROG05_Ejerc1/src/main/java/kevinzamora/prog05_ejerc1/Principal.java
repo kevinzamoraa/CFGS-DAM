@@ -80,7 +80,7 @@ public class Principal {
                 break;
             case 3:
                 System.out.println("NÚMERO DE KILÓMETROS: \n");
-                System.out.println(vehiculoSeleccionado.getNumKilometros() + "\n");
+                System.out.println(vehiculoSeleccionado.getNumKilometros() + " kilometros\n");
                 // System.out.print("PULSE CUALQUIER TECLA PARA CONTINUAR");
                 /* System.in.read(); // Probando a implementar una interrupción; en .NET podemos usar:
                 Console.ReadKey()*/
@@ -110,7 +110,8 @@ public class Principal {
                 break;
             case 6:
                 System.out.println("PROPIETARIO: \n");
-                System.out.println(vehiculoSeleccionado.getPropietario() + "\n");
+                System.out.println(vehiculoSeleccionado.getPropietario() 
+                        + ", con DNI: " + vehiculoSeleccionado.getDniPropietario() + "\n");
                 // System.out.print("PULSE CUALQUIER TECLA PARA CONTINUAR");
                 /* System.in.read(); // Probando a implementar una interrupción; en .NET podemos usar:
                 Console.ReadKey()*/
@@ -118,8 +119,10 @@ public class Principal {
                 break;
             case 7:
                 System.out.println("DESCRIPCIÓN: \n");
-                String descripcionS = vehiculoSeleccionado.getDescripcion();
-                System.out.println(descripcionS + "\n");
+                               
+                System.out.println(vehiculoSeleccionado.getDescripcion() + ", con matrícula: " + 
+                        vehiculoSeleccionado.getMatricula() + " y lleva recorridos " 
+                        + vehiculoSeleccionado.getNumKilometros() + " kilometros \n");
                 // System.out.print("PULSE CUALQUIER TECLA PARA CONTINUAR");
                 /* System.in.read(); // Probando a implementar una interrupción; en .NET podemos usar:
                 Console.ReadKey()*/
