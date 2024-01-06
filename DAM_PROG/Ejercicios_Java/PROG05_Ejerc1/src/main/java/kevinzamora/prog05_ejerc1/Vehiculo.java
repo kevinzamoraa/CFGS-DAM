@@ -22,7 +22,7 @@ public class Vehiculo {
     private String modelo;
     private String matricula;
     private int numKilometros;
-    private int anioFabricacion;
+    private LocalDate fechaMatriculacion;
     private String propietario;
     private String descripcion;
     private double precio;
@@ -33,13 +33,13 @@ public class Vehiculo {
     }
 
     public Vehiculo(int id, String fabricante, String modelo, String matricula, int numKilometros,
-            int anioFabricacion, String propietario, String descripcion, double precio, String dniPropietario) {
+            LocalDate fechaMatriculacion, String propietario, String descripcion, double precio, String dniPropietario) {
         this.id = id;
         this.fabricante = fabricante;
         this.modelo = modelo;
         this.matricula = matricula;
         this.numKilometros = numKilometros;
-        this.anioFabricacion = anioFabricacion;
+        this.fechaMatriculacion = fechaMatriculacion;
         this.propietario = propietario;
         this.descripcion = descripcion;
         this.precio = precio;
@@ -50,7 +50,7 @@ public class Vehiculo {
     public String toString() {
         return "ID: " + id + ". Marca: " + fabricante + " Modelo: " + modelo 
                 + " Matricula: " + matricula + " Nº Kms: " + numKilometros 
-                + " Año de fabricación: " + anioFabricacion + " Propietario: " 
+                + " fecha de fabricación: " + fechaMatriculacion + " Propietario: " 
                 + propietario + " Descripción: " + descripcion + " Precio: " 
                 + precio + "€ DNI del Propietario: " + dniPropietario;
     }
@@ -76,8 +76,8 @@ public class Vehiculo {
         return numKilometros;
     }
 
-    public int getAnioFabricacion() {
-        return anioFabricacion;
+    public LocalDate getFechaMatriculacion() {
+        return fechaMatriculacion;
     }
 
     public String getPropietario() {
@@ -113,8 +113,8 @@ public class Vehiculo {
         this.numKilometros = numKms;
     }
 
-    public void setAnioFabricacion(int anioFabricacion) {
-        this.anioFabricacion = anioFabricacion;
+    public void setFechaMatriculacion(LocalDate fechaMatriculacion) {
+        this.fechaMatriculacion = fechaMatriculacion;
     }
 
     public void setPropietario(String propietario) {
@@ -130,13 +130,12 @@ public class Vehiculo {
     }
 
     // Funciones
-    public int get_Anios(int anioFabricacion) {
+    public int get_Anios(LocalDate fechaMatriculacion) {
         int antiguedad = 0;
-        LocalDate anioActual = LocalDate.now();
-        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("yyyy");
-        String anioActualFormateado = anioActual.format(myFormatObj);
-        int anioActualInt = Integer.parseInt(anioActualFormateado);
-        antiguedad = anioActualInt - anioFabricacion;
+        LocalDate fechaActual = LocalDate.now();
+        // DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd/mm/yyyy");
+        // String fechaActualFormateada = fechaActual.format(myFormatObj);
+        antiguedad = fechaActual.compareTo(fechaMatriculacion);
 //        System.out.println(antiguedad);
         return antiguedad;
     }
@@ -188,7 +187,12 @@ public class Vehiculo {
         System.out.println("Nº de Kilometros: ");
         int numKms = Integer.parseInt(scanner.nextLine());
         System.out.println("Año de Matriculación: ");
-        int fechaFabricacion = Integer.parseInt(scanner.nextLine());
+        System.out.println("Introduce el día (número entero):");
+        int diaMatriculacion = Integer.parseInt(scanner.nextLine());
+        System.out.println("Introduce el mes (número entero)");
+        int mesMatriculacion = Integer.parseInt(scanner.nextLine());
+        System.out.println("Introduce el año (número entero)");
+        int anioMatriculacion = Integer.parseInt(scanner.nextLine());
         System.out.println("Descripción: ");
         String descripcion1 = scanner.nextLine();
         System.out.println("Precio: ");
@@ -198,10 +202,15 @@ public class Vehiculo {
         System.out.println("DNI del propietario: ");
         String dniPropietario1 = scanner.nextLine();
         
+        LocalDate fechaMatriculacion1 = LocalDate.of(anioMatriculacion,mesMatriculacion,
+                diaMatriculacion );
+        // DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd/mm/yyyy");
+        // String fechaMatriculacionFormateada = fechaMatriculacion1.format(myFormatObj);
+        
         System.out.println("\nSE VA A INSERTAR EL SIGUIENTE ELEMENTO EN NUESTRA BASE DE DATOS \n"
                 + "¿ES CORRECTO? RESPONDE 'Y' PARA DECIR 'SÍ' O 'N' PARA DECIR 'NO'");
         Vehiculo nuevoVehiculo = new Vehiculo(nuevoId, fabricante1, modelo1,
-                matricula1, numKms, fechaFabricacion,
+                matricula1, numKms, fechaMatriculacion1,
                 propietario1, descripcion1, precio1, dniPropietario1);
         System.out.println(nuevoVehiculo.toString());
         
@@ -210,12 +219,19 @@ public class Vehiculo {
             case "Y":
                 try {
                     vehiculos[nuevoId] = nuevoVehiculo;
+                    System.out.println("ASÍ SE ALOJARÍA NUESTRO NUEVO ELEMENTO, \n AUNQUE PARA VERLO JUNTO AL RESTO, "
+                            + "PRIMERO DEBERÍAMOS RECARGAR Y VOLVER A LEER EL 'ARRAY'.\n ADEMÁS, TAMPOCO RECUERDO "
+                            + "BIEN CÓMO PODÍAMOS INTRODUCIR NUEVOS DATOS EN UN 'ARRAY HARDCODEADO'");
+                    System.out.println(vehiculos[nuevoId]);
                     System.out.println("EL NUEVO VEHÍCULO HA SIDO INTRODUCIDO CORRECTAMENTE");
                 } catch (Exception e) {};
                 break;
             case "N":
                 System.out.println("HA DECIDIDO DESISTIR DURANTE LA CREACIÓN DE ESTE "
                         + "NUEVO VEHÍCULO EN NUESTRA BASE DE DATOS");
+                break;
+            default:
+                System.out.println("SE HA PRODUCIDO UN ERROR EN TIEMPO DE EJECUCIÓN");
         }
     }
 

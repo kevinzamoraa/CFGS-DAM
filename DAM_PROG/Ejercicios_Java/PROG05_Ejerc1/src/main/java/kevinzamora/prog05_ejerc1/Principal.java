@@ -4,6 +4,7 @@
  */
 package kevinzamora.prog05_ejerc1;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 /**
@@ -18,13 +19,13 @@ public class Principal {
     
     // Declaración e Inicialización de los "Coches ejemplo"
     Vehiculo coche1 = new Vehiculo(1, "Audi", "A6", "12345ABC",
-            10000, 2015, "Manolo",
+            10000, LocalDate.of(2015,3,11), "Manolo",
             "Coche 'largo' de gama media-alta", 70000.50, "12345678M");
     Vehiculo coche2 = new Vehiculo(2, "Ford", "Focus", "12345CBA",
-            7000, 2017, "Conchi",
+            7000, LocalDate.of(2013,5,10), "Conchi",
             "Coche 'corto' de gama media", 25000, "12345678N");
     Vehiculo coche3 = new Vehiculo(3, "Fiat", "Punto", "12346ABC",
-            200000, 2005, "Blai",
+            200000, LocalDate.of(2005,9,20), "Blai",
             "Coche 'corto' de gama media-baja", 6000, "12345678O");
 
     // Colección de Vehículos
@@ -65,6 +66,10 @@ public class Principal {
                 
                 vehiculoObj.creaUnVehiculo(vehiculos);
                 vehiculoObj.imprimeVehiculos(vehiculos);
+                System.out.println("NO VEO LA CAUSA POR LA QUE EL PROGRAMA NO ES CAPAZ DE AÑADIR EL NUEVO \n"
+                        + "ITEM A NUESTRO 'ARRAY' CARGADO EN MEMORIA, AUNQUE SEA SÓLO PARA PODER MOSTRARLO \n"
+                        + "TEMPORALMENTE. AGRADECERÍA ALGO DE AYUDA PARA LOGRAR LOCALIZAR EL 'ERROR' "
+                        + "EN CUESTIÓN\n\n");
                 // System.out.print("PULSE CUALQUIER TECLA PARA CONTINUAR");
                 /* System.in.read(); // Probando a implementar una interrupción; 
                 en .NET podemos usar: Console.ReadKey()*/
@@ -100,8 +105,8 @@ public class Principal {
                 break;
             case 5:
                 System.out.println("AÑOS DE ANTIGUEDAD DEL VEHÍCULO: \n");
-                int anioFabricacion = vehiculoSeleccionado.getAnioFabricacion();
-                int antiguedad = vehiculoObj.get_Anios(anioFabricacion);            
+                LocalDate fechaMatriculacion = vehiculoSeleccionado.getFechaMatriculacion();
+                int antiguedad = vehiculoObj.get_Anios(fechaMatriculacion);            
                 System.out.println(antiguedad + " años \n");
                 // System.out.print("PULSE CUALQUIER TECLA PARA CONTINUAR");
                 /* System.in.read(); // Probando a implementar una interrupción; en .NET podemos usar:
