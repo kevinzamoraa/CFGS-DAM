@@ -7,6 +7,7 @@ package kevinzamora.prog05_ejerc1;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
+import kevinzamora.prog05_ejer1_util.Validaciones;
 
 /**
  *
@@ -15,6 +16,7 @@ import java.util.Scanner;
 public class Vehiculo {
 
     Scanner scanner = new Scanner(System.in);
+    Validaciones validacionObj = new Validaciones();
 
     // Propiedades
     int id;
@@ -45,13 +47,13 @@ public class Vehiculo {
         this.precio = precio;
         this.dniPropietario = dniPropietario;
     }
-    
+
     // Método TO STRING
     public String toString() {
-        return "ID: " + id + ". Marca: " + fabricante + " Modelo: " + modelo 
-                + " Matricula: " + matricula + " Nº Kms: " + numKilometros 
-                + " fecha de fabricación: " + fechaMatriculacion + " Propietario: " 
-                + propietario + " Descripción: " + descripcion + " Precio: " 
+        return "ID: " + id + ". Marca: " + fabricante + " Modelo: " + modelo
+                + " Matricula: " + matricula + " Nº Kms: " + numKilometros
+                + " fecha de fabricación: " + fechaMatriculacion + " Propietario: "
+                + propietario + " Descripción: " + descripcion + " Precio: "
                 + precio + "€ DNI del Propietario: " + dniPropietario;
     }
 
@@ -83,7 +85,7 @@ public class Vehiculo {
     public String getPropietario() {
         return propietario;
     }
-    
+
     public String getDniPropietario() {
         return dniPropietario;
     }
@@ -175,9 +177,9 @@ public class Vehiculo {
     }
 
     public void creaUnVehiculo(Vehiculo[] vehiculos) {
-        int nuevoId = vehiculos.length+1;
+        int nuevoId = vehiculos.length + 1;
         // System.out.println(nuevoId);
-        
+
         System.out.println("Fabricante/Marca: ");
         String fabricante1 = scanner.nextLine();
         System.out.println("Modelo: ");
@@ -186,13 +188,26 @@ public class Vehiculo {
         String matricula1 = scanner.nextLine();
         System.out.println("Nº de Kilometros: ");
         int numKms = Integer.parseInt(scanner.nextLine());
-        System.out.println("Año de Matriculación: ");
-        System.out.println("Introduce el día (número entero):");
-        int diaMatriculacion = Integer.parseInt(scanner.nextLine());
-        System.out.println("Introduce el mes (número entero)");
-        int mesMatriculacion = Integer.parseInt(scanner.nextLine());
-        System.out.println("Introduce el año (número entero)");
-        int anioMatriculacion = Integer.parseInt(scanner.nextLine());
+        LocalDate fechaMatriculacion1;
+        LocalDate momentoActual;
+        do {
+            System.out.println("Año de Matriculación: ");
+            System.out.println("Introduce el día (número entero):");
+            int diaMatriculacion = Integer.parseInt(scanner.nextLine());
+            System.out.println("Introduce el mes (número entero)");
+            int mesMatriculacion = Integer.parseInt(scanner.nextLine());
+            System.out.println("Introduce el año (número entero)");
+            int anioMatriculacion = Integer.parseInt(scanner.nextLine());
+            fechaMatriculacion1 = LocalDate.of(anioMatriculacion, mesMatriculacion,
+                    diaMatriculacion);
+            // DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd/mm/yyyy");
+            // String fechaMatriculacionFormateada = fechaMatriculacion1.format(myFormatObj);
+            momentoActual = LocalDate.now();
+            if (momentoActual.isBefore(fechaMatriculacion1)) {
+                System.out.println("LA FECHA DE MATRICULACIÓN ES INCORRECTA, ACTUALÍCELA "
+                        + "PARA CONTINUAR \n");
+            }
+        } while (momentoActual.isBefore(fechaMatriculacion1));
         System.out.println("Descripción: ");
         String descripcion1 = scanner.nextLine();
         System.out.println("Precio: ");
@@ -201,31 +216,28 @@ public class Vehiculo {
         String propietario1 = scanner.nextLine();
         System.out.println("DNI del propietario: ");
         String dniPropietario1 = scanner.nextLine();
-        
-        LocalDate fechaMatriculacion1 = LocalDate.of(anioMatriculacion,mesMatriculacion,
-                diaMatriculacion );
-        // DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd/mm/yyyy");
-        // String fechaMatriculacionFormateada = fechaMatriculacion1.format(myFormatObj);
-        
+
         System.out.println("\nSE VA A INSERTAR EL SIGUIENTE ELEMENTO EN NUESTRA BASE DE DATOS \n"
                 + "¿ES CORRECTO? RESPONDE 'Y' PARA DECIR 'SÍ' O 'N' PARA DECIR 'NO'");
         Vehiculo nuevoVehiculo = new Vehiculo(nuevoId, fabricante1, modelo1,
                 matricula1, numKms, fechaMatriculacion1,
                 propietario1, descripcion1, precio1, dniPropietario1);
         System.out.println(nuevoVehiculo.toString());
-        
+
         String confirmacion = scanner.nextLine();
         switch (confirmacion) {
             case "Y":
                 try {
-                    vehiculos[nuevoId] = nuevoVehiculo;
-                    System.out.println("ASÍ SE ALOJARÍA NUESTRO NUEVO ELEMENTO, \n AUNQUE PARA VERLO JUNTO AL RESTO, "
-                            + "PRIMERO DEBERÍAMOS RECARGAR Y VOLVER A LEER EL 'ARRAY'.\n ADEMÁS, TAMPOCO RECUERDO "
-                            + "BIEN CÓMO PODÍAMOS INTRODUCIR NUEVOS DATOS EN UN 'ARRAY HARDCODEADO'");
-                    System.out.println(vehiculos[nuevoId]);
-                    System.out.println("EL NUEVO VEHÍCULO HA SIDO INTRODUCIDO CORRECTAMENTE");
-                } catch (Exception e) {};
-                break;
+                vehiculos[nuevoId] = nuevoVehiculo;
+                System.out.println("ASÍ SE ALOJARÍA NUESTRO NUEVO ELEMENTO, \n AUNQUE PARA VERLO JUNTO AL RESTO, "
+                        + "PRIMERO DEBERÍAMOS RECARGAR Y VOLVER A LEER EL 'ARRAY'.\n ADEMÁS, TAMPOCO RECUERDO "
+                        + "BIEN CÓMO PODÍAMOS INTRODUCIR NUEVOS DATOS EN UN 'ARRAY HARDCODEADO'");
+                System.out.println(vehiculos[nuevoId]);
+                System.out.println("EL NUEVO VEHÍCULO HA SIDO INTRODUCIDO CORRECTAMENTE");
+            } catch (Exception e) {
+            }
+            ;
+            break;
             case "N":
                 System.out.println("HA DECIDIDO DESISTIR DURANTE LA CREACIÓN DE ESTE "
                         + "NUEVO VEHÍCULO EN NUESTRA BASE DE DATOS");
