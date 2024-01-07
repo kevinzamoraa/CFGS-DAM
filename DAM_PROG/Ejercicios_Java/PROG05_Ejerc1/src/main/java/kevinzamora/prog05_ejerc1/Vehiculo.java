@@ -17,7 +17,8 @@ public class Vehiculo {
 
     Scanner scanner = new Scanner(System.in);
     Validaciones validacionObj = new Validaciones();
-
+    int errores = 0;
+    
     // Propiedades
     int id;
     private String fabricante;
@@ -58,6 +59,10 @@ public class Vehiculo {
     }
 
     // Métodos GETTER
+    public int getErrores() {
+        return errores;
+    }
+    
     public int getId() {
         return id;
     }
@@ -192,6 +197,14 @@ public class Vehiculo {
             System.out.println("Nº de Kilometros: ");
             numKms = Integer.parseInt(scanner.nextLine());
             numKmsIsCorrect = validacionObj.comprobarKilometros(numKms);
+            errores++;
+            if (errores >= 3) {System.out.println("HAS COMETIDO 3 ERRORES Y SE TE REDIRIGE "
+                    + "A LA PANTALLA PRINCIPAL. MÁS SUERTE LA PRÓXIMA VEZ. \n VUELVE A INICIAR LA APLICACIÓN "
+                    + "PARA VOLVER A INTENTARLO"); errores = 0; return; } /*Faltaria reiniciar la aplicación 
+            o redirigir a la función loadMainMenu() alojada actualmente en la clase 'Principal'. Debido a falta 
+            de tiempo y de recursos lo dejamos pendiente de realizar. PD: Debería bastar con mover la función del menú 
+            a una clase independiente desde la que pueda ser llamada desde todas partes, para evitar así que el 
+            error 'StackOverflow' debido a al llamamiento mutuo entre clases/entidades */
 //            if (numKms <= 0) {
 //                System.out.println("EL NÚMERO DE KILÓMETROS NO PUEDE RESULTAR CERO NI "
 //                        + "MUCHO MENOS SER NEGATIVO");
@@ -215,6 +228,14 @@ public class Vehiculo {
             // String fechaMatriculacionFormateada = fechaMatriculacion1.format(myFormatObj);
             momentoActual = LocalDate.now();
             FMisCorrect = validacionObj.comprobarFechaMatriculacion(fechaMatriculacion1);
+            errores++;
+            if (errores >= 3) {System.out.println("HAS COMETIDO 3 ERRORES Y SE TE REDIRIGE "
+                    + "A LA PANTALLA PRINCIPAL. MÁS SUERTE LA PRÓXIMA VEZ. \n VUELVE A INICIAR LA APLICACIÓN "
+                    + "PARA VOLVER A INTENTARLO"); errores = 0; return; } /*Faltaria reiniciar la aplicación 
+            o redirigir a la función loadMainMenu() alojada actualmente en la clase 'Principal'. Debido a falta 
+            de tiempo y de recursos lo dejamos pendiente de realizar. PD: Debería bastar con mover la función del menú 
+            a una clase independiente desde la que pueda ser llamada desde todas partes, para evitar así que el 
+            error 'StackOverflow' debido a al llamamiento mutuo entre clases/entidades */
 //            if (momentoActual.isBefore(fechaMatriculacion1)) {
 //                System.out.println("LA FECHA DE MATRICULACIÓN ES INCORRECTA, ACTUALÍCELA "
 //                        + "PARA CONTINUAR \n");
@@ -233,6 +254,14 @@ public class Vehiculo {
         System.out.println("DNI del propietario: ");
         dniPropietario1 = scanner.nextLine();
         dniPropietario1IsCorrect = validacionObj.comprobarDni(dniPropietario1);
+        errores++;
+            if (errores >= 3) {System.out.println("HAS COMETIDO 3 ERRORES Y SE TE REDIRIGE "
+                    + "A LA PANTALLA PRINCIPAL. MÁS SUERTE LA PRÓXIMA VEZ. \n VUELVE A INICIAR LA APLICACIÓN "
+                    + "PARA VOLVER A INTENTARLO"); errores = 0; return; } /*Faltaria reiniciar la aplicación 
+            o redirigir a la función loadMainMenu() alojada actualmente en la clase 'Principal'. Debido a falta 
+            de tiempo y de recursos lo dejamos pendiente de realizar. PD: Debería bastar con mover la función del menú 
+            a una clase independiente desde la que pueda ser llamada desde todas partes, para evitar así que el 
+            error 'StackOverflow' debido a al llamamiento mutuo entre clases/entidades */
         } while (dniPropietario1IsCorrect = true);
         
 

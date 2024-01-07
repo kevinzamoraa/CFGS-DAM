@@ -16,22 +16,22 @@ public class Principal {
     int idVehiculoSeleccionado;
     Vehiculo vehiculoSeleccionado;
     Vehiculo vehiculoObj = new Vehiculo();
-    
+    int errores = vehiculoObj.errores;
+
     // Declaración e Inicialización de los "Coches ejemplo"
     Vehiculo coche1 = new Vehiculo(1, "Audi", "A6", "12345ABC",
-            10000, LocalDate.of(2015,3,11), "Manolo",
+            10000, LocalDate.of(2015, 3, 11), "Manolo",
             "Coche 'largo' de gama media-alta", 70000.50, "12345678M");
     Vehiculo coche2 = new Vehiculo(2, "Ford", "Focus", "12345CBA",
-            7000, LocalDate.of(2013,5,10), "Conchi",
+            7000, LocalDate.of(2013, 5, 10), "Conchi",
             "Coche 'corto' de gama media", 25000, "12345678N");
     Vehiculo coche3 = new Vehiculo(3, "Fiat", "Punto", "12346ABC",
-            200000, LocalDate.of(2005,9,20), "Blai",
+            200000, LocalDate.of(2005, 9, 20), "Blai",
             "Coche 'corto' de gama media-baja", 6000, "12345678O");
 
     // Colección de Vehículos
     public Vehiculo[] vehiculos = {
         coche1, coche2, coche3};
-    
 
     public void loadMainMenu() {
 
@@ -63,13 +63,27 @@ public class Principal {
                 break;
             case 1:
                 System.out.println("INTRODUCIR DATOS - CREAR NUEVO VEHÍCULO: \n");
-                
+
                 vehiculoObj.creaUnVehiculo(vehiculos);
                 vehiculoObj.imprimeVehiculos(vehiculos);
                 System.out.println("NO VEO LA CAUSA POR LA QUE EL PROGRAMA NO ES CAPAZ DE AÑADIR EL NUEVO \n"
                         + "ITEM A NUESTRO 'ARRAY' CARGADO EN MEMORIA, AUNQUE SEA SÓLO PARA PODER MOSTRARLO \n"
                         + "TEMPORALMENTE. AGRADECERÍA ALGO DE AYUDA PARA LOGRAR LOCALIZAR EL 'ERROR' "
                         + "EN CUESTIÓN\n\n");
+
+                if (errores >= 3) {
+                    System.out.println("HAS COMETIDO 3 ERRORES Y SE TE REDIRIGE "
+                            + "A LA PANTALLA PRINCIPAL. MÁS SUERTE LA PRÓXIMA VEZ. \n VUELVE A INICIAR LA APLICACIÓN "
+                            + "PARA VOLVER A INTENTARLO");
+                    errores = 0;
+                    return;
+                }
+                /*Faltaria reiniciar la aplicación 
+            o redirigir a la función loadMainMenu() alojada actualmente en la clase 'Principal'. Debido a falta 
+            de tiempo y de recursos lo dejamos pendiente de realizar. PD: Debería bastar con mover la función del menú 
+            a una clase independiente desde la que pueda ser llamada desde todas partes, para evitar así que el 
+            error 'StackOverflow' debido a al llamamiento mutuo entre clases/entidades */
+
                 // System.out.print("PULSE CUALQUIER TECLA PARA CONTINUAR");
                 /* System.in.read(); // Probando a implementar una interrupción; 
                 en .NET podemos usar: Console.ReadKey()*/
@@ -106,7 +120,7 @@ public class Principal {
             case 5:
                 System.out.println("AÑOS DE ANTIGUEDAD DEL VEHÍCULO: \n");
                 LocalDate fechaMatriculacion = vehiculoSeleccionado.getFechaMatriculacion();
-                int antiguedad = vehiculoObj.get_Anios(fechaMatriculacion);            
+                int antiguedad = vehiculoObj.get_Anios(fechaMatriculacion);
                 System.out.println(antiguedad + " años \n");
                 // System.out.print("PULSE CUALQUIER TECLA PARA CONTINUAR");
                 /* System.in.read(); // Probando a implementar una interrupción; en .NET podemos usar:
@@ -115,7 +129,7 @@ public class Principal {
                 break;
             case 6:
                 System.out.println("PROPIETARIO: \n");
-                System.out.println(vehiculoSeleccionado.getPropietario() 
+                System.out.println(vehiculoSeleccionado.getPropietario()
                         + ", con DNI: " + vehiculoSeleccionado.getDniPropietario() + "\n");
                 // System.out.print("PULSE CUALQUIER TECLA PARA CONTINUAR");
                 /* System.in.read(); // Probando a implementar una interrupción; en .NET podemos usar:
@@ -124,9 +138,9 @@ public class Principal {
                 break;
             case 7:
                 System.out.println("DESCRIPCIÓN: \n");
-                               
-                System.out.println(vehiculoSeleccionado.getDescripcion() + ", con matrícula: " + 
-                        vehiculoSeleccionado.getMatricula() + " y lleva recorridos " 
+
+                System.out.println(vehiculoSeleccionado.getDescripcion() + ", con matrícula: "
+                        + vehiculoSeleccionado.getMatricula() + " y lleva recorridos "
                         + vehiculoSeleccionado.getNumKilometros() + " kilometros \n");
                 // System.out.print("PULSE CUALQUIER TECLA PARA CONTINUAR");
                 /* System.in.read(); // Probando a implementar una interrupción; en .NET podemos usar:
