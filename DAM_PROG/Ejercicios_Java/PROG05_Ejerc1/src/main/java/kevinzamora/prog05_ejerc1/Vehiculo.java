@@ -186,8 +186,15 @@ public class Vehiculo {
         String modelo1 = scanner.nextLine();
         System.out.println("Matrícula: ");
         String matricula1 = scanner.nextLine();
-        System.out.println("Nº de Kilometros: ");
-        int numKms = Integer.parseInt(scanner.nextLine());
+        int numKms;
+        do {
+            System.out.println("Nº de Kilometros: ");
+            numKms = Integer.parseInt(scanner.nextLine());
+            if (numKms <= 0) {
+                System.out.println("EL NÚMERO DE KILÓMETROS NO PUEDE RESULTAR CERO NI "
+                        + "MUCHO MENOS SER NEGATIVO");
+            }
+        } while (numKms <= 0);
         LocalDate fechaMatriculacion1;
         LocalDate momentoActual;
         do {
