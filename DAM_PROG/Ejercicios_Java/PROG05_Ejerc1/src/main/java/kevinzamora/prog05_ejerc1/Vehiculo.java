@@ -227,8 +227,14 @@ public class Vehiculo {
         double precio1 = Double.parseDouble(scanner.nextLine());
         System.out.println("Nombre del propietario: ");
         String propietario1 = scanner.nextLine();
+        String dniPropietario1;
+        boolean dniPropietario1IsCorrect = false;
+        do {
         System.out.println("DNI del propietario: ");
-        String dniPropietario1 = scanner.nextLine();
+        dniPropietario1 = scanner.nextLine();
+        dniPropietario1IsCorrect = validacionObj.comprobarDni(dniPropietario1);
+        } while (dniPropietario1IsCorrect = true);
+        
 
         System.out.println("\nSE VA A INSERTAR EL SIGUIENTE ELEMENTO EN NUESTRA BASE DE DATOS \n"
                 + "¿ES CORRECTO? RESPONDE 'Y' PARA DECIR 'SÍ' O 'N' PARA DECIR 'NO'");

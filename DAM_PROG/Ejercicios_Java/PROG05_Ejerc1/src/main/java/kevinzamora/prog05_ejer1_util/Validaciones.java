@@ -48,8 +48,8 @@ public class Validaciones {
                 DIGITO_CONTROL.charAt(Integer.parseInt(
                         dniIntroducido.substring(0, 8)) % 23); // (3)
         if (seemsCorrect) {System.out.println("EL DNI INTRODUCIDO PRESENTA "
-                + "UN FORMATO CORRECTO"); return true;} else {System.out.println("EL DNI PRESENTA "
-                        + "UN FORMATO INCORRECTO. ACTUALÍCELO PARA CONTINUAR"); return false;}
+                + "UN FORMATO CORRECTO \n"); return true;} else {System.out.println("EL DNI PRESENTA "
+                        + "UN FORMATO INCORRECTO. ACTUALÍCELO PARA CONTINUAR \n"); return false;}
     }
     
     public boolean comprobarActualizacionKms(int kms, Vehiculo vehiculoSeleccionado) {
