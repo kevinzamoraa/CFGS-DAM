@@ -197,6 +197,7 @@ public class Vehiculo {
         } while (numKms <= 0);
         LocalDate fechaMatriculacion1;
         LocalDate momentoActual;
+        boolean FMisCorrect = false;
         do {
             System.out.println("Año de Matriculación: ");
             System.out.println("Introduce el día (número entero):");
@@ -210,11 +211,13 @@ public class Vehiculo {
             // DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd/mm/yyyy");
             // String fechaMatriculacionFormateada = fechaMatriculacion1.format(myFormatObj);
             momentoActual = LocalDate.now();
-            if (momentoActual.isBefore(fechaMatriculacion1)) {
-                System.out.println("LA FECHA DE MATRICULACIÓN ES INCORRECTA, ACTUALÍCELA "
-                        + "PARA CONTINUAR \n");
-            }
-        } while (momentoActual.isBefore(fechaMatriculacion1));
+            FMisCorrect = validacionObj.comprobarFechaMatriculacion(fechaMatriculacion1);
+//            if (momentoActual.isBefore(fechaMatriculacion1)) {
+//                System.out.println("LA FECHA DE MATRICULACIÓN ES INCORRECTA, ACTUALÍCELA "
+//                        + "PARA CONTINUAR \n");
+//            }
+//        } while (momentoActual.isBefore(fechaMatriculacion1));
+        } while (FMisCorrect != true);
         System.out.println("Descripción: ");
         String descripcion1 = scanner.nextLine();
         System.out.println("Precio: ");

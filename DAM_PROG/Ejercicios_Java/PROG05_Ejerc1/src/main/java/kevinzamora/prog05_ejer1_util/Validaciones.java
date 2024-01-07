@@ -21,10 +21,10 @@ public class Validaciones {
 
     public boolean comprobarFechaMatriculacion(LocalDate fechaMatriculacionIntroducida) {
         if (LocalDate.now().compareTo(fechaMatriculacionIntroducida) > 0) {
-            System.out.println("LA FECHA INTRODUCIDA ES CORRECTA, ES ANTERIOR AL MOMENTO ACTUAL");
+            System.out.println("LA FECHA INTRODUCIDA ES CORRECTA, ES ANTERIOR AL MOMENTO ACTUAL \n");
             return true;
         } else {
-            System.out.println("LA FECHA INTRODUCIDA ES INCORRECTA. ACTUALÍCELA PARA CONTINUAR");
+            System.out.println("LA FECHA INTRODUCIDA ES INCORRECTA. ACTUALÍCELA PARA CONTINUAR \n");
             return false;
         }
     }
@@ -32,11 +32,11 @@ public class Validaciones {
     public boolean comprobarKilometros(int kmsIntroducidos) {
         if (kmsIntroducidos > 0) {
             System.out.println("OK: LOS KILOMETROS INTRODUCIDOS SON MAYORES "
-                    + "QUE CERO");
+                    + "QUE CERO \n");
             return true;
         } else {
             System.out.println("KILÓMETROS INCORRECTOS. "
-                    + "MODIFÍQUELOS PARA CONTINUAR");
+                    + "MODIFÍQUELOS PARA CONTINUAR \n");
             return false;
         }
     }
