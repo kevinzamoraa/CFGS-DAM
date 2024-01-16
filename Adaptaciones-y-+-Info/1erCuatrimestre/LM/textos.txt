@@ -1,0 +1,80 @@
+<!-- Introducción -->
+
+Lenguajes de marcas y sistemas de gestión de información
+
+
+El módulo de Lenguaje de Marcas y Sistemas de Gestión de la información se centra en el reconocimiento de las características de los lenguajes de marcas y su utilización en entornos web.
+
+HTML/XHTML
+XML
+
+<!-- Unidad 1-->
+
+Unidad de Trabajo 1.- Reconocimiento de las características de lenguajes de marcas.
+
+
+En esta unidad de trabajo estudiaras la evolución de los lenguajes de marcas y las características elementales de los mismos. Además serás capaz de generar documentos XML básicos.
+
+Con los conocimientos que aquí se aportarán podrás comenzar a trabajar y elaborar documentos XML que tengan cierta funcionalidad. Todas las herramientas y posibilidades de XML que veremos más adelante se construyen sobre conceptos aquí presentados.
+
+<!-- Unidad 2-->
+
+Unidad de Trabajo 2.- Utilización de lenguajes de marcas en entornos web.
+
+
+En esta unidad de trabajo estudiarás el lenguaje HTML y el uso de las hojas de estilos CSS. Al finalizar la unidad podrás elaborar páginas web sencillas.
+
+En este primer apartado de la UT2 aprenderás sobre la evolución del lenguaje HTML y las características del XHTML. Descubrirás cual es la estructura de un documento HTML y aprenderás a identificar las etiquetas y los atributos que forman el lenguaje. Por último conocerás los atributos comunes a todas las etiquetas HTML.
+
+CSS (Cascading Style Sheets) permite a los desarrolladores Web controlar el estilo y el formato de múltiples páginas Web al mismo tiempo.
+
+<!-- Unidad 3-->
+
+Unidad de Trabajo 3.- Aplicación de los lenguajes de marcas a la sindicación de contenidos.
+
+
+La redifusión, o sindicación de contenidos, permite a un sitio utilizar los servicios o contenidos ofertados por otro sitio diferente.
+
+<!-- Unidad 4-->
+
+Unidad de Trabajo 4.- Definición de esquemas y vocabularios en xml.
+
+
+Hasta ahora hemos trabajado con documentos básicos de XML. En la primera unidad vimos que un documento XML básico estaba formado por un prólogo y un ejemplar. Recordamos que cada una de esas partes tiene el siguiente cometido:
+
+Estos documentos básicos están incompletos, ya que solo hemos declarado el tipo de documento que va a ser (qué ejemplar vamos a definir), pero no hemos definido qué cualidades tiene ese ejemplar.
+
+Para completarlos y definir en profundidad las cualidades del ejemplar, usaremos o bien DTDs o bien XML Schemas.
+
+
+<!-- Unidad 5-->
+
+Unidad de Trabajo 5.- Conversión y adaptación de documentos XML.
+
+
+Los documentos XML son documentos de texto con etiquetas, que contienen exclusivamente información, sin entrar en detalles de formato.
+
+Por eso, si queremos usar directamente los datos (para leer, imprimir, etc.) es necesario transformar primero el documento XML.
+
+Los navegadores, por ejemplo, interpretan las etiquetas del documento XML, les aplican un formato según lo especificado en las hojas CSS y lo muestran al usuario.
+
+<!-- Unidad 6-->
+
+Unidad de Trabajo 6.- Almacenamiento de información.
+
+
+Podemos pensar en XML como en una base de datos. Visto así, una base de datos XML se puede ver como una colección de documentos XML. Cada documento XML representa un registro de la base de datos; es un archivo en el sistema de archivos y contiene una cadena válida XML.
+
+La estructura de un documento XML suele seguir un mismo esquema XML, aunque no es necesario que sea así. Este es uno de los beneficios de las bases de datos XML, ya que cada archivo se puede configurar de forma estructurada por lo que es independiente, pero fácilmente accesible.
+
+
+<!-- Unidad 7-->
+
+Unidad de Trabajo 7.- Sistemas de gestión empresarial.
+
+
+Los ERP son sistemas de gestión de información que se caracterizan por estar compuestos por varios módulos. Cada uno de estos módulos proporciona una unidad de gestión y funcionalidad diferente y específica, por ejemplo: producción, ventas, compras, pedidos, nóminas, etc.
+
+Un CRM (Customer Relationship Management) es un sistema de gestión de información que se centra en gestionar toda la información referida a los clientes de la empresa.
+
+
