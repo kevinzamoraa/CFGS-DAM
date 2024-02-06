@@ -6,6 +6,7 @@ package kevinzamora.prog06_tarea;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -48,6 +49,7 @@ public class Vehiculo {
     }
 
     // Método TO STRING
+    @Override
     public String toString() {
         return "ID: " + id + ". Marca: " + fabricante + " Modelo: " + modelo
                 + " Matricula: " + matricula + " Nº Kms: " + numKilometros
@@ -148,7 +150,7 @@ public class Vehiculo {
     /* Mini CRUD | En una aplicación real, estarían presentes las cuatro funciones del CRUD,
     estas serían privadas y posiblemente, también usaríamos una interfaz para así proteger un poco 
     más su ejecución 'inadecuada', ante algún ataque o vulnerabilidad en la ciberseguridad */
-    public Vehiculo encontrarVehiculoPorID(int id, Vehiculo[] vehiculos) {
+    public Vehiculo encontrarVehiculoPorID(int id, List<Vehiculo> vehiculos) {
         Vehiculo vehiculoEncontrado; // Variable auxiliar prescindible
 
         for (Vehiculo vehiculo : vehiculos) {
@@ -170,18 +172,49 @@ public class Vehiculo {
         }
         return null;
     }
+    
+    public Vehiculo encontrarVehiculoPorMatricula(String matricula, List<Vehiculo> vehiculos) {
+        Vehiculo vehiculoEncontrado; // Variable auxiliar prescindible
 
-    public void imprimeVehiculos(Vehiculo[] vehiculos) {
-        System.out.println("LISTA DE VEHICULOS: \n");
+        for (Vehiculo vehiculo : vehiculos) {
+            if (matricula == vehiculo.matricula) {
+                vehiculoEncontrado = vehiculo;
+                /* Este paso sería innecesario, 
+                aunque así se comprende mejor el funcionamiento del programa */
+                System.out.println("Se ha encontrado un vehiculo identificado "
+                        + "con el ID introducido y se has cargado sus datos para "
+                        + "poder condultarlos y/o modificarlos");
+                return vehiculoEncontrado;
+            } else {
+                vehiculoEncontrado = null;
+                System.out.println("No se ha encontrado ningún vehículo con la matrícula introducida");
+                return vehiculoEncontrado;
+                /* Aquí también se podría prescindir de la variable 
+                y devolver directamente 'null' como resultado de la función */
+            }
+        }
+        return null;
+    }
+
+    public void imprimeVehiculos(List<Vehiculo> vehiculos) {
+        System.out.println("LISTA DE VEHICULOS EN NUESTRO CONCESIONARIO: \n");
         for (Vehiculo vehiculo : vehiculos) {
             System.out.println(vehiculo.id + ". " + vehiculo.fabricante + " " + vehiculo.modelo);
         }
         System.out.println("\n");
     }
+    
+    public void imprimeCaracteristicasVehiculos(List<Vehiculo> vehiculos) {
+        System.out.println("LISTA DE VEHICULOS EN NUESTRO CONCESIONARIO: \n");
+        for (Vehiculo vehiculo : vehiculos) {
+            System.out.println(vehiculo.toString());
+        }
+        System.out.println("\n");
+    }
 
-    public void creaUnVehiculo(Vehiculo[] vehiculos) {
-        int nuevoId = vehiculos.length + 1;
-        // System.out.println(nuevoId);
+    public void creaUnVehiculo(List<Vehiculo> vehiculos) {
+        int nuevoId = vehiculos.hashCode() + 1;
+         System.out.println(nuevoId);
 
         System.out.println("Fabricante/Marca: ");
         String fabricante1 = scanner.nextLine();
@@ -273,16 +306,13 @@ public class Vehiculo {
         String confirmacion = scanner.nextLine();
         switch (confirmacion) {
             case "Y":
-                try {
-                vehiculos[nuevoId] = nuevoVehiculo;
-                System.out.println("ASÍ SE ALOJARÍA NUESTRO NUEVO ELEMENTO, \n AUNQUE PARA VERLO JUNTO AL RESTO, "
-                        + "PRIMERO DEBERÍAMOS RECARGAR Y VOLVER A LEER EL 'ARRAY'.\n ADEMÁS, TAMPOCO RECUERDO "
-                        + "BIEN CÓMO PODÍAMOS INTRODUCIR NUEVOS DATOS EN UN 'ARRAY HARDCODEADO'");
-                System.out.println(vehiculos[nuevoId]);
+                if (vehiculos.hashCode() <= 49) {
+                try {                
+                vehiculos.add(nuevoVehiculo);
                 System.out.println("EL NUEVO VEHÍCULO HA SIDO INTRODUCIDO CORRECTAMENTE");
             } catch (Exception e) {
-            }
-            ;
+            };
+                } else { System.out.println("Se ha alcanzado el límite de capacidad de nuestro concesionario, el cual se encuentra definido en 50 vehículos"); }
             break;
             case "N":
                 System.out.println("HA DECIDIDO DESISTIR DURANTE LA CREACIÓN DE ESTE "

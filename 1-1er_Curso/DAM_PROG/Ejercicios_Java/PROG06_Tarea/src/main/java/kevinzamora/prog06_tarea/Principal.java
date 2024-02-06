@@ -5,6 +5,7 @@
 package kevinzamora.prog06_tarea;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -15,23 +16,8 @@ public class Principal {
 
     String matriculaVehiculoSeleccionado;
     Vehiculo vehiculoSeleccionado;
-    Vehiculo vehiculoObj = new Vehiculo();
-    int errores = vehiculoObj.errores;
-
-    // Declaración e Inicialización de los "Coches ejemplo"
-    Vehiculo coche1 = new Vehiculo(1, "Audi", "A6", "12345ABC",
-            10000, LocalDate.of(2015, 3, 11), "Manolo",
-            "Coche 'largo' de gama media-alta", 70000.50, "12345678M");
-    Vehiculo coche2 = new Vehiculo(2, "Ford", "Focus", "12345CBA",
-            7000, LocalDate.of(2013, 5, 10), "Conchi",
-            "Coche 'corto' de gama media", 25000, "12345678N");
-    Vehiculo coche3 = new Vehiculo(3, "Fiat", "Punto", "12346ABC",
-            200000, LocalDate.of(2005, 9, 20), "Blai",
-            "Coche 'corto' de gama media-baja", 6000, "12345678O");
-
-    // Colección de Vehículos
-    public Vehiculo[] vehiculos = {
-        coche1, coche2, coche3};
+    Concesionario concesionario1 = new Concesionario();
+    List<Vehiculo> vehiculos = concesionario1.getVehiculos();
 
     public void loadMainMenu() {
 
@@ -40,7 +26,11 @@ public class Principal {
                 + "1. Nuevo Vehículo. \n 2. Listar Vehículos. \n "
                 + "3. Buscar Vehículo. \n 4. Modificar kms Vehículo. \n "
                 + "5. Salir \n");
-
+        
+        /* Inicialización del inventario con algunos vehiculos a modo de base, 
+        para la realización de las pruebas pertinentes */
+        concesionario1.cargarVehiculosPredefinidos();
+        
         System.out.println("SELECCIONA UNA OPCIÓN (Introduce un nº entero):");
         Scanner scanner = new Scanner(System.in);
         int opcion = scanner.nextInt();
@@ -50,40 +40,44 @@ public class Principal {
             case 1:
                 System.out.println("INTRODUCIR DATOS - CREAR NUEVO VEHÍCULO: \n");
 
-                vehiculoObj.creaUnVehiculo(vehiculos);
-                vehiculoObj.imprimeVehiculos(vehiculos);
-                System.out.println("NO VEO LA CAUSA POR LA QUE EL PROGRAMA NO ES CAPAZ DE AÑADIR EL NUEVO \n"
-                        + "ITEM A NUESTRO 'ARRAY' CARGADO EN MEMORIA, AUNQUE SEA SÓLO PARA PODER MOSTRARLO \n"
-                        + "TEMPORALMENTE. AGRADECERÍA ALGO DE AYUDA PARA LOGRAR LOCALIZAR EL 'ERROR' "
-                        + "EN CUESTIÓN\n\n");
+                concesionario1.creaUnVehiculo(vehiculos);
+//                concesionario1.imprimeVehiculos(vehiculos);
+//                System.out.println("NO VEO LA CAUSA POR LA QUE EL PROGRAMA NO ES CAPAZ DE AÑADIR EL NUEVO \n"
+//                        + "ITEM A NUESTRO 'ARRAY' CARGADO EN MEMORIA, AUNQUE SEA SÓLO PARA PODER MOSTRARLO \n"
+//                        + "TEMPORALMENTE. AGRADECERÍA ALGO DE AYUDA PARA LOGRAR LOCALIZAR EL 'ERROR' "
+//                        + "EN CUESTIÓN\n\n");
 
-                if (errores >= 3) {
+                if (concesionario1.errores >= 3) {
                     System.out.println("HAS COMETIDO 3 ERRORES Y SE TE REDIRIGE "
                             + "A LA PANTALLA PRINCIPAL. MÁS SUERTE LA PRÓXIMA VEZ. \n VUELVE A INICIAR LA APLICACIÓN "
                             + "PARA VOLVER A INTENTARLO");
-                    errores = 0;
+                    concesionario1.errores = 0;
                     return;
                 }
                 loadMainMenu();
                 break;
             case 2:
                 System.out.println("LISTA DE VEHÍCULOS: \n");
-                vehiculoObj.imprimeVehiculos(vehiculos);
+                concesionario1.imprimeVehiculos(vehiculos);
                 loadMainMenu();
                 break;
             case 3:
                 System.out.println("BÚSCA UN VEHÍCULO: \n ");
-                System.out.println("INTRODUCE LA MATRÍCULA DEL VEHÍCULO A BUSCAR: ");
+                concesionario1.imprimeCaracteristicasVehiculos(vehiculos);
+                System.out.println("INTRODUCE LA MATRÍCULA DEL VEHÍCULO A BUSCAR: \n");
                 matriculaVehiculoSeleccionado = scanner.nextLine();
-                
-                System.out.print("El vehiculo se ha guardado correctamente \n\n");
+                vehiculoSeleccionado = concesionario1.encontrarVehiculoPorMatricula(matriculaVehiculoSeleccionado, vehiculos);
+                if (vehiculoSeleccionado != null) {
+                    System.out.print("El vehiculo se ha encontrado correctamente y estos son los datos correspondientes: \n\n");
+                    System.out.print(vehiculoSeleccionado.toString());
+                } else { System.out.println("No se ha detectado ningún valor válido introducido con el que realizar la busqueda"); }
                 loadMainMenu();
                 break;
             case 4:
                 System.out.println("ACTUALIZAR KILÓMETROS: \n Introduce su nuevo kilometraje: ");
                 int nuevoKilometraje = scanner.nextInt();
-                vehiculoObj.actualizarKms(nuevoKilometraje, vehiculoSeleccionado);
-                int kmsVehiculoSeleccionado = vehiculoSeleccionado.getNumKilometros();
+                concesionario1.actualizarKms(nuevoKilometraje, concesionario1.vehiculoSeleccionado);
+                int kmsVehiculoSeleccionado = concesionario1.vehiculoSeleccionado.getNumKilometros();
                 System.out.println("Los kilometros del coche has sido actualizados correctamente; ahora tiene "
                         + kmsVehiculoSeleccionado + " kilometros \n");
                 // System.out.print("PULSE CUALQUIER TECLA PARA CONTINUAR");
