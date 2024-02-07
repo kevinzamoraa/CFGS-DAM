@@ -224,14 +224,19 @@ public class Vehiculo {
         String modelo1 = scanner.nextLine();
         String matricula1;
         boolean matriculaCorrecta = false;
+        boolean matriculaRepetida = false;
         do {
-            matricula1 = scanner.nextLine();
             System.out.println("Matrícula: ");
-            
+            matricula1 = scanner.nextLine();
+            matriculaCorrecta = validacionObj.comprobarMatricula(matricula1);
+            matriculaRepetida = validacionObj.comprobarMatriculaRepetida(matricula1,vehiculos);
+            if (matriculaCorrecta != true) {
+                errores++;
+            }
             if (errores >= 3) {System.out.println("HAS COMETIDO 3 ERRORES Y SE TE REDIRIGE "
                     + "A LA PANTALLA PRINCIPAL. MÁS SUERTE LA PRÓXIMA VEZ. \n VUELVE A INICIAR LA APLICACIÓN "
                     + "PARA VOLVER A INTENTARLO"); errores = 0; return; }
-        } while (matriculaCorrecta != true);
+        } while (matriculaCorrecta != true && matriculaRepetida != true);
         
         int numKms;
         boolean numKmsIsCorrect = false;

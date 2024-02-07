@@ -39,13 +39,7 @@ public class Principal {
 
             case 1:
                 System.out.println("INTRODUCIR DATOS - CREAR NUEVO VEHÍCULO: \n");
-
                 concesionario1.creaUnVehiculo(vehiculos);
-//                concesionario1.imprimeVehiculos(vehiculos);
-//                System.out.println("NO VEO LA CAUSA POR LA QUE EL PROGRAMA NO ES CAPAZ DE AÑADIR EL NUEVO \n"
-//                        + "ITEM A NUESTRO 'ARRAY' CARGADO EN MEMORIA, AUNQUE SEA SÓLO PARA PODER MOSTRARLO \n"
-//                        + "TEMPORALMENTE. AGRADECERÍA ALGO DE AYUDA PARA LOGRAR LOCALIZAR EL 'ERROR' "
-//                        + "EN CUESTIÓN\n\n");
 
                 if (concesionario1.errores >= 3) {
                     System.out.println("HAS COMETIDO 3 ERRORES Y SE TE REDIRIGE "
@@ -61,7 +55,7 @@ public class Principal {
                 concesionario1.imprimeVehiculos(vehiculos);
                 System.out.println("TODO: Nota para cuando ya se ha añadido un nuevo vehiculo: \n"
                         + "El programa manifiesta una reverberación de la lectura del bucle "
-                        + "que no es mostrada en la lectura inicial. Si me da tiempo de depurar, intentaré corregirlo");
+                        + "que no es mostrada en la lectura inicial. Si me da tiempo de depurar, intentaré corregirlo \n");
                 loadMainMenu();
                 break;
             case 3:

@@ -6,7 +6,9 @@ package kevinzamora.prog06_tarea_util;
 
 import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.List;
 import java.util.regex.Pattern;
+import kevinzamora.prog06_tarea.Concesionario;
 import kevinzamora.prog06_tarea.Vehiculo;
 
 /**
@@ -53,14 +55,14 @@ public class Validacion {
     }
     
     public boolean comprobarMatricula(String matriculaIntroducida) {
-        // if (matriculaIntroducida.toUpperCase().matches("NNNNLLL") { 
         if (matriculaIntroducida.toUpperCase().matches("^[0-9]{4}[A-Z]{3}$")) {
-            System.out.println("Matrícula válida");
+            // if (matriculaIntroducida.toUpperCase().matches("NNNNLLL") { // Patrón propuesto    
+            System.out.println("Matrícula válida \n");
             return true;
-        }else{
-            System.out.println("Matrícula inválida");
+        } else {
+            System.out.println("Matrícula inválida \n");
             return false;
-        } 
+        }
     }
     
     public boolean comprobarActualizacionKms(int kms, Vehiculo vehiculoSeleccionado) {
@@ -68,6 +70,20 @@ public class Validacion {
             System.out.println("SE PUEDEN ACTUALIZAR EL Nº DE KILÓMETROS POR EL NUEVO VALOR: " 
                     + kms); return true; } else { System.out.println("NO SE PERMITE RESTAR "
                             + "KILÓMETROS. ACTUALICE EL VALOR PARA CONTINUAR"); return false; }
+    }
+    
+    public boolean comprobarMatriculaRepetida(String matriculaIntroducida, List<Vehiculo> vehiculos) {
+        for (Vehiculo vehiculo : vehiculos) {
+            String matriculaLeida = vehiculo.getMatricula();
+            if (matriculaLeida.equals(matriculaIntroducida)) {
+                System.out.println("La matrícula introducida ya existe en nuestra base de datos y "
+                        + "por tanto no se puede volver a introducir");
+                return false;
+            } else {
+                return true;
+            }
+        }
+        return true;
     }
 
 }
