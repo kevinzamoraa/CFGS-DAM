@@ -33,7 +33,7 @@ public class Principal {
         
         System.out.println("SELECCIONA UNA OPCIÓN (Introduce un nº entero):");
         Scanner scanner = new Scanner(System.in);
-        int opcion = scanner.nextInt();
+        int opcion = Integer.parseInt(scanner.nextLine());
 
         switch (opcion) {
 
@@ -59,6 +59,9 @@ public class Principal {
             case 2:
                 System.out.println("LISTA DE VEHÍCULOS: \n");
                 concesionario1.imprimeVehiculos(vehiculos);
+                System.out.println("TODO: Nota para cuando ya se ha añadido un nuevo vehiculo: \n"
+                        + "El programa manifiesta una reverberación de la lectura del bucle "
+                        + "que no es mostrada en la lectura inicial. Si me da tiempo de depurar, intentaré corregirlo");
                 loadMainMenu();
                 break;
             case 3:
@@ -67,19 +70,25 @@ public class Principal {
                 System.out.println("INTRODUCE LA MATRÍCULA DEL VEHÍCULO A BUSCAR: \n");
                 matriculaVehiculoSeleccionado = scanner.nextLine();
                 vehiculoSeleccionado = concesionario1.encontrarVehiculoPorMatricula(matriculaVehiculoSeleccionado, vehiculos);
+                // El siguiente paso de podría eliminar y a su vez, también se podría introducir los mensajes de respuesta dentro de la función
+                concesionario1.setVehiculoSeleccionado(vehiculoSeleccionado);
                 if (vehiculoSeleccionado != null) {
-                    System.out.print("El vehiculo se ha encontrado correctamente y estos son los datos correspondientes: \n\n");
-                    System.out.print(vehiculoSeleccionado.toString());
-                } else { System.out.println("No se ha detectado ningún valor válido introducido con el que realizar la busqueda"); }
+                    System.out.print("El vehiculo se ha encontrado correctamente y estos son los datos correspondientes: " 
+                            + vehiculoSeleccionado.toString() + "\n");
+                } else { System.out.println("No se ha detectado ningún valor válido introducido con el que realizar la busqueda \n"); }
+                System.out.println(("Se ha seleccionado el siguiente vehículo:" + concesionario1.vehiculoSeleccionado).toString());
                 loadMainMenu();
                 break;
             case 4:
                 System.out.println("ACTUALIZAR KILÓMETROS: \n Introduce su nuevo kilometraje: ");
-                int nuevoKilometraje = scanner.nextInt();
+                int nuevoKilometraje = Integer.parseInt(scanner.nextLine());
+                vehiculoSeleccionado = concesionario1.vehiculoSeleccionado;
+                int kmsAnt = concesionario1.vehiculoSeleccionado.getNumKilometros();
                 concesionario1.actualizarKms(nuevoKilometraje, concesionario1.vehiculoSeleccionado);
                 int kmsVehiculoSeleccionado = concesionario1.vehiculoSeleccionado.getNumKilometros();
-                System.out.println("Los kilometros del coche has sido actualizados correctamente; ahora tiene "
-                        + kmsVehiculoSeleccionado + " kilometros \n");
+                System.out.println(("Se han actualizado correctamente los kms del vehículo: \n" 
+                        + concesionario1.vehiculoSeleccionado).toString()
+                                    + "\n Antes tenía " + kmsAnt + " kilometros \n");
                 // System.out.print("PULSE CUALQUIER TECLA PARA CONTINUAR");
                 /* System.in.read(); // Probando a implementar una interrupción; en .NET podemos usar:
                 Console.ReadKey()*/

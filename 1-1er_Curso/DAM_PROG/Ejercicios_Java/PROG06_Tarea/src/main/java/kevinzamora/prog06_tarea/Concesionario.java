@@ -39,6 +39,9 @@ public class Concesionario {
     public Vehiculo getVehiculoSeleccionado() {
         return vehiculoSeleccionado;
     }
+    public void setVehiculoSeleccionado(Vehiculo vehiculoSeleccionadoIntroducido) {
+        vehiculoSeleccionado = vehiculoSeleccionadoIntroducido;
+    }
     
     // Inicialización de nuestra colección de vehiculos
     public void cargarVehiculosPredefinidos() {

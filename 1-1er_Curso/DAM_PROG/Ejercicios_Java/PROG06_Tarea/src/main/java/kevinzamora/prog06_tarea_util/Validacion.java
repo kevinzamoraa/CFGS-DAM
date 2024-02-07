@@ -13,7 +13,7 @@ import kevinzamora.prog06_tarea.Vehiculo;
  *
  * @author kzdesigner // Autor y nombre del equipo de Kevin Zamora Amela
  */
-public class Validaciones {
+public class Validacion {
 
     private static final Pattern REGEXP = Pattern.compile("[0-9]{8}[A-Z]");
     private static final String DIGITO_CONTROL = "TRWAGMYFPDXBNJZSQVHLCKE";
@@ -50,6 +50,17 @@ public class Validaciones {
         if (seemsCorrect) {System.out.println("EL DNI INTRODUCIDO PRESENTA "
                 + "UN FORMATO CORRECTO \n"); return true;} else {System.out.println("EL DNI PRESENTA "
                         + "UN FORMATO INCORRECTO. ACTUALÍCELO PARA CONTINUAR \n"); return false;}
+    }
+    
+    public boolean comprobarMatricula(String matriculaIntroducida) {
+        // if (matriculaIntroducida.toUpperCase().matches("NNNNLLL") { 
+        if (matriculaIntroducida.toUpperCase().matches("^[0-9]{4}[A-Z]{3}$")) {
+            System.out.println("Matrícula válida");
+            return true;
+        }else{
+            System.out.println("Matrícula inválida");
+            return false;
+        } 
     }
     
     public boolean comprobarActualizacionKms(int kms, Vehiculo vehiculoSeleccionado) {

@@ -8,6 +8,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Scanner;
+import kevinzamora.prog06_tarea_util.Validacion;
 
 /**
  *
@@ -17,6 +18,7 @@ public class Vehiculo {
 
     Scanner scanner = new Scanner(System.in);
     int errores = 0;
+    Validacion validacionObj = new Validacion();
     
     // Propiedades
     int id;
@@ -177,7 +179,7 @@ public class Vehiculo {
         Vehiculo vehiculoEncontrado; // Variable auxiliar prescindible
 
         for (Vehiculo vehiculo : vehiculos) {
-            if (matricula == vehiculo.matricula) {
+            if (matricula.toLowerCase().equals((vehiculo.matricula).toLowerCase())) {
                 vehiculoEncontrado = vehiculo;
                 /* Este paso sería innecesario, 
                 aunque así se comprende mejor el funcionamiento del programa */
@@ -213,22 +215,33 @@ public class Vehiculo {
     }
 
     public void creaUnVehiculo(List<Vehiculo> vehiculos) {
-        int nuevoId = vehiculos.hashCode() + 1;
-         System.out.println(nuevoId);
+        int nuevoId = vehiculos.size() + 1;
+        // System.out.println(nuevoId);
 
         System.out.println("Fabricante/Marca: ");
         String fabricante1 = scanner.nextLine();
         System.out.println("Modelo: ");
         String modelo1 = scanner.nextLine();
-        System.out.println("Matrícula: ");
-        String matricula1 = scanner.nextLine();
+        String matricula1;
+        boolean matriculaCorrecta = false;
+        do {
+            matricula1 = scanner.nextLine();
+            System.out.println("Matrícula: ");
+            
+            if (errores >= 3) {System.out.println("HAS COMETIDO 3 ERRORES Y SE TE REDIRIGE "
+                    + "A LA PANTALLA PRINCIPAL. MÁS SUERTE LA PRÓXIMA VEZ. \n VUELVE A INICIAR LA APLICACIÓN "
+                    + "PARA VOLVER A INTENTARLO"); errores = 0; return; }
+        } while (matriculaCorrecta != true);
+        
         int numKms;
         boolean numKmsIsCorrect = false;
         do {
             System.out.println("Nº de Kilometros: ");
             numKms = Integer.parseInt(scanner.nextLine());
-            //numKmsIsCorrect = validacionObj.comprobarKilometros(numKms);
-            errores++;
+            numKmsIsCorrect = validacionObj.comprobarKilometros(numKms);
+            if (numKmsIsCorrect != true) {
+                errores++;
+            }
             if (errores >= 3) {System.out.println("HAS COMETIDO 3 ERRORES Y SE TE REDIRIGE "
                     + "A LA PANTALLA PRINCIPAL. MÁS SUERTE LA PRÓXIMA VEZ. \n VUELVE A INICIAR LA APLICACIÓN "
                     + "PARA VOLVER A INTENTARLO"); errores = 0; return; } /*Faltaria reiniciar la aplicación 
@@ -257,8 +270,8 @@ public class Vehiculo {
                     diaMatriculacion);
             // DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd/mm/yyyy");
             // String fechaMatriculacionFormateada = fechaMatriculacion1.format(myFormatObj);
-            momentoActual = LocalDate.now();
-            //FMisCorrect = validacionObj.comprobarFechaMatriculacion(fechaMatriculacion1);
+            // momentoActual = LocalDate.now();
+            FMisCorrect = validacionObj.comprobarFechaMatriculacion(fechaMatriculacion1);
             errores++;
             if (errores >= 3) {System.out.println("HAS COMETIDO 3 ERRORES Y SE TE REDIRIGE "
                     + "A LA PANTALLA PRINCIPAL. MÁS SUERTE LA PRÓXIMA VEZ. \n VUELVE A INICIAR LA APLICACIÓN "
@@ -284,7 +297,7 @@ public class Vehiculo {
         do {
         System.out.println("DNI del propietario: ");
         dniPropietario1 = scanner.nextLine();
-        //dniPropietario1IsCorrect = validacionObj.comprobarDni(dniPropietario1);
+        dniPropietario1IsCorrect = validacionObj.comprobarDni(dniPropietario1);
         errores++;
             if (errores >= 3) {System.out.println("HAS COMETIDO 3 ERRORES Y SE TE REDIRIGE "
                     + "A LA PANTALLA PRINCIPAL. MÁS SUERTE LA PRÓXIMA VEZ. \n VUELVE A INICIAR LA APLICACIÓN "
@@ -293,7 +306,7 @@ public class Vehiculo {
             de tiempo y de recursos lo dejamos pendiente de realizar. PD: Debería bastar con mover la función del menú 
             a una clase independiente desde la que pueda ser llamada desde todas partes, para evitar así que el 
             error 'StackOverflow' debido a al llamamiento mutuo entre clases/entidades */
-        } while (dniPropietario1IsCorrect = true);
+        } while (dniPropietario1IsCorrect != true);
         
 
         System.out.println("\nSE VA A INSERTAR EL SIGUIENTE ELEMENTO EN NUESTRA BASE DE DATOS \n"
