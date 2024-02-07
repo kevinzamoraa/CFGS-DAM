@@ -216,7 +216,10 @@ public class Vehiculo {
 
     public void creaUnVehiculo(List<Vehiculo> vehiculos) {
         int nuevoId = vehiculos.size() + 1;
-        // System.out.println(nuevoId);
+        if (nuevoId > 50) {
+            System.out.println("Se ha alcanzado el límite de 50 vehículos por concesionario. Ya no se pueden añadir más");
+            return; 
+        };
 
         System.out.println("Fabricante/Marca: ");
         String fabricante1 = scanner.nextLine();
