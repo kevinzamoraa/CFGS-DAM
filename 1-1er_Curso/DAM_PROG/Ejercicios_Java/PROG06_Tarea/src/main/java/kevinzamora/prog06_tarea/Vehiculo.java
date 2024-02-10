@@ -19,6 +19,7 @@ public class Vehiculo {
     Scanner scanner = new Scanner(System.in);
     int errores = 0;
     Validacion validacionObj = new Validacion();
+    int arraySize = 0;
     
     // Propiedades
     int id;
@@ -137,6 +138,16 @@ public class Vehiculo {
     public void setPrecio(double precio) {
         this.precio = precio;
     }
+    
+    // MÉTODOS GETTER Y SETTER AUXILIARES
+    
+    public int getArraySize() {
+        return arraySize;
+    }
+    
+    public void setArraySize(int introducedArraySize) {
+        arraySize = introducedArraySize;
+    }
 
     // Funciones
     public int get_Anios(LocalDate fechaMatriculacion) {
@@ -183,13 +194,13 @@ public class Vehiculo {
                 vehiculoEncontrado = vehiculo;
                 /* Este paso sería innecesario, 
                 aunque así se comprende mejor el funcionamiento del programa */
-                System.out.println("Se ha encontrado un vehiculo identificado "
-                        + "con el ID introducido y se has cargado sus datos para "
-                        + "poder condultarlos y/o modificarlos");
+//                System.out.println("Se ha encontrado un vehiculo identificado "
+//                        + "con el ID introducido y se has cargado sus datos para "
+//                        + "poder condultarlos y/o modificarlos");
                 return vehiculoEncontrado;
             } else {
                 vehiculoEncontrado = null;
-                System.out.println("No se ha encontrado ningún vehículo con la matrícula introducida");
+//                System.out.println("No se ha encontrado ningún vehículo con la matrícula introducida");
                 return vehiculoEncontrado;
                 /* Aquí también se podría prescindir de la variable 
                 y devolver directamente 'null' como resultado de la función */
@@ -200,25 +211,44 @@ public class Vehiculo {
 
     public void imprimeVehiculos(List<Vehiculo> vehiculos) {
         System.out.println("LISTA DE VEHICULOS EN NUESTRO CONCESIONARIO: \n");
-        for (Vehiculo vehiculo : vehiculos) {
+        System.out.println(arraySize + " vehículos:");
+        for (int i = 0; i < 1; i++) {
+            // System.out.println(arraySize);
+            for (int j = 0; j < (arraySize); j++) {
+//        for (Vehiculo vehiculo : vehiculos) {
+            Vehiculo vehiculo = vehiculos.get(j);
             System.out.println(vehiculo.id + ". " + vehiculo.fabricante + " " + vehiculo.modelo);
         }
+        }
+        // System.out.println(arraySize); // Aquí el tamaño del 'array' se recoge correctamente en 'primera' lectura
         System.out.println("\n");
     }
     
     public void imprimeCaracteristicasVehiculos(List<Vehiculo> vehiculos) {
         System.out.println("LISTA DE VEHICULOS EN NUESTRO CONCESIONARIO: \n");
-        for (Vehiculo vehiculo : vehiculos) {
-            System.out.println(vehiculo.toString());
+        for (int i = 0; i < 1; i++) {
+            // System.out.println(arraySize);
+            for (int j = 0; j < arraySize; j++) {
+                Vehiculo vehiculo = vehiculos.get(j);
+                System.out.println(vehiculo.fabricante + " / con matrícula: " + vehiculo.matricula + " / y al precio: " + vehiculo.precio + "€");
+            }
         }
         System.out.println("\n");
     }
 
-    public void creaUnVehiculo(List<Vehiculo> vehiculos) {
-        int nuevoId = vehiculos.size() + 1;
+    public List<Vehiculo> creaUnVehiculo(List<Vehiculo> vehiculos) {
+        List<Vehiculo> coleccionAux = vehiculos;
+        arraySize = vehiculos.size();
+        System.out.println("Número de vehículos: " + arraySize);
+        int nuevoId = arraySize + 1;
+        System.out.println("NuevoID: " + nuevoId + "\n");
+        // arraySize++;
+        // System.out.println("Nuevo arraySize: " + arraySize);
+        
         if (nuevoId > 50) {
+            System.out.println("Nuevo ID: " + nuevoId);
             System.out.println("Se ha alcanzado el límite de 50 vehículos por concesionario. Ya no se pueden añadir más");
-            return; 
+            return null; 
         };
 
         System.out.println("Fabricante/Marca: ");
@@ -235,10 +265,19 @@ public class Vehiculo {
             matriculaRepetida = validacionObj.comprobarMatriculaRepetida(matricula1,vehiculos);
             if (matriculaCorrecta != true) {
                 errores++;
+                System.out.println("Matrícula: ");
+                matricula1 = scanner.nextLine();
+            }
+            if (matriculaRepetida != true) {
+                errores++;
+                System.out.println("La matricula introducida ya se encuentra en nuestro sistema y en consecuencia "
+                        + "no puede introducirse. Introduce una de nuevo para continuar");
+                System.out.println("Matrícula: ");
+                matricula1 = scanner.nextLine();
             }
             if (errores >= 3) {System.out.println("HAS COMETIDO 3 ERRORES Y SE TE REDIRIGE "
                     + "A LA PANTALLA PRINCIPAL. MÁS SUERTE LA PRÓXIMA VEZ. \n VUELVE A INICIAR LA APLICACIÓN "
-                    + "PARA VOLVER A INTENTARLO"); errores = 0; return; }
+                    + "PARA VOLVER A INTENTARLO"); errores = 0; return null; }
         } while (matriculaCorrecta != true && matriculaRepetida != true);
         
         int numKms;
@@ -249,10 +288,12 @@ public class Vehiculo {
             numKmsIsCorrect = validacionObj.comprobarKilometros(numKms);
             if (numKmsIsCorrect != true) {
                 errores++;
+                System.out.println("Nº de Kilometros: ");
+                numKms = Integer.parseInt(scanner.nextLine());
             }
             if (errores >= 3) {System.out.println("HAS COMETIDO 3 ERRORES Y SE TE REDIRIGE "
                     + "A LA PANTALLA PRINCIPAL. MÁS SUERTE LA PRÓXIMA VEZ. \n VUELVE A INICIAR LA APLICACIÓN "
-                    + "PARA VOLVER A INTENTARLO"); errores = 0; return; } /*Faltaria reiniciar la aplicación 
+                    + "PARA VOLVER A INTENTARLO"); errores = 0; return null; } /*Faltaria reiniciar la aplicación 
             o redirigir a la función loadMainMenu() alojada actualmente en la clase 'Principal'. Debido a falta 
             de tiempo y de recursos lo dejamos pendiente de realizar. PD: Debería bastar con mover la función del menú 
             a una clase independiente desde la que pueda ser llamada desde todas partes, para evitar así que el 
@@ -283,7 +324,7 @@ public class Vehiculo {
             errores++;
             if (errores >= 3) {System.out.println("HAS COMETIDO 3 ERRORES Y SE TE REDIRIGE "
                     + "A LA PANTALLA PRINCIPAL. MÁS SUERTE LA PRÓXIMA VEZ. \n VUELVE A INICIAR LA APLICACIÓN "
-                    + "PARA VOLVER A INTENTARLO"); errores = 0; return; } /*Faltaria reiniciar la aplicación 
+                    + "PARA VOLVER A INTENTARLO"); errores = 0; return null; } /*Faltaria reiniciar la aplicación 
             o redirigir a la función loadMainMenu() alojada actualmente en la clase 'Principal'. Debido a falta 
             de tiempo y de recursos lo dejamos pendiente de realizar. PD: Debería bastar con mover la función del menú 
             a una clase independiente desde la que pueda ser llamada desde todas partes, para evitar así que el 
@@ -309,7 +350,7 @@ public class Vehiculo {
         errores++;
             if (errores >= 3) {System.out.println("HAS COMETIDO 3 ERRORES Y SE TE REDIRIGE "
                     + "A LA PANTALLA PRINCIPAL. MÁS SUERTE LA PRÓXIMA VEZ. \n VUELVE A INICIAR LA APLICACIÓN "
-                    + "PARA VOLVER A INTENTARLO"); errores = 0; return; } /*Faltaria reiniciar la aplicación 
+                    + "PARA VOLVER A INTENTARLO"); errores = 0; return null; } /*Faltaria reiniciar la aplicación 
             o redirigir a la función loadMainMenu() alojada actualmente en la clase 'Principal'. Debido a falta 
             de tiempo y de recursos lo dejamos pendiente de realizar. PD: Debería bastar con mover la función del menú 
             a una clase independiente desde la que pueda ser llamada desde todas partes, para evitar así que el 
@@ -327,13 +368,17 @@ public class Vehiculo {
         String confirmacion = scanner.nextLine();
         switch (confirmacion) {
             case "Y":
-                if (vehiculos.hashCode() <= 49) {
+                if (vehiculos.size() <= 50) {
                 try {                
                 vehiculos.add(nuevoVehiculo);
-                System.out.println("EL NUEVO VEHÍCULO HA SIDO INTRODUCIDO CORRECTAMENTE");
+                coleccionAux.add(nuevoVehiculo);
+                System.out.println("EL NUEVO VEHÍCULO HA SIDO INTRODUCIDO CORRECTAMENTE \n");
+                arraySize++;
+                return coleccionAux;
             } catch (Exception e) {
             };
-                } else { System.out.println("Se ha alcanzado el límite de capacidad de nuestro concesionario, el cual se encuentra definido en 50 vehículos"); }
+                } else { System.out.println("Se ha alcanzado el límite de capacidad de nuestro concesionario, "
+                        + "el cual se encuentra definido en 50 vehículos"); }
             break;
             case "N":
                 System.out.println("HA DECIDIDO DESISTIR DURANTE LA CREACIÓN DE ESTE "
@@ -341,7 +386,9 @@ public class Vehiculo {
                 break;
             default:
                 System.out.println("SE HA PRODUCIDO UN ERROR EN TIEMPO DE EJECUCIÓN");
+                break;
         }
+        return null;
     }
 
     public void actualizarKms(int kms, Vehiculo vehiculo) {

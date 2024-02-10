@@ -36,6 +36,10 @@ public class Concesionario {
     public List<Vehiculo> getVehiculos() {
         return vehiculos;
     }
+    
+    public void setVehiculos(List<Vehiculo> vehiculosMod) {
+        vehiculos = vehiculosMod;
+    }
 
     public Vehiculo getVehiculoSeleccionado() {
         return vehiculoSeleccionado;
@@ -44,29 +48,44 @@ public class Concesionario {
     public void setVehiculoSeleccionado(Vehiculo vehiculoSeleccionadoIntroducido) {
         vehiculoSeleccionado = vehiculoSeleccionadoIntroducido;
     }
+    
+    public int getArraySize() {
+        return vehiculoObj.getArraySize();
+    }
 
     // Inicialización de nuestra colección de vehiculos
     public void cargarVehiculosPredefinidos() {
         vehiculos.add(coche1);
         vehiculos.add(coche2);
         vehiculos.add(coche3);
+        vehiculoObj.setArraySize(3);
+    }
+    
+    public int actualizarArraySize() {
+        if (vehiculoObj.getArraySize() != vehiculos.size()) {
+            int arraySize = vehiculos.size();
+            vehiculoObj.setArraySize(arraySize);
+        }
+        return vehiculoObj.getArraySize();
     }
 
     // Métodos importados desde la clase Vehiculo
-    public Vehiculo encontrarVehiculoPorMatricula(String matricula, List<Vehiculo> vehiculos) {
+    public Vehiculo encontrarVehiculoPorMatricula(String matricula) {
         return vehiculoObj.encontrarVehiculoPorMatricula(matricula, vehiculos);
     }
 
-    public void imprimeVehiculos(List<Vehiculo> vehiculos) {
+    public void imprimeVehiculos() {
+//        int arraySize = actualizarArraySize();
+//        System.out.println(arraySize);
         vehiculoObj.imprimeVehiculos(vehiculos);
     }
 
-    public void imprimeCaracteristicasVehiculos(List<Vehiculo> vehiculos) {
+    public void imprimeCaracteristicasVehiculos() {
         vehiculoObj.imprimeCaracteristicasVehiculos(vehiculos);
     }
 
-    public void creaUnVehiculo(List<Vehiculo> vehiculos) {
-        vehiculoObj.creaUnVehiculo(vehiculos);
+    public void creaUnVehiculo() {
+        vehiculos = vehiculoObj.creaUnVehiculo(vehiculos);
     }
 
     public void actualizarKms(int kms, Vehiculo vehiculo) {
