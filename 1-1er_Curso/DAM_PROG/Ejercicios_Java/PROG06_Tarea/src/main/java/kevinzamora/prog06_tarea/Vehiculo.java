@@ -5,7 +5,6 @@
 package kevinzamora.prog06_tarea;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Scanner;
 import kevinzamora.prog06_tarea_util.Validacion;
@@ -214,14 +213,20 @@ public class Vehiculo {
         System.out.println("LISTA DE VEHICULOS EN NUESTRO CONCESIONARIO: \n");
         arraySize = concesionario1.getArraySize();
         System.out.println(arraySize + " vehículos:");
-//        for (int i = 0; i < 1; i++) {
-////            System.out.println(arraySize);
-//            for (int j = 0; j < arraySize; j++) {
-        for (Vehiculo vehiculo : vehiculos) {
-//            Vehiculo vehiculo = vehiculos.get(j);
-            System.out.println(vehiculo.id + ". " + vehiculo.fabricante + " " + vehiculo.modelo);
+        for (int i = 0; i < 1; i++) {
+//            System.out.println(arraySize);
+            if (arraySize < 4) {
+                for (int j = 0; j < arraySize; j++) {
+                Vehiculo vehiculo = vehiculos.get(j);
+                System.out.println(vehiculo.id + ". " + vehiculo.fabricante + " " + vehiculo.modelo);
+                }
+            } else {
+                for (int j = 4; j < arraySize; j++) {
+                Vehiculo vehiculo = vehiculos.get(j);
+                System.out.println(vehiculo.id + ". " + vehiculo.fabricante + " " + vehiculo.modelo);
+                }
+            }
         }
-//        }
         // System.out.println(arraySize); // Aquí el tamaño del 'array' se recoge correctamente en 'primera' lectura
         System.out.println("\n");
     }
@@ -232,7 +237,8 @@ public class Vehiculo {
             // System.out.println(arraySize);
             for (int j = 0; j < arraySize; j++) {
                 Vehiculo vehiculo = vehiculos.get(j);
-                System.out.println(vehiculo.fabricante + " / con matrícula: " + vehiculo.matricula + " / y al precio: " + vehiculo.precio + "€");
+                System.out.println(vehiculo.fabricante + " / con matrícula: " + vehiculo.matricula 
+                        + " / y al precio: " + vehiculo.precio + "€");
             }
         }
         System.out.println("\n");
@@ -380,7 +386,7 @@ public class Vehiculo {
                 if (vehiculos.size() <= 50) {
                 try {                
                 vehiculos.add(nuevoVehiculo);
-                System.out.println(arraySize);
+//                System.out.println(arraySize);
                 System.out.println("EL NUEVO VEHÍCULO HA SIDO INTRODUCIDO CORRECTAMENTE \n");
                 return nuevoVehiculo;
             } catch (Exception e) {

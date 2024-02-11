@@ -65,7 +65,7 @@ public class Concesionario {
         return vehiculoSeleccionado = vehiculoObj.encontrarVehiculoPorMatricula(matricula, vehiculos);
     }
 
-    public void imprimeVehiculos(List<Vehiculo> vehiculos, Concesionario concesionario1) {
+    public void imprimeVehiculos(Concesionario concesionario1) {
         vehiculoObj.imprimeVehiculos(vehiculos, concesionario1);
     }
     
@@ -78,7 +78,11 @@ public class Concesionario {
     }
 
     public Vehiculo creaUnVehiculo(List<Vehiculo> vehiculos) {
-        return vehiculoObj.creaUnVehiculo(vehiculos);
+        Vehiculo vehiculoCreado = vehiculoObj.creaUnVehiculo(vehiculos);
+        if (vehiculoCreado != null) {
+            vehiculoObj.setArraySize(vehiculoObj.getArraySize() + 1);
+        }
+        return vehiculoCreado;
     }
 
     public void actualizarKms(int kms, Vehiculo vehiculo) {
