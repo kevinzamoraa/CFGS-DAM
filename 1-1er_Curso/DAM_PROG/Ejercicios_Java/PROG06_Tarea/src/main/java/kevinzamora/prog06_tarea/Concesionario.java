@@ -66,11 +66,11 @@ public class Concesionario {
     }
 
     public void imprimeVehiculos(Concesionario concesionario1) {
-        vehiculoObj.imprimeVehiculos(vehiculos, concesionario1);
+        vehiculoObj.imprimeVehiculos(vehiculos, getArraySize());
     }
     
-    public void listaVehiculos(List<Vehiculo> vehiculos, Concesionario concesionario1) {
-        vehiculoObj.imprimeVehiculos(vehiculos, concesionario1);
+    public void listaVehiculos(List<Vehiculo> vehiculos) {
+        vehiculoObj.imprimeVehiculos(vehiculos, getArraySize());
     }
 
     public void imprimeCaracteristicasVehiculos(List<Vehiculo> vehiculos) {
@@ -78,9 +78,10 @@ public class Concesionario {
     }
 
     public Vehiculo creaUnVehiculo(List<Vehiculo> vehiculos) {
-        Vehiculo vehiculoCreado = vehiculoObj.creaUnVehiculo(vehiculos);
+        Vehiculo vehiculoCreado = vehiculoObj.creaUnVehiculo(vehiculos, getArraySize());
         if (vehiculoCreado != null) {
             vehiculoObj.setArraySize(vehiculoObj.getArraySize() + 1);
+            vehiculos.add(vehiculoCreado);
         }
         return vehiculoCreado;
     }

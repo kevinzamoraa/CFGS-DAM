@@ -209,19 +209,18 @@ public class Vehiculo {
         return null;
     }
 
-    public void imprimeVehiculos(List<Vehiculo> vehiculos, Concesionario concesionario1) {
+    public void imprimeVehiculos(List<Vehiculo> vehiculos, int arraySize) {
         System.out.println("LISTA DE VEHICULOS EN NUESTRO CONCESIONARIO: \n");
-        arraySize = concesionario1.getArraySize();
         System.out.println(arraySize + " vehículos:");
         for (int i = 0; i < 1; i++) {
 //            System.out.println(arraySize);
-            if (arraySize < 4) {
+            if (arraySize <= 3) {
                 for (int j = 0; j < arraySize; j++) {
                 Vehiculo vehiculo = vehiculos.get(j);
                 System.out.println(vehiculo.id + ". " + vehiculo.fabricante + " " + vehiculo.modelo);
                 }
             } else {
-                for (int j = 4; j < arraySize; j++) {
+                for (int j = 0; j < arraySize; j++) {
                 Vehiculo vehiculo = vehiculos.get(j);
                 System.out.println(vehiculo.id + ". " + vehiculo.fabricante + " " + vehiculo.modelo);
                 }
@@ -244,20 +243,21 @@ public class Vehiculo {
         System.out.println("\n");
     }
 
-    public Vehiculo creaUnVehiculo(List<Vehiculo> vehiculos) {
+    public Vehiculo creaUnVehiculo(List<Vehiculo> vehiculos, int arraySize) {
         int nuevoId = 0;
         
-        if (vehiculos.size() < 2) {
-            arraySize = vehiculos.size();
+        if (arraySize <= 3) {
             nuevoId = arraySize + 1;
+            System.out.println("Número de vehículos: " + arraySize);
+            System.out.println("NuevoID: " + nuevoId + "\n");
         } else {
-            arraySize = (vehiculos.size() - 3);
+//            arraySize = (vehiculos.size() - 3);
+//            arraySize = (arraySize - 3);
             nuevoId = (arraySize + 1);
+            System.out.println("Número de vehículos: " + arraySize);
+            System.out.println("NuevoID: " + nuevoId + "\n");
         }
-        
-        System.out.println("Número de vehículos: " + arraySize);
-        System.out.println("NuevoID: " + nuevoId + "\n");
-        
+                
         if (nuevoId > 50) {
             System.out.println("Nuevo ID: " + nuevoId);
             System.out.println("Se ha alcanzado el límite de 50 vehículos por concesionario. Ya no se pueden añadir más");
@@ -318,7 +318,6 @@ public class Vehiculo {
 //        } while (numKms <= 0);
         } while (numKmsIsCorrect != true);
         LocalDate fechaMatriculacion1;
-        LocalDate momentoActual;
         boolean FMisCorrect = false;
         do {
             System.out.println("Año de Matriculación: ");
@@ -330,11 +329,11 @@ public class Vehiculo {
             int anioMatriculacion = Integer.parseInt(scanner.nextLine());
             fechaMatriculacion1 = LocalDate.of(anioMatriculacion, mesMatriculacion,
                     diaMatriculacion);
-            // DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd/mm/yyyy");
-            // String fechaMatriculacionFormateada = fechaMatriculacion1.format(myFormatObj);
-            // momentoActual = LocalDate.now();
+            
             FMisCorrect = validacionObj.comprobarFechaMatriculacion(fechaMatriculacion1);
-            errores++;
+            if (!FMisCorrect) {
+                errores++;
+            }
             if (errores >= 3) {System.out.println("HAS COMETIDO 3 ERRORES Y SE TE REDIRIGE "
                     + "A LA PANTALLA PRINCIPAL. MÁS SUERTE LA PRÓXIMA VEZ. \n VUELVE A INICIAR LA APLICACIÓN "
                     + "PARA VOLVER A INTENTARLO"); errores = 0; return null; } /*Faltaria reiniciar la aplicación 
@@ -386,6 +385,7 @@ public class Vehiculo {
                 if (vehiculos.size() <= 50) {
                 try {                
                 vehiculos.add(nuevoVehiculo);
+                arraySize = arraySize + 1;
 //                System.out.println(arraySize);
                 System.out.println("EL NUEVO VEHÍCULO HA SIDO INTRODUCIDO CORRECTAMENTE \n");
                 return nuevoVehiculo;

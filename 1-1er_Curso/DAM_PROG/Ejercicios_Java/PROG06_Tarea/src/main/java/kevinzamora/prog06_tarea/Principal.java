@@ -51,7 +51,7 @@ public class Principal {
                     concesionario1.errores = 0;
                     return;
                 }
-                System.out.println(concesionario1.getArraySize());
+//                System.out.println(concesionario1.getArraySize());
                 concesionario1.imprimeVehiculos(concesionario1);
                 loadMainMenu();
                 break;
@@ -73,7 +73,7 @@ public class Principal {
                 concesionario1.setVehiculoSeleccionado(vehiculoSeleccionado);
                 if (vehiculoSeleccionado != null) {
                     System.out.print("El vehiculo se ha encontrado correctamente y estos son los datos correspondientes: \n"
-                            + vehiculoSeleccionado.toString() + "\n");
+                            + vehiculoSeleccionado.toString() + "\n\n");
                 } else {
                     System.out.println("No se ha detectado ningún valor válido introducido con el que realizar la busqueda \n");
                 }
