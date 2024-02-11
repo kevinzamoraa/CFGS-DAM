@@ -220,7 +220,7 @@ public class Vehiculo {
                 System.out.println(vehiculo.id + ". " + vehiculo.fabricante + " " + vehiculo.modelo);
                 }
             } else {
-                for (int j = 0; j < arraySize; j++) {
+                for (int j = 3; j < (3 + arraySize); j++) {
                 Vehiculo vehiculo = vehiculos.get(j);
                 System.out.println(vehiculo.id + ". " + vehiculo.fabricante + " " + vehiculo.modelo);
                 }
