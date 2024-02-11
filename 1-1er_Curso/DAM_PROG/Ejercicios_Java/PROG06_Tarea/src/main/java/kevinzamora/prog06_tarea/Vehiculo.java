@@ -20,6 +20,7 @@ public class Vehiculo {
     int errores = 0;
     Validacion validacionObj = new Validacion();
     int arraySize = 0;
+    int contadorCiclos = 0;
     
     // Propiedades
     int id;
@@ -212,14 +213,14 @@ public class Vehiculo {
     public void imprimeVehiculos(List<Vehiculo> vehiculos) {
         System.out.println("LISTA DE VEHICULOS EN NUESTRO CONCESIONARIO: \n");
         System.out.println(arraySize + " vehículos:");
-        for (int i = 0; i < 1; i++) {
-            // System.out.println(arraySize);
-            for (int j = 0; j < (arraySize); j++) {
-//        for (Vehiculo vehiculo : vehiculos) {
-            Vehiculo vehiculo = vehiculos.get(j);
+//        for (int i = 0; i < 1; i++) {
+////            System.out.println(arraySize);
+//            for (int j = 0; j < arraySize; j++) {
+        for (Vehiculo vehiculo : vehiculos) {
+//            Vehiculo vehiculo = vehiculos.get(j);
             System.out.println(vehiculo.id + ". " + vehiculo.fabricante + " " + vehiculo.modelo);
         }
-        }
+//        }
         // System.out.println(arraySize); // Aquí el tamaño del 'array' se recoge correctamente en 'primera' lectura
         System.out.println("\n");
     }
@@ -236,14 +237,19 @@ public class Vehiculo {
         System.out.println("\n");
     }
 
-    public List<Vehiculo> creaUnVehiculo(List<Vehiculo> vehiculos) {
-        List<Vehiculo> coleccionAux = vehiculos;
-        arraySize = vehiculos.size();
+    public Vehiculo creaUnVehiculo(List<Vehiculo> vehiculos) {
+        int nuevoId = 0;
+        
+        if (vehiculos.size() < 2) {
+            arraySize = vehiculos.size();
+            nuevoId = arraySize + 1;
+        } else {
+            arraySize = (vehiculos.size() - 3);
+            nuevoId = (arraySize + 1);
+        }
+        
         System.out.println("Número de vehículos: " + arraySize);
-        int nuevoId = arraySize + 1;
         System.out.println("NuevoID: " + nuevoId + "\n");
-        // arraySize++;
-        // System.out.println("Nuevo arraySize: " + arraySize);
         
         if (nuevoId > 50) {
             System.out.println("Nuevo ID: " + nuevoId);
@@ -344,10 +350,12 @@ public class Vehiculo {
         String dniPropietario1;
         boolean dniPropietario1IsCorrect = false;
         do {
-        System.out.println("DNI del propietario: ");
-        dniPropietario1 = scanner.nextLine();
-        dniPropietario1IsCorrect = validacionObj.comprobarDni(dniPropietario1);
-        errores++;
+            System.out.println("DNI del propietario: ");
+            dniPropietario1 = scanner.nextLine();
+            dniPropietario1IsCorrect = validacionObj.comprobarDni(dniPropietario1);
+            if (!dniPropietario1IsCorrect) {
+                errores++;
+            }
             if (errores >= 3) {System.out.println("HAS COMETIDO 3 ERRORES Y SE TE REDIRIGE "
                     + "A LA PANTALLA PRINCIPAL. MÁS SUERTE LA PRÓXIMA VEZ. \n VUELVE A INICIAR LA APLICACIÓN "
                     + "PARA VOLVER A INTENTARLO"); errores = 0; return null; } /*Faltaria reiniciar la aplicación 
@@ -371,10 +379,9 @@ public class Vehiculo {
                 if (vehiculos.size() <= 50) {
                 try {                
                 vehiculos.add(nuevoVehiculo);
-                coleccionAux.add(nuevoVehiculo);
+                System.out.println(arraySize);
                 System.out.println("EL NUEVO VEHÍCULO HA SIDO INTRODUCIDO CORRECTAMENTE \n");
-                arraySize++;
-                return coleccionAux;
+                return nuevoVehiculo;
             } catch (Exception e) {
             };
                 } else { System.out.println("Se ha alcanzado el límite de capacidad de nuestro concesionario, "

@@ -16,9 +16,9 @@ public class Principal {
 
     String matriculaVehiculoSeleccionado;
     Vehiculo vehiculoSeleccionado;
+    Vehiculo vehiculoCreado;
     String matriculaSeleccionada = "any";
     Concesionario concesionario1 = new Concesionario();
-    List<Vehiculo> copiaColección;
 
     public void loadMainMenu() {
 
@@ -31,6 +31,7 @@ public class Principal {
         /* Inicialización del inventario con algunos vehiculos a modo de base, 
         para la realización de las pruebas pertinentes */
         concesionario1.cargarVehiculosPredefinidos();
+        // concesionario1.imprimeVehiculos(concesionario1.getVehiculos());
 
         System.out.println("SELECCIONA UNA OPCIÓN (Introduce un nº entero):");
         Scanner scanner = new Scanner(System.in);
@@ -40,7 +41,8 @@ public class Principal {
 
             case 1:
                 System.out.println("INTRODUCIR DATOS - CREAR NUEVO VEHÍCULO: \n");
-                concesionario1.creaUnVehiculo();
+                vehiculoCreado = concesionario1.creaUnVehiculo(concesionario1.getVehiculos());
+                concesionario1.setVehiculo(vehiculoCreado);
                 
                 if (concesionario1.errores >= 3) {
                     System.out.println("HAS COMETIDO 3 ERRORES Y SE TE REDIRIGE "
@@ -50,14 +52,15 @@ public class Principal {
                     return;
                 }
                 System.out.println(concesionario1.getArraySize());
-                concesionario1.imprimeVehiculos();
+                concesionario1.imprimeVehiculos(concesionario1.getVehiculos());
                 loadMainMenu();
                 break;
             case 2:
-                concesionario1.imprimeVehiculos();
-                System.out.println("TODO: Nota para cuando ya se ha añadido un nuevo vehiculo: \n"
-                        + "El programa manifiesta una reverberación de la lectura del bucle "
-                        + "que no es mostrada en la lectura inicial. Si me da tiempo de depurar, intentaré corregirlo \n");
+                List<Vehiculo> vehiculos = concesionario1.getVehiculos();
+                concesionario1.imprimeVehiculos(vehiculos);
+//                System.out.println("TODO: Nota para cuando ya se ha añadido un nuevo vehiculo: \n"
+//                        + "El programa manifiesta una reverberación de la lectura del bucle "
+//                        + "que no es mostrada en la lectura inicial. Si me da tiempo de depurar, intentaré corregirlo \n");
                 loadMainMenu();
                 break;
             case 3:
@@ -81,6 +84,8 @@ public class Principal {
                 System.out.println("ACTUALIZAR KILÓMETROS:");
                 int nuevoKilometraje = 0;
                 vehiculoSeleccionado = concesionario1.vehiculoSeleccionado;
+                matriculaSeleccionada = vehiculoSeleccionado.getMatricula();
+//                System.out.println(vehiculoSeleccionado);
                 
                 if (matriculaSeleccionada.equals("any")) {
                     System.out.println("No hay ningún vehículo seleccionado/buscado previamente. Para poder "

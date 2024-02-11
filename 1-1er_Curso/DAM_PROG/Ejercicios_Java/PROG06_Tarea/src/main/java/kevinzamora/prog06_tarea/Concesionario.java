@@ -15,19 +15,18 @@ import java.util.List;
 public class Concesionario {
 
     // Declaración e Inicialización de los "Coches ejemplo"
-    Vehiculo coche1 = new Vehiculo(1, "Audi", "A6", "12345ABC",
+    Vehiculo coche1 = new Vehiculo(1, "Audi", "A6", "1234ABC",
             10000, LocalDate.of(2015, 3, 11), "Manolo",
             "Coche 'largo' de gama media-alta", 70000.50, "12345678M");
-    Vehiculo coche2 = new Vehiculo(2, "Ford", "Focus", "12345CBA",
+    Vehiculo coche2 = new Vehiculo(2, "Ford", "Focus", "1234CBA",
             7000, LocalDate.of(2013, 5, 10), "Conchi",
-            "Coche 'corto' de gama media", 25000, "12345678N");
-    Vehiculo coche3 = new Vehiculo(3, "Fiat", "Punto", "12346ABC",
+            "Coche 'corto' de gama media", 25000, "5678KWN");
+    Vehiculo coche3 = new Vehiculo(3, "Fiat", "Punto", "7234ABC",
             200000, LocalDate.of(2005, 9, 20), "Blai",
             "Coche 'corto' de gama media-baja", 6000, "12345678O");
 
     // Colección de Vehículos
     public List<Vehiculo> vehiculos = new ArrayList<Vehiculo>();
-
     Vehiculo vehiculoSeleccionado;
     Vehiculo vehiculoObj = new Vehiculo();
     int errores = vehiculoObj.errores;
@@ -37,8 +36,8 @@ public class Concesionario {
         return vehiculos;
     }
     
-    public void setVehiculos(List<Vehiculo> vehiculosMod) {
-        vehiculos = vehiculosMod;
+    public void setVehiculo(Vehiculo vehiculo) {
+        vehiculos.add(vehiculo);
     }
 
     public Vehiculo getVehiculoSeleccionado() {
@@ -60,23 +59,17 @@ public class Concesionario {
         vehiculos.add(coche3);
         vehiculoObj.setArraySize(3);
     }
-    
-    public int actualizarArraySize() {
-        if (vehiculoObj.getArraySize() != vehiculos.size()) {
-            int arraySize = vehiculos.size();
-            vehiculoObj.setArraySize(arraySize);
-        }
-        return vehiculoObj.getArraySize();
-    }
 
     // Métodos importados desde la clase Vehiculo
     public Vehiculo encontrarVehiculoPorMatricula(String matricula) {
-        return vehiculoObj.encontrarVehiculoPorMatricula(matricula, vehiculos);
+        return vehiculoSeleccionado = vehiculoObj.encontrarVehiculoPorMatricula(matricula, vehiculos);
     }
 
-    public void imprimeVehiculos() {
-//        int arraySize = actualizarArraySize();
-//        System.out.println(arraySize);
+    public void imprimeVehiculos(List<Vehiculo> vehiculos) {
+        vehiculoObj.imprimeVehiculos(vehiculos);
+    }
+    
+    public void listaVehiculos() {
         vehiculoObj.imprimeVehiculos(vehiculos);
     }
 
@@ -84,8 +77,8 @@ public class Concesionario {
         vehiculoObj.imprimeCaracteristicasVehiculos(vehiculos);
     }
 
-    public void creaUnVehiculo() {
-        vehiculos = vehiculoObj.creaUnVehiculo(vehiculos);
+    public Vehiculo creaUnVehiculo(List<Vehiculo> vehiculos) {
+        return vehiculoObj.creaUnVehiculo(vehiculos);
     }
 
     public void actualizarKms(int kms, Vehiculo vehiculo) {
