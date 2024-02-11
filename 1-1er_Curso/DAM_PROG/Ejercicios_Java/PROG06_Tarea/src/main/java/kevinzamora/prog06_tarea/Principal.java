@@ -52,12 +52,12 @@ public class Principal {
                     return;
                 }
                 System.out.println(concesionario1.getArraySize());
-                concesionario1.imprimeVehiculos(concesionario1.getVehiculos());
+                concesionario1.imprimeVehiculos(concesionario1.getVehiculos(), concesionario1);
                 loadMainMenu();
                 break;
             case 2:
                 List<Vehiculo> vehiculos = concesionario1.getVehiculos();
-                concesionario1.imprimeVehiculos(vehiculos);
+                concesionario1.imprimeVehiculos(vehiculos, concesionario1);
 //                System.out.println("TODO: Nota para cuando ya se ha añadido un nuevo vehiculo: \n"
 //                        + "El programa manifiesta una reverberación de la lectura del bucle "
 //                        + "que no es mostrada en la lectura inicial. Si me da tiempo de depurar, intentaré corregirlo \n");
@@ -65,7 +65,8 @@ public class Principal {
                 break;
             case 3:
                 System.out.println("BÚSCA UN VEHÍCULO: \n ");
-                concesionario1.imprimeCaracteristicasVehiculos();
+                vehiculos = concesionario1.getVehiculos();
+                concesionario1.imprimeCaracteristicasVehiculos(vehiculos);
                 System.out.println("INTRODUCE LA MATRÍCULA DEL VEHÍCULO A BUSCAR: \n");
                 matriculaVehiculoSeleccionado = scanner.nextLine();
                 vehiculoSeleccionado = concesionario1.encontrarVehiculoPorMatricula(matriculaVehiculoSeleccionado);

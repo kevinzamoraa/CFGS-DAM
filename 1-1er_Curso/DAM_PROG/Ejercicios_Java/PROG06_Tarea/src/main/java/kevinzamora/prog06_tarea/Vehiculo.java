@@ -210,8 +210,9 @@ public class Vehiculo {
         return null;
     }
 
-    public void imprimeVehiculos(List<Vehiculo> vehiculos) {
+    public void imprimeVehiculos(List<Vehiculo> vehiculos, Concesionario concesionario1) {
         System.out.println("LISTA DE VEHICULOS EN NUESTRO CONCESIONARIO: \n");
+        arraySize = concesionario1.getArraySize();
         System.out.println(arraySize + " vehículos:");
 //        for (int i = 0; i < 1; i++) {
 ////            System.out.println(arraySize);

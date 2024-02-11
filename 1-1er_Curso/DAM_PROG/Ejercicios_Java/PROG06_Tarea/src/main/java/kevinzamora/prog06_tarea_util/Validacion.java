@@ -76,8 +76,8 @@ public class Validacion {
         for (Vehiculo vehiculo : vehiculos) {
             String matriculaLeida = vehiculo.getMatricula();
             if (matriculaLeida.equals(matriculaIntroducida)) {
-                System.out.println("La matrícula introducida ya existe en nuestra base de datos y "
-                        + "por tanto no se puede volver a introducir");
+//                System.out.println("La matrícula introducida ya existe en nuestra base de datos y "
+//                        + "por tanto no se puede volver a introducir");
                 return false;
             } else {
                 return true;

@@ -65,15 +65,15 @@ public class Concesionario {
         return vehiculoSeleccionado = vehiculoObj.encontrarVehiculoPorMatricula(matricula, vehiculos);
     }
 
-    public void imprimeVehiculos(List<Vehiculo> vehiculos) {
-        vehiculoObj.imprimeVehiculos(vehiculos);
+    public void imprimeVehiculos(List<Vehiculo> vehiculos, Concesionario concesionario1) {
+        vehiculoObj.imprimeVehiculos(vehiculos, concesionario1);
     }
     
-    public void listaVehiculos() {
-        vehiculoObj.imprimeVehiculos(vehiculos);
+    public void listaVehiculos(List<Vehiculo> vehiculos, Concesionario concesionario1) {
+        vehiculoObj.imprimeVehiculos(vehiculos, concesionario1);
     }
 
-    public void imprimeCaracteristicasVehiculos() {
+    public void imprimeCaracteristicasVehiculos(List<Vehiculo> vehiculos) {
         vehiculoObj.imprimeCaracteristicasVehiculos(vehiculos);
     }
 
