@@ -78,8 +78,8 @@ public class Concesionario {
         vehiculoObj.imprimeVehiculos(vehiculos, arraySizeMemory);
     }
 
-    public void imprimeCaracteristicasVehiculos(List<Vehiculo> vehiculos) {
-        vehiculoObj.imprimeCaracteristicasVehiculos(vehiculos);
+    public void imprimeCaracteristicasVehiculos() {
+        vehiculoObj.imprimeCaracteristicasVehiculos(vehiculos, arraySizeMemory);
     }
 
     public Vehiculo creaUnVehiculo(List<Vehiculo> vehiculos) {

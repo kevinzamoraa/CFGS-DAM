@@ -222,7 +222,7 @@ public class Vehiculo {
         System.out.println("\n");
     }
     
-    public void imprimeCaracteristicasVehiculos(List<Vehiculo> vehiculos) {
+    public void imprimeCaracteristicasVehiculos(List<Vehiculo> vehiculos, int arraySize) {
         System.out.println("LISTA DE VEHICULOS EN NUESTRO CONCESIONARIO: \n");
         for (int i = 0; i < 1; i++) {
             // System.out.println(arraySize);

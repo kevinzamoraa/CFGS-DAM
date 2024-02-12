@@ -64,8 +64,7 @@ public class Principal {
                 break;
             case 3:
                 System.out.println("BÚSCA UN VEHÍCULO: \n ");
-                List<Vehiculo> vehiculos = concesionario1.getVehiculos();
-                concesionario1.imprimeCaracteristicasVehiculos(vehiculos);
+                concesionario1.imprimeCaracteristicasVehiculos();
                 System.out.println("INTRODUCE LA MATRÍCULA DEL VEHÍCULO A BUSCAR: \n");
                 matriculaVehiculoSeleccionado = scanner.nextLine();
                 vehiculoSeleccionado = concesionario1.encontrarVehiculoPorMatricula(matriculaVehiculoSeleccionado);
