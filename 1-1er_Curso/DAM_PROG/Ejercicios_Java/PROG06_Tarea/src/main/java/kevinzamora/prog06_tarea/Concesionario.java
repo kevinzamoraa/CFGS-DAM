@@ -30,6 +30,7 @@ public class Concesionario {
     Vehiculo vehiculoSeleccionado;
     Vehiculo vehiculoObj = new Vehiculo();
     int errores = vehiculoObj.errores;
+    int arraySizeMemory = 3;
 
     // Métodos GETTER
     public List<Vehiculo> getVehiculos() {
@@ -51,6 +52,10 @@ public class Concesionario {
     public int getArraySize() {
         return vehiculoObj.getArraySize();
     }
+    
+    public int getArraySizeMemory() {
+        return arraySizeMemory;
+    }
 
     // Inicialización de nuestra colección de vehiculos
     public void cargarVehiculosPredefinidos() {
@@ -69,8 +74,8 @@ public class Concesionario {
         vehiculoObj.imprimeVehiculos(vehiculos, getArraySize());
     }
     
-    public void listaVehiculos(List<Vehiculo> vehiculos) {
-        vehiculoObj.imprimeVehiculos(vehiculos, getArraySize());
+    public void listaVehiculos() {
+        vehiculoObj.imprimeVehiculos(vehiculos, arraySizeMemory);
     }
 
     public void imprimeCaracteristicasVehiculos(List<Vehiculo> vehiculos) {
@@ -80,7 +85,10 @@ public class Concesionario {
     public Vehiculo creaUnVehiculo(List<Vehiculo> vehiculos) {
         Vehiculo vehiculoCreado = vehiculoObj.creaUnVehiculo(vehiculos, getArraySize());
         if (vehiculoCreado != null) {
-            vehiculoObj.setArraySize(vehiculoObj.getArraySize() + 1);
+            int arraySize = vehiculoObj.getArraySize();
+            int nuevoArraySize = arraySize + 1;
+            vehiculoObj.setArraySize(nuevoArraySize);
+            arraySizeMemory = nuevoArraySize;
             vehiculos.add(vehiculoCreado);
         }
         return vehiculoCreado;

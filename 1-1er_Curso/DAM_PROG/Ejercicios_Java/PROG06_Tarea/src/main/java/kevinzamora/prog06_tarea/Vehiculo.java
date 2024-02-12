@@ -213,18 +213,10 @@ public class Vehiculo {
         System.out.println("LISTA DE VEHICULOS EN NUESTRO CONCESIONARIO: \n");
         System.out.println(arraySize + " vehículos:");
         for (int i = 0; i < 1; i++) {
-//            System.out.println(arraySize);
-            if (arraySize <= 3) {
                 for (int j = 0; j < arraySize; j++) {
                 Vehiculo vehiculo = vehiculos.get(j);
                 System.out.println(vehiculo.id + ". " + vehiculo.fabricante + " " + vehiculo.modelo);
                 }
-            } else {
-                for (int j = 3; j < (3 + arraySize); j++) {
-                Vehiculo vehiculo = vehiculos.get(j);
-                System.out.println(vehiculo.id + ". " + vehiculo.fabricante + " " + vehiculo.modelo);
-                }
-            }
         }
         // System.out.println(arraySize); // Aquí el tamaño del 'array' se recoge correctamente en 'primera' lectura
         System.out.println("\n");

@@ -56,7 +56,7 @@ public class Principal {
                 loadMainMenu();
                 break;
             case 2:
-                concesionario1.imprimeVehiculos(concesionario1);
+                concesionario1.listaVehiculos();
 //                System.out.println("TODO: Nota para cuando ya se ha añadido un nuevo vehiculo: \n"
 //                        + "El programa manifiesta una reverberación de la lectura del bucle "
 //                        + "que no es mostrada en la lectura inicial. Si me da tiempo de depurar, intentaré corregirlo \n");
