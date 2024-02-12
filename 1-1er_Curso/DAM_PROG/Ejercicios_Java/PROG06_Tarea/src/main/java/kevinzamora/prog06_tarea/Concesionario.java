@@ -31,6 +31,7 @@ public class Concesionario {
     Vehiculo vehiculoObj = new Vehiculo();
     int errores = vehiculoObj.errores;
     int arraySizeMemory = 3;
+    List<Vehiculo> vehiculosAux;
 
     // Métodos GETTER
     public List<Vehiculo> getVehiculos() {
@@ -67,11 +68,12 @@ public class Concesionario {
 
     // Métodos importados desde la clase Vehiculo
     public Vehiculo encontrarVehiculoPorMatricula(String matricula) {
-        return vehiculoSeleccionado = vehiculoObj.encontrarVehiculoPorMatricula(matricula, vehiculos);
+        return vehiculoSeleccionado = vehiculoObj.encontrarVehiculoPorMatricula(matricula, vehiculosAux, arraySizeMemory);
     }
 
     public void imprimeVehiculos(Concesionario concesionario1) {
         vehiculoObj.imprimeVehiculos(vehiculos, getArraySize());
+        vehiculosAux = vehiculos;
     }
     
     public void listaVehiculos() {

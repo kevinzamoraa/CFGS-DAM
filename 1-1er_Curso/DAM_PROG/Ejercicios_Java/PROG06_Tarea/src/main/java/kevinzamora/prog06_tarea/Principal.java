@@ -14,7 +14,6 @@ import java.util.Scanner;
  */
 public class Principal {
 
-    String matriculaVehiculoSeleccionado;
     Vehiculo vehiculoSeleccionado;
     Vehiculo vehiculoCreado;
     String matriculaSeleccionada = "any";
@@ -43,7 +42,7 @@ public class Principal {
                 System.out.println("INTRODUCIR DATOS - CREAR NUEVO VEHÍCULO: \n");
                 vehiculoCreado = concesionario1.creaUnVehiculo(concesionario1.getVehiculos());
                 concesionario1.setVehiculo(vehiculoCreado);
-                
+
                 if (concesionario1.errores >= 3) {
                     System.out.println("HAS COMETIDO 3 ERRORES Y SE TE REDIRIGE "
                             + "A LA PANTALLA PRINCIPAL. MÁS SUERTE LA PRÓXIMA VEZ. \n VUELVE A INICIAR LA APLICACIÓN "
@@ -65,27 +64,30 @@ public class Principal {
             case 3:
                 System.out.println("BÚSCA UN VEHÍCULO: \n ");
                 concesionario1.imprimeCaracteristicasVehiculos();
-                System.out.println("INTRODUCE LA MATRÍCULA DEL VEHÍCULO A BUSCAR: \n");
-                matriculaVehiculoSeleccionado = scanner.nextLine();
-                vehiculoSeleccionado = concesionario1.encontrarVehiculoPorMatricula(matriculaVehiculoSeleccionado);
-                // El siguiente paso de podría eliminar y a su vez, también se podría introducir los mensajes de respuesta dentro de la función
-                concesionario1.setVehiculoSeleccionado(vehiculoSeleccionado);
-                if (vehiculoSeleccionado != null) {
-                    System.out.print("El vehiculo se ha encontrado correctamente y estos son los datos correspondientes: \n"
-                            + vehiculoSeleccionado.toString() + "\n\n");
+                System.out.println("INTRODUCE LA MATRÍCULA DEL VEHÍCULO A BUSCAR: ");
+                matriculaSeleccionada = scanner.nextLine();
+                if (matriculaSeleccionada != "any") {
+                    vehiculoSeleccionado = concesionario1.encontrarVehiculoPorMatricula(matriculaSeleccionada);
+                    if (vehiculoSeleccionado != null) {
+                        // El siguiente paso de podría eliminar y a su vez, también se podría introducir los mensajes de respuesta dentro de la función
+                        concesionario1.setVehiculoSeleccionado(vehiculoSeleccionado);
+                        vehiculoSeleccionado = concesionario1.getVehiculoSeleccionado();
+                        System.out.print("El vehiculo se ha encontrado correctamente y estos son los datos correspondientes: \n"
+                                + vehiculoSeleccionado.toString() + "\n\n");
+                        loadMainMenu();
+                        break;
+                    } else {
+                        System.out.println("La matrícula introducida no se encuentra registrada en nuestra base de datos \n");
+                        loadMainMenu();
+                        break;
+                    }
                 } else {
-                    System.out.println("No se ha detectado ningún valor válido introducido con el que realizar la busqueda \n");
+                    System.out.println("No se ha detectado ninguna matrícula \n");
                 }
-//                System.out.println(("Se ha seleccionado el siguiente vehículo:" + concesionario1.vehiculoSeleccionado).toString());
-                loadMainMenu();
-                break;
             case 4:
                 System.out.println("ACTUALIZAR KILÓMETROS:");
                 int nuevoKilometraje = 0;
-                vehiculoSeleccionado = concesionario1.vehiculoSeleccionado;
-                matriculaSeleccionada = vehiculoSeleccionado.getMatricula();
-//                System.out.println(vehiculoSeleccionado);
-                
+
                 if (matriculaSeleccionada.equals("any")) {
                     System.out.println("No hay ningún vehículo seleccionado/buscado previamente. Para poder "
                             + "actualizar su número de kilómetros, primero tendrás que buscarlo adecuadamente: \n");
@@ -96,10 +98,10 @@ public class Principal {
                     concesionario1.setVehiculoSeleccionado(vehiculoSeleccionado);
                 } else {
                     matriculaSeleccionada = vehiculoSeleccionado.getMatricula();
+                    vehiculoSeleccionado = concesionario1.encontrarVehiculoPorMatricula(matriculaSeleccionada);
                 }
                 int kmsAnt;
 
-                vehiculoSeleccionado = concesionario1.encontrarVehiculoPorMatricula(matriculaSeleccionada);
                 System.out.println("Se ha seleccionado el siguiente vehículo: \n" + vehiculoSeleccionado.toString() + "\n");
                 System.out.println("Introduce su nuevo kilometraje: ");
                 nuevoKilometraje = Integer.parseInt(scanner.nextLine());

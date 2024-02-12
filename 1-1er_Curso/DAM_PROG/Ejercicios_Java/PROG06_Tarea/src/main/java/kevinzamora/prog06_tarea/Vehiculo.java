@@ -186,24 +186,29 @@ public class Vehiculo {
         return null;
     }
     
-    public Vehiculo encontrarVehiculoPorMatricula(String matricula, List<Vehiculo> vehiculos) {
+    public Vehiculo encontrarVehiculoPorMatricula(String matricula, List<Vehiculo> vehiculos, int arraySize) {
         Vehiculo vehiculoEncontrado; // Variable auxiliar prescindible
-
-        for (Vehiculo vehiculo : vehiculos) {
-            if (matricula.toLowerCase().equals((vehiculo.matricula).toLowerCase())) {
-                vehiculoEncontrado = vehiculo;
-                /* Este paso sería innecesario, 
-                aunque así se comprende mejor el funcionamiento del programa */
-//                System.out.println("Se ha encontrado un vehiculo identificado "
-//                        + "con el ID introducido y se has cargado sus datos para "
-//                        + "poder condultarlos y/o modificarlos");
-                return vehiculoEncontrado;
-            } else {
-                vehiculoEncontrado = null;
-//                System.out.println("No se ha encontrado ningún vehículo con la matrícula introducida");
-                return vehiculoEncontrado;
-                /* Aquí también se podría prescindir de la variable 
-                y devolver directamente 'null' como resultado de la función */
+        String matriculaEncontrada;
+//        for (Vehiculo vehiculo : vehiculos) {
+        for (int i = 0; i < 1; i++) {
+            // System.out.println(arraySize);
+            for (int j = 0; j < arraySize; j++) {
+                Vehiculo vehiculo = vehiculos.get(j);
+                matriculaEncontrada = vehiculo.getMatricula();
+                if ((matricula.toLowerCase()).equals((matriculaEncontrada).toLowerCase())) {
+                    vehiculoEncontrado = vehiculo;
+                    /* Este paso sería innecesario, 
+                    aunque así se comprende mejor el funcionamiento del programa */
+    //                System.out.println("Se ha encontrado un vehiculo identificado "
+    //                        + "con el ID introducido y se has cargado sus datos para "
+    //                        + "poder condultarlos y/o modificarlos");
+                    return vehiculoEncontrado;
+                } else {
+    //                System.out.println("No se ha encontrado ningún vehículo con la matrícula introducida");
+                    return null;
+                    /* Aquí también se podría prescindir de la variable 
+                    y devolver directamente 'null' como resultado de la función */
+                }
             }
         }
         return null;
