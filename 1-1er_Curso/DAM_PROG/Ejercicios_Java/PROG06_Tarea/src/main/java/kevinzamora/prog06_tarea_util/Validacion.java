@@ -8,7 +8,6 @@ import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Pattern;
-import kevinzamora.prog06_tarea.Concesionario;
 import kevinzamora.prog06_tarea.Vehiculo;
 
 /**
@@ -86,6 +85,14 @@ public class Validacion {
         return true;
     }
     
-    
-
+    public boolean comprobarNombrePropietario(String nombre) {
+        if (nombre.matches("(^([\\p{L}\\s.’\\-,]{3,13})\\s([\\p{L}\\s.’\\-,]{2,13})\\s([\\p{L}\\s.’\\-,]{2,13}))")) {
+            System.out.println(nombre + " es un nombre válido \n");
+            return true;
+        } else {
+            System.out.println(nombre + " NO es un nombre válido. Inténtalo de nuevo y considera los siguientes parámetros: \n "
+                    + "Pistas: \n 1. Necesitas un nombre y dos apellidos \n 2. El número máximo de carácteres está definido en 40 \n");
+            return false;
+        }
+    }
 }

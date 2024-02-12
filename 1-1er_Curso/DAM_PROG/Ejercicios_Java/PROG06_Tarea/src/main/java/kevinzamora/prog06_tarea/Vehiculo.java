@@ -348,8 +348,26 @@ public class Vehiculo {
         String descripcion1 = scanner.nextLine();
         System.out.println("Precio: ");
         double precio1 = Double.parseDouble(scanner.nextLine());
-        System.out.println("Nombre del propietario: ");
-        String propietario1 = scanner.nextLine();
+        
+        boolean propietarioIsCorrect = false;
+        String propietario1;
+        do {
+            System.out.println("Nombre del propietario: ");
+            propietario1 = scanner.nextLine();
+            propietarioIsCorrect = validacionObj.comprobarNombrePropietario(propietario1);
+            
+            if (!propietarioIsCorrect) {
+                errores++;
+            }
+            if (errores >= 3) {System.out.println("HAS COMETIDO 3 ERRORES Y SE TE REDIRIGE "
+                    + "A LA PANTALLA PRINCIPAL. MÁS SUERTE LA PRÓXIMA VEZ. \n VUELVE A INICIAR LA APLICACIÓN "
+                    + "PARA VOLVER A INTENTARLO"); errores = 0; break; } /*Faltaria reiniciar la aplicación 
+            o redirigir a la función loadMainMenu() alojada actualmente en la clase 'Principal'. Debido a falta 
+            de tiempo y de recursos lo dejamos pendiente de realizar. PD: Debería bastar con mover la función del menú 
+            a una clase independiente desde la que pueda ser llamada desde todas partes, para evitar así que el 
+            error 'StackOverflow' debido a al llamamiento mutuo entre clases/entidades */
+        } while (!propietarioIsCorrect);
+        
         String dniPropietario1;
         boolean dniPropietario1IsCorrect = false;
         do {

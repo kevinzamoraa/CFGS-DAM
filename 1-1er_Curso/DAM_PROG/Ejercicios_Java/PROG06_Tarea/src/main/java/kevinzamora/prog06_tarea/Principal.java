@@ -64,8 +64,12 @@ public class Principal {
             case 3:
                 System.out.println("BÚSCA UN VEHÍCULO: \n ");
                 concesionario1.imprimeCaracteristicasVehiculos();
+                System.out.println("TODO: Falta por depurar y reparar la selección de un vehículo cuando este lo acabemos de "
+                        + "crear/introducir y está almacenado sólo en memoria 'volatil'. De momento, nuestro programa no "
+                        + "resulta capaz de leer y mostrar la información referente a dicho item \n");
                 System.out.println("INTRODUCE LA MATRÍCULA DEL VEHÍCULO A BUSCAR: ");
                 matriculaSeleccionada = scanner.nextLine();
+                
                 if (matriculaSeleccionada != "any") {
                     vehiculoSeleccionado = concesionario1.encontrarVehiculoPorMatricula(matriculaSeleccionada);
                     if (vehiculoSeleccionado != null) {
@@ -83,6 +87,8 @@ public class Principal {
                     }
                 } else {
                     System.out.println("No se ha detectado ninguna matrícula \n");
+                    loadMainMenu();
+                    break;
                 }
             case 4:
                 System.out.println("ACTUALIZAR KILÓMETROS:");
