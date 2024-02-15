@@ -1,0 +1,57 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="marca" type="xs:string"/>
+  <xs:element name="modelo" type="xs:string"/>
+  <xs:element name="peso" type="xs:decimal"/>
+  <xs:element name="tamaño" type="xs:string"/>
+  <xs:element name="cartucho" type="xs:string"/>
+  <xs:element name="enred" type="xs:string"/>
+  <xs:element name="impresora">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="marca"/>
+        <xs:element ref="modelo"/>
+        <xs:element ref="peso">
+            <xs:simpleType type="xs:decimal" use="required">
+                <xs:restriction base="xs:decimal">
+                    <xs:minExclusive value="0"/>
+                </xs:restriction>
+                <xs:restriction base="xs:decimal">
+                    <xs:fractionDigits value="2"></xs:fractionDigits>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element ref="tamaño" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element ref="cartucho">
+            <xs:simpleType>
+                <xs:restriction>
+                    <xs:pattern value="^[C][-][1-9]{3}[A-Z]{1,2}$"></xs:pattern>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element ref="enred" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="numSerie" use="required"/>
+      <xs:attribute name="tipo" use="required">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="matricial"></xs:enumeration>
+                <xs:enumeration value="láser"></xs:enumeration>
+                <xs:enumeration value="tinta"></xs:enumeration>
+            </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="compra" use="optional">
+        <xs:simpleType>
+            <xs:restriction base="xs:positiveInteger"></xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="impresoras">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="impresora" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

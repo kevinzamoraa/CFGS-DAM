@@ -1,3 +1,5 @@
+<!DOCTYPE impresora SYSTEM "./LMSGI04_Ej1_XML_Schema-Gestion_Impresoras.xml">
+
 <impresoras>
 	<impresora numSerie="i245" tipo="láser" compra="2010">
 		<marca>Epson</marca>
@@ -6,7 +8,7 @@
 		<tamaño>A4</tamaño>
 		<tamaño>A5</tamaño>
 		<cartucho>C-123BV</cartucho>
-		<enred/>
+		<enred />
 	</impresora>
 	<impresora numSerie="i246" tipo="matricial">
 		<marca>HP</marca>
