@@ -1,16 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="impresoras"
+           elementFormDefault="qualified"
+           xmlns="impresoras">
 
-  <xs:element name="impresoras">
-    <xs:complexType>
+    <xs:element name="impresoras" type="impresoraType2"/>
+    <xs:complexType name="impresoraType2">
       <xs:sequence>
-        <xs:element ref="impresora" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element name="impresora" type="impresoraType"/>
       </xs:sequence>
     </xs:complexType>
-  </xs:element>
 
-  <xs:element name="impresora">
-    <xs:complexType>
+    <xs:complexType name="impresoraType">
       <xs:sequence>
         <xs:element name="marca" type="xs:string" />
         <xs:element name="modelo" type="xs:string" />
@@ -48,6 +48,5 @@
         </xs:simpleType>
       </xs:attribute>
     </xs:complexType>
-  </xs:element>
 
 </xs:schema>
