@@ -1,4 +1,4 @@
-<!DOCTYPE impresora SYSTEM "./LMSGI04_Ej1_XML_Schema-Gestion_Impresoras.xml">
+<!DOCTYPE impresoras SYSTEM "./LMSGI04_Ej1_validation.xsd">
 
 <impresoras>
 	<impresora numSerie="i245" tipo="láser" compra="2010">
