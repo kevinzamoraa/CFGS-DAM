@@ -1,52 +1,51 @@
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           targetNamespace="impresoras"
-           elementFormDefault="qualified"
-           xmlns="impresoras">
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-    <xs:element name="impresoras" type="impresoraType2"/>
-    <xs:complexType name="impresoraType2">
+  <xs:element name="impresoras">
+    <xs:complexType>
       <xs:sequence>
-        <xs:element name="impresora" type="impresoraType"/>
+        <xs:element name="impresora" type="impresoraType" />
       </xs:sequence>
     </xs:complexType>
+  </xs:element>
 
-    <xs:complexType name="impresoraType">
-      <xs:sequence>
-        <xs:element name="marca" type="xs:string" />
-        <xs:element name="modelo" type="xs:string" />
-        <xs:element name="peso">
-          <xs:simpleType>
-            <xs:restriction base="xs:decimal">
-              <xs:minExclusive value="0"/>
-              <xs:fractionDigits value="2"></xs:fractionDigits>
-            </xs:restriction>
-          </xs:simpleType>
-        </xs:element>
-        <xs:element name="tamaño" type="xs:string" maxOccurs="unbounded" minOccurs="0" />
-        <xs:element name="cartucho">
-          <xs:simpleType>
-            <xs:restriction base="xs:string">
-              <xs:pattern value="^[C][-][1-9]{3}[A-Z]{1,2}$"></xs:pattern>
-            </xs:restriction>
-          </xs:simpleType>
-        </xs:element>
-        <xs:element name="enred" type="xs:string" minOccurs="0" />
-      </xs:sequence>
-      <xs:attribute type="xs:string" name="numSerie" use="required" />
-      <xs:attribute name="tipo" use="required">
+  <xs:complexType name="impresoraType">
+    <xs:sequence>
+      <xs:element name="marca" type="xs:string" />
+      <xs:element name="modelo" type="xs:string" />
+      <xs:element name="peso">
         <xs:simpleType>
-          <xs:restriction base="xs:string">
-            <xs:enumeration value="matricial"></xs:enumeration>
-            <xs:enumeration value="láser"></xs:enumeration>
-            <xs:enumeration value="tinta"></xs:enumeration>
+          <xs:restriction base="xs:decimal">
+            <xs:minExclusive value="0" />
+            <xs:fractionDigits value="2"></xs:fractionDigits>
           </xs:restriction>
         </xs:simpleType>
-      </xs:attribute>
-      <xs:attribute name="compra">
+      </xs:element>
+      <xs:element name="tamaño" type="xs:string" maxOccurs="unbounded" minOccurs="0" />
+      <xs:element name="cartucho">
         <xs:simpleType>
-          <xs:restriction base="xs:positiveInteger"></xs:restriction>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="^[C][-][0-9]{3}[A-Z]{1,2}$"></xs:pattern>
+          </xs:restriction>
         </xs:simpleType>
-      </xs:attribute>
-    </xs:complexType>
+      </xs:element>
+      <xs:element name="enred" type="xs:string" minOccurs="0" />
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="numSerie" use="required" />
+    <xs:attribute name="tipo" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="matricial"></xs:enumeration>
+          <xs:enumeration value="láser"></xs:enumeration>
+          <xs:enumeration value="tinta"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="compra" use="optional">
+      <xs:simpleType>
+        <xs:restriction base="xs:positiveInteger"></xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
 
 </xs:schema>

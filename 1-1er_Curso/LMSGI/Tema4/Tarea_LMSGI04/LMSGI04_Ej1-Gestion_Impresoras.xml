@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<impresoras
-        xmlns="impresoras"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="./LMSGI04_Ej1_validation.xsd">
+<impresoras 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="./LMSGI04_Ej1_validation.xsd">
 		
 	<impresora numSerie="i245" tipo="láser" compra="2010">
 		<marca>Epson</marca>
