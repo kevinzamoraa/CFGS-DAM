@@ -1,0 +1,50 @@
+@options
+@packages
+-encoding
+'UTF-8'
+-protected
+-source
+'11'
+-sourcepath
+'/home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS_DAM-Tarea_ED04-Deposito/ED04_Tarea/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2024. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS_DAM-Tarea_ED04-Deposito/ED04_Tarea/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'ED04_Tarea 1.0-SNAPSHOT API'
+-linkoffline
+'https://docs.oracle.com/en/java/javase/11/docs/api' '/home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS_DAM-Tarea_ED04-Deposito/ED04_Tarea/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'ED04_Tarea 1.0-SNAPSHOT API'
+cuentas
+kevinzamora.ed04_tarea
+/home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS_DAM-Tarea_ED04-Deposito/ED04_Tarea/src/main/java = 1708173533066
+/home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS_DAM-Tarea_ED04-Deposito/ED04_Tarea/target/site/apidocs/overview-tree.html = 1708246429139
+/home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS_DAM-Tarea_ED04-Deposito/ED04_Tarea/target/site/apidocs/member-search-index.js = 1708246429176
+/home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS_DAM-Tarea_ED04-Deposito/ED04_Tarea/target/site/apidocs/package-search-index.js = 1708246429156
+/home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS_DAM-Tarea_ED04-Deposito/ED04_Tarea/target/site/apidocs/script.js = 1708246429213
+/home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS_DAM-Tarea_ED04-Deposito/ED04_Tarea/target/site/apidocs/package-search-index.zip = 1708246429176
+/home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS_DAM-Tarea_ED04-Deposito/ED04_Tarea/target/site/apidocs/help-doc.html = 1708246429209
+/home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS_DAM-Tarea_ED04-Deposito/ED04_Tarea/target/site/apidocs/jquery-ui.overrides.css = 1708246429219
+/home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS_DAM-Tarea_ED04-Deposito/ED04_Tarea/target/site/apidocs/overview-summary.html = 1708246429206
+/home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS_DAM-Tarea_ED04-Deposito/ED04_Tarea/target/site/apidocs/index.html = 1708246429203
+/home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS_DAM-Tarea_ED04-Deposito/ED04_Tarea/target/site/apidocs/constant-values.html = 1708246429113
+/home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS_DAM-Tarea_ED04-Deposito/ED04_Tarea/target/site/apidocs/type-search-index.js = 1708246429176
+/home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS_DAM-Tarea_ED04-Deposito/ED04_Tarea/target/site/apidocs/stylesheet.css = 1708246429213
+/home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS_DAM-Tarea_ED04-Deposito/ED04_Tarea/target/site/apidocs/allclasses.html = 1708246429199
+/home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS_DAM-Tarea_ED04-Deposito/ED04_Tarea/target/site/apidocs/member-search-index.zip = 1708246429176
+/home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS_DAM-Tarea_ED04-Deposito/ED04_Tarea/target/site/apidocs/element-list = 1708246429089
+/home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS_DAM-Tarea_ED04-Deposito/ED04_Tarea/target/site/apidocs/search.js = 1708246429213
+/home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS_DAM-Tarea_ED04-Deposito/ED04_Tarea/target/site/apidocs/allclasses-index.html = 1708246429183
+/home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS_DAM-Tarea_ED04-Deposito/ED04_Tarea/target/site/apidocs/deprecated-list.html = 1708246429196
+/home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS_DAM-Tarea_ED04-Deposito/ED04_Tarea/target/site/apidocs/index-all.html = 1708246429179
+/home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS_DAM-Tarea_ED04-Deposito/ED04_Tarea/target/site/apidocs/allpackages-index.html = 1708246429186
+/home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS_DAM-Tarea_ED04-Deposito/ED04_Tarea/target/site/apidocs/type-search-index.zip = 1708246429176
