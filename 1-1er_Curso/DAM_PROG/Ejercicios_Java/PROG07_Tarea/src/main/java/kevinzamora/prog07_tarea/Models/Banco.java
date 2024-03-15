@@ -48,6 +48,7 @@ public class Banco {
         Double nuevoSaldoCuenta = Double.parseDouble(scanner.nextLine());
         System.out.println("Introduce el número de cuenta: ");
         String numCuenta = scanner.nextLine();
+        String tipoCuenta;
         switch (tipoCuentaIndicado) {
             case 1:
                 System.out.println("Estás creando una cuenta de ahorro!? \n "
@@ -57,6 +58,7 @@ public class Banco {
                 System.out.println("El tipo de interés ha sido leido correctamente.");
                 CuentaAhorro nuevaCuentaAhorro = new CuentaAhorro(nuevxTitular,
                         nuevoSaldoCuenta, numCuenta, tipoInteresRemuneracion);
+                tipoCuenta = "cuentaAhorro";
                 nuevaCuenta = new Cuenta(nuevxTitular, nuevoSaldoCuenta, 
                         numCuenta, numCuenta);
                 listaCuentas.add(nuevaCuenta);
@@ -75,6 +77,7 @@ public class Banco {
                         new CuentaCorrientePersonal(nuevxTitular, nuevoSaldoCuenta, 
                                 numCuenta, listaEntidades, comisionMantenimiento,  
                                 comisionMantenimiento);
+                tipoCuenta = "cuentaCorrientePersonal";
                 nuevaCuenta = new Cuenta(nuevxTitular, nuevoSaldoCuenta, 
                                 numCuenta, numCuenta);
                 listaCuentas.add(nuevaCuenta);
@@ -103,6 +106,7 @@ public class Banco {
                         new CuentaCorrienteEmpresa(nuevxTitular, nuevoSaldoCuenta, 
                                 numCuenta, listaEntidades, tipoInteresPorDescubrimiento, 
                                 nivelMaximoDescubiertoPermitido);
+                tipoCuenta = "cuentaCorrienteEmpresa";
                 nuevaCuenta = new Cuenta(nuevxTitular, nuevoSaldoCuenta, 
                                 numCuenta, numCuenta);
                 listaCuentas.add(nuevaCuenta);
@@ -123,7 +127,24 @@ public class Banco {
         }
     }
     
-    private void informacionCuenta() {}
+    private void informacionCuenta() {
+        System.out.println("OBTENER TODOS LOS DATOS DE LA CUENTA INTRODUCIDA: \n");
+        System.out.println("Introduce el número de cuenta a buscar: ");
+        String numCuentaIntroducido = scanner.nextLine();
+        for (Cuenta cuenta : listaCuentas) {
+            if (((cuenta.numCuenta).toLowerCase()).equals(numCuentaIntroducido.toLowerCase())) {
+                if ((cuenta.tipoCuenta).equalsIgnoreCase("cuentaAhorro")) {
+                    for (CuentaAhorro cuentaAhorro : listaCuentasAhorro) {
+                        if (((cuentaAhorro.numCuenta).toLowerCase()).equals(numCuentaIntroducido.toLowerCase())) {
+                            System.out.println("Se ha encontrado una cuenta: \n ");
+                        }
+                    }
+                }
+            } else {
+                System.out.println("No se ha encontrado ninguna cuenta con ese identificador");
+            }
+        }
+    }
     
     /**
      * Fúnción/Método referente a y contenedor de la funcionalidad necesaria 
@@ -162,5 +183,8 @@ public class Banco {
     }
     public void getListadoCuentas() {
         listadoCuentas();
+    }
+    public void getInformacionCuenta() {
+        informacionCuenta();
     }
 }

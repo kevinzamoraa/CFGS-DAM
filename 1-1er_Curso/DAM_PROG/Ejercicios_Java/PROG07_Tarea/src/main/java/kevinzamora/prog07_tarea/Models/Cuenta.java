@@ -61,7 +61,11 @@ public class Cuenta {
     // MÉTODOS AUXILIARES
     public String toString() {
         return "Nº Cuenta: " + numCuenta + ", Titular: " + titular.nombre + 
-                " " + titular.apellidos +
-                ", Saldo actual: " + saldo + "€ \n ";
+                " " + titular.apellidos + ", Saldo actual: " + saldo + "€ \n ";
     }
+    public String completeInfoToString() {
+        return "Nº Cuenta: " + numCuenta + ", Titular: " + titular.nombre + 
+                " " + titular.apellidos + ", Saldo actual: " + saldo + "€ \n ";
+    }
+    
 }
