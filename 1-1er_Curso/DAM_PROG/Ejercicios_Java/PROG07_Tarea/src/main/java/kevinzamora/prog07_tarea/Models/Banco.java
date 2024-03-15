@@ -4,15 +4,27 @@
  */
 package kevinzamora.prog07_tarea.Models;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 /**
  *
  * @author kzdesigner
  */
 public class Banco {
     
+    // Declaración de variables
+    ArrayList<Cuenta> listaCuentas = new ArrayList<Cuenta>();
+    Scanner scanner = new Scanner(System.in);
     
-    
-    private boolean abrirCuenta() {return false;}
+    private boolean abrirCuenta() {
+        System.out.println("Selecciona el tipo de cuenta deseada: \n"
+                + "1. Cuenta de Ahorro \n "
+                + "2. Cuenta Corriente Personal \n "
+                + "3. Cuenta Corriente Empresa \n ");
+        
+        return false;
+    }
     
     private void listadoCuentas() {}
     

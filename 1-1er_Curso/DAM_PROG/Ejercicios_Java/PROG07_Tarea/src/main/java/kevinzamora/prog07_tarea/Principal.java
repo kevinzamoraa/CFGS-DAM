@@ -23,8 +23,8 @@ public class Principal {
         System.out.println("ADMINISTRA TU CUENTA, NUESTRAS OPCIONES SON: \n "
                 + "1. Abrir una nueva cuenta. \n "
                 + "2. Ver listado de cuentas disponibles. \n "
-                + "3. Obtener los datos de una cuenta concreta. \n"
-                + "4. Realizar un ingreso. \n"
+                + "3. Obtener los datos de una cuenta concreta. \n "
+                + "4. Realizar un ingreso. \n "
                 + "5. Retirar efectivo. \n "
                 + "6. Consultar el saldo actual de mi cuenta \n "
                 + "7. Salir \n");
