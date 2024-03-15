@@ -11,7 +11,8 @@ package kevinzamora.prog07_tarea;
 public class PROG07_Tarea {
 
     public static void main(String[] args) {
-        Main mainObj = new Main();
-        mainObj.menuIntroducirNum();
+        Principal principalObj = new Principal();
+        principalObj.loadMainMenu();
     }
+    
 }
