@@ -62,6 +62,6 @@ public class Cuenta {
     public String toString() {
         return "Nº Cuenta: " + numCuenta + ", Titular: " + titular.nombre + 
                 " " + titular.apellidos +
-                ", Saldo actual: " + saldo + "€";
+                ", Saldo actual: " + saldo + "€ \n ";
     }
 }

@@ -24,11 +24,10 @@ public class CuentaCorrientePersonal extends Cuenta {
     }
 
     public CuentaCorrientePersonal(Persona titular, Number saldo, String numCuenta, 
-            ArrayList<String> listaEntidades, Double comisionMantenimiento, 
-            Double tipoInteresPorDescubierto, Double maxDescubiertoPermitido) {
+            ArrayList<String> listaEntidades, Double tipoInteresPorDescubierto, 
+            Double maxDescubiertoPermitido) {
         this.numCuenta = numCuenta;
         this.listaEntidades = listaEntidades;
-        this.comisionMantenimiento = comisionMantenimiento;
         this.tipoInteresPorDescubierto = tipoInteresPorDescubierto;
         this.maxDescubiertoPermitido = maxDescubiertoPermitido;
     }

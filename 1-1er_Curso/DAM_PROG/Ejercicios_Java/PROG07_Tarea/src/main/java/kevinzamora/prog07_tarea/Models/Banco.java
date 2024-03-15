@@ -20,6 +20,10 @@ public class Banco {
             new ArrayList<CuentaCorrientePersonal>();
     ArrayList<CuentaCorrienteEmpresa> listaCuentaCEmpresa = 
             new ArrayList<CuentaCorrienteEmpresa>();
+    ArrayList<String> listaEntidades = new ArrayList<String>();
+    String entidad1 = "Caixabank";
+    String entidad2 = "Banc Sabadell";
+    String entidad3 = "Mediolanum";
     Cuenta nuevaCuenta;
     
     // Declaración de variables de lectura o de entrada
@@ -57,35 +61,53 @@ public class Banco {
                         numCuenta, numCuenta);
                 listaCuentas.add(nuevaCuenta);
                 listaCuentasAhorro.add(nuevaCuentaAhorro);
-                
                 return true;
             case 2:
                 System.out.println("Estás creando una cuenta corriente personal. \n "
                         + "Si es así, introduce el importe de la comisión de "
-                        + "mantenimiento: \n");
+                        + "mantenimiento: ");
                 double comisionMantenimiento = Double.parseDouble(scanner.nextLine());
                 System.out.println("La comisión de mantenimiento ha sido leido correctamente.");
-                break;
+                listaEntidades.add(entidad1);
+                listaEntidades.add(entidad2);
+                listaEntidades.add(entidad3);
+                CuentaCorrientePersonal nuevaCuentaCPersonal = 
+                        new CuentaCorrientePersonal(nuevxTitular, nuevoSaldoCuenta, 
+                                numCuenta, listaEntidades, comisionMantenimiento,  
+                                comisionMantenimiento);
+                nuevaCuenta = new Cuenta(nuevxTitular, nuevoSaldoCuenta, 
+                                numCuenta, numCuenta);
+                listaCuentas.add(nuevaCuenta);
+                listaCuentaCPersonal.add(nuevaCuentaCPersonal);
+                return true;
             case 3:
                 System.out.println("Estás creando una cuenta corriente de empresa!? \n "
                         + "Si es así, introduce el valor máximo de descubierto "
-                        + "introducido: \n");
+                        + "introducido: ");
                 double nivelMaximoDescubiertoPermitido = 
                         Double.parseDouble(scanner.nextLine());
                 System.out.println("El valor del máximo descubierto permitido ha sido "
                         + "leido correctamente. \n");
-                System.out.println("Introduce el tipo de interés por descubrimiento: \n");
+                System.out.println("Introduce el tipo de interés por descubrimiento: ");
                 double tipoInteresPorDescubrimiento = 
                         Double.parseDouble(scanner.nextLine());
                 System.out.println("El valor del máximo descubierto permitido ha sido "
                         + "leido correctamente. \n");
                 System.out.println("Introduce el valor de la comisión fija por "
-                        + "cada descubierto: \n");
+                        + "cada descubierto: ");
                 double comisionFijaPorDescubierto = 
                         Double.parseDouble(scanner.nextLine());
                 System.out.println("El valor del máximo descubierto permitido ha sido "
                         + "leido correctamente.");
-                break;
+                CuentaCorrienteEmpresa nuevaCuentaCEmpresa = 
+                        new CuentaCorrienteEmpresa(nuevxTitular, nuevoSaldoCuenta, 
+                                numCuenta, listaEntidades, tipoInteresPorDescubrimiento, 
+                                nivelMaximoDescubiertoPermitido);
+                nuevaCuenta = new Cuenta(nuevxTitular, nuevoSaldoCuenta, 
+                                numCuenta, numCuenta);
+                listaCuentas.add(nuevaCuenta);
+                listaCuentaCEmpresa.add(nuevaCuentaCEmpresa);
+                return true;
             default:
                 System.out.println("Se ha producido un pequeño error en tiempo de "
                         + "ejecución. Por favor, inténtelo de nuevo más tarde");
