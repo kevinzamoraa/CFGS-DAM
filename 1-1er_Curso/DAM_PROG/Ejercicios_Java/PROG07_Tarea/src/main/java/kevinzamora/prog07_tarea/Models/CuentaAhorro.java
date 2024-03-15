@@ -10,17 +10,22 @@ package kevinzamora.prog07_tarea.Models;
  */
 public class CuentaAhorro extends Cuenta {
     
+    // Definición de parámetros
+    Persona titular;
+    Number saldo;
     String numCuenta;
     Double tipoInteresAnual;
-
+    
+    // Constructores
     public CuentaAhorro() {
     }
 
-    public CuentaAhorro(String numCuenta, Double tipoInteresAnual) {
+    public CuentaAhorro(Persona titular, Number saldo, String numCuenta, 
+            Double tipoInteresAnual) {
+        this.titular = titular;
+        this.saldo = saldo;
         this.numCuenta = numCuenta;
         this.tipoInteresAnual = tipoInteresAnual;
     }
-    
-    
     
 }

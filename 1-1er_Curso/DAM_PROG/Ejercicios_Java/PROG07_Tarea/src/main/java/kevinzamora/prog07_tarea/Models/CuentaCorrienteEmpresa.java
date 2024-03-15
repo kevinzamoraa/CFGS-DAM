@@ -12,6 +12,8 @@ import java.util.ArrayList;
  */
 public class CuentaCorrienteEmpresa extends Cuenta {
     
+    Persona titular;
+    Number saldo;
     String numCuenta;
     ArrayList<String> listaEntidades;
     Double comisionMantenimiento;
@@ -21,9 +23,9 @@ public class CuentaCorrienteEmpresa extends Cuenta {
     public CuentaCorrienteEmpresa() {
     }
 
-    public CuentaCorrienteEmpresa(String numCuenta, ArrayList<String> listaEntidades, 
-            Double comisionMantenimiento, Double tipoInteresPorDescubierto, 
-            Double maxDescubiertoPermitido) {
+    public CuentaCorrienteEmpresa(Persona titular, Number saldo, String numCuenta, 
+            ArrayList<String> listaEntidades, Double comisionMantenimiento, 
+            Double tipoInteresPorDescubierto, Double maxDescubiertoPermitido) {
         this.numCuenta = numCuenta;
         this.listaEntidades = listaEntidades;
         this.comisionMantenimiento = comisionMantenimiento;

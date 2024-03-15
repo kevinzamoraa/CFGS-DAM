@@ -12,11 +12,13 @@ import java.util.ArrayList;
  */
 public class Cuenta {
     
+    // DEFINICIÓN DE PARÁMETROS
     Persona titular;
     Number saldo;
     String numCuenta;
     String tipoCuenta;
-
+    
+    // CONSTRUCTORES
     public Cuenta() {
     }
 
@@ -26,5 +28,40 @@ public class Cuenta {
         this.numCuenta = numCuenta;
         this.tipoCuenta = tipoCuenta;
     }
-       
+    
+    // MÉTODOS GETTER
+    public Persona getTitular() {
+        return titular;
+    }
+    public Number getSaldo() {
+        return saldo;
+    }
+    public String getNumCuenta() {
+        return numCuenta;
+    }
+    public String getTipoCuenta() {
+        return tipoCuenta;
+    }
+    
+    // MÉTODOS SETTER
+    public void setTitular(String nombre, String Apellidos, String DNI) {
+        Persona nuevoTitular = new Persona(nombre, Apellidos, DNI);
+        titular = nuevoTitular;
+    }
+    public void setSaldo(double nuevoSaldo) {
+        saldo = nuevoSaldo;
+    }
+    public void setNumCuenta(String nuevoNumCuenta) {
+        numCuenta = nuevoNumCuenta;
+    }
+    public void setTipoCuenta(String tipoCuentaSelec) {
+        tipoCuenta = tipoCuenta;
+    }
+    
+    // MÉTODOS AUXILIARES
+    public String toString() {
+        return "Nº Cuenta: " + numCuenta + ", Titular: " + titular.nombre + 
+                " " + titular.apellidos +
+                ", Saldo actual: " + saldo + "€";
+    }
 }

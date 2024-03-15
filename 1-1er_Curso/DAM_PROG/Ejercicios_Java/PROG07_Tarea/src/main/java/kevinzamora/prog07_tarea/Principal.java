@@ -37,13 +37,15 @@ public class Principal {
 
             case 1:
                 System.out.println("INTRODUCIR DATOS DE LA NUEVA CUENTA: \n");
-                
+                boolean addedAccount = bancoObj.getAbrirCuenta();
+                if (addedAccount) {System.out.println("Cuenta añadida con éxito! \n ");} 
+                else {System.out.println("No se ha podido añadir. Prueba de nuevo "
+                        + "más tarde. \n ");}
                 loadMainMenu();
                 break;
             case 2:
                 System.out.println("LISTA DE CUENTAS DISPONIBLES:");
-                
-                
+                bancoObj.getListadoCuentas();                
                 loadMainMenu();
                 break;
             case 3:
