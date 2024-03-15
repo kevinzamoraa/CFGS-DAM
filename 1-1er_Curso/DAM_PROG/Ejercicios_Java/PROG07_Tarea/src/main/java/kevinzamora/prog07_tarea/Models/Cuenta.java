@@ -26,7 +26,5 @@ public class Cuenta {
         this.numCuenta = numCuenta;
         this.tipoCuenta = tipoCuenta;
     }
-    
-    
-    
+       
 }

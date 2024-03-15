@@ -7,20 +7,27 @@ package kevinzamora.prog07_tarea;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Scanner;
+import kevinzamora.prog07_tarea.Models.Banco;
 
 /**
  *
  * @author kzdesigner // Autor y nombre del equipo de Kevin Zamora Amela
  */
 public class Principal {
+    
+    Banco bancoObj = new Banco();
 
     public void loadMainMenu() {
 
-        System.out.println("BIENVENID@S A NUESTRO INVENTARIO DE VEHICULOS: \n");
-        System.out.println("NUESTRAS OPCIONES: \n "
-                + "1. Nuevo Vehículo. \n 2. Listar Vehículos. \n "
-                + "3. Buscar Vehículo. \n 4. Modificar kms Vehículo. \n "
-                + "5. Salir \n");
+        System.out.println("BIENVENID@S A NUESTRO BANCO: \n");
+        System.out.println("ADMINISTRA TU CUENTA, NUESTRAS OPCIONES SON: \n "
+                + "1. Abrir una nueva cuenta. \n "
+                + "2. Ver listado de cuentas disponibles. \n "
+                + "3. Obtener los datos de una cuenta concreta. \n"
+                + "4. Realizar un ingreso. \n"
+                + "5. Retirar efectivo. \n "
+                + "6. Consultar el saldo actual de mi cuenta \n "
+                + "7. Salir \n");
 
         System.out.println("SELECCIONA UNA OPCIÓN (Introduce un nº entero):");
         Scanner scanner = new Scanner(System.in);
@@ -29,32 +36,40 @@ public class Principal {
         switch (opcion) {
 
             case 1:
-                System.out.println("INTRODUCIR DATOS - CREAR NUEVO VEHÍCULO: \n");
+                System.out.println("INTRODUCIR DATOS DE LA NUEVA CUENTA: \n");
                 
                 loadMainMenu();
                 break;
             case 2:
+                System.out.println("LISTA DE CUENTAS DISPONIBLES:");
+                
                 
                 loadMainMenu();
                 break;
             case 3:
-                System.out.println("BÚSCA UN VEHÍCULO: \n ");
-                
-                System.out.println("TODO: Falta por depurar y reparar la selección de un vehículo cuando este lo acabemos de "
-                        + "crear/introducir y está almacenado sólo en memoria 'volatil'. De momento, nuestro programa no "
-                        + "resulta capaz de leer y mostrar la información referente a dicho item \n");
-                System.out.println("INTRODUCE LA MATRÍCULA DEL VEHÍCULO A BUSCAR: ");
+                System.out.println("DATOS DE LA CUENTA SELECCIONADA: \n ");
                 
                 
                 break;
             case 4:
-                System.out.println("ACTUALIZAR KILÓMETROS:");
-                int nuevoKilometraje = 0;
-
+                System.out.println("INGRESAR EFECTIVO:");
+                
                 
                 loadMainMenu();
                 break;
             case 5:
+                System.out.println("RETIRAR EFECTIVO:");
+                
+                
+                loadMainMenu();
+                break;
+            case 6:
+                System.out.println("SALDO DE MI CUENTA:");
+                
+                
+                loadMainMenu();
+                break;
+            case 7:
                 System.out.println("¡HASTA PRONTO!");
                 break;
             default:

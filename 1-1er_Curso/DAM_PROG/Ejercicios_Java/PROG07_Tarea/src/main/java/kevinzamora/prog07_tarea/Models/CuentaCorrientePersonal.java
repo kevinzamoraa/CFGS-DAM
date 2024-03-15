@@ -10,7 +10,7 @@ import java.util.ArrayList;
  *
  * @author kzdesigner
  */
-public class CuentaCorriente {
+public class CuentaCorrientePersonal extends Cuenta {
     
     String numCuenta;
     ArrayList<String> listaEntidades;
@@ -18,10 +18,10 @@ public class CuentaCorriente {
     Double tipoInteresPorDescubierto;
     Double maxDescubiertoPermitido;
 
-    public CuentaCorriente() {
+    public CuentaCorrientePersonal() {
     }
 
-    public CuentaCorriente(String numCuenta, ArrayList<String> listaEntidades, 
+    public CuentaCorrientePersonal(String numCuenta, ArrayList<String> listaEntidades, 
             Double comisionMantenimiento, Double tipoInteresPorDescubierto, 
             Double maxDescubiertoPermitido) {
         this.numCuenta = numCuenta;

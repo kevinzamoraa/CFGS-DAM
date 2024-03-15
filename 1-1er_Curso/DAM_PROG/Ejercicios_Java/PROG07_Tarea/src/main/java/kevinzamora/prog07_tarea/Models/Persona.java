@@ -10,6 +10,7 @@ package kevinzamora.prog07_tarea.Models;
  */
 public class Persona {
     
+    
     String nombre;
     String apellidos;
     String DNI;
