@@ -48,9 +48,16 @@ public class Banco /*implements Imprimible*/ {
         int tipoCuentaIndicado = Integer.parseInt(scanner.nextLine());
         System.out.println("Introduce el saldo de la nueva cuenta: ");
         Double nuevoSaldoCuenta = Double.parseDouble(scanner.nextLine());
-        System.out.println("Introduce el número de cuenta: ");
-        String numCuenta = scanner.nextLine();
-        System.out.println(numCuenta);
+        String numCuenta;
+        boolean numCuentaEsCorrecto = false;
+        do {            
+            System.out.println("Introduce el número de cuenta: ");
+            numCuenta = scanner.nextLine();
+            if (numCuenta.matches("[a-zA-Z]{2}[0-9]{20}$")) {
+                numCuentaEsCorrecto = true;
+                System.out.println("Número de cuenta correcto");
+            } else {System.out.println("Número de cuenta incorrecto. Prueba de nuevo");}
+        } while (!numCuentaEsCorrecto);
         String tipoCuenta;
         switch (tipoCuentaIndicado) {
             case 1:
@@ -201,7 +208,7 @@ public class Banco /*implements Imprimible*/ {
                     double nuevoSaldo = cuenta.getSaldo() + cantidad;
                     cuenta.setSaldo(nuevoSaldo);
                     System.out.println("El saldo de su cuenta ha sido actualizado con éxito y este es: " 
-                            + cuenta.getSaldo()) + "\n ";
+                            + cuenta.getSaldo() + "\n ");
                 }
             } 
         } else {
