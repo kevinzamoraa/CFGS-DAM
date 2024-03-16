@@ -15,7 +15,7 @@ public class CuentaBancaria /*implements Imprimible*/ {
     
     // DEFINICIÓN DE PARÁMETROS
     Persona titular;
-    Number saldo;
+    Double saldo;
     String numCuenta;
     String tipoCuenta;
     
@@ -23,7 +23,7 @@ public class CuentaBancaria /*implements Imprimible*/ {
     public CuentaBancaria() {
     }
 
-    public CuentaBancaria(Persona titular, Number saldo, String numCuenta, String tipoCuenta) {
+    public CuentaBancaria(Persona titular, Double saldo, String numCuenta, String tipoCuenta) {
         this.titular = titular;
         this.saldo = saldo;
         this.numCuenta = numCuenta;
@@ -34,7 +34,7 @@ public class CuentaBancaria /*implements Imprimible*/ {
     public Persona getTitular() {
         return titular;
     }
-    public Number getSaldo() {
+    public Double getSaldo() {
         return saldo;
     }
     public String getNumCuenta() {

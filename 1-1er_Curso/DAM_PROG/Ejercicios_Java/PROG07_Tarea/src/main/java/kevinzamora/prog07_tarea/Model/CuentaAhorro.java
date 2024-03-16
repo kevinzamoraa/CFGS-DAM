@@ -17,7 +17,7 @@ public class CuentaAhorro extends CuentaBancaria {
     public CuentaAhorro() {
     }
 
-    public CuentaAhorro(Persona titular, Number saldo, String numCuenta, 
+    public CuentaAhorro(Persona titular, Double saldo, String numCuenta, 
             Double tipoInteresAnual) {
         this.titular = titular;
         this.saldo = saldo;

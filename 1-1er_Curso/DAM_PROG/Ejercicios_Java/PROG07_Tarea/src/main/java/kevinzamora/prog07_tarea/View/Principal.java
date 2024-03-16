@@ -50,23 +50,21 @@ public class Principal {
                 break;
             case 3:
                 bancoObj.getInformacionCuenta();
+                loadMainMenu();
                 break;
             case 4:
                 System.out.println("INGRESAR EFECTIVO:");
-                
-                
+                bancoObj.ingresar();
                 loadMainMenu();
                 break;
             case 5:
                 System.out.println("RETIRAR EFECTIVO:");
-                
-                
+                bancoObj.retirar();
                 loadMainMenu();
                 break;
             case 6:
                 System.out.println("SALDO DE MI CUENTA:");
-                
-                
+                bancoObj.getSaldo();
                 loadMainMenu();
                 break;
             case 7:

@@ -25,6 +25,8 @@ public class Banco /*implements Imprimible*/ {
     String entidad2 = "Banc Sabadell";
     String entidad3 = "Mediolanum";
     CuentaBancaria nuevaCuenta;
+    CuentaBancaria cuentaSeleccionada;
+    String numCuentaIntroducido;
     
     // Declaración de variables de lectura o de entrada
     Scanner scanner = new Scanner(System.in);
@@ -129,7 +131,7 @@ public class Banco /*implements Imprimible*/ {
     private void informacionCuenta() {
         System.out.println("OBTENER TODOS LOS DATOS DE LA CUENTA INTRODUCIDA: \n");
         System.out.println("Introduce el número de cuenta a buscar: ");
-        String numCuentaIntroducido = scanner.nextLine();
+        numCuentaIntroducido = scanner.nextLine();
         boolean numCuentaDetectado = false;
         if (numCuentaIntroducido != null) {
             numCuentaDetectado = true;
@@ -146,33 +148,31 @@ public class Banco /*implements Imprimible*/ {
                         for (CuentaAhorro cuentaAhorro : listaCuentasAhorro) {
                             if (((cuentaAhorro.numCuenta).toLowerCase()).equals(numCuentaIntroducido.toLowerCase())) {
                                 System.out.println("Se ha encontrado una cuenta: \n "
-                                        + cuentaAhorro.toString());
-                                break;
+                                        + cuentaAhorro.toString() + "\n ");
+                                cuentaSeleccionada = cuenta;
                             }
                         }
                     } else if ((cuenta.tipoCuenta).equalsIgnoreCase("cuentaCorrientePersonal")) {
                         for (CuentaCorrientePersonal cuentaCorrientePersonal : listaCuentaCPersonal) {
                             if (((cuentaCorrientePersonal.numCuenta).toLowerCase()).equals(numCuentaIntroducido.toLowerCase())) {
                                 System.out.println("Se ha encontrado una cuenta: \n "
-                                        + cuentaCorrientePersonal.toString());
-                                break;
+                                        + cuentaCorrientePersonal.toString() + "\n ");
+                                cuentaSeleccionada = cuenta;
                             }
                         }
                     } else if ((cuenta.tipoCuenta).equalsIgnoreCase("cuentaCorrienteEmpresa")) {
                         for (CuentaCorrienteEmpresa cuentaCorrienteEmpresa : listaCuentaCEmpresa) {
                             if (((cuentaCorrienteEmpresa.numCuenta).toLowerCase()).equals(numCuentaIntroducido.toLowerCase())) {
                                 System.out.println("Se ha encontrado una cuenta: \n "
-                                        + cuentaCorrienteEmpresa.toString());
-                                break;
+                                        + cuentaCorrienteEmpresa.toString() + "\n ");
+                                cuentaSeleccionada = cuenta;
                             }
                         }
                     } else {
                         System.out.println("No se ha conseguido entrar en los IF anidados");
-                        break;
                     }
                 } else {
                     System.out.println("No se ha encontrado ninguna cuenta con ese identificador");
-                    break;
                 }
             }
         } else {System.out.println("No se ha detectado ningún número de cuenta válido");}
@@ -185,11 +185,36 @@ public class Banco /*implements Imprimible*/ {
      * @exception Exception Se muestra el error "No se puede ingresar una cantidad negativa" 
      * cuando se intenta ingresar un valor inferior a 0
      **/
-    public void ingresar(double cantidad) throws Exception
-    {
-        if (cantidad<0)
-            throw new Exception("No se puede ingresar una cantidad negativa");
-//        saldo = saldo + cantidad;
+    public void ingresar() {
+        System.out.println("Introduce la cantidad a ingresar: ");
+            double cantidad = Double.parseDouble(scanner.nextLine());
+                 
+            if (cantidad < 0.0)
+                System.out.println("No se puede ingresar una cantidad negativa");
+            
+        if(cuentaSeleccionada != null) {            
+            for (CuentaBancaria cuenta : listaCuentas) {
+                if ((cuenta.numCuenta).equals(cuentaSeleccionada.numCuenta)) {
+                    double nuevoSaldo = cuenta.getSaldo() + cantidad;
+                    cuenta.setSaldo(nuevoSaldo);
+                    System.out.println("El saldo de su cuenta ha sido actualizado con éxito y este es: " 
+                            + cuenta.getSaldo());
+                }
+            } 
+        } else {
+            System.out.println("No se ha detectado ningún número de cuenta guardado en la presente sesión. \n "
+                    + "Por favor, introduzca el número de cuenta en donde quiere realizar el ingreso de efectivo: ");
+            numCuentaIntroducido = scanner.nextLine();
+            for (CuentaBancaria cuenta : listaCuentas) {
+                if ((cuenta.numCuenta).equalsIgnoreCase(numCuentaIntroducido)) {
+                    cuentaSeleccionada = cuenta;
+                    double nuevoSaldo = cuenta.getSaldo() + cantidad;
+                    cuenta.setSaldo(nuevoSaldo);
+                    System.out.println("El saldo de su cuenta ha sido actualizado con éxito y este es: " 
+                            + cuenta.getSaldo() + "€ \n");
+                } else { System.out.println("No se ha encontrado la cuenta donde se quiere ingresar \n"); }
+            }
+        }
     }
     
     /**
@@ -200,13 +225,40 @@ public class Banco /*implements Imprimible*/ {
      * @exception Exception Muestra un error distinto en base a dos supuestos: valor 
      * negativo y saldo insuficiente
      **/
-    public void retirar(double cantidad) throws Exception
-    {
-        if (cantidad <= 0)
-            throw new Exception ("No se puede retirar una cantidad negativa");
-//        if (estado()< cantidad)
-//            throw new Exception ("No se hay suficiente saldo");
-//        saldo = saldo - cantidad;
+    public void retirar() {
+        System.out.println("Introduce la cantidad a retirar: ");
+            double cantidad = Double.parseDouble(scanner.nextLine());
+            
+        if(cuentaSeleccionada != null) {            
+            for (CuentaBancaria cuenta : listaCuentas) {
+                if ((cuenta.numCuenta).equals(cuentaSeleccionada.numCuenta)) {
+                    if (cantidad > cuenta.saldo) {
+                        System.out.println("No se puede retirar el importe introducido, este excede al "
+                                + "saldo disponible en la cuenta"); }
+                    
+                    double nuevoSaldo = cuenta.getSaldo() - cantidad;
+                    cuenta.setSaldo(nuevoSaldo);
+                    System.out.println("El saldo de su cuenta ha sido actualizado con éxito y este es: " 
+                            + cuenta.getSaldo());
+                }
+            } 
+        } else {
+            System.out.println("No se ha detectado ningún número de cuenta guardado en la presente sesión. \n "
+                    + "Por favor, introduzca el número de cuenta en donde quiere realizar el ingreso de efectivo: ");
+            numCuentaIntroducido = scanner.nextLine();
+            for (CuentaBancaria cuenta : listaCuentas) {
+                if ((cuenta.numCuenta).equalsIgnoreCase(numCuentaIntroducido)) {
+                    if (cantidad > cuenta.saldo) {
+                        System.out.println("No se puede retirar el importe introducido, este excede al "
+                                + "saldo disponible en la cuenta"); }
+                    cuentaSeleccionada = cuenta;
+                    double nuevoSaldo = cuenta.getSaldo() - cantidad;
+                    cuenta.setSaldo(nuevoSaldo);
+                    System.out.println("El saldo de su cuenta ha sido actualizado con éxito y este es: " 
+                            + cuenta.getSaldo() + "€ \n");
+                } else { System.out.println("No se ha encontrado la cuenta donde se quiere ingresar \n"); }
+            }
+        }
     }
     
     // MÉTODOS GETTER (FUNCIONES OPERATIVAS)
@@ -218,5 +270,20 @@ public class Banco /*implements Imprimible*/ {
     }
     public void getInformacionCuenta() {
         informacionCuenta();
+    }
+    public void getSaldo() {
+        if (cuentaSeleccionada != null) {
+            System.out.println(cuentaSeleccionada.getSaldo() + "€ de saldo disponible \n");
+        } else {
+            System.out.println("No se ha detectado ningún número de cuenta guardado en la presente sesión. \n "
+                    + "Por favor, introduzca el número de cuenta en donde quiere realizar el ingreso de efectivo: ");
+            numCuentaIntroducido = scanner.nextLine();
+            for (CuentaBancaria cuenta : listaCuentas) {
+                if ((cuenta.numCuenta).equalsIgnoreCase(numCuentaIntroducido)) {
+                    cuentaSeleccionada = cuenta;
+                    System.out.println(cuentaSeleccionada.getSaldo() + "€ de saldo disponible \n");
+                } else { System.out.println("No se ha encontrado la cuenta a consultar \n"); }
+            }
+        }
     }
 }
