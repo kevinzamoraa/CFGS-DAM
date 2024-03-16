@@ -13,34 +13,26 @@ import java.util.ArrayList;
 public class CuentaCorrientePersonal extends CuentaCorriente {
     
     // Parámetros
-    Persona titular;
-    Number saldo;
-    String numCuenta;
     ArrayList<String> listaEntidades;
     Double comisionMantenimiento;
-    Double tipoInteresPorDescubierto;
-    Double maxDescubiertoPermitido;
     
     // Constructores
-    public CuentaCorrientePersonal() {
-    }
+    public CuentaCorrientePersonal() {}
 
-    public CuentaCorrientePersonal(Persona titular, Number saldo, String numCuenta, 
-            ArrayList<String> listaEntidades, Double tipoInteresPorDescubierto, 
-            Double maxDescubiertoPermitido) {
+    public CuentaCorrientePersonal(Persona titular, Double saldo, String numCuenta, 
+            ArrayList<String> listaEntidades, Double comisionMantenimiento) {
+        this.titular = titular;
+        this.saldo = saldo;
         this.numCuenta = numCuenta;
         this.listaEntidades = listaEntidades;
-        this.tipoInteresPorDescubierto = tipoInteresPorDescubierto;
-        this.maxDescubiertoPermitido = maxDescubiertoPermitido;
+        this.comisionMantenimiento = comisionMantenimiento;
     }
     
     // Método toString
     public String toString() {
         return "Datos de la cuenta corriente personal: \n" + numCuenta + " - " 
-                + titular.toString() + " -> " + saldo + "€ / Tipo de interés por "
-                + "descubierto: " + tipoInteresPorDescubierto + " Máximo descubieto "
-                + "permitido: " + maxDescubiertoPermitido + " Lista de entidades: " 
-                + listaEntidades;
+                + titular.toString() + " -> " + saldo + "€ / Comisión de mantenimiento:" 
+                + comisionMantenimiento + ", Lista de entidades: " + listaEntidades;
     }
     
     

@@ -13,17 +13,20 @@ import java.util.ArrayList;
 public class CuentaCorrienteEmpresa extends CuentaCorriente {
     
     ArrayList<String> listaEntidades;
+    Double comisionFijaPorDescubierto;
     Double tipoInteresPorDescubierto;
     Double maxDescubiertoPermitido;
 
-    public CuentaCorrienteEmpresa() {
-    }
+    public CuentaCorrienteEmpresa() {}
 
-    public CuentaCorrienteEmpresa(Persona titular, Number saldo, String numCuenta, 
-            ArrayList<String> listaEntidades, Double tipoInteresPorDescubierto, 
-            Double maxDescubiertoPermitido) {
+    public CuentaCorrienteEmpresa(Persona titular, Double saldo, String numCuenta, 
+            ArrayList<String> listaEntidades, Double comisionFijaPorDescubierto, 
+            Double tipoInteresPorDescubierto, Double maxDescubiertoPermitido) {
+        this.titular = titular;
+        this.saldo = saldo;
         this.numCuenta = numCuenta;
         this.listaEntidades = listaEntidades;
+        this.comisionFijaPorDescubierto = comisionFijaPorDescubierto;
         this.tipoInteresPorDescubierto = tipoInteresPorDescubierto;
         this.maxDescubiertoPermitido = maxDescubiertoPermitido;
     }
@@ -31,9 +34,10 @@ public class CuentaCorrienteEmpresa extends CuentaCorriente {
     // Método toString
     public String toString() {
         return "Datos de la cuenta corriente personal: \n" + numCuenta + " - " 
-                + titular.toString() + " -> " + saldo + "€ / Tipo de interés por "
-                + "descubierto: " + tipoInteresPorDescubierto + " Máximo descubieto "
-                + "permitido: " + maxDescubiertoPermitido + " Lista de entidades: " 
+                + titular.toString() + " -> " + saldo + "€ / Comisión fija por descubierto: " 
+                + comisionFijaPorDescubierto + ", Tipo de interés por "
+                + "descubierto: " + tipoInteresPorDescubierto + ", Máximo descubieto "
+                + "permitido: " + maxDescubiertoPermitido + ", Lista de entidades: " 
                 + listaEntidades;
     }
     

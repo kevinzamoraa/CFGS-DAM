@@ -25,6 +25,7 @@ public class Persona {
         this.DNI = DNI;
     }
     
+    // Métodos auxiliares
     public String toString() {
         return nombre + " " + apellidos + " " + DNI;
     }

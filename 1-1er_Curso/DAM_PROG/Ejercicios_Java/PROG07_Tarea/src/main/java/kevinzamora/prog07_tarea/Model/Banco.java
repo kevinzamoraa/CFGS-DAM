@@ -50,6 +50,7 @@ public class Banco /*implements Imprimible*/ {
         Double nuevoSaldoCuenta = Double.parseDouble(scanner.nextLine());
         System.out.println("Introduce el número de cuenta: ");
         String numCuenta = scanner.nextLine();
+        System.out.println(numCuenta);
         String tipoCuenta;
         switch (tipoCuentaIndicado) {
             case 1:
@@ -76,9 +77,8 @@ public class Banco /*implements Imprimible*/ {
                 listaEntidades.add(entidad2);
                 listaEntidades.add(entidad3);
                 CuentaCorrientePersonal nuevaCuentaCPersonal = 
-                        new CuentaCorrientePersonal(nuevxTitular, nuevoSaldoCuenta, 
-                                numCuenta, listaEntidades, comisionMantenimiento,  
-                                comisionMantenimiento);
+                        new CuentaCorrientePersonal(nuevxTitular, nuevoSaldoCuenta, numCuenta,  
+                                 listaEntidades, comisionMantenimiento);
                 tipoCuenta = "cuentaCorrientePersonal";
                 nuevaCuenta = new CuentaBancaria(nuevxTitular, nuevoSaldoCuenta, 
                                 numCuenta, tipoCuenta);
@@ -96,6 +96,9 @@ public class Banco /*implements Imprimible*/ {
                 System.out.println("Introduce el tipo de interés por descubrimiento: ");
                 double tipoInteresPorDescubrimiento = 
                         Double.parseDouble(scanner.nextLine());
+                listaEntidades.add(entidad1);
+                listaEntidades.add(entidad2);
+                listaEntidades.add(entidad3);
                 System.out.println("El valor del máximo descubierto permitido ha sido "
                         + "leido correctamente. \n");
                 System.out.println("Introduce el valor de la comisión fija por "
@@ -106,7 +109,8 @@ public class Banco /*implements Imprimible*/ {
                         + "leido correctamente.");
                 CuentaCorrienteEmpresa nuevaCuentaCEmpresa = 
                         new CuentaCorrienteEmpresa(nuevxTitular, nuevoSaldoCuenta, 
-                                numCuenta, listaEntidades, tipoInteresPorDescubrimiento, 
+                                numCuenta, listaEntidades, comisionFijaPorDescubierto, 
+                                tipoInteresPorDescubrimiento, 
                                 nivelMaximoDescubiertoPermitido);
                 tipoCuenta = "cuentaCorrienteEmpresa";
                 nuevaCuenta = new CuentaBancaria(nuevxTitular, nuevoSaldoCuenta, 
@@ -143,7 +147,6 @@ public class Banco /*implements Imprimible*/ {
             for (CuentaBancaria cuenta : listaCuentas) {
                 if ((cuenta.numCuenta.toLowerCase()).equalsIgnoreCase(numCuentaIntroducido)) {
 //                    System.out.println("Estoy dentro del primer if");
-                    System.out.println(cuenta.tipoCuenta);
                     if ((cuenta.tipoCuenta).equalsIgnoreCase("cuentaAhorro")) {
                         for (CuentaAhorro cuentaAhorro : listaCuentasAhorro) {
                             if (((cuentaAhorro.numCuenta).toLowerCase()).equals(numCuentaIntroducido.toLowerCase())) {
@@ -198,7 +201,7 @@ public class Banco /*implements Imprimible*/ {
                     double nuevoSaldo = cuenta.getSaldo() + cantidad;
                     cuenta.setSaldo(nuevoSaldo);
                     System.out.println("El saldo de su cuenta ha sido actualizado con éxito y este es: " 
-                            + cuenta.getSaldo());
+                            + cuenta.getSaldo()) + "\n ";
                 }
             } 
         } else {
@@ -239,7 +242,7 @@ public class Banco /*implements Imprimible*/ {
                     double nuevoSaldo = cuenta.getSaldo() - cantidad;
                     cuenta.setSaldo(nuevoSaldo);
                     System.out.println("El saldo de su cuenta ha sido actualizado con éxito y este es: " 
-                            + cuenta.getSaldo());
+                            + cuenta.getSaldo() + "€ \n ");
                 }
             } 
         } else {
