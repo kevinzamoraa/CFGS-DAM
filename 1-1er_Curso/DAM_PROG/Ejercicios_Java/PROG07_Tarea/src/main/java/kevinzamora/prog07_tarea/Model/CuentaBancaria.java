@@ -2,15 +2,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package kevinzamora.prog07_tarea.Models;
+package kevinzamora.prog07_tarea.Model;
 
 import java.util.ArrayList;
+//import kevinzamora.prog07_tarea.Controler.Imprimible;
 
 /**
  *
  * @author kzdesigner
  */
-public class Cuenta {
+public class CuentaBancaria /*implements Imprimible*/ {
     
     // DEFINICIÓN DE PARÁMETROS
     Persona titular;
@@ -19,10 +20,10 @@ public class Cuenta {
     String tipoCuenta;
     
     // CONSTRUCTORES
-    public Cuenta() {
+    public CuentaBancaria() {
     }
 
-    public Cuenta(Persona titular, Number saldo, String numCuenta, String tipoCuenta) {
+    public CuentaBancaria(Persona titular, Number saldo, String numCuenta, String tipoCuenta) {
         this.titular = titular;
         this.saldo = saldo;
         this.numCuenta = numCuenta;
@@ -63,9 +64,4 @@ public class Cuenta {
         return "Nº Cuenta: " + numCuenta + ", Titular: " + titular.nombre + 
                 " " + titular.apellidos + ", Saldo actual: " + saldo + "€ \n ";
     }
-    public String completeInfoToString() {
-        return "Nº Cuenta: " + numCuenta + ", Titular: " + titular.nombre + 
-                " " + titular.apellidos + ", Saldo actual: " + saldo + "€ \n ";
-    }
-    
 }

@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package kevinzamora.prog07_tarea.Models;
+package kevinzamora.prog07_tarea.Model;
 
 import java.util.ArrayList;
 
@@ -10,8 +10,9 @@ import java.util.ArrayList;
  *
  * @author kzdesigner
  */
-public class CuentaCorrientePersonal extends Cuenta {
+public class CuentaCorrientePersonal extends CuentaCorriente {
     
+    // Parámetros
     Persona titular;
     Number saldo;
     String numCuenta;
@@ -19,7 +20,8 @@ public class CuentaCorrientePersonal extends Cuenta {
     Double comisionMantenimiento;
     Double tipoInteresPorDescubierto;
     Double maxDescubiertoPermitido;
-
+    
+    // Constructores
     public CuentaCorrientePersonal() {
     }
 
@@ -31,6 +33,17 @@ public class CuentaCorrientePersonal extends Cuenta {
         this.tipoInteresPorDescubierto = tipoInteresPorDescubierto;
         this.maxDescubiertoPermitido = maxDescubiertoPermitido;
     }
+    
+    // Método toString
+    public String toString() {
+        return "Datos de la cuenta corriente personal: \n" + numCuenta + " - " 
+                + titular.toString() + " -> " + saldo + "€ / Tipo de interés por "
+                + "descubierto: " + tipoInteresPorDescubierto + " Máximo descubieto "
+                + "permitido: " + maxDescubiertoPermitido + " Lista de entidades: " 
+                + listaEntidades;
+    }
+    
+    
     
     
     

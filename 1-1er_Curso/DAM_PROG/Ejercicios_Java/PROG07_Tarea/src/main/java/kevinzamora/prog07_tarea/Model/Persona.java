@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package kevinzamora.prog07_tarea.Models;
+package kevinzamora.prog07_tarea.Model;
 
 /**
  *
@@ -10,11 +10,12 @@ package kevinzamora.prog07_tarea.Models;
  */
 public class Persona {
     
-    
+    // Parámetros
     String nombre;
     String apellidos;
     String DNI;
-
+    
+    // Constructores
     public Persona() {
     }
 
@@ -22,6 +23,10 @@ public class Persona {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.DNI = DNI;
+    }
+    
+    public String toString() {
+        return nombre + " " + apellidos + " " + DNI;
     }
     
 }

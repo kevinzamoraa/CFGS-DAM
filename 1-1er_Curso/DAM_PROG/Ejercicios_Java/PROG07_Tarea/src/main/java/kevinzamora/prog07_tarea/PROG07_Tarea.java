@@ -4,6 +4,8 @@
 
 package kevinzamora.prog07_tarea;
 
+import kevinzamora.prog07_tarea.View.Principal;
+
 /**
  *
  * @author kzdesigner

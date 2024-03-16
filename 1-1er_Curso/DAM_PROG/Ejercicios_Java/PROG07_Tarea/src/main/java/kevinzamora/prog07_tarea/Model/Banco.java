@@ -2,19 +2,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package kevinzamora.prog07_tarea.Models;
+package kevinzamora.prog07_tarea.Model;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+//import kevinzamora.prog07_tarea.Controler.Imprimible;
 
 /**
  *
  * @author kzdesigner
  */
-public class Banco {
-    
-    // Declaración de variables contenedoras
-    ArrayList<Cuenta> listaCuentas = new ArrayList<Cuenta>();
+public class Banco /*implements Imprimible*/ {
+    CuentaBancaria cuentaObj = new CuentaBancaria() {};
+    ArrayList<CuentaBancaria> listaCuentas = new ArrayList<CuentaBancaria>();
     ArrayList<CuentaAhorro> listaCuentasAhorro = new ArrayList<CuentaAhorro>();
     ArrayList<CuentaCorrientePersonal> listaCuentaCPersonal = 
             new ArrayList<CuentaCorrientePersonal>();
@@ -24,7 +24,7 @@ public class Banco {
     String entidad1 = "Caixabank";
     String entidad2 = "Banc Sabadell";
     String entidad3 = "Mediolanum";
-    Cuenta nuevaCuenta;
+    CuentaBancaria nuevaCuenta;
     
     // Declaración de variables de lectura o de entrada
     Scanner scanner = new Scanner(System.in);
@@ -59,8 +59,8 @@ public class Banco {
                 CuentaAhorro nuevaCuentaAhorro = new CuentaAhorro(nuevxTitular,
                         nuevoSaldoCuenta, numCuenta, tipoInteresRemuneracion);
                 tipoCuenta = "cuentaAhorro";
-                nuevaCuenta = new Cuenta(nuevxTitular, nuevoSaldoCuenta, 
-                        numCuenta, numCuenta);
+                nuevaCuenta = new CuentaBancaria(nuevxTitular, nuevoSaldoCuenta, 
+                        numCuenta, tipoCuenta);
                 listaCuentas.add(nuevaCuenta);
                 listaCuentasAhorro.add(nuevaCuentaAhorro);
                 return true;
@@ -78,8 +78,8 @@ public class Banco {
                                 numCuenta, listaEntidades, comisionMantenimiento,  
                                 comisionMantenimiento);
                 tipoCuenta = "cuentaCorrientePersonal";
-                nuevaCuenta = new Cuenta(nuevxTitular, nuevoSaldoCuenta, 
-                                numCuenta, numCuenta);
+                nuevaCuenta = new CuentaBancaria(nuevxTitular, nuevoSaldoCuenta, 
+                                numCuenta, tipoCuenta);
                 listaCuentas.add(nuevaCuenta);
                 listaCuentaCPersonal.add(nuevaCuentaCPersonal);
                 return true;
@@ -107,8 +107,8 @@ public class Banco {
                                 numCuenta, listaEntidades, tipoInteresPorDescubrimiento, 
                                 nivelMaximoDescubiertoPermitido);
                 tipoCuenta = "cuentaCorrienteEmpresa";
-                nuevaCuenta = new Cuenta(nuevxTitular, nuevoSaldoCuenta, 
-                                numCuenta, numCuenta);
+                nuevaCuenta = new CuentaBancaria(nuevxTitular, nuevoSaldoCuenta, 
+                                numCuenta, tipoCuenta);
                 listaCuentas.add(nuevaCuenta);
                 listaCuentaCEmpresa.add(nuevaCuentaCEmpresa);
                 return true;
@@ -117,12 +117,11 @@ public class Banco {
                         + "ejecución. Por favor, inténtelo de nuevo más tarde");
                 break;
         }
-        
         return false;
     }
     
     private void listadoCuentas() {
-        for (Cuenta cuenta : listaCuentas) {
+        for (CuentaBancaria cuenta : listaCuentas) {
             System.out.println(cuenta);
         }
     }
@@ -131,19 +130,52 @@ public class Banco {
         System.out.println("OBTENER TODOS LOS DATOS DE LA CUENTA INTRODUCIDA: \n");
         System.out.println("Introduce el número de cuenta a buscar: ");
         String numCuentaIntroducido = scanner.nextLine();
-        for (Cuenta cuenta : listaCuentas) {
-            if (((cuenta.numCuenta).toLowerCase()).equals(numCuentaIntroducido.toLowerCase())) {
-                if ((cuenta.tipoCuenta).equalsIgnoreCase("cuentaAhorro")) {
-                    for (CuentaAhorro cuentaAhorro : listaCuentasAhorro) {
-                        if (((cuentaAhorro.numCuenta).toLowerCase()).equals(numCuentaIntroducido.toLowerCase())) {
-                            System.out.println("Se ha encontrado una cuenta: \n ");
-                        }
-                    }
-                }
-            } else {
-                System.out.println("No se ha encontrado ninguna cuenta con ese identificador");
-            }
+        boolean numCuentaDetectado = false;
+        if (numCuentaIntroducido != null) {
+            numCuentaDetectado = true;
+        } else {
+            numCuentaDetectado = false;
         }
+        if (numCuentaDetectado) {
+//            System.out.println("Nº de Cuenta introducido: " + numCuentaIntroducido);
+            for (CuentaBancaria cuenta : listaCuentas) {
+                if ((cuenta.numCuenta.toLowerCase()).equalsIgnoreCase(numCuentaIntroducido)) {
+//                    System.out.println("Estoy dentro del primer if");
+                    System.out.println(cuenta.tipoCuenta);
+                    if ((cuenta.tipoCuenta).equalsIgnoreCase("cuentaAhorro")) {
+                        for (CuentaAhorro cuentaAhorro : listaCuentasAhorro) {
+                            if (((cuentaAhorro.numCuenta).toLowerCase()).equals(numCuentaIntroducido.toLowerCase())) {
+                                System.out.println("Se ha encontrado una cuenta: \n "
+                                        + cuentaAhorro.toString());
+                                break;
+                            }
+                        }
+                    } else if ((cuenta.tipoCuenta).equalsIgnoreCase("cuentaCorrientePersonal")) {
+                        for (CuentaCorrientePersonal cuentaCorrientePersonal : listaCuentaCPersonal) {
+                            if (((cuentaCorrientePersonal.numCuenta).toLowerCase()).equals(numCuentaIntroducido.toLowerCase())) {
+                                System.out.println("Se ha encontrado una cuenta: \n "
+                                        + cuentaCorrientePersonal.toString());
+                                break;
+                            }
+                        }
+                    } else if ((cuenta.tipoCuenta).equalsIgnoreCase("cuentaCorrienteEmpresa")) {
+                        for (CuentaCorrienteEmpresa cuentaCorrienteEmpresa : listaCuentaCEmpresa) {
+                            if (((cuentaCorrienteEmpresa.numCuenta).toLowerCase()).equals(numCuentaIntroducido.toLowerCase())) {
+                                System.out.println("Se ha encontrado una cuenta: \n "
+                                        + cuentaCorrienteEmpresa.toString());
+                                break;
+                            }
+                        }
+                    } else {
+                        System.out.println("No se ha conseguido entrar en los IF anidados");
+                        break;
+                    }
+                } else {
+                    System.out.println("No se ha encontrado ninguna cuenta con ese identificador");
+                    break;
+                }
+            }
+        } else {System.out.println("No se ha detectado ningún número de cuenta válido");}
     }
     
     /**

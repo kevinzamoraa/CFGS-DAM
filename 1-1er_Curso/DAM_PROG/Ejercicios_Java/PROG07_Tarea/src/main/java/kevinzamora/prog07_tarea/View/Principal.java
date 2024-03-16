@@ -2,12 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package kevinzamora.prog07_tarea;
+package kevinzamora.prog07_tarea.View;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Scanner;
-import kevinzamora.prog07_tarea.Models.Banco;
+import kevinzamora.prog07_tarea.Model.Banco;
 
 /**
  *
@@ -49,9 +49,7 @@ public class Principal {
                 loadMainMenu();
                 break;
             case 3:
-                System.out.println("DATOS DE LA CUENTA SELECCIONADA: \n ");
-                
-                
+                bancoObj.getInformacionCuenta();
                 break;
             case 4:
                 System.out.println("INGRESAR EFECTIVO:");
