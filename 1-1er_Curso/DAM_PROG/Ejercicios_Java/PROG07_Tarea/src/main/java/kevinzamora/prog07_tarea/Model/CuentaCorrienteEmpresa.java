@@ -12,11 +12,13 @@ import java.util.ArrayList;
  */
 public class CuentaCorrienteEmpresa extends CuentaCorriente {
     
+    // Declaración de parámetros
     ArrayList<String> listaEntidades;
     Double comisionFijaPorDescubierto;
     Double tipoInteresPorDescubierto;
     Double maxDescubiertoPermitido;
-
+    
+    // Constructores de clase
     public CuentaCorrienteEmpresa() {}
 
     public CuentaCorrienteEmpresa(Persona titular, Double saldo, String numCuenta, 

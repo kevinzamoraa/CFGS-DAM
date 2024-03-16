@@ -15,8 +15,14 @@ import kevinzamora.prog07_tarea.Model.Banco;
  */
 public class Principal {
     
+    /* En la clase Principal definimos y construimos la estructura del menú de 
+    navegación de nuestra aplicación */
+    /* A su vez, también instanciamos la clase Banco para poder hacer uso de las 
+    funciones/métodos, creados para gestionar las diferentes cuentas de nuestra 
+    aplicación y desarrollados/ejecutados mediante esta */
     Banco bancoObj = new Banco();
 
+    // Estructura de nuestro menú principal imprimido por pantalla
     public void loadMainMenu() {
 
         System.out.println("BIENVENID@S A NUESTRO BANCO: \n");
@@ -28,13 +34,15 @@ public class Principal {
                 + "5. Retirar efectivo. \n "
                 + "6. Consultar el saldo actual de mi cuenta \n "
                 + "7. Salir \n");
-
+        
+        // Método de entrada para seleccionar la opción deseada
         System.out.println("SELECCIONA UNA OPCIÓN (Introduce un nº entero):");
         Scanner scanner = new Scanner(System.in);
         int opcion = Integer.parseInt(scanner.nextLine());
 
+        // Conmutador/Switch necesario para realizar la selección de la opción deseada
+        // En cada opción se procede a llamar la función necesaria mediante 'bancoObj.' y nombre función + ()
         switch (opcion) {
-
             case 1:
                 System.out.println("INTRODUCIR DATOS DE LA NUEVA CUENTA: \n");
                 boolean addedAccount = bancoObj.getAbrirCuenta();

@@ -133,12 +133,14 @@ public class Banco /*implements Imprimible*/ {
         return false;
     }
     
+    // Imprimimos las cuentas de nuestra base de datos por pantalla
     private void listadoCuentas() {
         for (CuentaBancaria cuenta : listaCuentas) {
             System.out.println(cuenta);
         }
     }
     
+    // Mostramos por pantalla toda la información de la cuenta seleccionada
     private void informacionCuenta() {
         System.out.println("OBTENER TODOS LOS DATOS DE LA CUENTA INTRODUCIDA: \n");
         System.out.println("Introduce el número de cuenta a buscar: ");
@@ -188,6 +190,7 @@ public class Banco /*implements Imprimible*/ {
         } else {System.out.println("No se ha detectado ningún número de cuenta válido");}
     }
     
+    // Método para ingresar efectivo
     /**
      * Fúnción/Método referente a y contenedor de la funcionalidad necesaria 
      * para poder ingresar efectivo en la cuenta en cuestión
@@ -227,6 +230,7 @@ public class Banco /*implements Imprimible*/ {
         }
     }
     
+    // Método para retirar efectivo
     /**
      * Función/Método contenedor de la funcionalidad necesaria para poder 
      * retirar cierta cantidad pasada vía parámetro del saldo disponible en la 
@@ -271,7 +275,7 @@ public class Banco /*implements Imprimible*/ {
         }
     }
     
-    // MÉTODOS GETTER (FUNCIONES OPERATIVAS)
+    // MÉTODOS GETTER (Habilitadores de acceso) | FUNCIONES OPERATIVAS y ALGUNA VARIABLE
     public boolean getAbrirCuenta() {
         return abrirCuenta();
     }
