@@ -8,11 +8,13 @@
             <head>
                 <title>Lista de artistas por Kevin Zamora</title>  
                 <style type="text/css">
+                    body{font-family: Arial, Helvetica, sans-serif;}
                     .verde1{background-color:#82E0AA;}
                     .verde2{background-color:#D5F5E3;}                   
                     td{text-align: center;}
                     h2{color:#28B463; font-weight:bold; text-align:center;}
-                    .averde1{color:#28B463;}
+                    .averde1{color:#28B463; text-decoration:none;}
+                    .averde1:active{color:#82E0AA; text-decoration:none;}
                 </style>           
             </head>
             <body>
