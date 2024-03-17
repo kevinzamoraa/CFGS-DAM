@@ -70,3 +70,9 @@
         </xsl:if>
     </xsl:template>
 </xsl:stylesheet>
+<xsl:comment>
+    Agradecería recibir más información acerca de cómo se realizaría esta parte del ejercicio, tras o simultaneamente con su corrección y valoración
+    <xsl:if test="!fallecimiento">
+        <xsl:value-of select="Desconocido" />
+    </xsl:if>
+</xsl:comment>
