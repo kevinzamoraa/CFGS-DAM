@@ -1,6 +1,7 @@
+// ACTIVIDAD 1
 CREATE OR REPLACE PROCEDURE CambiarCategoria
-( id_CategoriaOrigen categoria.cod_categoria%type, 
-id_CategoriaDestino categoria.cod_categoria%type )
+( id_CategoriaOrigen productos.cod_categoria%type, 
+id_CategoriaDestino productos.cod_categoria%type )
 AS
     categorias_iguales exception;
     categoria_origen_no_existe exception;
@@ -8,7 +9,7 @@ AS
     numCategoriaOrigen number(8);
     numCategoriaDestino number(8);
     nombreCategoriaOrigen categorias.nombre%type;
-    nombreCategoríaDestino categorias.nombre%type;
+    nombreCategoriaDestino categorias.nombre%type;
     numProductos number(8);
 BEGIN
 
@@ -18,7 +19,7 @@ BEGIN
     
     SELECT COUNT(*) INTO numCategoriaOrigen 
         FROM productos 
-        WHERE identificador = id_CategoriaOrigen;
+        WHERE cod_categoria = id_CategoriaOrigen;
         
     IF numCategoriaOrigen = 0 THEN 
         RAISE categoria_origen_no_existe;
@@ -26,7 +27,7 @@ BEGIN
     
     SELECT COUNT(*) INTO numCategoriaDestino
         FROM productos 
-        WHERE identificador = id_CategoriaDestino;
+        WHERE cod_categoria = id_CategoriaDestino;
         
     IF numCategoriaDestino = 0 THEN 
         RAISE categoria_destino_no_existe;
@@ -34,11 +35,11 @@ BEGIN
     
     SELECT nombre INTO nombreCategoriaOrigen
         FROM categorias
-        WHERE identificador = id_CategoriaOrigen;
+        WHERE cod_categoria = id_CategoriaOrigen;
         
     SELECT nombre INTO nombreCategoriaDestino
         FROM categorias
-        WHERE identificador = id_CategoriaDestino;
+        WHERE cod_categoria = id_CategoriaDestino;
         
     SELECT COUNT(*) INTO numProductos
     FROM productos
@@ -53,9 +54,9 @@ BEGIN
 EXCEPTION
     WHEN categorias_iguales THEN
     DBMS_OUTPUT.PUT_LINE('Las categorias no pueden ser iguales');
-    WHEN countCategoriaOrigen THEN
+    WHEN categoria_origen_no_existe THEN
     DBMS_OUTPUT.PUT_LINE('La categoria origen no existe');
-    WHEN countCategoriaDestino THEN
+    WHEN categoria_destino_no_existe THEN
     DBMS_OUTPUT.PUT_LINE('La categoria destino no existe');
 END;
 /
