@@ -1,0 +1,10 @@
+docker run --name your_container -d -p 1521:1521 -e ORACLE_PASSWORD=admin -e ORACLE_DATABASE=your_database -v oracle-volume:your_directory_direction gvenzl/oracle-xe
+
+docker run --name databases -d -p 1521:1521 -e ORACLE_PASSWORD=admin -e ORACLE_DATABASE=bd -v oracle-volume:/home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/DAM_BD-Bases_Datos/SQLprograms gvenzl/oracle-xe
+
+
+
+
+
+docker run --name BD_Tareas -d -p 1521:1521 -e ORACLE_PASSWORD=admin -e ORACLE_DATABASE=BD07_Tarea -v oracle-volume:/home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/DAM_BD-Bases_Datos/SQLprograms gvenzl/oracle-xe
+
