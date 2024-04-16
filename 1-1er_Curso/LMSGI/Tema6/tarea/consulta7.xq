@@ -2,4 +2,7 @@
 for $x in doc("impresoras.xml")/impresoras/impresora
 where count($x/tamaño) > 1
 return
-$x/modelo/text()
+<impresora>
+  <marca>{$x/marca/text()}</marca>
+  <modelo>{$x/modelo/text()}</modelo>
+</impresora>
