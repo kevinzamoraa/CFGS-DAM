@@ -1,0 +1,39 @@
+# General Options
+DEBUG = false
+DBPATH = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/basex/data
+LOGPATH = .logs
+REPOPATH = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/basex/repo
+LANG = English
+FAIRLOCK = false
+CACHETIMEOUT = 3600
+
+# Client/Server Architecture
+HOST = localhost
+PORT = 1984
+SERVERPORT = 1984
+USER = 
+PASSWORD = 
+SERVERHOST = 
+PROXYHOST = 
+PROXYPORT = 0
+NONPROXYHOSTS = 
+IGNORECERT = false
+TIMEOUT = 30
+KEEPALIVE = 600
+PARALLEL = 8
+LOG = true
+LOGMSGMAXLEN = 1000
+LOGTRACE = true
+
+# HTTP Services
+WEBPATH = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/basex/webapp
+GZIP = false
+RESTPATH = 
+RESTXQPATH = 
+PARSERESTXQ = 3
+RESTXQERRORS = true
+HTTPLOCAL = false
+STOPPORT = 8081
+AUTHMETHOD = Basic
+
+# Local Options

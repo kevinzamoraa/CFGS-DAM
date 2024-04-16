@@ -1,0 +1,116 @@
+# Version
+UPDATEVERSION = 10.7
+CHECKUPDATES = false
+
+# Paths
+INPUTPATH = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/basex/
+DATAPATH = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/basex/
+WORKPATH = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/
+PROJECTPATH = /home/kzdesigner/
+
+# Layout
+FONT = SansSerif
+MONOFONT = Monospaced
+FONTSIZE = 15
+LISTMONO = true
+ANTIALIAS = System
+COLORRED = 21
+COLORGREEN = 14
+COLORBLUE = 7
+
+# Windows
+VIEWS = V H editor folder map plot - H text info table tree explore - - 
+GUISIZE0 = 960
+GUISIZE1 = 1025
+GUILOC0 = 960
+GUILOC1 = 0
+MAXSTATE = false
+SHOWBUTTONS = true
+SHOWINPUT = true
+SHOWSTATUS = true
+SHOWINFO = true
+SHOWMAP = true
+SHOWTABLE = false
+SHOWTEXT = true
+SHOWFOLDER = false
+SHOWEXPLORE = false
+SHOWPLOT = false
+SHOWEDITOR = true
+SHOWTREE = false
+SHOWPROJECT = true
+PREFTAB = 0
+LOOKANDFEEL = 
+LABELS = name,label,id
+SCROLLTABS = true
+MOUSEFOCUS = false
+XMLSUFFIXES = xml,xsd,svg,rdf,rss,rng,sch,xhtml
+ASCSORT = true
+CASESORT = true
+MERGEDUPL = false
+COLUMN = 1
+UNICODE = true
+SHOWMARGIN = true
+MARGIN = 80
+TABSPACES = true
+INDENT = 2
+SHOWINVISIBLE = true
+SHOWNL = false
+SHOWLINES = true
+MARKLINE = true
+SAVERUN = false
+PARSEPROJ = true
+AUTO = true
+FILES = *.xml, *.xq*
+SHOWHIDDEN = false
+SEARCHMODE = 0
+FILTERRT = false
+EXECRT = false
+DBNAME = 
+LASTINSERT = 1
+
+# Visualizations
+MAPATTS = false
+MAPOFFSETS = 3
+MAPALGO = 0
+MAPWEIGHT = 0
+TREESLIM = true
+TREEATTS = false
+PLOTDOTS = 0
+PLOTXLOG = false
+PLOTYLOG = false
+MAXTEXT = 8388608
+MAXRESULTS = 500000
+
+# Search
+SEARCHED = 2
+SEARCHED1 = número
+SEARCHED2 = etiq
+REPLACED = 0
+
+# History
+COMMANDS = 0
+SEARCH = 0
+XQUERY = 0
+
+# Files
+EDITOR = 10
+EDITOR1 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/consulta7.xq
+EDITOR2 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/consulta6.xq
+EDITOR3 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/impresoras.xml
+EDITOR4 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/consulta5.xq
+EDITOR5 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/consulta4.xq
+EDITOR6 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/consulta3.xq
+EDITOR7 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/consulta2.xq
+EDITOR8 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/consulta1.xq
+EDITOR9 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/artistas.xml
+EDITOR10 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/ejemplos_tema6.xq
+INPUTS = 0
+OPEN = 3
+OPEN1 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/ejemplos_tema6.xq
+OPEN2 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/impresoras.xml
+OPEN3 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/consulta7.xq
+PROJECTS = 0
+PROJFILES = 0
+PROJCONTS = 0
+
+# Local Options
