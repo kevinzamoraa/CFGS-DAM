@@ -79,7 +79,7 @@ public class Banco /*implements Imprimible*/ {
                         + "Si es así, introduce el importe de la comisión de "
                         + "mantenimiento: ");
                 double comisionMantenimiento = Double.parseDouble(scanner.nextLine());
-                System.out.println("La comisión de mantenimiento ha sido leido correctamente.");
+                System.out.println("La comisión de mantenimiento ha sido leida correctamente.");
                 listaEntidades.add(entidad1);
                 listaEntidades.add(entidad2);
                 listaEntidades.add(entidad3);
