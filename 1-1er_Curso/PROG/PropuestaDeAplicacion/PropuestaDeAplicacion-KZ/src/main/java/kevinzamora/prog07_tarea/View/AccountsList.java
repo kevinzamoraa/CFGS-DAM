@@ -30,7 +30,7 @@ public class AccountsList extends javax.swing.JFrame {
     }
     
     Connection con = null;
-    PreparedStatement preparedStat = null;
+    PreparedStatement stmt = null;
     ResultSet rs = null;
     Vector<Object> columnNames = new Vector<Object>();
     Vector<Object> data = new Vector<Object>();
@@ -41,10 +41,10 @@ public class AccountsList extends javax.swing.JFrame {
               
         try {
             con = DriverManager.getConnection("jdbc:mysql://localhost:9090/db", "root", "admin");
-            preparedStat = con.prepareStatement("SELECT * FROM Cuentas");
+            stmt = con.prepareStatement("SELECT * FROM Cuentas");
             System.out.println("La conexión ha sido establecida con éxito.");
             
-            rs = preparedStat.executeQuery();
+            rs = stmt.executeQuery();
             ResultSetMetaData RSMD = rs.getMetaData();
             int colums = RSMD.getColumnCount();
             
@@ -54,16 +54,16 @@ public class AccountsList extends javax.swing.JFrame {
             
             while(rs.next()) {
                 var v2 = new Vector();
-            
+                
                 for (int i=0; i <= colums; i++) {
                     var numCuenta = v2.add(rs.getString("num_cuenta"));
                     var nombreYapellidos = v2.add(rs.getString("nombre_y_apellidos"));
                     var saldo = v2.add(rs.getString("saldo"));
                     
-                    System.out.println(rs.getString("num_cuenta") + " - " 
+                    /* System.out.println(rs.getString("num_cuenta") + " - " 
                             + rs.getString("nombre_y_apellidos") + " - " 
                             + rs.getString("saldo"));
-
+                    */
                     model.addRow(
                         new Object[]{
                             rs.getString("num_cuenta"),
@@ -71,6 +71,9 @@ public class AccountsList extends javax.swing.JFrame {
                             rs.getString("saldo")
                         }
                     );
+                    rs.close();
+                    stmt.close();
+                    con.close();
                 }
             }
             
