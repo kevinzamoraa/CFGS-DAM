@@ -26,7 +26,7 @@ public class AccountsList extends javax.swing.JFrame {
      */
     public AccountsList() {
         initComponents();
-        show_tdata();
+        showTableData();
     }
     
     Connection con = null;
@@ -35,7 +35,9 @@ public class AccountsList extends javax.swing.JFrame {
     Vector<Object> columnNames = new Vector<Object>();
     Vector<Object> data = new Vector<Object>();
     
-    private void show_tdata() {
+    private void showTableData() {
+        
+        
               
         try {
             con = DriverManager.getConnection("jdbc:mysql://localhost:9090/db", "root", "admin");
@@ -46,20 +48,29 @@ public class AccountsList extends javax.swing.JFrame {
             ResultSetMetaData RSMD = rs.getMetaData();
             int colums = RSMD.getColumnCount();
             
-            DefaultTableModel DFT = (DefaultTableModel)ListaCuentas.getModel();
+            DefaultTableModel model = (DefaultTableModel)ListaCuentas.getModel();
             
-            DFT.setRowCount(0);
+            model.setRowCount(0);
             
             while(rs.next()) {
                 var v2 = new Vector();
             
                 for (int i=0; i <= colums; i++) {
-                    v2.add(rs.getString("num_cuenta"));
-                    v2.add(rs.getString("nombre_y_apellidos"));
-                    v2.add(rs.getString("saldo"));
+                    var numCuenta = v2.add(rs.getString("num_cuenta"));
+                    var nombreYapellidos = v2.add(rs.getString("nombre_y_apellidos"));
+                    var saldo = v2.add(rs.getString("saldo"));
+                    
                     System.out.println(rs.getString("num_cuenta") + " - " 
                             + rs.getString("nombre_y_apellidos") + " - " 
                             + rs.getString("saldo"));
+
+                    model.addRow(
+                        new Object[]{
+                            rs.getString("num_cuenta"),
+                            rs.getString("nombre_y_apellidos"),
+                            rs.getString("saldo")
+                        }
+                    );
                 }
             }
             
