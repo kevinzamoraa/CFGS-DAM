@@ -27,15 +27,7 @@ public class AccountsList extends javax.swing.JFrame {
     public AccountsList() {
         initComponents();
         showTableData();
-    }
-    
-    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {                                        
-        AccountsList origin1 = new AccountsList();
-        MainMenu mainMenu1 = new MainMenu();
-        origin1.setVisible(false);
-        mainMenu1.setVisible(true);
-        dispose();
-    }        
+    }      
     
     Connection con = null;
     PreparedStatement stmt = null;
@@ -129,6 +121,11 @@ public class AccountsList extends javax.swing.JFrame {
         ListaCuentas.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         btnExit.setText("Salir");
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -163,6 +160,14 @@ public class AccountsList extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+        AccountsList origin1 = new AccountsList();
+        MainMenu mainMenu1 = new MainMenu();
+        origin1.setVisible(false);
+        mainMenu1.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnExitActionPerformed
 
     /**
      * @param args the command line arguments

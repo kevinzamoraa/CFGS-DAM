@@ -195,7 +195,7 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnShowCurrentBalanceActionPerformed
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
-        return;
+        dispose();
     }//GEN-LAST:event_btnExitActionPerformed
 
     /**
