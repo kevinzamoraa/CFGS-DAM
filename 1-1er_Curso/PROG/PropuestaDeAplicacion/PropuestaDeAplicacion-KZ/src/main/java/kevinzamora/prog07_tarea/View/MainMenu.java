@@ -28,13 +28,13 @@ public class MainMenu extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        btnNewAccount = new javax.swing.JButton();
+        btnAccountList = new javax.swing.JButton();
+        btnAccountData = new javax.swing.JButton();
+        btnAddingMoney = new javax.swing.JButton();
+        btnDiscountingMoney = new javax.swing.JButton();
+        btnShowCurrentBalance = new javax.swing.JButton();
+        btnExit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -45,59 +45,59 @@ public class MainMenu extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
         jLabel2.setText("ADMINISTRA TU CUENTA CON LAS SIGUIENTES OPCIONES:");
 
-        jButton1.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
-        jButton1.setText("Abrir una nueva cuenta");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnNewAccount.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
+        btnNewAccount.setText("Abrir una nueva cuenta");
+        btnNewAccount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnNewAccountActionPerformed(evt);
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
-        jButton2.setText("Ver listado de cuentas disponibles");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnAccountList.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
+        btnAccountList.setText("Ver listado de cuentas disponibles");
+        btnAccountList.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnAccountListActionPerformed(evt);
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
-        jButton3.setText("Ver los datos de una cuenta concreta");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnAccountData.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
+        btnAccountData.setText("Ver los datos de una cuenta concreta");
+        btnAccountData.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnAccountDataActionPerformed(evt);
             }
         });
 
-        jButton4.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
-        jButton4.setText("Realizar un ingreso");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnAddingMoney.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
+        btnAddingMoney.setText("Realizar un ingreso");
+        btnAddingMoney.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnAddingMoneyActionPerformed(evt);
             }
         });
 
-        jButton5.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
-        jButton5.setText("Retirar efectivo");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btnDiscountingMoney.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
+        btnDiscountingMoney.setText("Retirar efectivo");
+        btnDiscountingMoney.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnDiscountingMoneyActionPerformed(evt);
             }
         });
 
-        jButton6.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
-        jButton6.setText("Consultar el saldo actual de mi cuenta");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        btnShowCurrentBalance.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
+        btnShowCurrentBalance.setText("Consultar el saldo actual de mi cuenta");
+        btnShowCurrentBalance.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                btnShowCurrentBalanceActionPerformed(evt);
             }
         });
 
-        jButton7.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
-        jButton7.setText("Salir");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        btnExit.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
+        btnExit.setText("Salir");
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                btnExitActionPerformed(evt);
             }
         });
 
@@ -110,13 +110,13 @@ public class MainMenu extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnNewAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAccountList, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAccountData, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAddingMoney, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnDiscountingMoney, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnShowCurrentBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(114, 114, 114))
         );
         layout.setVerticalGroup(
@@ -127,52 +127,76 @@ public class MainMenu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(btnNewAccount)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(btnAccountList)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3)
+                .addComponent(btnAccountData)
                 .addGap(18, 18, 18)
-                .addComponent(jButton4)
+                .addComponent(btnAddingMoney)
                 .addGap(18, 18, 18)
-                .addComponent(jButton5)
+                .addComponent(btnDiscountingMoney)
                 .addGap(18, 18, 18)
-                .addComponent(jButton6)
+                .addComponent(btnShowCurrentBalance)
                 .addGap(18, 18, 18)
-                .addComponent(jButton7)
+                .addComponent(btnExit)
                 .addContainerGap(39, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnNewAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewAccountActionPerformed
+        MainMenu mainMenu1 = new MainMenu();
+        CreateMenu createMenu1 = new CreateMenu();
+        mainMenu1.setVisible(false);
+        createMenu1.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnNewAccountActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void btnAccountListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccountListActionPerformed
+        MainMenu mainMenu1 = new MainMenu();
+        AccountsList accountsList1 = new AccountsList();
+        mainMenu1.setVisible(false);
+        accountsList1.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnAccountListActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void btnAccountDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccountDataActionPerformed
+        MainMenu mainMenu1 = new MainMenu();
+        AccountData accountData1 = new AccountData();
+        mainMenu1.setVisible(false);
+        accountData1.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnAccountDataActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    private void btnAddingMoneyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddingMoneyActionPerformed
+        MainMenu mainMenu1 = new MainMenu();
+        AddingMoney addingMoney1 = new AddingMoney();
+        mainMenu1.setVisible(false);
+        addingMoney1.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnAddingMoneyActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    private void btnDiscountingMoneyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDiscountingMoneyActionPerformed
+        MainMenu mainMenu1 = new MainMenu();
+        DiscountingMoney discountingMoney1 = new DiscountingMoney();
+        mainMenu1.setVisible(false);
+        discountingMoney1.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnDiscountingMoneyActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    private void btnShowCurrentBalanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowCurrentBalanceActionPerformed
+        MainMenu mainMenu1 = new MainMenu();
+        ShowCurrentBalance currentBalance1 = new ShowCurrentBalance();
+        mainMenu1.setVisible(false);
+        currentBalance1.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnShowCurrentBalanceActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+        return;
+    }//GEN-LAST:event_btnExitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -210,13 +234,13 @@ public class MainMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
+    private javax.swing.JButton btnAccountData;
+    private javax.swing.JButton btnAccountList;
+    private javax.swing.JButton btnAddingMoney;
+    private javax.swing.JButton btnDiscountingMoney;
+    private javax.swing.JButton btnExit;
+    private javax.swing.JButton btnNewAccount;
+    private javax.swing.JButton btnShowCurrentBalance;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables

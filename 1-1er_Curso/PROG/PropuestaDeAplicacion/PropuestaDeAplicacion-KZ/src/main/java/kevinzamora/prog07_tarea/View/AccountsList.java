@@ -29,6 +29,14 @@ public class AccountsList extends javax.swing.JFrame {
         showTableData();
     }
     
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        AccountsList origin1 = new AccountsList();
+        MainMenu mainMenu1 = new MainMenu();
+        origin1.setVisible(false);
+        mainMenu1.setVisible(true);
+        dispose();
+    }        
+    
     Connection con = null;
     PreparedStatement stmt = null;
     ResultSet rs = null;
@@ -36,8 +44,6 @@ public class AccountsList extends javax.swing.JFrame {
     Vector<Object> data = new Vector<Object>();
     
     private void showTableData() {
-        
-        
               
         try {
             con = DriverManager.getConnection("jdbc:mysql://localhost:9090/db", "root", "admin");
@@ -79,8 +85,7 @@ public class AccountsList extends javax.swing.JFrame {
             
             
         } catch (SQLException ex) {
-            Logger.getLogger(AccountsList.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("Conexión fallida.");
+            System.out.println("Conexión fallida, generando error: \n" + ex);
         }
     }
 
@@ -97,7 +102,7 @@ public class AccountsList extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         ListaCuentas = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
+        btnExit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -123,7 +128,7 @@ public class AccountsList extends javax.swing.JFrame {
         jScrollPane1.setViewportView(ListaCuentas);
         ListaCuentas.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
-        jButton2.setText("Salir");
+        btnExit.setText("Salir");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -132,16 +137,15 @@ public class AccountsList extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(75, 75, 75)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(jLabel2)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(82, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel1)
-                        .addGap(83, 83, 83))))
+                    .addComponent(jLabel2)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(82, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.CENTER, layout.createSequentialGroup()
+                .addGap(76, 76, 76)
+                .addComponent(btnExit)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(83, 83, 83))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,7 +153,7 @@ public class AccountsList extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jButton2))
+                    .addComponent(btnExit))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -198,7 +202,7 @@ public class AccountsList extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable ListaCuentas;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnExit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
