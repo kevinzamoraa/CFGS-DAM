@@ -28,6 +28,12 @@ public class AddingMoney extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        btnAddingCash = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        searchedAccount = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        introducedBalance = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
         btnExit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -38,6 +44,35 @@ public class AddingMoney extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
         jLabel2.setText("ADMINISTRA TU CUENTA CON LAS SIGUIENTES OPCIONES:");
+
+        btnAddingCash.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
+        btnAddingCash.setText("Ingresar");
+        btnAddingCash.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddingCashActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
+        jLabel3.setText("INGRESAR EFECTIVO");
+
+        searchedAccount.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchedAccountActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
+        jLabel4.setText("INTRODUCE EL IMPORTE A INGRESAR:");
+
+        introducedBalance.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                introducedBalanceActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
+        jLabel5.setText("INTRODUCIR CUENTA A BUSCAR:");
 
         btnExit.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
         btnExit.setText("Salir");
@@ -58,6 +93,17 @@ public class AddingMoney extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(114, 114, 114))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(119, 119, 119)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                        .addComponent(jLabel3)
+                        .addComponent(searchedAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel4)
+                        .addComponent(introducedBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel5)
+                        .addComponent(btnAddingCash))
+                    .addContainerGap(120, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -66,16 +112,47 @@ public class AddingMoney extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addGap(258, 258, 258)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 255, Short.MAX_VALUE)
                 .addComponent(btnExit)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addGap(42, 42, 42))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(109, 109, 109)
+                    .addComponent(jLabel3)
+                    .addGap(11, 11, 11)
+                    .addComponent(jLabel5)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(searchedAccount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jLabel4)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(introducedBalance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(btnAddingCash)
+                    .addContainerGap(109, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+    private void btnAddingCashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddingCashActionPerformed
         // TODO add your handling code here:
+    }//GEN-LAST:event_btnAddingCashActionPerformed
+
+    private void searchedAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchedAccountActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchedAccountActionPerformed
+
+    private void introducedBalanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_introducedBalanceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_introducedBalanceActionPerformed
+
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+        AccountsList origin1 = new AccountsList();
+        MainMenu mainMenu1 = new MainMenu();
+        origin1.setVisible(false);
+        mainMenu1.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnExitActionPerformed
 
     /**
@@ -115,8 +192,14 @@ public class AddingMoney extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAddingCash;
     private javax.swing.JButton btnExit;
+    private javax.swing.JTextField introducedBalance;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JTextField searchedAccount;
     // End of variables declaration//GEN-END:variables
 }
