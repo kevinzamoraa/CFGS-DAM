@@ -111,7 +111,7 @@ public class AccountsList extends javax.swing.JFrame {
                 {null, null, null}
             },
             new String [] {
-                "num_cuenta", "nombre_y_apellidos", "saldo"
+                "Número de cuenta", "Nombre completo", "Saldo en cuenta"
             }
         ));
         ListaCuentas.setColumnSelectionAllowed(true);
@@ -131,16 +131,17 @@ public class AccountsList extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(75, 75, 75)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel2)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnExit1, javax.swing.GroupLayout.PREFERRED_SIZE, 449, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(75, 75, 75)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(jLabel2)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnExit1, javax.swing.GroupLayout.PREFERRED_SIZE, 449, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.CENTER, layout.createSequentialGroup()
+                        .addGap(76, 76, 76)
+                        .addComponent(jLabel1)))
                 .addContainerGap(82, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.CENTER, layout.createSequentialGroup()
-                .addGap(76, 76, 76)
-                .addComponent(jLabel1)
-                .addGap(83, 83, 83))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

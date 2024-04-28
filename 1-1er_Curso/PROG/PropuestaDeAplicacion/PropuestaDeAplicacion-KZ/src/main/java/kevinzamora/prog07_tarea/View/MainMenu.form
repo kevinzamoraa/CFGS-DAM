@@ -29,8 +29,8 @@
           <Group type="102" attributes="0">
               <EmptySpace pref="108" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="2" attributes="0">
-                  <Component id="jLabel1" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel2" alignment="2" min="-2" max="-2" attributes="0"/>
+                  <Component id="Titulo" alignment="2" min="-2" max="-2" attributes="0"/>
+                  <Component id="Subtitulo" alignment="2" min="-2" max="-2" attributes="0"/>
                   <Component id="btnNewAccount" alignment="2" min="-2" pref="387" max="-2" attributes="0"/>
                   <Component id="btnAccountList" alignment="2" min="-2" pref="387" max="-2" attributes="0"/>
                   <Component id="btnAccountData" alignment="2" min="-2" pref="387" max="-2" attributes="0"/>
@@ -47,9 +47,9 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <Component id="Titulo" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+              <Component id="Subtitulo" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnNewAccount" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -70,7 +70,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="Titulo">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Liberation Sans" size="18" style="1"/>
@@ -79,7 +79,7 @@
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
+    <Component class="javax.swing.JLabel" name="Subtitulo">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Liberation Sans" size="13" style="1"/>

@@ -26,8 +26,8 @@ public class MainMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        Titulo = new javax.swing.JLabel();
+        Subtitulo = new javax.swing.JLabel();
         btnNewAccount = new javax.swing.JButton();
         btnAccountList = new javax.swing.JButton();
         btnAccountData = new javax.swing.JButton();
@@ -39,12 +39,12 @@ public class MainMenu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 204));
 
-        jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
-        jLabel1.setText("BIENVENIDOS A NUESTRO BANCO");
-        jLabel1.setToolTipText("");
+        Titulo.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        Titulo.setText("BIENVENIDOS A NUESTRO BANCO");
+        Titulo.setToolTipText("");
 
-        jLabel2.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
-        jLabel2.setText("ADMINISTRA TU CUENTA CON LAS SIGUIENTES OPCIONES:");
+        Subtitulo.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
+        Subtitulo.setText("ADMINISTRA TU CUENTA CON LAS SIGUIENTES OPCIONES:");
 
         btnNewAccount.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
         btnNewAccount.setText("Abrir una nueva cuenta");
@@ -109,8 +109,8 @@ public class MainMenu extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(108, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
+                    .addComponent(Titulo)
+                    .addComponent(Subtitulo)
                     .addComponent(btnNewAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAccountList, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAccountData, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -124,9 +124,9 @@ public class MainMenu extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(31, 31, 31)
-                .addComponent(jLabel1)
+                .addComponent(Titulo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
+                .addComponent(Subtitulo)
                 .addGap(18, 18, 18)
                 .addComponent(btnNewAccount)
                 .addGap(18, 18, 18)
@@ -235,6 +235,8 @@ public class MainMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Subtitulo;
+    private javax.swing.JLabel Titulo;
     private javax.swing.JButton btnAccountData;
     private javax.swing.JButton btnAccountList;
     private javax.swing.JButton btnAddingMoney;
@@ -242,7 +244,5 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnNewAccount;
     private javax.swing.JButton btnShowCurrentBalance;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
