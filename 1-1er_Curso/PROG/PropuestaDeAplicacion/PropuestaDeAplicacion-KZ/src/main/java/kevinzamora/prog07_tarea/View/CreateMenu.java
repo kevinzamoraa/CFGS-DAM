@@ -6,8 +6,12 @@ package kevinzamora.prog07_tarea.View;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.Properties;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -22,30 +26,9 @@ public class CreateMenu extends javax.swing.JFrame {
         initComponents();
     }
     
-    private String user = "root";
-    private String password = "admin";
-    private Connection conn;
-
-    // Chris: para conecta el baso de datos 
-	public Connection getConn() throws ClassNotFoundException {
-		String urlConnection;
-		Properties infoConnection;
-
-		urlConnection = "jdbc:mysql://localhost:3306/db";
-		infoConnection = new Properties();
-		infoConnection.put("user", this.user);
-		infoConnection.put("password", this.password);
-
-		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			conn = DriverManager.getConnection(urlConnection, infoConnection);
-			System.err.println("Conexion Establecida");
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return conn;
-	}
+    private Connection con = null;
+    PreparedStatement stmt = null;
+    ResultSet rs = null;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -56,146 +39,133 @@ public class CreateMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        nombre = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        labelTitulo = new javax.swing.JLabel();
+        labelSt = new javax.swing.JLabel();
+        labelNombre = new javax.swing.JLabel();
+        inputNombre = new javax.swing.JTextField();
+        labelDni = new javax.swing.JLabel();
+        inputDNI = new javax.swing.JTextField();
+        labelTipoCuenta = new javax.swing.JLabel();
+        inputSaldo = new javax.swing.JTextField();
+        labelSaldoCuenta = new javax.swing.JLabel();
+        labelTipoInteres = new javax.swing.JLabel();
+        inputTipoInteresDescubierto = new javax.swing.JTextField();
+        labelComMant = new javax.swing.JLabel();
+        inputComMantenimiento = new javax.swing.JTextField();
+        labelMaxDescubierto = new javax.swing.JLabel();
+        inputMaxDescubiertoPermitido = new javax.swing.JTextField();
+        inputComFijaDescubierto = new javax.swing.JTextField();
+        labelComFijaDescubierto = new javax.swing.JLabel();
+        labelNumCuenta = new javax.swing.JLabel();
+        inputNumCuenta = new javax.swing.JTextField();
+        btnSubmit = new javax.swing.JButton();
+        btnExit = new javax.swing.JButton();
+        selectorTipoCuenta = new javax.swing.JComboBox<>();
+        labelDni1 = new javax.swing.JLabel();
+        inputTipoInteresAnual = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
-        jLabel1.setText("NUESTRO BANCO");
-        jLabel1.setToolTipText("");
+        labelTitulo.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        labelTitulo.setText("NUESTRO BANCO");
+        labelTitulo.setToolTipText("");
 
-        jLabel2.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
-        jLabel2.setText("INTRODUCIR LOS DATOS DE LA NUEVA CUENTA:");
+        labelSt.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
+        labelSt.setText("INTRODUCIR LOS DATOS DE LA NUEVA CUENTA:");
 
-        jLabel3.setText("Introducir el nombre del/de la titular:");
+        labelNombre.setText("Introducir el nombre del/de la titular:");
 
-        nombre.setText("Introduce tu nombre y apellidos");
-        nombre.addActionListener(new java.awt.event.ActionListener() {
+        inputNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nombreActionPerformed(evt);
+                inputNombreActionPerformed(evt);
             }
         });
 
-        jLabel5.setText("Introducir el DNI del/de la titular:");
+        labelDni.setText("Introducir el DNI del/de la titular:");
 
-        jTextField3.setText("Introduce el número de tu DNI");
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        inputDNI.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                inputDNIActionPerformed(evt);
             }
         });
 
-        jLabel6.setText("Selecciona el tipo de cuenta:");
+        labelTipoCuenta.setText("Selecciona el tipo de cuenta:");
 
-        jTextField5.setText("Introduce el saldo de tu cuenta");
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        inputSaldo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                inputSaldoActionPerformed(evt);
             }
         });
 
-        jLabel7.setText("Introducir el saldo de la cuenta:");
+        labelSaldoCuenta.setText("Introducir el saldo de la cuenta:");
 
-        jLabel8.setText("Introducir tipo de interés:");
+        labelTipoInteres.setText("Introducir tipo interés descubierto:");
 
-        jTextField6.setText("Introducir sólo en cuenta ahorro");
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        inputTipoInteresDescubierto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                inputTipoInteresDescubiertoActionPerformed(evt);
             }
         });
 
-        jLabel9.setText("Introducir comisión mantenimiento:");
+        labelComMant.setText("Introducir comisión mantenimiento:");
 
-        jTextField7.setText("Sólo en cuenta corriente personal");
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        inputComMantenimiento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                inputComMantenimientoActionPerformed(evt);
             }
         });
 
-        jLabel10.setText("Nivel máximo de descubierto:");
+        labelMaxDescubierto.setText("Nivel máximo de descubierto:");
 
-        jTextField8.setText("Sólo en cuenta corriente empresa");
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+        inputMaxDescubiertoPermitido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
+                inputMaxDescubiertoPermitidoActionPerformed(evt);
             }
         });
 
-        jTextField9.setText("Sólo en cuenta corriente empresa");
-        jTextField9.addActionListener(new java.awt.event.ActionListener() {
+        inputComFijaDescubierto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField9ActionPerformed(evt);
+                inputComFijaDescubiertoActionPerformed(evt);
             }
         });
 
-        jLabel11.setText("Comisión fija por descubierto:");
+        labelComFijaDescubierto.setText("Comisión fija por descubierto:");
 
-        jLabel12.setText("Introducir el número de cuenta:");
+        labelNumCuenta.setText("Introducir el número de cuenta:");
 
-        jTextField10.setText("Introduce el número de cuenta");
-        jTextField10.addActionListener(new java.awt.event.ActionListener() {
+        inputNumCuenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField10ActionPerformed(evt);
+                inputNumCuentaActionPerformed(evt);
             }
         });
 
-        jRadioButton1.setText("C. de Ahorro");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnSubmit.setText("Guardar");
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                btnSubmitActionPerformed(evt);
             }
         });
 
-        jRadioButton2.setText("C.Cor.Empresa");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnExit.setText("Salir");
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
+                btnExitActionPerformed(evt);
             }
         });
 
-        jRadioButton3.setText("C.C. Personal");
-        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+        selectorTipoCuenta.setFont(new java.awt.Font("Liberation Sans", 0, 13)); // NOI18N
+        selectorTipoCuenta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cuenta de Ahorro", "Cuenta Corriente Personal", "Cuenta Corriente Empresa" }));
+        selectorTipoCuenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton3ActionPerformed(evt);
+                selectorTipoCuentaActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Guardar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        labelDni1.setText("Introducir tipo de interés anual:");
 
-        jButton2.setText("Salir");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        inputTipoInteresAnual.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                inputTipoInteresAnualActionPerformed(evt);
             }
         });
 
@@ -204,161 +174,205 @@ public class CreateMenu extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap(56, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(62, 62, 62)
+                        .addGap(11, 11, 11)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(jLabel2)
+                            .addComponent(labelNombre)
+                            .addComponent(inputNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelDni)
+                            .addComponent(selectorTipoCuenta, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(inputDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelTipoCuenta)
+                            .addComponent(inputSaldo, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelDni1)
+                            .addComponent(labelSaldoCuenta)
+                            .addComponent(inputTipoInteresAnual, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(57, 57, 57)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                                        .addComponent(jLabel3)
-                                        .addComponent(jLabel5)
-                                        .addComponent(jLabel6)
-                                        .addComponent(jLabel7)
-                                        .addComponent(jRadioButton2))
-                                    .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jRadioButton1)
-                                        .addGap(7, 7, 7)
-                                        .addComponent(jRadioButton3)))
-                                .addGap(57, 57, 57)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                                        .addComponent(jLabel12)
-                                        .addComponent(jLabel8)
-                                        .addComponent(jLabel9)
-                                        .addComponent(jLabel10)
-                                        .addComponent(jLabel11))
-                                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)))
+                                .addGap(6, 6, 6)
+                                .addComponent(labelTipoInteres))
+                            .addComponent(labelNumCuenta)
+                            .addComponent(inputNumCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(inputTipoInteresDescubierto, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                                .addComponent(labelComFijaDescubierto)
+                                .addComponent(inputComFijaDescubierto, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnSubmit, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                                .addComponent(inputComMantenimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(labelComMant, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(labelMaxDescubierto)
+                                .addComponent(inputMaxDescubiertoPermitido, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(labelTitulo)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(59, 59, 59)
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel1)))
-                .addContainerGap(77, Short.MAX_VALUE))
+                        .addComponent(btnExit)
+                        .addGap(11, 11, 11)
+                        .addComponent(labelSt)))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jButton2))
+                .addComponent(labelTitulo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addGap(16, 16, 16)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelSt)
+                    .addComponent(btnExit))
+                .addGap(13, 13, 13)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel12)
+                        .addComponent(labelNombre)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(inputNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel8)
+                        .addComponent(labelDni)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(inputDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel9)
+                        .addComponent(labelTipoCuenta)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(selectorTipoCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(labelDni1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel10)
+                        .addComponent(inputTipoInteresAnual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(labelSaldoCuenta)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton1))
+                        .addComponent(inputSaldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
+                        .addComponent(labelNumCuenta)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(inputNumCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel5)
+                        .addComponent(labelTipoInteres)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(inputTipoInteresDescubierto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel6)
+                        .addComponent(labelComMant)
+                        .addGap(6, 6, 6)
+                        .addComponent(inputComMantenimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(labelMaxDescubierto)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jRadioButton1)
-                            .addComponent(jRadioButton3))
+                        .addComponent(inputMaxDescubiertoPermitido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(labelComFijaDescubierto)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jRadioButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(26, Short.MAX_VALUE))
+                        .addComponent(inputComFijaDescubierto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSubmit)))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreActionPerformed
+    private void inputNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_nombreActionPerformed
+    }//GEN-LAST:event_inputNombreActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void inputDNIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputDNIActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_inputDNIActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void inputSaldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputSaldoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_inputSaldoActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void inputTipoInteresDescubiertoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputTipoInteresDescubiertoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_inputTipoInteresDescubiertoActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void inputComMantenimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputComMantenimientoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_inputComMantenimientoActionPerformed
 
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+    private void inputMaxDescubiertoPermitidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputMaxDescubiertoPermitidoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField8ActionPerformed
+    }//GEN-LAST:event_inputMaxDescubiertoPermitidoActionPerformed
 
-    private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
+    private void inputNumCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNumCuentaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField10ActionPerformed
+    }//GEN-LAST:event_inputNumCuentaActionPerformed
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+    private void inputComFijaDescubiertoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputComFijaDescubiertoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+    }//GEN-LAST:event_inputComFijaDescubiertoActionPerformed
 
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
+        
+        try {
+            con = DriverManager.getConnection("jdbc:mysql://localhost:9090/db", "root", "admin");
+            
+            String auxStmt1 = "INSERT INTO `Cuentas` "
+                    + "(num_cuenta, saldo, tipo_cuenta, nombre_y_apellidos, dni, tipo_interes_anual, "
+                    + "comision_fija_descubierto, tipo_interes_descubierto, max_descubierto_permitido) "
+                    + "VALUES (";
+            
+            int intTipoCuenta = 0;
+//            System.out.println(selectorTipoCuenta.getSelectedItem().toString());
+            switch (selectorTipoCuenta.getSelectedItem().toString()) {
+                case "Cuenta de Ahorro":
+                    intTipoCuenta = 1;
+                    break;
+                case "Cuenta Corriente Personal":
+                    intTipoCuenta = 2;
+                    break;
+                case "Cuenta Corriente Empresa":
+                    intTipoCuenta = 3;
+                    break;
+                default:
+                    intTipoCuenta = 0;
+                    System.out.println("No se ha detectado el tipo de cuenta.");
+                    break;
+            }
+            
+            String auxStmt2 = inputNumCuenta.getText() + ", " + inputSaldo.getText() + ", " 
+                    + intTipoCuenta + ", " + inputNombre.getText() + ", "
+                    + inputDNI.getText() + ", " + inputTipoInteresDescubierto.getText() + ", " 
+                    + inputComFijaDescubierto.getText() + ", " + inputTipoInteresDescubierto.getText() + ", " 
+                    + inputMaxDescubiertoPermitido.getText() + ")";
+            
+            String auxStmt = auxStmt1.concat(auxStmt2);
+                    
+            stmt = con.prepareStatement(auxStmt.toString());
+            rs = stmt.executeQuery();
+            ResultSetMetaData RSMD = rs.getMetaData();
+            
+            while(rs.next()) {
+                JOptionPane.showMessageDialog(this, "El objeto ha sido introducido con éxito.");
+            }
+                        
+            rs.close();
+            stmt.close();
+            con.close();
+            
+            
+        } catch (SQLException ex) {
+            System.out.println("Conexión fallida, generando error: \n" + ex);
+        }
+    }//GEN-LAST:event_btnSubmitActionPerformed
 
-    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton3ActionPerformed
-
-    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField9ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        AccountsList origin1 = new AccountsList();
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+        CreateMenu origin1 = new CreateMenu();
         MainMenu mainMenu1 = new MainMenu();
         origin1.setVisible(false);
         mainMenu1.setVisible(true);
         dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnExitActionPerformed
+
+    private void selectorTipoCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectorTipoCuentaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_selectorTipoCuentaActionPerformed
+
+    private void inputTipoInteresAnualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputTipoInteresAnualActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputTipoInteresAnualActionPerformed
 
     /**
      * @param args the command line arguments
@@ -397,29 +411,29 @@ public class CreateMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
-    private javax.swing.JTextField nombre;
+    private javax.swing.JButton btnExit;
+    private javax.swing.JButton btnSubmit;
+    private javax.swing.JTextField inputComFijaDescubierto;
+    private javax.swing.JTextField inputComMantenimiento;
+    private javax.swing.JTextField inputDNI;
+    private javax.swing.JTextField inputMaxDescubiertoPermitido;
+    private javax.swing.JTextField inputNombre;
+    private javax.swing.JTextField inputNumCuenta;
+    private javax.swing.JTextField inputSaldo;
+    private javax.swing.JTextField inputTipoInteresAnual;
+    private javax.swing.JTextField inputTipoInteresDescubierto;
+    private javax.swing.JLabel labelComFijaDescubierto;
+    private javax.swing.JLabel labelComMant;
+    private javax.swing.JLabel labelDni;
+    private javax.swing.JLabel labelDni1;
+    private javax.swing.JLabel labelMaxDescubierto;
+    private javax.swing.JLabel labelNombre;
+    private javax.swing.JLabel labelNumCuenta;
+    private javax.swing.JLabel labelSaldoCuenta;
+    private javax.swing.JLabel labelSt;
+    private javax.swing.JLabel labelTipoCuenta;
+    private javax.swing.JLabel labelTipoInteres;
+    private javax.swing.JLabel labelTitulo;
+    private javax.swing.JComboBox<String> selectorTipoCuenta;
     // End of variables declaration//GEN-END:variables
 }
