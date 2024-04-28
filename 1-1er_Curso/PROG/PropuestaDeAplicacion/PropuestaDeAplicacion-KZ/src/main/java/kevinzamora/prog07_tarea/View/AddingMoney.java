@@ -4,6 +4,14 @@
  */
 package kevinzamora.prog07_tarea.View;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author kzdesigner
@@ -16,6 +24,11 @@ public class AddingMoney extends javax.swing.JFrame {
     public AddingMoney() {
         initComponents();
     }
+    
+    Connection con = null;
+    PreparedStatement stmt = null;
+    ResultSet rs = null;
+    Double saldo = 0.0;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -136,7 +149,32 @@ public class AddingMoney extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddingCashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddingCashActionPerformed
-        // TODO add your handling code here:
+        try {
+            con = DriverManager.getConnection("jdbc:mysql://localhost:9090/db", "root", "admin");
+            stmt = con.prepareStatement("UPDATE Cuentas SET saldo = '" 
+                    + (1500.6 + (Double.valueOf(introducedBalance.getText()))) + "'");
+            int rowsNum = stmt.executeUpdate();
+            stmt = con.prepareStatement("SELECT * FROM Cuentas");
+            rs = stmt.executeQuery();
+            ResultSetMetaData RSMD = rs.getMetaData();
+            
+            while(rs.next()) {
+                if(rs.getString("num_cuenta").equalsIgnoreCase(searchedAccount.getText())) {
+                    System.out.println("Tú nuevo saldo en cuenta es: " + rs.getString("saldo"));
+                    JOptionPane.showMessageDialog(this, "Tu nuevo saldo en cuenta es: " + rs.getString("saldo"));
+                } else {
+                    JOptionPane.showMessageDialog(this, "No se ha encontrado la cuenta introducida");
+                }
+            }
+                        
+            rs.close();
+            stmt.close();
+            con.close();
+            
+            
+        } catch (SQLException ex) {
+            System.out.println("Conexión fallida, generando error: \n" + ex);
+        }
     }//GEN-LAST:event_btnAddingCashActionPerformed
 
     private void searchedAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchedAccountActionPerformed
@@ -148,7 +186,7 @@ public class AddingMoney extends javax.swing.JFrame {
     }//GEN-LAST:event_introducedBalanceActionPerformed
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
-        AccountsList origin1 = new AccountsList();
+        AddingMoney origin1 = new AddingMoney();
         MainMenu mainMenu1 = new MainMenu();
         origin1.setVisible(false);
         mainMenu1.setVisible(true);

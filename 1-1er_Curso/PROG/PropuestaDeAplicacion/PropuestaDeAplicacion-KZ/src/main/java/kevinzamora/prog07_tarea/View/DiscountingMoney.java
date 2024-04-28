@@ -4,6 +4,14 @@
  */
 package kevinzamora.prog07_tarea.View;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author kzdesigner
@@ -16,6 +24,12 @@ public class DiscountingMoney extends javax.swing.JFrame {
     public DiscountingMoney() {
         initComponents();
     }
+    
+    Connection con = null;
+    PreparedStatement stmt = null;
+    ResultSet rs = null;
+    Double saldo = null;
+    Double balanceToDiscount = null;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -29,7 +43,7 @@ public class DiscountingMoney extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         btnExit = new javax.swing.JButton();
-        btnAddingCash = new javax.swing.JButton();
+        btnDiscountingCash = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         searchedAccount = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
@@ -53,11 +67,11 @@ public class DiscountingMoney extends javax.swing.JFrame {
             }
         });
 
-        btnAddingCash.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
-        btnAddingCash.setText("Ingresar");
-        btnAddingCash.addActionListener(new java.awt.event.ActionListener() {
+        btnDiscountingCash.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
+        btnDiscountingCash.setText("Retirar");
+        btnDiscountingCash.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddingCashActionPerformed(evt);
+                btnDiscountingCashActionPerformed(evt);
             }
         });
 
@@ -102,7 +116,7 @@ public class DiscountingMoney extends javax.swing.JFrame {
                         .addComponent(jLabel4)
                         .addComponent(introducedBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel5)
-                        .addComponent(btnAddingCash))
+                        .addComponent(btnDiscountingCash))
                     .addContainerGap(120, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
@@ -128,7 +142,7 @@ public class DiscountingMoney extends javax.swing.JFrame {
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                     .addComponent(introducedBalance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addComponent(btnAddingCash)
+                    .addComponent(btnDiscountingCash)
                     .addContainerGap(109, Short.MAX_VALUE)))
         );
 
@@ -143,9 +157,37 @@ public class DiscountingMoney extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnExitActionPerformed
 
-    private void btnAddingCashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddingCashActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAddingCashActionPerformed
+    private void btnDiscountingCashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDiscountingCashActionPerformed
+        try {
+            con = DriverManager.getConnection("jdbc:mysql://localhost:9090/db", "root", "admin");
+            stmt = con.prepareStatement("SELECT * FROM Cuentas");
+            rs = stmt.executeQuery();
+            ResultSetMetaData RSMD = rs.getMetaData();
+            
+            while(rs.next()) {
+                if(rs.getString("num_cuenta").equalsIgnoreCase(searchedAccount.getText())) {
+                    saldo = rs.getDouble("saldo");
+                    balanceToDiscount = Double.parseDouble(introducedBalance.getSelectedText());
+                    saldo = saldo + balanceToDiscount;
+                    System.out.println("Tú nuevo saldo en cuenta es: " + saldo);
+                    stmt = con.prepareStatement("UPDATE Cuentas SET saldo = " + saldo + " WHERE num_cuenta = '" 
+                            + searchedAccount.getText() + "'");
+                    JOptionPane.showMessageDialog(this, "Tu nuevo saldo en cuenta es: " + rs.getDouble("saldo"));
+                    dispose();
+                } else {
+                    JOptionPane.showMessageDialog(this, "No se ha encontrado la cuenta introducida");
+                }
+            }
+                        
+            rs.close();
+            stmt.close();
+            con.close();
+            
+            
+        } catch (SQLException ex) {
+            System.out.println("Conexión fallida, generando error: \n" + ex);
+        }
+    }//GEN-LAST:event_btnDiscountingCashActionPerformed
 
     private void searchedAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchedAccountActionPerformed
         // TODO add your handling code here:
@@ -194,7 +236,7 @@ public class DiscountingMoney extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAddingCash;
+    private javax.swing.JButton btnDiscountingCash;
     private javax.swing.JButton btnExit;
     private javax.swing.JTextField introducedBalance;
     private javax.swing.JLabel jLabel1;
