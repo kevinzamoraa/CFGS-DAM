@@ -54,7 +54,7 @@ public class AccountsList extends javax.swing.JFrame {
                 for (int i=0; i <= colums; i++) {
                     var numCuenta = v2.add(rs.getString("num_cuenta"));
                     var nombreYapellidos = v2.add(rs.getString("nombre_y_apellidos"));
-                    var saldo = v2.add(rs.getString("saldo"));
+                    var saldo = v2.add(rs.getString("saldo")+ "€");
                     
                     /* System.out.println(rs.getString("num_cuenta") + " - " 
                             + rs.getString("nombre_y_apellidos") + " - " 
