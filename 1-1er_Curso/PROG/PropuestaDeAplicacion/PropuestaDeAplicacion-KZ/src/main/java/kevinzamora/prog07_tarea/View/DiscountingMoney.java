@@ -160,24 +160,39 @@ public class DiscountingMoney extends javax.swing.JFrame {
     private void btnDiscountingCashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDiscountingCashActionPerformed
         try {
             con = DriverManager.getConnection("jdbc:mysql://localhost:9090/db", "root", "admin");
-            stmt = con.prepareStatement("SELECT * FROM Cuentas");
+            stmt = con.prepareStatement("SELECT * FROM Cuentas");/* WHERE num_cuenta = '*/ 
+                   /* + searchedAccount.getSelectedText().toString()+ "'");*/
             rs = stmt.executeQuery();
-            ResultSetMetaData RSMD = rs.getMetaData();
-            
+//            String antBalance = rs.getString("saldo");
+//            Double saldoActual = 0.0;
             while(rs.next()) {
                 if(rs.getString("num_cuenta").equalsIgnoreCase(searchedAccount.getText())) {
-                    saldo = rs.getDouble("saldo");
-                    balanceToDiscount = Double.parseDouble(introducedBalance.getSelectedText());
-                    saldo = saldo + balanceToDiscount;
-                    System.out.println("Tú nuevo saldo en cuenta es: " + saldo);
-                    stmt = con.prepareStatement("UPDATE Cuentas SET saldo = " + saldo + " WHERE num_cuenta = '" 
-                            + searchedAccount.getText() + "'");
-                    JOptionPane.showMessageDialog(this, "Tu nuevo saldo en cuenta es: " + rs.getDouble("saldo"));
-                    dispose();
-                } else {
+                    /*saldoActual = */rs.getDouble("saldo");
+                    if(rs.getDouble("saldo") >= Double.parseDouble(introducedBalance.getText())) {
+                        stmt = con.prepareStatement("UPDATE Cuentas SET saldo = (saldo - " 
+                        + Double.valueOf(introducedBalance.getText()) + ");");
+                        /*int rowsNum = */stmt.executeUpdate();
+                        JOptionPane.showMessageDialog(this, /*"Antes había un saldo de: " + antBalance*/
+                           "Se han retirado " + introducedBalance.getText() + "€ con éxito, de tu cuenta y "
+                                   + "tu saldo disponible antes de realizar la operación era de: " 
+                                   + rs.getString("saldo") + "€");
+                    } else {
                     JOptionPane.showMessageDialog(this, "No se ha encontrado la cuenta introducida");
                 }
+                }
             }
+            
+//            stmt = con.prepareStatement("SELECT * FROM Cuentas;" /*WHERE num_cuenta = '" 
+//                    + searchedAccount.getSelectedText().toString() + "'"*/);
+//            rs = stmt.executeQuery();
+//            ResultSetMetaData RSMD = rs.getMetaData();
+//            
+//            while(rs.next()) {
+//                if(rs.getString("num_cuenta").equalsIgnoreCase(searchedAccount.getText())) {
+//                    System.out.println("Tú nuevo saldo en cuenta es: " + rs.getString("saldo"));
+//                    
+//                } 
+//            }
                         
             rs.close();
             stmt.close();

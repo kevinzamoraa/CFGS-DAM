@@ -138,7 +138,7 @@ public class ShowCurrentBalance extends javax.swing.JFrame {
             
             while(rs.next()) {
                 if(rs.getString("num_cuenta").equalsIgnoreCase(searchedAccount.getText())) {
-                    JOptionPane.showMessageDialog(this, "Tu saldo es: " + rs.getString("saldo"));
+                    JOptionPane.showMessageDialog(this, "Tu saldo es: " + rs.getString("saldo") + "€");
                 } else {
                     JOptionPane.showMessageDialog(this, "No se ha encontrado la cuenta introducida");
                 }
