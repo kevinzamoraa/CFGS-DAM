@@ -151,17 +151,24 @@ public class AddingMoney extends javax.swing.JFrame {
     private void btnAddingCashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddingCashActionPerformed
         try {
             con = DriverManager.getConnection("jdbc:mysql://localhost:9090/db", "root", "admin");
-            stmt = con.prepareStatement("UPDATE Cuentas SET saldo = '" 
-                    + (1500.6 + (Double.valueOf(introducedBalance.getText()))) + "'");
+//            stmt = con.prepareStatement("SELECT saldo FROM Cuentas");/* WHERE num_cuenta = '*/ 
+                   /* + searchedAccount.getSelectedText().toString()+ "'");*/
+//            rs = stmt.executeQuery();
+//            String antBalance = rs.getString("saldo");
+            stmt = con.prepareStatement("UPDATE Cuentas SET saldo = saldo + " 
+                     + Double.valueOf(introducedBalance.getText()) + ";");
             int rowsNum = stmt.executeUpdate();
-            stmt = con.prepareStatement("SELECT * FROM Cuentas");
+            stmt = con.prepareStatement("SELECT * FROM Cuentas;" /*WHERE num_cuenta = '" 
+                    + searchedAccount.getSelectedText().toString() + "'"*/);
             rs = stmt.executeQuery();
             ResultSetMetaData RSMD = rs.getMetaData();
             
             while(rs.next()) {
                 if(rs.getString("num_cuenta").equalsIgnoreCase(searchedAccount.getText())) {
                     System.out.println("Tú nuevo saldo en cuenta es: " + rs.getString("saldo"));
-                    JOptionPane.showMessageDialog(this, "Tu nuevo saldo en cuenta es: " + rs.getString("saldo"));
+                    JOptionPane.showMessageDialog(this, /*"Antes había un saldo de: " + antBalance*/
+                           "Se han ingresado " + introducedBalance.getText() + "€ con éxito y "
+                                   + "tu u saldo actual en cuenta es: " + rs.getString("saldo") + "€");
                 } else {
                     JOptionPane.showMessageDialog(this, "No se ha encontrado la cuenta introducida");
                 }
