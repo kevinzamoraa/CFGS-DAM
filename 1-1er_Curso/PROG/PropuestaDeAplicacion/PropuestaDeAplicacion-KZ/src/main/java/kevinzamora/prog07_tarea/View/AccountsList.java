@@ -25,55 +25,54 @@ public class AccountsList extends javax.swing.JFrame {
     public AccountsList() {
         initComponents();
         showTableData();
-    }      
-    
+    }
+
     Connection con = null;
     PreparedStatement stmt = null;
     ResultSet rs = null;
     Vector<Object> columnNames = new Vector<Object>();
     Vector<Object> data = new Vector<Object>();
-    
+
     private void showTableData() {
-              
+
         try {
             con = DriverManager.getConnection("jdbc:mysql://localhost:9090/db", "root", "admin");
             stmt = con.prepareStatement("SELECT * FROM Cuentas");
             System.out.println("La conexión ha sido establecida con éxito.");
-            
+
             rs = stmt.executeQuery();
             ResultSetMetaData RSMD = rs.getMetaData();
-            int colums = RSMD.getColumnCount();
-            
-            DefaultTableModel model = (DefaultTableModel)ListaCuentas.getModel();
-            
+            int colums = 3 /*RSMD.getColumnCount()*/;
+
+            DefaultTableModel model = (DefaultTableModel) ListaCuentas.getModel();
+
             model.setRowCount(0);
-            
-            while(rs.next()) {
+
+            while (rs.next()) {
                 var v2 = new Vector();
-                
-                for (int i=0; i <= colums; i++) {
+
+                for (int i = 0; i <= colums; i++) {
                     var numCuenta = v2.add(rs.getString("num_cuenta"));
                     var nombreYapellidos = v2.add(rs.getString("nombre_y_apellidos"));
-                    var saldo = v2.add(rs.getString("saldo")+ "€");
-                    
+                    var saldo = v2.add(rs.getString("saldo") + "€");
+
                     /* System.out.println(rs.getString("num_cuenta") + " - " 
                             + rs.getString("nombre_y_apellidos") + " - " 
                             + rs.getString("saldo"));
-                    */
-                    model.addRow(
+                     */    
+                }
+                model.addRow(
                         new Object[]{
                             rs.getString("num_cuenta"),
                             rs.getString("nombre_y_apellidos"),
                             rs.getString("saldo")
                         }
-                    );
-                    rs.close();
-                    stmt.close();
-                    con.close();
-                }
+                );
             }
-            
-            
+            rs.close();
+            stmt.close();
+            con.close();
+
         } catch (SQLException ex) {
             System.out.println("Conexión fallida, generando error: \n" + ex);
         }

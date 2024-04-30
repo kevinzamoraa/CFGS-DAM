@@ -340,6 +340,7 @@ public class CreateMenu extends javax.swing.JFrame {
                 case 2:
                     additionalInfoQueries = null + ", " + Double.parseDouble(inputComMantenimiento.getText()) + ", " + null
                             + ", " + null;
+                    System.out.println(inputComMantenimiento.getText());
                     //System.out.println(additionalInfoQueries);
                     break;
                 case 3:
