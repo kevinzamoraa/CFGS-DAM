@@ -155,7 +155,7 @@ public class AccountData extends javax.swing.JFrame {
                         System.out.println("Tipo de cuenta incorrecto o desconocido");
                         break;
                 }
-                System.out.println(stmt);
+//                System.out.println(stmt);
                 if(rs.getString("num_cuenta").equalsIgnoreCase(searchedAccount.getText())) {
                     JOptionPane.showMessageDialog(this, "Información de la cuenta: \n " 
                         + "Titular: " + rs.getString("nombre_y_apellidos") + " - " 
@@ -164,9 +164,10 @@ public class AccountData extends javax.swing.JFrame {
                         + "Tipo de Cuenta: " + rs.getString("tipo_cuenta") + "\n "
                         + "Saldo: " + rs.getString("saldo") + "\n " + additionalInfo                        
                     );
-                } else {
+                } /* else {
                     JOptionPane.showMessageDialog(this, "No se ha encontrado la cuenta introducida");
-                }
+                    
+                } */
             }
                         
             rs.close();
