@@ -10,9 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-import java.util.Vector;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -26,10 +24,10 @@ public class AccountData extends javax.swing.JFrame {
     public AccountData() {
         initComponents();
     }
-    
-        Connection con = null;
-        PreparedStatement stmt = null;
-        ResultSet rs = null;
+
+    Connection con = null;
+    PreparedStatement stmt = null;
+    ResultSet rs = null;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -129,56 +127,56 @@ public class AccountData extends javax.swing.JFrame {
     }//GEN-LAST:event_btnExitActionPerformed
 
     private void btnSearchAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchAccountActionPerformed
-        
+
         try {
             con = DriverManager.getConnection("jdbc:mysql://localhost:9090/db", "root", "admin");
             stmt = con.prepareStatement("SELECT * FROM Cuentas");
             rs = stmt.executeQuery();
             ResultSetMetaData RSMD = rs.getMetaData();
-            
-            while(rs.next()) {
-                String additionalInfo = null;
-                switch(rs.getString("tipo_cuenta")) {
-                    case "1":
-                        additionalInfo = "Tipo de interés anual: " + rs.getString("tipo_interes_anual");
-                        break;
-                    case "2":
-                        additionalInfo = "Comisión de mantenimiento" + rs.getString("com_mantenimiento");
-                        break;
-                    case "3":
-                        additionalInfo = "Tipo de interés por descubierto: " 
-                                + rs.getString("tipo_interes_descubierto") 
-                                + " \n Máximo descubierto permitido:" 
-                                + rs.getString("max_descubierto_permitido");
-                        break;
-                    default:
-                        System.out.println("Tipo de cuenta incorrecto o desconocido");
-                        break;
-                }
+
+            while (rs.next()) {
 //                System.out.println(stmt);
-                if(rs.getString("num_cuenta").equalsIgnoreCase(searchedAccount.getText())) {
-                    JOptionPane.showMessageDialog(this, "Información de la cuenta: \n " 
-                        + "Titular: " + rs.getString("nombre_y_apellidos") + " - " 
-                        + rs.getString("dni") + "\n "
-                        + "Número de Cuenta: " + rs.getString("num_cuenta") + "\n "
-                        + "Tipo de Cuenta: " + rs.getString("tipo_cuenta") + "\n "
-                        + "Saldo: " + rs.getString("saldo") + "\n " + additionalInfo                        
+                if (rs.getString("num_cuenta").equalsIgnoreCase(searchedAccount.getText())) {
+                    String additionalInfo = null;
+                    switch (rs.getString("tipo_cuenta")) {
+                        case "1":
+                            additionalInfo = "Tipo de interés anual: " + rs.getString("tipo_interes_anual");
+                            break;
+                        case "2":
+                            additionalInfo = "Comisión de mantenimiento: " + rs.getString("com_mantenimiento");
+                            break;
+                        case "3":
+                            additionalInfo = "Tipo de interés por descubierto: "
+                                    + rs.getString("tipo_interes_descubierto")
+                                    + " \n Máximo descubierto permitido:"
+                                    + rs.getString("max_descubierto_permitido");
+                            break;
+                        default:
+                            System.out.println("Tipo de cuenta incorrecto o desconocido");
+                            break;
+                    }
+                    JOptionPane.showMessageDialog(this, "Información de la cuenta: \n "
+                            + "Titular: " + rs.getString("nombre_y_apellidos") + " - "
+                            + rs.getString("dni") + "\n "
+                            + "Número de Cuenta: " + rs.getString("num_cuenta") + "\n "
+                            + "Tipo de Cuenta: " + rs.getString("tipo_cuenta") + "\n "
+                            + "Saldo: " + rs.getString("saldo") + "\n " + additionalInfo
                     );
-                } /* else {
+                }
+                /* else {
                     JOptionPane.showMessageDialog(this, "No se ha encontrado la cuenta introducida");
                     
                 } */
             }
-                        
+
             rs.close();
             stmt.close();
             con.close();
-            
-            
+
         } catch (SQLException ex) {
             System.out.println("Conexión fallida, generando error: \n" + ex);
         }
-        
+
     }//GEN-LAST:event_btnSearchAccountActionPerformed
 
     /**

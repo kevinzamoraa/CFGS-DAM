@@ -333,18 +333,18 @@ public class CreateMenu extends javax.swing.JFrame {
             String additionalInfoQueries = "";
             switch (intTipoCuenta) {
                 case 1:
-                    additionalInfoQueries = Double.parseDouble(inputTipoInteresAnual.getText()) + ", " + null + ", " + null
-                            + ", " + null;
+                    additionalInfoQueries = Double.parseDouble(inputTipoInteresAnual.getText()) + ", " + 0.0 + ", " + 0.0
+                            + ", " + 0.0 + ", " + 0.0;
                     //System.out.println(additionalInfoQueries);
                     break;
                 case 2:
-                    additionalInfoQueries = null + ", " + Double.parseDouble(inputComMantenimiento.getText()) + ", " + null
-                            + ", " + null;
-                    System.out.println(inputComMantenimiento.getText());
-                    //System.out.println(additionalInfoQueries);
+                    additionalInfoQueries = 0.0 + ", " + Double.parseDouble(inputComMantenimiento.getText()) + ", " + 0.0
+                            + ", " + 0.0 + ", " + 0.0;
+//                    System.out.println(additionalInfoQueries);
                     break;
                 case 3:
-                    additionalInfoQueries = null + ", " + null + ", "
+                    additionalInfoQueries = 0.0 + ", " + 0.0 + ", "
+                            + Double.parseDouble(inputComFijaDescubierto.getText()) + ", "
                             + Double.parseDouble(inputTipoInteresDescubierto.getText()) + ", "
                             + Double.parseDouble(inputMaxDescubiertoPermitido.getText());
                     //System.out.println(additionalInfoQueries);
@@ -357,7 +357,7 @@ public class CreateMenu extends javax.swing.JFrame {
 
             stmt = con.prepareStatement("INSERT INTO Cuentas "
                     + "(num_cuenta, saldo, tipo_cuenta, nombre_y_apellidos, dni, "
-                    + "tipo_interes_anual, comision_fija_descubierto, tipo_interes_descubierto, "
+                    + "tipo_interes_anual, com_mantenimiento, comision_fija_descubierto, tipo_interes_descubierto, "
                     + "max_descubierto_permitido) VALUES ( '"
                     + inputNumCuenta.getText() + "', "
                     + inputSaldo.getText() + ", " + intTipoCuenta + ", '" + inputNombre.getText() + "', '"
@@ -377,7 +377,7 @@ public class CreateMenu extends javax.swing.JFrame {
                             additionalInfo = "Tipo de interés anual: " + rs.getString("tipo_interes_anual");
                             break;
                         case "2":
-                            additionalInfo = "Comisión de mantenimiento" + rs.getString("com_mantenimiento");
+                            additionalInfo = "Comisión de mantenimiento: " + rs.getString("com_mantenimiento");
                             break;
                         case "3":
                             additionalInfo = "Tipo de interés por descubierto: "
