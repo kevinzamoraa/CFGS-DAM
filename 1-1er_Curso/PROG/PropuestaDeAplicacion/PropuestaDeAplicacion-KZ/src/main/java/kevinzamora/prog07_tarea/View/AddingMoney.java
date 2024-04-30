@@ -169,9 +169,9 @@ public class AddingMoney extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this, /*"Antes había un saldo de: " + antBalance*/
                            "Se han ingresado " + introducedBalance.getText() + "€ con éxito y "
                                    + "tu u saldo actual en cuenta es: " + rs.getString("saldo") + "€");
-                } else {
+                } /* else {
                     JOptionPane.showMessageDialog(this, "No se ha encontrado la cuenta introducida");
-                }
+                }*/
             }
                         
             rs.close();

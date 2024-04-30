@@ -329,11 +329,11 @@ public class CreateMenu extends javax.swing.JFrame {
                     break;
             }
 //            System.out.println(intTipoCuenta);
-            
+
             String additionalInfoQueries = "";
             switch (intTipoCuenta) {
                 case 1:
-                    additionalInfoQueries = Double.parseDouble(inputTipoInteresAnual.getText()) + ", " + null + ", " + null 
+                    additionalInfoQueries = Double.parseDouble(inputTipoInteresAnual.getText()) + ", " + null + ", " + null
                             + ", " + null;
                     //System.out.println(additionalInfoQueries);
                     break;
@@ -353,50 +353,54 @@ public class CreateMenu extends javax.swing.JFrame {
                             + "Este resulta imprescindible seleccionar el 'tipo de cuenta' deseado'");
                     break;
             }
-            
+
             stmt = con.prepareStatement("INSERT INTO Cuentas "
-                    + "(num_cuenta, saldo, tipo_cuenta, nombre_y_apellidos, dni,  "
+                    + "(num_cuenta, saldo, tipo_cuenta, nombre_y_apellidos, dni, "
                     + "tipo_interes_anual, comision_fija_descubierto, tipo_interes_descubierto, "
-                    + "max_descubierto_permitido) VALUES ( '" 
+                    + "max_descubierto_permitido) VALUES ( '"
                     + inputNumCuenta.getText() + "', "
                     + inputSaldo.getText() + ", " + intTipoCuenta + ", '" + inputNombre.getText() + "', '"
-                    + inputDNI.getText() + "', " + additionalInfoQueries + ")");
-            int rowsNum = stmt.executeUpdate();
-//            System.out.println(rowsNum);
-            ResultSetMetaData RSMD = rs.getMetaData();
-            stmt = con.prepareStatement("SELECT * FROM Cuentas");
+                    + inputDNI.getText() + "', " + additionalInfoQueries + ");");
+            stmt.executeUpdate();
+            stmt = con.prepareStatement("SELECT * FROM Cuentas;");
             rs = stmt.executeQuery();
-            String additionalInfo = "";
-                switch(rs.getString("tipo_cuenta")) {
-                    case "1":
-                        additionalInfo = "Tipo de interés anual: " + rs.getString("tipo_interes_anual");
-                        break;
-                    case "2":
-                        additionalInfo = "Comisión de mantenimiento" + rs.getString("com_mantenimiento");
-                        break;
-                    case "3":
-                        additionalInfo = "Tipo de interés por descubierto: " 
-                                + rs.getString("tipo_interes_descubierto") 
-                                + " \n Máximo descubierto permitido:" 
-                                + rs.getString("max_descubierto_permitido");
-                        break;
-                    default:
-                        System.out.println("Tipo de cuenta incorrecto o desconocido");
-                        break;
-                }
-            if (rs.getString("num_cuenta").equalsIgnoreCase(inputNumCuenta.getText())) {
-                JOptionPane.showMessageDialog(this, "Los datos introducidos se han añadido "
-                        + "correctamente a nuestra base de datos. \n "
-                        + "Información de la cuenta: \n "
-                        + "Titular: " + rs.getString("nombre_y_apellidos") + " - "
-                        + rs.getString("dni") + "\n "
-                        + "Número de Cuenta: " + rs.getString("num_cuenta") + "\n "
-                        + "Tipo de Cuenta: " + rs.getString("tipo_cuenta") + "\n "
-                        + "Saldo: " + rs.getString("saldo") + "\n " + additionalInfo                        
-                );
-            } else {
-                JOptionPane.showMessageDialog(this, "Ha ocurrido un error durante el proceso "
-                        + "de guardado de los datos introducidos");
+            ResultSetMetaData RSMD = rs.getMetaData();
+            
+            while (rs.next()) {
+//                System.out.println(rs.getString("num_cuenta"));
+//                System.out.println(inputNumCuenta.getText());
+                if (rs.getString("num_cuenta").equalsIgnoreCase(inputNumCuenta.getText())) {
+                    String additionalInfo = "";
+                    switch (rs.getString("tipo_cuenta")) {
+                        case "1":
+                            additionalInfo = "Tipo de interés anual: " + rs.getString("tipo_interes_anual");
+                            break;
+                        case "2":
+                            additionalInfo = "Comisión de mantenimiento" + rs.getString("com_mantenimiento");
+                            break;
+                        case "3":
+                            additionalInfo = "Tipo de interés por descubierto: "
+                                    + rs.getString("tipo_interes_descubierto")
+                                    + " \n Máximo descubierto permitido:"
+                                    + rs.getString("max_descubierto_permitido");
+                            break;
+                        default:
+                            System.out.println("Tipo de cuenta incorrecto o desconocido");
+                            break;
+                    }
+                    JOptionPane.showMessageDialog(this, "Los datos introducidos se han añadido "
+                            + "correctamente a nuestra base de datos. \n " 
+                            + "Información de la cuenta: \n "
+                            + "Titular: " + rs.getString("nombre_y_apellidos") + " - "
+                            + rs.getString("dni") + "\n "
+                            + "Número de Cuenta: " + rs.getString("num_cuenta") + "\n "
+                            + "Tipo de Cuenta: " + rs.getString("tipo_cuenta") + "\n "
+                            + "Saldo: " + rs.getString("saldo") + "\n " + additionalInfo 
+                    );
+                } /* else {
+                    JOptionPane.showMessageDialog(this, "Ha ocurrido un error durante el proceso "
+                            + "de guardado de los datos introducidos");
+                }*/
             }
 
             rs.close();

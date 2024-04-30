@@ -155,6 +155,7 @@ public class AccountData extends javax.swing.JFrame {
                         System.out.println("Tipo de cuenta incorrecto o desconocido");
                         break;
                 }
+                System.out.println(stmt);
                 if(rs.getString("num_cuenta").equalsIgnoreCase(searchedAccount.getText())) {
                     JOptionPane.showMessageDialog(this, "Información de la cuenta: \n " 
                         + "Titular: " + rs.getString("nombre_y_apellidos") + " - " 
