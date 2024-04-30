@@ -25,6 +25,7 @@ public class AccountsList extends javax.swing.JFrame {
     public AccountsList() {
         initComponents();
         showTableData();
+        this.setLocationRelativeTo(null);
     }
 
     Connection con = null;

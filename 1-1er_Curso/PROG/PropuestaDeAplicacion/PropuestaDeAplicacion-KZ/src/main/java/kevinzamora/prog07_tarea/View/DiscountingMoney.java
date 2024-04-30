@@ -23,6 +23,7 @@ public class DiscountingMoney extends javax.swing.JFrame {
      */
     public DiscountingMoney() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
     
     Connection con = null;

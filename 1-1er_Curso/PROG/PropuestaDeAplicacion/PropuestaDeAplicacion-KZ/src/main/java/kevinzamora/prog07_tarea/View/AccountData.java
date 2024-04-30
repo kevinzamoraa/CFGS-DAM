@@ -23,6 +23,7 @@ public class AccountData extends javax.swing.JFrame {
      */
     public AccountData() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     Connection con = null;
@@ -160,7 +161,7 @@ public class AccountData extends javax.swing.JFrame {
                             + rs.getString("dni") + "\n "
                             + "Número de Cuenta: " + rs.getString("num_cuenta") + "\n "
                             + "Tipo de Cuenta: " + rs.getString("tipo_cuenta") + "\n "
-                            + "Saldo: " + rs.getString("saldo") + "\n " + additionalInfo
+                            + "Saldo: " + rs.getString("saldo") + "€ \n " + additionalInfo
                     );
                 }
                 /* else {

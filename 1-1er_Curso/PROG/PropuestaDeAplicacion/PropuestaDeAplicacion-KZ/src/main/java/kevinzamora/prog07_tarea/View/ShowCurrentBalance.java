@@ -25,6 +25,7 @@ public class ShowCurrentBalance extends javax.swing.JFrame {
      */
     public ShowCurrentBalance() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
     
         Connection con = null;

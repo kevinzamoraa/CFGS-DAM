@@ -23,6 +23,7 @@ public class AddingMoney extends javax.swing.JFrame {
      */
     public AddingMoney() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
     
     Connection con = null;

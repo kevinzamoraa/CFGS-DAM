@@ -23,6 +23,7 @@ public class CreateMenu extends javax.swing.JFrame {
      */
     public CreateMenu() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     private Connection con = null;
@@ -396,7 +397,7 @@ public class CreateMenu extends javax.swing.JFrame {
                             + rs.getString("dni") + "\n "
                             + "Número de Cuenta: " + rs.getString("num_cuenta") + "\n "
                             + "Tipo de Cuenta: " + rs.getString("tipo_cuenta") + "\n "
-                            + "Saldo: " + rs.getString("saldo") + "\n " + additionalInfo 
+                            + "Saldo: " + rs.getString("saldo") + "€ \n " + additionalInfo 
                     );
                 } /* else {
                     JOptionPane.showMessageDialog(this, "Ha ocurrido un error durante el proceso "
