@@ -1,0 +1,5 @@
+<!ELEMENT entrada (#PCDATA)>
+<!ATTLIST entrada id ID #REQUIRED>
+<!ATTLIST entrada nombre CDATA #REQUIRED>
+<!ATTLIST entrada direccion ID #REQUIRED>
+<!ATTLIST entrada telefono ID #REQUIRED>

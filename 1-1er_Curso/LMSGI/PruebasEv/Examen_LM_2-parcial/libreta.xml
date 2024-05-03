@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE libreta SYSTEM "libreta.dtd">
+<libreta>
+	<entrada id="1">
+		<nombre>Aitor Tilla</nombre>
+		<direccion>
+			<cp>44600</cp>
+			<localidad>Alcañiz</localidad>
+		</direccion>
+		<telefonos>
+			<telefono tipo="fijo">555888999</telefono>
+		</telefonos>
+	</entrada>
+	<entrada id="2">
+		<nombre>Lola Mento</nombre>
+		<direccion>
+			<cp>50001</cp>
+			<localidad>Zaragoza</localidad>
+		</direccion>
+		<telefonos>
+			<telefono tipo="fijo">555111222</telefono>
+			<telefono tipo="movil">555111223</telefono>
+		</telefonos>
+	</entrada>
+</libreta>

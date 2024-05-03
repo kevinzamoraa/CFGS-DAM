@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<mensajes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="mensajes.xsd">
+<mensaje tipo="entrada">
+	<de>Juan</de>
+	<para>María</para>
+	<mensaje>Hola, ya he llegado</mensaje>
+	<orden>1</orden>
+	<leido/>
+</mensaje>
+<mensaje tipo="salida">
+	<de>María</de>
+	<para>Oscar</para>
+	<para>Luisa</para>
+	<mensaje>Juan ya he llegado</mensaje>
+	<orden>2</orden>
+</mensaje>
+</mensajes>

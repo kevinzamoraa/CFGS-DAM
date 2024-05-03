@@ -5,7 +5,7 @@ CHECKUPDATES = false
 # Paths
 INPUTPATH = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/basex/
 DATAPATH = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/basex/
-WORKPATH = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/
+WORKPATH = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/PruebasEv/Examen_LM_2-parcial/
 PROJECTPATH = /home/kzdesigner/
 
 # Layout
@@ -93,20 +93,22 @@ SEARCH = 0
 XQUERY = 0
 
 # Files
-EDITOR = 13
-EDITOR1 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/consulta1.xq
-EDITOR2 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/consulta2.xq
-EDITOR3 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/artistas.xml
-EDITOR4 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/impresoras.xml
-EDITOR5 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/consulta10.xq
-EDITOR6 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/consulta9.xq
-EDITOR7 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/consulta8.xq
-EDITOR8 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/consulta7.xq
-EDITOR9 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/consulta6.xq
-EDITOR10 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/consulta5.xq
-EDITOR11 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/consulta4.xq
-EDITOR12 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/consulta3.xq
-EDITOR13 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/ejemplos_tema6.xq
+EDITOR = 15
+EDITOR1 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/PruebasEv/Examen_LM_2-parcial/consulta1.xq
+EDITOR2 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/PruebasEv/Examen_LM_2-parcial/consulta2.xq
+EDITOR3 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/consulta1.xq
+EDITOR4 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/consulta2.xq
+EDITOR5 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/artistas.xml
+EDITOR6 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/impresoras.xml
+EDITOR7 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/consulta10.xq
+EDITOR8 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/consulta9.xq
+EDITOR9 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/consulta8.xq
+EDITOR10 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/consulta7.xq
+EDITOR11 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/consulta6.xq
+EDITOR12 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/consulta5.xq
+EDITOR13 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/consulta4.xq
+EDITOR14 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/consulta3.xq
+EDITOR15 = /home/kzdesigner/Documents/CFGS-Multiplataforma/CFGS-DAM/1-1er_Curso/LMSGI/Tema6/tarea/ejemplos_tema6.xq
 INPUTS = 0
 OPEN = 0
 PROJECTS = 0

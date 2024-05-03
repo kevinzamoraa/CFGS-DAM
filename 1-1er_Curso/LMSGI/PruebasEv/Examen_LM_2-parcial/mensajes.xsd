@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="mensajes" type="mensaje"></xs:element>
+    <xs:complexType name="mensaje">
+        <xs:attribute name="tipo" use="required">
+            <xs:simpleType>
+                <xs:restriction>
+                    <xs:enumeration value="salida"></xs:enumeration>
+                    <xs:enumeration value="entrada"></xs:enumeration>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:element name="de" ></xs:element>
+    <xs:element name="para"></xs:element>
+    <xs:element name="mensaje"></xs:element>
+    <xs:element name="orden"></xs:element>
+    <xs:element name="leido"></xs:element>
+
+
+</xs:schema>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<obras>
+	<obra pais="Francia">
+		<titulo>Bal au moulin de la Galette</titulo>
+		<autor>Pierre Renoir</autor>
+		<museo>Museo de Orsay</museo>
+	</obra>
+	<obra pais="Francia">
+		<titulo>Pont de Maincy</titulo>
+		<autor>Paul Cézanne</autor>
+		<museo>Museo de Orsay</museo>
+	</obra>
+	<obra pais="España">
+		<titulo>Vieja friendo huevos</titulo>
+		<autor>Diego Velázquez</autor>
+		<museo>Galería Nacional de Escocia</museo>
+	</obra>
+</obras>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="peliculas.xsl"?>
+<peliculas>
+<pelicula>
+	<titulo>Los Fabelman</titulo>
+	<sinopsis>La historia de un secreto familiar, que viene trufada de pequeños guiños a su propia carrera.
+	</sinopsis>
+</pelicula>
+<pelicula>
+	<titulo>Ant-Man y la Avispa: Quantumanía</titulo>
+	<sinopsis>Du sentido del humor, su espíritu aventurero, sus hechuras de ciencia ficción clásica y el espléndido descubrimiento de MODOK, uno de los mejores villanos Marvel de todos los tiempos.
+	</sinopsis>
+</pelicula>
+</peliculas>
