@@ -14,7 +14,7 @@ public class PARCIAL2_Tarea {
 
     public static void main(String[] args) {
         
-        Calculadora mainMenuObj = new Calculadora();
+        Calculadora calculadoraObj = new Calculadora();
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

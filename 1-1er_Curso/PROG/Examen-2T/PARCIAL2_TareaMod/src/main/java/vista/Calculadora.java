@@ -4,28 +4,28 @@
  */
 package vista;
 
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
+import java.awt.event.*;
+import javax.swing.*;
+import java.awt.*;
+import static javax.swing.JOptionPane.showMessageDialog;
 
 /**
  *
  * @author kzdesigner
  */
-public class Calculadora extends javax.swing.JFrame {
+public class Calculadora extends javax.swing.JFrame implements ActionListener {
 
     /**
-     * Creates new form MainMenu
+     * Creates new form Calculadora
      */
     public Calculadora() {
         initComponents();
         this.setLocationRelativeTo(null);
-        resultado.disable();
+        resultado.setEditable(false);
     }
     
-    double memResultado = 0.0;
-    
-    
-    
+    public double memResultado = 0.0;
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -226,31 +226,25 @@ public class Calculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_inputNumActionPerformed
 
     private void btnSumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSumActionPerformed
-        Calculadora mainMenu = new Calculadora();
-        double tempNum = Double.parseDouble(inputNum.getText());
-                //mainMenu.sumar(Double.parseDouble(inputNum.getText().toString()));
+        Calculadora calcObject = new Calculadora();
+        calcObject.memResultado = calcObject.memResultado + Double.parseDouble(inputNum.getText());
+        resultado.setText(String.valueOf(calcObject.memResultado));
     }//GEN-LAST:event_btnSumActionPerformed
 
     private void btnResActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResActionPerformed
-        Calculadora mainMenu = new Calculadora();
-        double tempNum = Double.parseDouble(inputNum.getText());
-                //mainMenu.sumar(Double.parseDouble(inputNum.getText().toString()));
+
     }//GEN-LAST:event_btnResActionPerformed
 
     private void btnMultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultActionPerformed
-        Calculadora mainMenu = new Calculadora();
-        double tempNum = Double.parseDouble(inputNum.getText());
-                //mainMenu.sumar(Double.parseDouble(inputNum.getText().toString()));
+
     }//GEN-LAST:event_btnMultActionPerformed
 
     private void btnDivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDivActionPerformed
-        Calculadora mainMenu = new Calculadora();
-        double tempNum = Double.parseDouble(inputNum.getText());
-                //mainMenu.sumar(Double.parseDouble(inputNum.getText().toString()));
+
     }//GEN-LAST:event_btnDivActionPerformed
 
     private void btnMSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMSActionPerformed
-        memResultado = 0;
+
     }//GEN-LAST:event_btnMSActionPerformed
 
     private void btnMemoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMemoriaActionPerformed
@@ -258,7 +252,7 @@ public class Calculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_btnMemoriaActionPerformed
 
     private void btnCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_btnCActionPerformed
 
     private void btnHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistorialActionPerformed
@@ -276,30 +270,7 @@ public class Calculadora extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Calculadora.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Calculadora.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Calculadora.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Calculadora.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
+    public void main(String args[]) {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -324,4 +295,10 @@ public class Calculadora extends javax.swing.JFrame {
     private javax.swing.JLabel resLabel;
     private javax.swing.JTextField resultado;
     // End of variables declaration//GEN-END:variables
+
+    /* Operational Methods */
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        
+    }
 }
