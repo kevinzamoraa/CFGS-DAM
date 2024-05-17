@@ -4,7 +4,7 @@
 
 package com.kevinzamora.parcial2_tarea;
 
-import vista.Calculadora;
+import vista.MainMenu;
 
 /**
  *
@@ -14,11 +14,11 @@ public class PARCIAL2_Tarea {
 
     public static void main(String[] args) {
         
-        Calculadora mainMenuObj = new Calculadora();
+        MainMenu mainMenuObj = new MainMenu();
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Calculadora().setVisible(true);
+                new MainMenu().setVisible(true);
             }
         });
     }

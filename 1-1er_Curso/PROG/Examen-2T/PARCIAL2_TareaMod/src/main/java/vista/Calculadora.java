@@ -13,7 +13,7 @@ import static javax.swing.JOptionPane.showMessageDialog;
  *
  * @author kzdesigner
  */
-public class Calculadora extends javax.swing.JFrame implements ActionListener {
+public class Calculadora extends javax.swing.JFrame {
 
     /**
      * Creates new form Calculadora
@@ -24,7 +24,8 @@ public class Calculadora extends javax.swing.JFrame implements ActionListener {
         resultado.setEditable(false);
     }
     
-    public double memResultado = 0.0;
+    double memResultado;
+    String s1, s2, s3;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -227,20 +228,42 @@ public class Calculadora extends javax.swing.JFrame implements ActionListener {
 
     private void btnSumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSumActionPerformed
         Calculadora calcObject = new Calculadora();
-        calcObject.memResultado = calcObject.memResultado + Double.parseDouble(inputNum.getText());
-        resultado.setText(String.valueOf(calcObject.memResultado));
+        double antResultado = calcObject.memResultado;
+        double numIntroducido = Double.parseDouble(inputNum.getText());
+        double sumatorio = (antResultado + numIntroducido);
+//        showMessageDialog(null, inputNum.getText() + " - " + sumatorio);
+        memResultado = sumatorio;
+        resultado.setText(String.valueOf(sumatorio));
     }//GEN-LAST:event_btnSumActionPerformed
 
     private void btnResActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResActionPerformed
-
+        Calculadora calcObject = new Calculadora();
+        double antResultado = calcObject.memResultado;
+        double numIntroducido = Double.parseDouble(inputNum.getText());
+        double sumatorio = (antResultado - numIntroducido);
+//        showMessageDialog(null, inputNum.getText() + " - " + sumatorio);
+        memResultado = sumatorio;
+        resultado.setText(String.valueOf(sumatorio));
     }//GEN-LAST:event_btnResActionPerformed
 
     private void btnMultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultActionPerformed
-
+        Calculadora calcObject = new Calculadora();
+        double antResultado = calcObject.memResultado;
+        double numIntroducido = Double.parseDouble(inputNum.getText());
+        double sumatorio = (antResultado * numIntroducido);
+//        showMessageDialog(null, inputNum.getText() + " - " + sumatorio);
+        memResultado = sumatorio;
+        resultado.setText(String.valueOf(sumatorio));
     }//GEN-LAST:event_btnMultActionPerformed
 
     private void btnDivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDivActionPerformed
-
+        Calculadora calcObject = new Calculadora();
+        double antResultado = calcObject.memResultado;
+        double numIntroducido = Double.parseDouble(inputNum.getText());
+        double sumatorio = (antResultado / numIntroducido);
+//        showMessageDialog(null, inputNum.getText() + " - " + sumatorio);
+        memResultado = sumatorio;
+        resultado.setText(String.valueOf(sumatorio));
     }//GEN-LAST:event_btnDivActionPerformed
 
     private void btnMSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMSActionPerformed
@@ -252,7 +275,7 @@ public class Calculadora extends javax.swing.JFrame implements ActionListener {
     }//GEN-LAST:event_btnMemoriaActionPerformed
 
     private void btnCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCActionPerformed
-
+        
     }//GEN-LAST:event_btnCActionPerformed
 
     private void btnHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistorialActionPerformed
@@ -271,7 +294,6 @@ public class Calculadora extends javax.swing.JFrame implements ActionListener {
      * @param args the command line arguments
      */
     public void main(String args[]) {
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -295,10 +317,4 @@ public class Calculadora extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JLabel resLabel;
     private javax.swing.JTextField resultado;
     // End of variables declaration//GEN-END:variables
-
-    /* Operational Methods */
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        
-    }
 }
