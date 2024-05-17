@@ -19,37 +19,10 @@ public class Calculadora extends javax.swing.JFrame {
     public Calculadora() {
         initComponents();
         this.setLocationRelativeTo(null);
+        resultado.disable();
     }
     
-    double resultado = 0.0;
-    
-    public double getResultado() {
-        return resultado;
-    }
-    
-    public void setResultado(double num) {
-        resultado = num;
-    }
-    
-//    public double sumar(double num) {
-//        resultado = resultado + num;
-//        return resultado;
-//    }
-//    
-//    public double restar(double num) {
-//        resultado = resultado - num;
-//        return resultado;
-//    }
-//    
-//    public double multiplicar(double num) {
-//        resultado = resultado * num;
-//        return resultado;
-//    }
-//    
-//    public double dividir(double num) {
-//        resultado = resultado / num;
-//        return resultado;
-//    }
+    double memResultado = 0.0;
     
     
     
@@ -65,7 +38,7 @@ public class Calculadora extends javax.swing.JFrame {
         inputNum = new javax.swing.JTextField();
         numLabel = new javax.swing.JLabel();
         resLabel = new javax.swing.JLabel();
-        result = new javax.swing.JTextField();
+        resultado = new javax.swing.JTextField();
         btnSum = new javax.swing.JButton();
         btnRes = new javax.swing.JButton();
         btnDiv = new javax.swing.JButton();
@@ -91,10 +64,10 @@ public class Calculadora extends javax.swing.JFrame {
         resLabel.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
         resLabel.setText("Resultado");
 
-        result.setText("0");
-        result.addActionListener(new java.awt.event.ActionListener() {
+        resultado.setText("0");
+        resultado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                resultActionPerformed(evt);
+                resultadoActionPerformed(evt);
             }
         });
 
@@ -197,7 +170,7 @@ public class Calculadora extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(resLabel)
                                         .addGap(18, 18, 18)
-                                        .addComponent(result))
+                                        .addComponent(resultado))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(numLabel)
                                         .addGap(31, 31, 31)
@@ -222,7 +195,7 @@ public class Calculadora extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(resLabel)
-                    .addComponent(result, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(resultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(52, 52, 52)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSum, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -256,40 +229,28 @@ public class Calculadora extends javax.swing.JFrame {
         Calculadora mainMenu = new Calculadora();
         double tempNum = Double.parseDouble(inputNum.getText());
                 //mainMenu.sumar(Double.parseDouble(inputNum.getText().toString()));
-        double resultadoAux = mainMenu.getResultado() + tempNum;
-        mainMenu.setResultado(resultadoAux);
-        JOptionPane.showMessageDialog(this, mainMenu.getResultado());
     }//GEN-LAST:event_btnSumActionPerformed
 
     private void btnResActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResActionPerformed
         Calculadora mainMenu = new Calculadora();
         double tempNum = Double.parseDouble(inputNum.getText());
                 //mainMenu.sumar(Double.parseDouble(inputNum.getText().toString()));
-        double resultadoAux = mainMenu.getResultado() - tempNum;
-        mainMenu.setResultado(resultadoAux);
-        JOptionPane.showMessageDialog(this, mainMenu.getResultado());
     }//GEN-LAST:event_btnResActionPerformed
 
     private void btnMultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultActionPerformed
         Calculadora mainMenu = new Calculadora();
         double tempNum = Double.parseDouble(inputNum.getText());
                 //mainMenu.sumar(Double.parseDouble(inputNum.getText().toString()));
-        double resultadoAux = mainMenu.getResultado() * tempNum;
-        mainMenu.setResultado(resultadoAux);
-        JOptionPane.showMessageDialog(this, mainMenu.getResultado());
     }//GEN-LAST:event_btnMultActionPerformed
 
     private void btnDivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDivActionPerformed
         Calculadora mainMenu = new Calculadora();
         double tempNum = Double.parseDouble(inputNum.getText());
                 //mainMenu.sumar(Double.parseDouble(inputNum.getText().toString()));
-        double resultadoAux = mainMenu.getResultado() / tempNum;
-        mainMenu.setResultado(resultadoAux);
-        JOptionPane.showMessageDialog(this, mainMenu.getResultado());
     }//GEN-LAST:event_btnDivActionPerformed
 
     private void btnMSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMSActionPerformed
-        resultado = 0;
+        memResultado = 0;
     }//GEN-LAST:event_btnMSActionPerformed
 
     private void btnMemoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMemoriaActionPerformed
@@ -308,9 +269,9 @@ public class Calculadora extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnExitActionPerformed
 
-    private void resultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resultActionPerformed
+    private void resultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resultadoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_resultActionPerformed
+    }//GEN-LAST:event_resultadoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -361,6 +322,6 @@ public class Calculadora extends javax.swing.JFrame {
     private javax.swing.JTextField inputNum;
     private javax.swing.JLabel numLabel;
     private javax.swing.JLabel resLabel;
-    private javax.swing.JTextField result;
+    private javax.swing.JTextField resultado;
     // End of variables declaration//GEN-END:variables
 }
