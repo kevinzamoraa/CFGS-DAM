@@ -2,25 +2,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package com.kevinzamora.parcial2_tarea;
-
-import vista.Calculadora;
+import com.kevinzamora.calculadora.vista.CalculadoraGUI;
 
 /**
  *
  * @author kzdesigner
  */
-public class PARCIAL2_Tarea {
+public class Calculadora {
 
     public static void main(String[] args) {
-        
-        Calculadora mainMenuObj = new Calculadora();
+        CalculadoraGUI calculadoraObj = new CalculadoraGUI();
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Calculadora().setVisible(true);
+                new CalculadoraGUI().setVisible(true);
             }
         });
     }
-        
 }
