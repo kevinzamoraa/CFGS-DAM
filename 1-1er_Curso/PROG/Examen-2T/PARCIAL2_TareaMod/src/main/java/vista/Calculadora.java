@@ -241,6 +241,7 @@ public class Calculadora extends javax.swing.JFrame {
         } else {
             numIntroducido2 = Double.parseDouble(inputNum.getText());
             resultado = numIntroducido1 + numIntroducido2;
+            numIntroducido1 = resultado;
             outputResultado.setText(String.valueOf(resultado));
             historial.add(numIntroducido2);
             historial.add(resultado);
@@ -255,6 +256,7 @@ public class Calculadora extends javax.swing.JFrame {
         } else {
             numIntroducido2 = Double.parseDouble(inputNum.getText());
             resultado = numIntroducido1 - numIntroducido2;
+            numIntroducido1 = resultado;
             outputResultado.setText(String.valueOf(resultado));
             historial.add(numIntroducido2);
             historial.add(resultado);
@@ -269,6 +271,7 @@ public class Calculadora extends javax.swing.JFrame {
         } else {
             numIntroducido2 = Double.parseDouble(inputNum.getText());
             resultado = numIntroducido1 * numIntroducido2;
+            numIntroducido1 = resultado;
             outputResultado.setText(String.valueOf(resultado));
             historial.add(numIntroducido2);
             historial.add(resultado);
@@ -283,6 +286,7 @@ public class Calculadora extends javax.swing.JFrame {
         } else {
             numIntroducido2 = Double.parseDouble(inputNum.getText());
             resultado = numIntroducido1 / numIntroducido2;
+            numIntroducido1 = resultado;
             outputResultado.setText(String.valueOf(resultado));
             historial.add(numIntroducido2);
             historial.add(resultado);
@@ -339,8 +343,13 @@ public class Calculadora extends javax.swing.JFrame {
             }
             int counter = 0;
             for (double num : historial) {
-                numHistorial = numHistorial.concat(" | " + String.valueOf(num) + " |");
-                counter++;
+                if (counter < 5) {
+                    numHistorial = numHistorial.concat(" | " + String.valueOf(num) + " | ");
+                    counter++;
+                } else if (counter == 5) {
+                    numHistorial = numHistorial.concat("\n | " + String.valueOf(num) + " | ");
+                    counter = 0;
+                }
             }
             showMessageDialog(null, "Lista de números introducidos: \n " 
                             + numHistorial);
