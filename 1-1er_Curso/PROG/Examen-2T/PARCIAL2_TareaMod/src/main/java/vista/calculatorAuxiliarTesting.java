@@ -12,12 +12,12 @@ import java.awt.*;
  *
  * @author kzdesigner
  */
-public class calculator extends javax.swing.JFrame implements ActionListener {
+public class calculatorAuxiliarTesting extends javax.swing.JFrame implements ActionListener {
 
     /**
      * Creates new form Calculator
      */
-    public calculator() {
+    public calculatorAuxiliarTesting() {
         initComponents();
         this.setLocationRelativeTo(null);
         s0 = s1 = s2 = "";
@@ -75,7 +75,7 @@ public class calculator extends javax.swing.JFrame implements ActionListener {
         }
  
         // create a object of class
-        calculator c = new calculator();
+        calculatorAuxiliarTesting c = new calculatorAuxiliarTesting();
  
         // create a textfield
         l = new JTextField(16);
