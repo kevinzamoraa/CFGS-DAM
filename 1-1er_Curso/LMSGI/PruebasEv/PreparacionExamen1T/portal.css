@@ -50,6 +50,7 @@ p {
 }
 #seccion-n {
     justify-content: center;
+    margin: auto;
     width: 800px;
     padding: 20px;
     background-color: rgb(123, 255, 255);
