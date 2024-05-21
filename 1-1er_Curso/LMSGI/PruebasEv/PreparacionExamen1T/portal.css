@@ -1,0 +1,49 @@
+body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.container {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+    width: 100%;
+    flex-direction: column;
+    align-content: center;
+    width: 100%;
+    padding: 0.5rem 1.5rem;
+}
+.izquierda {
+    width: 200px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    align-items: center;
+}
+.izquierda img {
+    width: 7rem;
+    display: block;
+}
+ul {
+    list-style: none;
+}
+.cabecera {
+    text-align: center;
+    vertical-align: middle;
+    align-content: center;
+    width: 100%;
+    background-color: blue;
+    color: white;
+}
+h1 {
+    font-family: fantasy;
+    font-size: 64px;
+}
+h3 {
+    font-family: fantasy;
+    font-size: 24px;
+}
+p {
+    text-align: justify;
+}
+
+.footer {
+    text-decoration: underline;
+}
