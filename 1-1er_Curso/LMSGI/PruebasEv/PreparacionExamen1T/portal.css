@@ -8,20 +8,25 @@ body {
     font-size: 18px;
     width: 100%;
     flex-direction: column;
-    align-content: center;
+    justify-self: center;
     width: 100%;
     padding: 0.5rem 1.5rem;
 }
+.fila1 {
+    flex-direction: row;
+    justify-content: space-between;
+}
 .izquierda {
     width: 200px;
+    float:left;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    align-items: center;
 }
-.izquierda img {
-    width: 7rem;
+.logo {
+    width: 12rem;
     display: block;
+    padding-left: 0.7rem;
 }
-ul {
+.menu ul {
     list-style: none;
 }
 .cabecera {
@@ -43,7 +48,17 @@ h3 {
 p {
     text-align: justify;
 }
-
-.footer {
+#seccion-n {
+    justify-content: center;
+    width: 800px;
+    padding: 20px;
+    background-color: rgb(123, 255, 255);
+    border-width: 7px;
+    border-style: outset;
+    border-color: blue;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.footer p {
     text-decoration: underline;
+    text-align: end;
 }
