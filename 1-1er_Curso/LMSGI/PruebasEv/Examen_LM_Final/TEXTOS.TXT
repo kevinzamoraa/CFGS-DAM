@@ -1,0 +1,26 @@
+JSON
+JavaScript Object Notation
+
+Logo JSON
+Introducción
+Características
+Ventajas
+Introducción
+JSON es un lenguaje usado para el intercambio de datos entre sistemas, está basado en la notación de los literales de objeto de Javascript.
+
+JSON son las siglas de JavaScript Object Notation, o sea, Notación de Objeto Javascript. Básicamente usa la misma notación o forma con la que se escriben los objetos Javascript en el código, los literales de objeto, con algunas restricciones y añadidos extra.
+
+La utilidad de JSON es la de intercambiar datos, por eso se conoce como lenguaje de intercambio de información o lenguaje de transporte. Sirve para la comunicación entre servicios web (web services) y los clientes que los consumen, enviándo y recibiendo la información en formato JSON.
+
+Características de JSON
+JSON es un lenguaje de modelador de datos
+en pares "clave - valor"
+Los valores pueden cadenas, números o boleanos, así como otros objetos JSON, con cualquier nivel de anidación
+Es un formato flexible, ligero y fácilmente transferible a través de las redes
+Ventajas de JSON
+La lectura del código resulta de fácil lectura y la información es suficienteme expresiva para poder ser leída por personas, además de máquinas.
+El tamaño de los archivos que se transfieren es ligero.
+El código está basado en el lenguaje Javascript, lo que es ideal para las aplicaciones web.
+Todos los lenguajes disponen de funciones para interpretar cadenas JSON y convertir datos en cadenas JSON válidas.
+Se escribe en archivos de texto plano con codificación UTF8, que es compatible con todos los sistemas.
+Estas ventajas son especialmente interesantes en el entorno web, ya que Javascript es el lenguaje de programación para frontend y el código es directamente entendible por cualquier sistema que soporte Javascript. Esta facilidad de procesamiento del JSON y su ligereza para la transmisión lo hacen ideal como formato de intercambio de información y por eso es ampliamente usado, mucho más que otras alternativas como podría ser el lenguaje XML. Por estos motivos, la mayoría de los servicios web que se construyen para ser consumidos por clientes web se implementan bajo JSON.

@@ -1,0 +1,103 @@
+/* 
+- Estilos generales
+- Cabecera
+- Secciones
+    - Menu de navegación entre secciones (Parte Izquierda)
+    - Bloque ventajas
+    - Pie de página
+*/
+
+/********************************************************** Estilos generales **********************************************************/
+body {
+    /* Inicializamos el modo de presentación flexible */
+    display: flex;
+    /* Definimos la dirección en la que queremos dicho ajuste y centramos horizontalmente todo el contendido */
+    flex-direction: row;
+    justify-content: center;
+}
+.container {
+    /* Asignamos las fuentes a usar para presentar nuestro contenido siguiendo un orden de prioridad, su tamaño y definimos otros estilos referentes al posicionamiento de los diferentes elementos contenidos en el presente contenedor */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+    width: 100%;
+    /* Cambiamos la dirección del ajuste flexible a columna para definir así que las secciones deben mostrarse una debajo de la otra */
+    flex-direction: column;
+    justify-self: center;
+    /* Intentamos evitar el uso del pixel (px) como unidad de medida para así lograr un mejor ajuste con independencia del dispositivo que estemos usando */
+    width: 100%; 
+}
+/* Añadimos el siguiente contenedor auxiliar para evitar aplicar el 'padding de las secciones' sobre nuestra cabecera */
+.container-aux {
+    /* Intentamos evitar el uso del pixel (px) como unidad de medida para así lograr un mejor ajuste con independencia del dispositivo que estemos usando */
+    padding: 0.5rem 1.5rem;
+}
+h1 {
+    /* Asignamos la fuente y su tamaño a todos los h1 de nuestro documento */
+    font-family: fantasy;
+    font-size: 64px;
+}
+h3 {
+    /* Asignamos la fuente y su tamaño a todos los h3 de nuestro documento */
+    font-family: fantasy;
+    font-size: 24px;
+}
+p {
+    /* Justificamos el texto contenido en todos los párrafos presentes en nuestro documento */
+    text-align: justify;
+}
+
+/********************************************************** Secciones **********************************************************/
+/* Cabecera */
+.cabecera {
+    /* Definimos el aspecto, el color de fondo y también el posicionamiento de nuestra cabecera y del texto contenido en su interior */
+    text-align: center;
+    vertical-align: middle;
+    align-content: center;
+    width: 100%;
+    background-color: blue;
+    color: white;
+}
+
+/* Menú de navegación entre secciones + logotipo (JSON) */
+.fila1 {
+    /* Creamos el presente contenedor auxiliar para facilitar el ajuste y posicionamiento del menú lateral y también de la primera sección del documento */
+    flex-direction: row;
+    justify-content: space-between;
+}
+.izquierda {
+    width: 200px;
+    /* Posicionamos el menú a la izquierda de nuestra pantalla y lo convertimos en flotante para conseguir un mejor ajuste con el resto de secciones */
+    float:left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.logo {
+    /* Definimos el tamaño en la unidad de medida 'rem' para así lograr un mejor ajuste y resultando este adaptable en cierta medida a las diferentes plataformas */
+    width: 12rem;
+    display: block;
+    padding-left: 0.7rem;
+}
+.menu ul {
+    /* Ocultamos las viñetas de nuestra lista desordenada, las cuales vienen habilitadas por defecto */
+    list-style: none;
+}
+
+/* Bloque ventajas */
+#seccion-n {
+    justify-content: center;
+    /* Asignamos un margen automático para lograr posicionar el presente contenedor para que permanezca centrado horizontalmente */
+    margin: auto;
+    width: 800px;
+    padding: 20px;
+    background-color: rgb(123, 255, 255);
+    border-width: 7px;
+    border-style: outset;
+    border-color: blue;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Pie de página */
+.footer p {
+    /* Añadimos el estilo 'subrayado' al texto y lo posicionamos a la derecha */
+    text-decoration: underline;
+    text-align: end;
+}

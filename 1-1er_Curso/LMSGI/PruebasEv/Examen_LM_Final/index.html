@@ -1,0 +1,104 @@
+<!-- Partimos de la estructura base generada mediante las herramientas de vscode -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+    <!-- Vinculamos la hoja de estilos o CSS -->
+    <link rel="stylesheet" href="portal.css">
+    <!-- Añadimos la hoja de estilos normalize para corregir los principales errores de visualización -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Modificamos la estructura de nuestro documento de partida para así poder mejorar el ajuste de nuestra cabecera, actuando 
+        y reduciendo el 'padding' aplicado sobre el contenedor con clase 'container' de partida -->
+        <div class="cabecera">
+            <h1>JSON</h1>
+            <h3>JavaScript Object Notation</h3>
+        </div>
+        <div class="container-aux">
+            <!-- Tomando como base la estructura de contenedores div generada mediante el correspondiente comando, vía el asistente de emmet, 
+                procedemos a insertar los diferentes textos suministrados dentro de los contenedores correspondientes -->
+            <div class="fila1">
+                <div class="izquierda">
+                    <!-- Enlazamos la imagen suministrada y definimos su tamaño y su posición mediante nuestro CSS -->
+                    <img class="logo" src="./IMG/json.png" alt="Logotipo de JSON">
+                    <!-- Introducimos una lista no ordenada encapsulada dentro del contenedor 'menu' -->
+                    <div class="menu">
+                        <ul>
+                            <!-- Añadimos una referencia local a los diferentes enlaces y esta hace referencia al 'id' que hemos definido en las diferentes secciones -->
+                            <li><a href="#seccion-1">Introducción</a></li>
+                            <li><a href="#seccion-2">Características</a></li>
+                            <li><a href="#seccion-3">Ventajas</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="seccion-1">
+                    <h3>Introducción</h3>
+                    <p>JSON es un lenguaje usado para el intercambio de datos entre sistemas, está basado en la notación
+                        de los
+                        literales de objeto de Javascript.
+                        <br><br>
+                        JSON son las siglas de JavaScript Object Notation, o sea, Notación de Objeto Javascript.
+                        Básicamente usa
+                        la misma notación o forma con la que se escriben los objetos Javascript en el código, los
+                        literales de
+                        objeto, con algunas restricciones y añadidos extra.
+                        <br><br>
+                        La utilidad de JSON es la de intercambiar datos, por eso se conoce como lenguaje de intercambio
+                        de
+                        información o lenguaje de transporte. Sirve para la comunicación entre servicios web (web
+                        services) y
+                        los clientes que los consumen, enviándo y recibiendo la información en formato JSON.
+                    </p>
+                </div>
+            </div>
+            <div id="seccion-2">
+                <h3>Características de JSON</h3>
+                <ul>
+                    <li>JSON es un lenguaje de modelador de datos</li>
+                    <li>en pares "clave - valor"</li>
+                    <li>Los valores pueden cadenas, números o boleanos, así como otros objetos JSON, con cualquier nivel
+                        de
+                        anidación</li>
+                    <li>Es un formato flexible, ligero y fácilmente transferible a través de las redes</li>
+                </ul>
+            </div>
+            <div id="seccion-3">
+                <h3>Ventajas de JSON</h3>
+                <ul>
+                    <li>La lectura del código resulta de fácil lectura y la información es suficienteme expresiva para
+                        poder ser leída por personas, además de máquinas.</li>
+                    <li>El tamaño de los archivos que se transfieren es ligero.</li>
+                    <li>El código está basado en el lenguaje Javascript, lo que es ideal para las aplicaciones web.</li>
+                    <li>Todos los lenguajes disponen de funciones para interpretar cadenas JSON y convertir datos en
+                        cadenas JSON válidas.</li>
+                    <li>Se escribe en archivos de texto plano con codificación UTF8, que es compatible con todos los
+                        sistemas.</li>
+                </ul>
+            </div>
+            <div id="seccion-n">
+                <!-- En el interior del siguiente párrafo se ha introducido el enlace solicitado en el enunciado mediante el uso de una ancla o 'anchor' y a su vez, te le ha aplicado un 'target='_blank' para definir que dicho enlace se abra en una nueva pestaña' -->
+                <p>Estas ventajas son especialmente interesantes en el entorno web, ya que Javascript es el lenguaje de
+                    programación para frontend y el código es directamente entendible por cualquier sistema que soporte
+                    Javascript. Esta facilidad de procesamiento del JSON y su ligereza para la transmisión lo hacen
+                    ideal como
+                    formato de intercambio de información y por eso es ampliamente usado, mucho más que otras
+                    alternativas como
+                    podría ser el <a href="https://desarrolloweb.com/home/xml" target="_blank">lenguaje XML</a>. Por
+                    estos
+                    motivos, la mayoría de los servicios web que se construyen para ser
+                    consumidos por clientes web se implementan bajo JSON.</p>
+            </div>
+            <section class="footer">
+                <p>Kevin Zamora 2024</p>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>
