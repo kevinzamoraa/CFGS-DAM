@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"vista","l":"Calculadora"},{"p":"com.kevinzamora.final1_tarea","l":"Final1_Tarea"},{"p":"com.kevinzamora.final1_tarea","l":"Principal"}]
