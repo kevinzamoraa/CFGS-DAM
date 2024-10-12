@@ -36,7 +36,7 @@ public class OrdenarNumeros {
                 
                 Arrays.sort(numeros);
                 
-                System.out.println("A continuación, se muestran ordenados los números introducidos: \n");
+                System.out.println("A continuación, se muestran ordenados los números introducidos: ");
                 for(int i = 0; i < numeros.length; i++) {
                     System.out.print(numeros[i] + " ");
                 }
