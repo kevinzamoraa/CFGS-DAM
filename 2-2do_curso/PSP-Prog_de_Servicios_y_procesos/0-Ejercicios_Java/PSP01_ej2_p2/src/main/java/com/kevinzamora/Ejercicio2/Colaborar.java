@@ -20,9 +20,9 @@ public class Colaborar {
             try {
                 for (int i = 1; i <= 10; i++) {
 
-                    System.out.println("Lanzado el proceso: " + 1);
+                    System.out.println("Lanzado el proceso: " + i);
 
-                    String comando = "java -jar lenguaje " + (i * 10) + " " + args[0];
+                    String comando = "java -jar lenguaje.jar " + (i * 10) + " " + args[0];
                     System.out.println("Lanzamos el siguiente comando: " + comando);
 
                     Runtime.getRuntime().exec(comando);
