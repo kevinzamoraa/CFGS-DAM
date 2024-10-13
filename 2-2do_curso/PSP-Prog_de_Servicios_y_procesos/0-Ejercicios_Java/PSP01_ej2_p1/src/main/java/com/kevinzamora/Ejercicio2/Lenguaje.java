@@ -10,10 +10,6 @@ import java.nio.channels.FileLock;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author kzdesigner
- */
 public class Lenguaje {
 
     public static void main(String[] args) {
@@ -26,7 +22,6 @@ public class Lenguaje {
             try {
                 int numLineas = Integer.parseInt(args[0]);
                 String osName = System.getProperty("os.name");
-
                 if (osName.toUpperCase().contains("WIN")) {
                     nombreFichero = args[1].replace("\\", "\\\\");
                 } else {
@@ -42,41 +37,37 @@ public class Lenguaje {
                 }
 
                 RandomAccessFile raf = new RandomAccessFile(archivo, "rwd");
-                
+
                 bloqueo = raf.getChannel().lock();
-                
+
                 raf.seek(archivo.length());
                 
                 for (int i = 0; i < numLineas; i++) {
-                
                     String linea = "";
                     int numCaracteres = generarNumeroAleatorio(1, 10);
-                    
-                    for (int j = 0; j < numCaracteres; i++) {
+                    for (int j = 0; j < numCaracteres; j++) {
                         linea += letras.charAt(generarNumeroAleatorio(0, letras.length() - 1));
                     }
-                    
                     raf.writeChars(linea + "\n");
-                
                 }
-                
+
                 bloqueo.release();
                 bloqueo = null;
                 raf.close();
-                
+
             } catch (IOException ex) {
                 Logger.getLogger(Lenguaje.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         } else {
-            System.out.println("El programa debe tener dos parámetros");
+            System.out.println("El programa debe tener dos parametros");
         }
 
     }
-    
-    public static int generarNumeroAleatorio(int min, int max) {
-        int num = (int) (Math.random()*(max - min + 1) + (min));
+
+    public static int generarNumeroAleatorio(int minimo, int maximo) {
+        int num = (int) (Math.random() * (maximo - minimo + 1) + (minimo));
         return num;
     }
-    
+
 }
