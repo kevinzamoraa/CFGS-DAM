@@ -1,0 +1,48 @@
+@options
+@packages
+-classpath
+'/home/kzdesigner/.m2/repository/org/projectlombok/lombok/1.18.34/lombok-1.18.34.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'21'
+-sourcepath
+'/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP01_ej1_p2/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2024. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP01_ej1_p2/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'PSP01_ej1_p2 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'PSP01_ej1_p2 1.0-SNAPSHOT API'
+Ejercicio1
+/home/kzdesigner/.m2/repository/org/projectlombok/lombok/1.18.34/lombok-1.18.34.jar = 1719535552000
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP01_ej1_p2/src/main/java = 1728804915523
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP01_ej1_p2/target/site/apidocs/allclasses-index.html = 1728807533260
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP01_ej1_p2/target/site/apidocs/allpackages-index.html = 1728807533264
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP01_ej1_p2/target/site/apidocs/copy.svg = 1728807533307
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP01_ej1_p2/target/site/apidocs/element-list = 1728807533215
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP01_ej1_p2/target/site/apidocs/help-doc.html = 1728807533296
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP01_ej1_p2/target/site/apidocs/index-all.html = 1728807533283
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP01_ej1_p2/target/site/apidocs/index.html = 1728807533290
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP01_ej1_p2/target/site/apidocs/link.svg = 1728807533309
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP01_ej1_p2/target/site/apidocs/member-search-index.js = 1728807533272
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP01_ej1_p2/target/site/apidocs/module-search-index.js = 1728807533266
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP01_ej1_p2/target/site/apidocs/overview-tree.html = 1728807533247
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP01_ej1_p2/target/site/apidocs/package-search-index.js = 1728807533268
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP01_ej1_p2/target/site/apidocs/script.js = 1728807533304
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP01_ej1_p2/target/site/apidocs/search-page.js = 1728807533316
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP01_ej1_p2/target/site/apidocs/search.html = 1728807533287
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP01_ej1_p2/target/site/apidocs/search.js = 1728807533313
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP01_ej1_p2/target/site/apidocs/stylesheet.css = 1728807533302
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP01_ej1_p2/target/site/apidocs/tag-search-index.js = 1728807533273
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP01_ej1_p2/target/site/apidocs/type-search-index.js = 1728807533270
