@@ -3,6 +3,11 @@
  */
 package com.kevinzamora.Ejercicio2;
 
+/**
+ *
+ * @author kzdesigner
+ */
+
 import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
@@ -10,8 +15,15 @@ import java.nio.channels.FileLock;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * Clase principal del programa 'Lenguaje'.
+ */
 public class Lenguaje {
 
+    /**
+     * Método principal de la clase 'Lenguaje'.
+     * @param args
+     */
     public static void main(String[] args) {
 
         String letras = "abcdefghijklmnopqrstuvwxyz";
@@ -64,7 +76,14 @@ public class Lenguaje {
         }
 
     }
-
+    
+    /**
+    * Método para generar números aleatorios contenidos entre un valor mínimo y 
+    * un máximo introducidos.
+    * @param min 
+    * @param max
+    * @return int
+    */
     public static int generarNumeroAleatorio(int minimo, int maximo) {
         int num = (int) (Math.random() * (maximo - minimo + 1) + (minimo));
         return num;

@@ -3,13 +3,20 @@
  */
 package com.kevinzamora.Ejercicio2;
 
+/**
+ *
+ * @author kzdesigner
+ */
+
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
  *
- * @author kzdesigner
+ * Clase principal del programa colaborar.
+ * La función de dicha clase consiste en ejecutar de forma automática 10 instancias 
+ * del 'programa' Lenguaje y que su resultado consista exactamente de 550 líneas.
  */
 public class Colaborar {
 
