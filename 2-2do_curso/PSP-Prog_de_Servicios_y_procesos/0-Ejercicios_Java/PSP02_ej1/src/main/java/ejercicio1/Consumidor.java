@@ -9,6 +9,8 @@ import java.util.logging.*;
 
 /**
  *
+ * Clase/Entidad 'Consumidor' extendiendo la clase nativa Thread y dedicada a la recogida 
+ * de los diferentes carácteres.
  * @author kzdesigner
  */
 public class Consumidor extends Thread {

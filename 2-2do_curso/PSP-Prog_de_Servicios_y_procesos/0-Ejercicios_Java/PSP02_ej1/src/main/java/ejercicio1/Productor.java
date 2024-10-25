@@ -8,6 +8,10 @@ import java.util.logging.*;
 
 /**
  *
+ * Clase 'Productor', encargada de extraer de forma aleatoria un caracter de dentro 
+ * de una colección con las letras del alfabeto. A su vez, también se realiza la 
+ * gestión de los turnos de lectura/escritura en el 'buffer'.
+ * @extends Thread
  * @author kzdesigner
  */
 public class Productor extends Thread {
