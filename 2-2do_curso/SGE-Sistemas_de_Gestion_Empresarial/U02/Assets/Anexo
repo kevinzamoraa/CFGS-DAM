@@ -1,0 +1,149 @@
+Tarea 1
+Odoo se ofrece bajo diferentes tipos de licencia. Investiga los tipos de licencia disponibles para Odoo y explica cuál es la licencia de la versión comunitaria que instalaremos mediante Docker. ¿Qué ventajas y limitaciones tiene respecto a la versión empresarial?
+
+Tipos de licencia de Odoo:
+
+Licencia LGPL (Lesser General Public License) v3: Utilizada para la versión comunitaria de Odoo. Permite usar, modificar y distribuir el software, siempre y cuando se mantenga la misma licencia.
+
+Licencia propietaria de Odoo Enterprise: La versión empresarial de Odoo, que ofrece funcionalidades adicionales y soporte, requiere una suscripción paga.
+
+Licencia de la versión comunitaria: La versión comunitaria de Odoo se ofrece bajo la licencia LGPL v3.
+
+Ventajas:
+
+Gratuita: Sin costo para utilizar, modificar y distribuir.
+
+Flexibilidad: Amplia capacidad de personalización.
+
+Limitaciones:
+
+Soporte limitado: No incluye el soporte empresarial y actualizaciones rápidas.
+
+Menos funcionalidades: Carece de ciertas funcionalidades avanzadas presentes en la versión empresarial.
+
+Tarea 2
+Realiza la instalación de Odoo en un entorno monopuesto utilizando Virtualbox. Describe los pasos que has seguido para instalar Odoo con Virtualbox y cómo verificaste que la instalación fue exitosa.
+
+Descarga e instalación de Virtualbox:
+
+Descarga desde sitio oficial.
+
+Instálalo siguiendo las instrucciones del asistente de instalación.
+
+Descarga de la imagen ISO de Ubuntu:
+
+Descarga la imagen desde Ubuntu.
+
+Creación de una máquina virtual:
+
+Abre Virtualbox y crea una nueva máquina virtual, eligiendo Ubuntu como sistema operativo.
+
+Configuración de la máquina virtual:
+
+Asigna memoria RAM y espacio en disco según las recomendaciones.
+
+Carga la imagen ISO de Ubuntu y procede con la instalación.
+
+Instalación de Odoo:
+
+Inicia sesión en Ubuntu, abre la terminal e instala las dependencias necesarias.
+
+Clona el repositorio de Odoo e instala los módulos requeridos.
+
+Verificación:
+
+Inicia Odoo y accede a http://localhost:8069 desde el navegador.
+
+La pantalla de inicio de sesión de Odoo confirma que la instalación fue exitosa.
+
+Tarea 3
+Realiza la instalación de Odoo en un entorno monopuesto utilizando Docker. Describe los pasos que has seguido para instalar Odoo con Docker y cómo verificaste que la instalación fue exitosa.
+
+Instalación de Docker:
+
+Descarga e instala Docker desde Docker.
+
+Obtención de la imagen de Odoo:
+
+Abre la terminal y ejecuta: docker pull odoo.
+
+Creación de un contenedor Odoo:
+
+Ejecuta: docker run -d -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=odoo -p 8069:8069 --name odoo --link db:db odoo.
+
+Verificación:
+
+Accede a http://localhost:8069 desde el navegador.
+
+La pantalla de inicio de sesión de Odoo confirma que la instalación fue exitosa.
+
+Tarea 4
+Revisa la lista de módulos disponibles en la versión comunitaria. Identifica al menos cinco módulos que vienen preinstalados. ¿Qué funcionalidades ofrece cada uno de ellos dentro del sistema ERP-CRM?
+
+Ventas: Gestión de pedidos, facturación y relaciones con clientes.
+
+Inventario: Control de stock, movimientos de mercancías y almacén.
+
+Contabilidad: Gestión de finanzas, ingresos y gastos.
+
+Fabricación: Control de órdenes de producción y planificación de recursos.
+
+Compras: Gestión de órdenes de compra y relaciones con proveedores.
+
+Tarea 5
+Instala un módulo adicional (como el de ventas o inventario). Describe los pasos que seguiste para instalar y configurar este módulo en el sistema.
+
+Acceso al panel de administración:
+
+Inicia sesión en Odoo y ve al panel de aplicaciones.
+
+Instalación del módulo:
+
+Busca el módulo de Ventas, haz clic en Instalar.
+
+Configuración del módulo:
+
+Configura los parámetros según las necesidades, como listas de precios, impuestos y plantillas de venta.
+
+Tarea 6
+Imagina que una empresa de ventas necesita gestionar sus facturas y almacén. ¿Qué módulos de Odoo recomendarías instalar para satisfacer estas necesidades? Instálalos en tu instancia de Odoo y describe el proceso.
+
+Módulos recomendados:
+
+Facturación: Para la gestión de las facturas de clientes y proveedores.
+
+Inventario: Para el control de stock y la gestión del almacén.
+
+Instalación de Facturación:
+
+Ve al panel de administración, busca Facturación y haz clic en Instalar.
+
+Instalación de Inventario:
+
+Ve al panel de administración, busca Inventario y haz clic en Instalar.
+
+Configuración:
+
+Configura ambos módulos según las políticas de la empresa, estableciendo reglas de inventario y criterios de facturación.
+
+Tarea 7
+Verifica que tu instalación de Odoo está funcionando correctamente. ¿Qué pruebas o comprobaciones has realizado para asegurarte de que todos los módulos están funcionando sin errores?
+
+Acceso a módulos: Verifica que cada módulo instalado puede ser accedido y utilizado.
+
+Pruebas funcionales: Realiza operaciones básicas en cada módulo, como crear facturas, registrar ventas, verificar stock.
+
+Logs de sistema: Revisa los registros de Odoo y Docker para cualquier error o advertencia.
+
+Tarea 8
+Documenta todo el proceso de instalación, configuración y verificación de Odoo. Asegúrate de incluir cualquier incidencia que haya surgido durante el proceso y cómo la has solucionado.
+
+Instalación: Descripción detallada de los pasos seguidos para instalar Odoo.
+
+Configuración: Pasos y parámetros configurados en cada módulo.
+
+Verificación: Listado de pruebas realizadas y resultados obtenidos.
+
+Incidencias y soluciones: Registro de problemas encontrados y cómo fueron resueltos.
+
+Espero que esto te sea de ayuda para avanzar en tu tarea. ¡Ánimo y suerte! 🚀
