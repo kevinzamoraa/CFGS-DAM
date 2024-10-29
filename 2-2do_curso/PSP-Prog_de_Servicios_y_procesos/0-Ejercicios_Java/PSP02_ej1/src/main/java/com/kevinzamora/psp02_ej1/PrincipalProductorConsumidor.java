@@ -2,8 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package ejercicio1;
+package com.kevinzamora.psp02_ej1;
 
+import ejercicio1.Buffer;
+import ejercicio1.Consumidor;
+import ejercicio1.Productor;
 import java.util.logging.*;
 
 /**
@@ -25,25 +28,30 @@ public class PrincipalProductorConsumidor {
      * de nuestro 'buffer'. Por último, también añadimos el método 'try catch', 
      * dedicado al control de excepciones, para así poder prevenir y capturar 
      * posibles errores/fallos de ejecución.
-     * @param args
+     * @param args Argumentos
      */
     public static void main(String[] args) {
         
+        // Encapsulamos el contenido del método principal en un método de control de 
+        // excepciones 'try catch'
         try {
         
-            Buffer b = new Buffer (6);
-            Productor p = new Productor (b);
-            Consumidor c = new Consumidor (b);
+            // Creamos una instancia de las diferentes entidades de nuestra applicación
+            Buffer b = new Buffer (6); // Definimos la capacidad de nuestro 'buffer' a 6
+            Productor p = new Productor (b); // Insertamos el 'buffer' en la clase Productor
+            Consumidor c = new Consumidor (b); // Insertar el 'buffer' en la clase Consumidor
             
-            p.start();
-            Thread.sleep(3000);
-            c.start();
+            p.start(); // Empezamos el proceso del productor con el método 'start'
+            Thread.sleep(3000); // Definimos un tiempo de pausa o espera
+            c.start(); // Iniciamos el proceso del consumidor con el método 'start'
             
-            p.join();
+            p.join(); // Juntamos el resultado del proceso del productor y del 
+                      // consumidor mediante los métodos 'join'
             c.join();
+            // Mostramos por pantalla un mensaje final
             System.out.println("Termina el programa");
         
-        } catch (InterruptedException ex) {
+        } catch (InterruptedException ex) { // Capturamos los errores en un 'Logger'
             Logger.getLogger(PrincipalProductorConsumidor.class.getName())
                     .log(Level.SEVERE, null, ex);
         }
