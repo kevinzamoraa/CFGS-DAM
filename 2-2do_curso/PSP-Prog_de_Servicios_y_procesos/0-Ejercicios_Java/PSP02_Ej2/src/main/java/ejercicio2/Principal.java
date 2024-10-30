@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package com.kevinzamora.psp02_ej2;
+package ejercicio2;
 
 import ejercicio2.Filosofo;
 import ejercicio2.Mesa;
@@ -18,10 +18,9 @@ public class Principal {
 
     /**
      * Método principal dedicado a inicializar y ejecutar nuestra aplicación
-     * @param args Argumentos del método 'main'
      * retorna 'void'
      */
-    public static void main(String[] args) {
+    public void main() {
         
         // Creamos una instancia de la entidad Mesa, introduciendo el valor 5 como 
         // parámetro y aludiendo así a uno de los dos constructores de la clase 'Semaphore'

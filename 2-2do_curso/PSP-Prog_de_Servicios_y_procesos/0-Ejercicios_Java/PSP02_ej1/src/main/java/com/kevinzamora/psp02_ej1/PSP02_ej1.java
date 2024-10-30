@@ -1,23 +1,21 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-
 package com.kevinzamora.psp02_ej1;
 
 import ejercicio1.Buffer;
 import ejercicio1.Consumidor;
 import ejercicio1.Productor;
-import java.util.logging.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
- * Clase principal de nuestro/a proyecto/aplicación. Esta contiene un método 'main'
- * y en este procedemos a inicializar/instanciar las clases/entidades necesarias 
- * para su ejecución y correcto funcionamiento.
  * @author kzdesigner
  */
-public class PrincipalProductorConsumidor {
-
+public class PSP02_ej1 {
+    
     /** 
      *
      * Este método 'main' sirve para iniciar nuestra aplicación y en su interior 
@@ -52,7 +50,7 @@ public class PrincipalProductorConsumidor {
             System.out.println("Termina el programa");
         
         } catch (InterruptedException ex) { // Capturamos los errores en un 'Logger'
-            Logger.getLogger(PrincipalProductorConsumidor.class.getName())
+            Logger.getLogger(PSP02_ej1.class.getName())
                     .log(Level.SEVERE, null, ex);
         }
         
