@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package ejercicio1;
+package com.kevinzamora.psp03_ej1;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -28,14 +28,36 @@ public class HiloServidor extends Thread {
         System.out.println("Cliente conectado");
         DataInputStream in = null;
         DataOutputStream out = null;
-        
         try {
             in = new DataInputStream(sc.getInputStream());
             out = new DataOutputStream(sc.getOutputStream());
             
-            int numAleatorio = generarNumeroAleatorio(0,100);
-            int numUsuario;
+            int numAleatorio = generarNumeroAleatorio(1,100);
+            int numUsuario = 0;
             
+            System.out.println("Num generado: " + numAleatorio);
+            
+            do {
+                
+                out.writeUTF("Escribe un numero entre 1 y 100");
+
+                numUsuario = in.readInt();
+
+                System.out.println("Numero recibido: " + numUsuario);
+
+                if(numUsuario == numAleatorio){
+                    out.writeUTF("¡Has ganado!");
+                }else if (numUsuario < numAleatorio){
+                    out.writeUTF("El numero buscado es mayor");
+                }else{
+                    out.writeUTF("El numero buscado es menor");
+                }
+
+                out.writeBoolean(numUsuario == numAleatorio);
+            } while(numUsuario != numAleatorio);
+            
+            sc.close();
+            System.out.println("Cliente desconectado");
             
         } catch (IOException ex) {
             Logger.getLogger(HiloServidor.class.getName()).log(Level.SEVERE, null, ex);
@@ -47,7 +69,7 @@ public class HiloServidor extends Thread {
                 Logger.getLogger(HiloServidor.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-    
+
     }
     
     private int generarNumeroAleatorio(int min, int max) {
