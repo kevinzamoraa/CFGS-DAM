@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.kevinzamora</groupId>
-    <artifactId>PSP03_ej1</artifactId>
+    <artifactId>PSP03_ej2</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <properties>
@@ -11,5 +11,5 @@
         <maven.compiler.target>21</maven.compiler.target>
         <exec.mainClass>com.kevinzamora.psp03_ej1.PSP03_ej1</exec.mainClass>
     </properties>
-    <name>PSP03_ej1</name>
+    <name>PSP03_ej2</name>
 </project>

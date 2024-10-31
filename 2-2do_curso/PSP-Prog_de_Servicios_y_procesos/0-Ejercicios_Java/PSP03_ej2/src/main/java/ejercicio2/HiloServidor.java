@@ -2,10 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.kevinzamora.psp03_ej1;
+package ejercicio2;
 
+import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.Socket;
 import java.util.logging.Level;
@@ -23,6 +26,7 @@ public class HiloServidor extends Thread {
         this.sc = sc;
     }
     
+    @Override
     public void run() {
     
         System.out.println("Cliente conectado");
@@ -32,29 +36,37 @@ public class HiloServidor extends Thread {
             in = new DataInputStream(sc.getInputStream());
             out = new DataOutputStream(sc.getOutputStream());
             
-            int numAleatorio = generarNumeroAleatorio(1,100);
-            int numUsuario = 0;
+            String ruta = in.readUTF();
             
-            System.out.println("Num generado: " + numAleatorio);
+            File f = new File(ruta);
             
-            do {
+            if(f.exists()) {
+                out.writeBoolean(true);
                 
-                out.writeUTF("Escribe un numero entre 1 y 100");
-
-                numUsuario = in.readInt();
-
-                System.out.println("Numero recibido: " + numUsuario);
-
-                if(numUsuario == numAleatorio){
-                    out.writeUTF("¡Has ganado!");
-                }else if (numUsuario < numAleatorio){
-                    out.writeUTF("El numero buscado es mayor");
-                }else{
-                    out.writeUTF("El numero buscado es menor");
+                BufferedReader br = new BufferedReader(new FileReader(ruta));
+                
+                String linea = "";
+                String contenido = "";
+                
+                while((linea = br.readLine()) != null) {
+                    contenido += linea;
                 }
-
-                out.writeBoolean(numUsuario == numAleatorio);
-            } while(numUsuario != numAleatorio);
+                
+                br.close();
+                
+                byte[] contenidoFichero = contenido.getBytes();
+                
+                out.writeInt(contenidoFichero.length);
+                
+                for (int i = 0; i < contenidoFichero.length; i++) {
+                    out.writeByte(contenidoFichero[i]);
+                }
+                
+                sc.close();
+                
+            } else {
+                out.writeBoolean(false);
+            }
             
             sc.close();
             System.out.println("Cliente desconectado");
