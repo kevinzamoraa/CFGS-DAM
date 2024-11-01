@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 
 /**
  * 
- * Clase/Entidad Cliente
+ * Clase/Entidad Cliente. 
  * @author kzdesigner
  */
 public class Cliente {

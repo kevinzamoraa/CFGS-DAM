@@ -44,6 +44,7 @@ public class HiloServidor extends Thread {
         flujos de entrada y de salida.
         */
         System.out.println("Cliente conectado");
+        // Creación e inicialización de variables
         DataInputStream in = null;
         DataOutputStream out = null;
         // Definimos un método de control de excepciones 'try catch' para 
@@ -59,21 +60,24 @@ public class HiloServidor extends Thread {
             // Inicializamos la variable 'numUsuario' a cero
             int numUsuario = 0;
             
-            // Imprimimos el número generado
+            // Mostramos el número aleatorio generado
             System.out.println("Num generado: " + numAleatorio);
             
-            // Creamos un bucle 'haz mientras'
+            // Bucle 'Haz mientras'. Este solicita un número por teclado 
+            // hasta que se adevina el número 'secreto' generado en el 'servidor'
             do {
                 
                 out.writeUTF("Escribe un numero entre 1 y 100");
-                // Imprimimos un mensaje y leemos el 'entero' introducido 
-                // por teclado
+                
+                // Leemos el entero vía teclado
                 numUsuario = in.readInt();
                 
-                // Imprimimos el número recibido
+                // Mostramos el número introducido
                 System.out.println("Numero recibido: " + numUsuario);
                 
-                // Realizamos la comparación para saber si es correcto
+                // Bucle 'si / si no'. En este se compara el valor introducido 
+                // con el generado por el método 'calcularNumeroAleatorio' 
+                // alojado en la clase 'HiloServidor' y se muestra un mensaje
                 if(numUsuario == numAleatorio){
                     out.writeUTF("¡Has ganado!");
                 }else if (numUsuario < numAleatorio){
@@ -83,6 +87,9 @@ public class HiloServidor extends Thread {
                 }
                 // Evaluamos sí el número del usuario y el generado son iguales
                 out.writeBoolean(numUsuario == numAleatorio);
+                
+              // Mientras el número introducido y el generado sean diferentes 
+              // se ejecutará reiteradamente el programa anterior
             } while(numUsuario != numAleatorio);
             
             // Cerramos la conexión e imprimimos el mensaje correspondiente
@@ -103,6 +110,12 @@ public class HiloServidor extends Thread {
 
     }
     
+    /** 
+     * Método generarNumeroAleatorio dedicado a la creación de números al azar
+     * @param min Valor mínimo
+     * @param max Valor máximo
+     * @return num Número aleatorio generado
+     */
     private int generarNumeroAleatorio(int min, int max) {
         int num = (int) (Math.random()*(max - min + 1) + (min));
         return num;
