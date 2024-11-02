@@ -104,7 +104,7 @@ public class HiloServidor extends Thread {
                  * haya una nueva línea.
                  */
                 while((linea = br.readLine()) != null) {
-                    contenido += linea;
+                    contenido += linea + "\r\n";
                 }
                 
                 /** 
