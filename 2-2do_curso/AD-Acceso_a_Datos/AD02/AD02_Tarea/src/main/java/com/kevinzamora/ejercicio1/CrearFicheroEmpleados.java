@@ -1,4 +1,4 @@
-package com.kevinzamora.ad02_tarea;
+package com.kevinzamora.ejercicio1;
 
 import java.io.RandomAccessFile;
 import java.io.IOException;
