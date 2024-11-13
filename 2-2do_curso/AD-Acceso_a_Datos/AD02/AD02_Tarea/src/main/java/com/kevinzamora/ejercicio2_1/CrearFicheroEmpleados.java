@@ -1,4 +1,4 @@
-package com.kevinzamora.ejercicio1;
+package com.kevinzamora.ejercicio2_1;
 
 import java.io.RandomAccessFile;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package com.kevinzamora.ejercicio2;
+package com.kevinzamora.ejercicio2_2;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
