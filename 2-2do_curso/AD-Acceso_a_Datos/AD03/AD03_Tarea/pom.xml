@@ -10,4 +10,17 @@
         <maven.compiler.release>21</maven.compiler.release>
         <exec.mainClass>com.kevinzamora.ad03_tarea.AD03_Tarea</exec.mainClass>
     </properties>
+    <dependencies>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.33</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.36</version>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
 </project>
