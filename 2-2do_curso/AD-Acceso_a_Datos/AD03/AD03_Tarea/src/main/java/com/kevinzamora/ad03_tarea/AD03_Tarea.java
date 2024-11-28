@@ -35,7 +35,7 @@ public class AD03_Tarea {
                 vuelos.forEach(System.out::println);
 
                 // Ver pasajeros de un vuelo específico
-                String codigoVuelo = "FR-PR-5000";
+                String codigoVuelo = "SP-DC-438";
                 List<Pasajero> pasajerosVuelo = flightDatabaseOperationsObj.obtenerPasajerosPorVuelo(conn, codigoVuelo);
                 System.out.println("\nPasajeros del vuelo " + codigoVuelo + ":");
                 pasajerosVuelo.forEach(System.out::println);

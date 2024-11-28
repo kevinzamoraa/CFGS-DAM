@@ -17,27 +17,27 @@ public class FlightDatabaseOperations {
     public List<Pasajero> obtenerPasajeros(Connection conn) throws SQLException {
         List<Pasajero> pasajeros = new ArrayList<>();
         String sql = "SELECT * FROM PASAJEROS";
-        
+
         try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(sql)) {
             while (rs.next()) {
                 Pasajero p = new Pasajero(
-                    rs.getInt("ID"),
-                    rs.getString("NOMBRE"),
-                    rs.getString("APELLIDO")
+                    rs.getInt("NUM"),
+                    rs.getString("COD_VUELO"),
+                    rs.getString("TIPO_PLAZA")
                 );
                 pasajeros.add(p);
             }
         } catch (SQLException e) {
             System.out.println("Error al obtener pasajeros: " + e.getMessage());
         }
-        
+
         return pasajeros;
     }
 
     public List<Vuelo> obtenerVuelos(Connection conn) throws SQLException {
         List<Vuelo> vuelos = new ArrayList<>();
         String sql = "SELECT * FROM VUELOS";
-        
+
         try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(sql)) {
             while (rs.next()) {
                 Vuelo v = new Vuelo(
@@ -55,23 +55,23 @@ public class FlightDatabaseOperations {
         } catch (SQLException e) {
             System.out.println("Error al obtener vuelos: " + e.getMessage());
         }
-        
+
         return vuelos;
     }
 
     public List<Pasajero> obtenerPasajerosPorVuelo(Connection conn, String codigoVuelo) throws SQLException {
         List<Pasajero> pasajeros = new ArrayList<>();
         String sql = "SELECT P.* FROM PASAJEROS P JOIN VUELOS V ON P.COD_VUELO = V.COD_VUELO WHERE V.COD_VUELO = ?";
-        
+
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            
+
             pstmt.setString(1, codigoVuelo);
             try (ResultSet rs = pstmt.executeQuery()) {
                 while (rs.next()) {
                     Pasajero p = new Pasajero(
                         rs.getInt("ID"),
-                        rs.getString("NOMBRE"),
-                        rs.getString("APELLIDO")
+                        rs.getString("COD_VUELO"),
+                        rs.getString("TIPO_PLAZA")
                     );
                     pasajeros.add(p);
                 }
@@ -79,7 +79,7 @@ public class FlightDatabaseOperations {
         } catch (SQLException e) {
             System.out.println("Error al obtener pasajeros por vuelo: " + e.getMessage());
         }
-        
+
         return pasajeros;
     }
 
@@ -87,9 +87,9 @@ public class FlightDatabaseOperations {
                               int plazasFumador, int plazasNoFumador, int plazasTurista, int plazasPrimera)
             throws SQLException {
         String sql = "INSERT INTO VUELOS (COD_VUELO, HORA_SALIDA, DESTINO, PROCEDENCIA, PLAZAS_FUMADOR, PLAZAS_NO_FUMADOR, PLAZAS_TURISTA, PLAZAS_PRIMERA) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-        
+
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            
+
             pstmt.setString(1, codigoVuelo);
             pstmt.setString(2, horaSalida);
             pstmt.setString(3, destino);
@@ -98,20 +98,20 @@ public class FlightDatabaseOperations {
             pstmt.setInt(6, plazasNoFumador);
             pstmt.setInt(7, plazasTurista);
             pstmt.setInt(8, plazasPrimera);
-            
+
             pstmt.executeUpdate();
         }
     }
 
-    public void insertarPasajero(Connection conn, String codigoVuelo, String nombre, String apellido)
+    public void insertarPasajero(Connection conn, String codigoVuelo, String tipoPlaza, String fumador)
             throws SQLException {
-        String sql = "INSERT INTO PASAJEROS (COD_VUELO, NOMBRE, APELLIDO) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO PASAJEROS (COD_VUELO, TIPO_PLAZA, FUMADOR) VALUES (?, ?, ?)";
         
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
             
             pstmt.setString(1, codigoVuelo);
-            pstmt.setString(2, nombre);
-            pstmt.setString(3, apellido);
+            pstmt.setString(2, tipoPlaza);
+            pstmt.setString(3, fumador);
             
             pstmt.executeUpdate();
         }
