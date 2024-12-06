@@ -69,7 +69,7 @@ public class FlightDatabaseOperations {
             try (ResultSet rs = pstmt.executeQuery()) {
                 while (rs.next()) {
                     Pasajero p = new Pasajero(
-                        rs.getInt("ID"),
+                        rs.getInt("NUM"),
                         rs.getString("COD_VUELO"),
                         rs.getString("TIPO_PLAZA")
                     );
@@ -103,16 +103,17 @@ public class FlightDatabaseOperations {
         }
     }
 
-    public void insertarPasajero(Connection conn, String codigoVuelo, String tipoPlaza, String fumador)
+    public void insertarPasajero(Connection conn, int id, String codigoVuelo, String tipoPlaza, String fumador)
             throws SQLException {
-        String sql = "INSERT INTO PASAJEROS (COD_VUELO, TIPO_PLAZA, FUMADOR) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO PASAJEROS VALUES (?, ?, ?, ?)";
         
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            
-            pstmt.setString(1, codigoVuelo);
-            pstmt.setString(2, tipoPlaza);
-            pstmt.setString(3, fumador);
-            
+
+            pstmt.setString(1, (String.valueOf(id)));
+            pstmt.setString(2, codigoVuelo);
+            pstmt.setString(3, tipoPlaza);
+            pstmt.setString(4, fumador);
+
             pstmt.executeUpdate();
         }
     }
