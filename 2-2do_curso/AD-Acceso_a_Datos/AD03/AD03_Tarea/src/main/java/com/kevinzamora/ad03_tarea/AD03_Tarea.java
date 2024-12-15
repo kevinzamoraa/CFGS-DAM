@@ -62,6 +62,7 @@ public class AD03_Tarea {
                 // 8. Eliminar un vuelo (Para comprobar que funcionan los ejercicios 4 y 5 se debería comentar la llamada al método siguiente)
                 String codigoVueloEliminar = "FR-PR-5000";
                 flightDatabaseOperationsObj.eliminarVuelo(conn, codigoVueloEliminar);
+                System.out.println("\nSe ha eliminado el vuelo FR-PR-5000");
 
 
             } finally {
