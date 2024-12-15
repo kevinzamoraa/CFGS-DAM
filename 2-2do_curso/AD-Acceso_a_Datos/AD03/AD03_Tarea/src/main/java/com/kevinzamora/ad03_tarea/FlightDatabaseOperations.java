@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
  * @author kzdesigner
  */
 public class FlightDatabaseOperations {
@@ -21,9 +20,10 @@ public class FlightDatabaseOperations {
         try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(sql)) {
             while (rs.next()) {
                 Pasajero p = new Pasajero(
-                    rs.getInt("NUM"),
-                    rs.getString("COD_VUELO"),
-                    rs.getString("TIPO_PLAZA")
+                        rs.getInt("NUM"),
+                        rs.getString("COD_VUELO"),
+                        rs.getString("TIPO_PLAZA"),
+                        rs.getString("FUMADOR")
                 );
                 pasajeros.add(p);
             }
@@ -41,14 +41,14 @@ public class FlightDatabaseOperations {
         try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(sql)) {
             while (rs.next()) {
                 Vuelo v = new Vuelo(
-                    rs.getString("COD_VUELO"),
-                    rs.getString("HORA_SALIDA"),
-                    rs.getString("DESTINO"),
-                    rs.getString("PROCEDENCIA"),
-                    rs.getInt("PLAZAS_FUMADOR"),
-                    rs.getInt("PLAZAS_NO_FUMADOR"),
-                    rs.getInt("PLAZAS_TURISTA"),
-                    rs.getInt("PLAZAS_PRIMERA")
+                        rs.getString("COD_VUELO"),
+                        rs.getString("HORA_SALIDA"),
+                        rs.getString("DESTINO"),
+                        rs.getString("PROCEDENCIA"),
+                        rs.getInt("PLAZAS_FUMADOR"),
+                        rs.getInt("PLAZAS_NO_FUMADOR"),
+                        rs.getInt("PLAZAS_TURISTA"),
+                        rs.getInt("PLAZAS_PRIMERA")
                 );
                 vuelos.add(v);
             }
@@ -69,9 +69,10 @@ public class FlightDatabaseOperations {
             try (ResultSet rs = pstmt.executeQuery()) {
                 while (rs.next()) {
                     Pasajero p = new Pasajero(
-                        rs.getInt("NUM"),
-                        rs.getString("COD_VUELO"),
-                        rs.getString("TIPO_PLAZA")
+                            rs.getInt("NUM"),
+                            rs.getString("COD_VUELO"),
+                            rs.getString("TIPO_PLAZA"),
+                            rs.getString("FUMADOR")
                     );
                     pasajeros.add(p);
                 }
@@ -106,7 +107,7 @@ public class FlightDatabaseOperations {
     public void insertarPasajero(Connection conn, int id, String codigoVuelo, String tipoPlaza, String fumador)
             throws SQLException {
         String sql = "INSERT INTO PASAJEROS VALUES (?, ?, ?, ?)";
-        
+
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             pstmt.setString(1, (String.valueOf(id)));
@@ -120,9 +121,9 @@ public class FlightDatabaseOperations {
 
     public void modificarPasajerosVuelo(Connection conn, String codigoVuelo) throws SQLException {
         String sql = "UPDATE VUELOS SET PLAZAS_FUMADOR = PLAZAS_NO_FUMADOR WHERE COD_VUELO = ?";
-        
+
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            
+
             pstmt.setString(1, codigoVuelo);
             pstmt.executeUpdate();
         }
@@ -130,9 +131,9 @@ public class FlightDatabaseOperations {
 
     public void modificarDestinoVuelo(Connection conn, String codigoVuelo, String nuevoDestino) throws SQLException {
         String sql = "UPDATE VUELOS SET DESTINO = ? WHERE COD_VUELO = ?";
-        
+
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            
+
             pstmt.setString(1, nuevoDestino);
             pstmt.setString(2, codigoVuelo);
             pstmt.executeUpdate();
@@ -141,9 +142,9 @@ public class FlightDatabaseOperations {
 
     public void eliminarVuelo(Connection conn, String codigoVuelo) throws SQLException {
         String sql = "DELETE FROM VUELOS WHERE COD_VUELO = ?";
-        
+
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            
+
             pstmt.setString(1, codigoVuelo);
             pstmt.executeUpdate();
         }

@@ -19,8 +19,9 @@ import lombok.*;
 @Builder
 public class Pasajero {
     
-    private int id;
-    private String nombre;
-    private String apellido;
+    private int num;
+    private String codVuelo;
+    private String tipoPlaza;
+    private String fumador;
     
 }
