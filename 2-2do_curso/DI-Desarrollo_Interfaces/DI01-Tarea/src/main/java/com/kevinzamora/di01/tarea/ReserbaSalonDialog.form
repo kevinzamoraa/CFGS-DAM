@@ -45,7 +45,7 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="detallesReserva" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="37" max="32767" attributes="0"/>
+                      <EmptySpace pref="47" max="32767" attributes="0"/>
                       <Component id="scrollPaneReservas" min="-2" pref="100" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -137,7 +137,7 @@
     </Component>
     <Component class="javax.swing.JCheckBox" name="necesitaHabitaciones">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Se precisan habitaciones"/>
+        <Property name="label" type="java.lang.String" value="Necesita habitaciones"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JScrollPane" name="detallesReserva">

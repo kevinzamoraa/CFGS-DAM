@@ -53,7 +53,7 @@ public class ReserbaSalonDialog extends javax.swing.JDialog {
 
         tipoCocina.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bufé", "Carta", "Pedir cita con el Chef", "No precisa" }));
 
-        necesitaHabitaciones.setText("Se precisan habitaciones");
+        necesitaHabitaciones.setLabel("Necesita habitaciones");
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -89,7 +89,7 @@ public class ReserbaSalonDialog extends javax.swing.JDialog {
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(detallesReserva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                         .addComponent(scrollPaneReservas, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         layout.setVerticalGroup(
