@@ -22,4 +22,8 @@ public class Dept {
 
     @Column(name = "loc")
     private String location;
+
+    public String toString() {
+        return "Departamento: " + name + ", Localización: " + location;
+    }
 }

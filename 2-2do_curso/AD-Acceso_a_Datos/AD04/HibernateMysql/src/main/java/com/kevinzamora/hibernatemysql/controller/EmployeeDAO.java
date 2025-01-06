@@ -1,6 +1,7 @@
 package com.kevinzamora.hibernatemysql.controller;
 
 import com.kevinzamora.hibernatemysql.config.HibernateUtil;
+import com.kevinzamora.hibernatemysql.model.Dept;
 import com.kevinzamora.hibernatemysql.model.Emp;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -45,6 +46,15 @@ public class EmployeeDAO {
     public List<Emp> listEmps() {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             return session.createQuery("FROM Emp", Emp.class).list();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ArrayList<>();
+        }
+    }
+
+    public List<Dept> listDept() {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            return session.createQuery("FROM Dept", Dept.class).list();
         } catch (Exception e) {
             e.printStackTrace();
             return new ArrayList<>();

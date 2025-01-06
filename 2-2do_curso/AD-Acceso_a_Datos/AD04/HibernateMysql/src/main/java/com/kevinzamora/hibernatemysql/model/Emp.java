@@ -10,23 +10,23 @@ import java.time.LocalDate;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 @Builder
 @Entity
 @Table(name = "emp")
 public class Emp {
     @Id
+    @Column(nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int empno;
 
-    @Column(name = "ename")
+    @Column(name = "ename", nullable = false)
     private String name;
 
-    @Column(name = "job")
+    @Column(name = "job", nullable = false)
     private String job;
 
     @Column(name = "mgr")
-    private int mgr;
+    private Integer mgr;
 
     @Column(name = "hiredate")
     private LocalDate hireDate;
@@ -34,10 +34,15 @@ public class Emp {
     @Column(name = "sal")
     private double salary;
 
-    @Column(name = "comm")
-    private double comm;
+    @Column(name = "comm", nullable = true)
+    private Double comm;
 
     @Column(name = "deptno")
     private  int deptno;
 
+    public String toString() {
+        return empno + " - Nombre:" + name + ", Salario: " + salary + "€";
+    }
+
 }
+
