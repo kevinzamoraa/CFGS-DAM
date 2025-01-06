@@ -14,7 +14,11 @@ public class EmployeeDAO {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             transaction = session.beginTransaction();
-            session.save(emp);
+            try {
+                session.save(emp);
+            } catch (Exception e) {
+                System.out.println("Se ha producido el siguiente error al guardar: " + e);
+            }
             transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {
@@ -59,5 +63,24 @@ public class EmployeeDAO {
             e.printStackTrace();
             return new ArrayList<>();
         }
+    }
+
+    public String printEmp(int empno) {
+        Transaction transaction = null;
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            transaction = session.beginTransaction();
+            Emp emp = session.get(Emp.class, empno);
+            if (emp != null) {
+                return emp.toString();
+            } else {
+                transaction.rollback();
+            }
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }
+        return "";
     }
 }

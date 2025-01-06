@@ -7,7 +7,9 @@ package com.kevinzamora.hibernatemysql;
 import com.kevinzamora.hibernatemysql.controller.EmployeeDAO;
 import com.kevinzamora.hibernatemysql.model.Dept;
 import com.kevinzamora.hibernatemysql.model.Emp;
+import jakarta.persistence.GenerationType;
 
+import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -21,12 +23,16 @@ public class HibernateMysql {
         EmployeeDAO employeeDAO = new EmployeeDAO();
 
         // Insertar un empleado
-        /*Emp emp = new Emp();
-        emp.setEmpno(1000);
-        emp.setName("Kevin");
+        Emp emp = new Emp();
+        emp.setName("KEVIN");
+        emp.setJob("SALESMAN");
+        emp.setMgr(null);
+        emp.setHireDate(LocalDate.of(2025, 1, 6));
         emp.setSalary(50000.0);
         emp.setComm(0.0);
-        employeeDAO.insertEmp(emp);*/
+        emp.setDeptno(20);
+        employeeDAO.insertEmp(emp);
+        System.out.println("El nuevo empleado se ha guardado correctamente");
 
         // Obtener lista de empleados
         List<Emp> employees = employeeDAO.listEmps();
@@ -43,10 +49,10 @@ public class HibernateMysql {
         }
 
         // Borrar un empleado
-        /* Para comprobar si funciona la siguiente línea, basta con restaurar nuestra base de datos, comprobarlo y luego
-        ejecutar el programa */
-        employeeDAO.deleteEmp(4521); // Suponiendo que el ID del empleado es 4521
-        System.out.println("Se ha borrado el empleado con el código 'empno' 4521");
+        /* Para comprobar si funciona la siguiente línea, basta con comentar el método 'deleteEmp'
+                                                                                   y apreciar como se mantiene el usuario creado */
+        employeeDAO.deleteEmp(emp.getEmpno()); // Borramos el usuario creado previamente
+        System.out.println("Se ha borrado el empleado creado durante la prueba de inserción");
 
     }
 }
