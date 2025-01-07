@@ -4,11 +4,17 @@
  */
 package com.kevinzamora.di01.tarea;
 
+import java.util.ArrayList;
+import java.util.Date;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author kzdesigner
  */
 public class ReservaSalonDialog extends javax.swing.JDialog {
+    
+    ArrayList<Reserva> reservas = new ArrayList<>();
 
     /**
      * Creates new form ReserbaSalonDialog
@@ -17,6 +23,14 @@ public class ReservaSalonDialog extends javax.swing.JDialog {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setTitle("Reservar Salón Habana");
+        nombreCliente.setToolTipText("Ingrese el nombre del cliente");
+        telefonoCliente.setToolTipText("Ingrese el teléfono del cliente");
+        fechaEvento.setToolTipText("Seleccione la fecha del evento");
+        tipoEvento.setToolTipText("Seleccione el tipo de evento");
+        numeroPersonas.setToolTipText("Ingrese el número de personas");
+        tipoCocina.setToolTipText("Seleccione el tipo de cocina");
+        numeroDias.setToolTipText("Ingrese el número de días (solo para eventos de congreso)");
+        necesitaHabitaciones.setToolTipText("Marque si se requieren habitaciones");
     }
     
     /**
@@ -43,7 +57,7 @@ public class ReservaSalonDialog extends javax.swing.JDialog {
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         btnGuardarReserva = new javax.swing.JButton();
-        btnActualizarReservas = new javax.swing.JButton();
+        btnMostrarReservas = new javax.swing.JButton();
         nombreClienteLabel = new javax.swing.JLabel();
         telefonoClienteLabel = new javax.swing.JLabel();
 
@@ -60,6 +74,11 @@ public class ReservaSalonDialog extends javax.swing.JDialog {
 
         tipoEvento.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         tipoEvento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Banquete", "Jornada", "Congreso" }));
+        tipoEvento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tipoEventoActionPerformed(evt);
+            }
+        });
 
         numeroPersonas.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         numeroPersonas.setToolTipText("");
@@ -94,8 +113,13 @@ public class ReservaSalonDialog extends javax.swing.JDialog {
             }
         });
 
-        btnActualizarReservas.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        btnActualizarReservas.setText("Mostrar reservas");
+        btnMostrarReservas.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        btnMostrarReservas.setText("Mostrar reservas");
+        btnMostrarReservas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMostrarReservasActionPerformed(evt);
+            }
+        });
 
         nombreClienteLabel.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         nombreClienteLabel.setText("Nombre del Cliente");
@@ -118,7 +142,7 @@ public class ReservaSalonDialog extends javax.swing.JDialog {
                                 .addComponent(jLabel2)
                                 .addComponent(nombreClienteLabel)
                                 .addComponent(necesitaHabitaciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnActualizarReservas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnMostrarReservas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(nombreCliente)
                                 .addComponent(tipoEvento, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(TipoEventoLabel))
@@ -179,7 +203,7 @@ public class ReservaSalonDialog extends javax.swing.JDialog {
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnGuardarReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnActualizarReservas))
+                    .addComponent(btnMostrarReservas))
                 .addContainerGap(44, Short.MAX_VALUE))
         );
 
@@ -187,8 +211,51 @@ public class ReservaSalonDialog extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGuardarReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarReservaActionPerformed
-        // TODO add your handling code here:
+        Reserva reserva = new Reserva();
+        reserva.setNombreCliente(nombreCliente.getText());
+        reserva.setTelefonoCliente(telefonoCliente.getText());
+        reserva.setFechaEvento((Date)fechaEvento.getValue());
+        reserva.setTipoEvento((String)tipoEvento.getSelectedItem());
+        reserva.setNumeroPersonas((Integer)numeroPersonas.getValue());
+        reserva.setTipoCocina((String)tipoCocina.getSelectedItem());
+        reserva.setNumeroDias((Integer)numeroDias.getValue());
+        reserva.setNecesitaHabitaciones(necesitaHabitaciones.isSelected());
+
+        // Guardar la reserva en un ArrayList
+        if (reservas == null) {
+            reservas = new ArrayList<>();
+        }
+        reservas.add(reserva);
+
+        JOptionPane.showMessageDialog(this, "Reserva guardada correctamente.");
+
     }//GEN-LAST:event_btnGuardarReservaActionPerformed
+
+    private void btnMostrarReservasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarReservasActionPerformed
+        StringBuilder sb = new StringBuilder();
+        for (Reserva r : reservas) {
+            sb.append("Cliente: ").append(r.getNombreCliente()).append("\n");
+            sb.append("Teléfono: ").append(r.getTelefonoCliente()).append("\n");
+            sb.append("Fecha: ").append(r.getFechaEvento()).append("\n");
+            sb.append("Tipo de evento: ").append(r.getTipoEvento()).append("\n");
+            sb.append("Número de personas: ").append(r.getNumeroPersonas()).append("\n");
+            sb.append("Tipo de cocina: ").append(r.getTipoCocina()).append("\n");
+            sb.append("Número de días: ").append(r.getNumeroDias()).append("\n");
+            sb.append("Necesita habitaciones: ").append(r.isNecesitaHabitaciones()).append("\n\n");
+        }
+        JOptionPane.showMessageDialog(this, sb.toString(), "Reservas", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_btnMostrarReservasActionPerformed
+
+    private void tipoEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoEventoActionPerformed
+        String selectedType = (String) tipoEvento.getSelectedItem();
+        if ("Congreso".equals(selectedType)) {
+            numeroDias.setEnabled(true);
+            necesitaHabitaciones.setEnabled(true);
+        } else {
+            numeroDias.setEnabled(false);
+            necesitaHabitaciones.setEnabled(false);
+        }
+    }//GEN-LAST:event_tipoEventoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -225,11 +292,11 @@ public class ReservaSalonDialog extends javax.swing.JDialog {
             }
         });
     }
-
+   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel TipoEventoLabel;
-    private javax.swing.JButton btnActualizarReservas;
     private javax.swing.JButton btnGuardarReserva;
+    private javax.swing.JButton btnMostrarReservas;
     private javax.swing.JSpinner fechaEvento;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

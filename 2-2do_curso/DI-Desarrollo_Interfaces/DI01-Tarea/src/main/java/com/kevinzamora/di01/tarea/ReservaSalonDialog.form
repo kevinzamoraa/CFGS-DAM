@@ -34,7 +34,7 @@
                               <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="nombreClienteLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="necesitaHabitaciones" max="32767" attributes="0"/>
-                              <Component id="btnActualizarReservas" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btnMostrarReservas" alignment="0" max="32767" attributes="0"/>
                               <Component id="nombreCliente" alignment="0" max="32767" attributes="0"/>
                               <Component id="tipoEvento" alignment="1" min="-2" pref="151" max="-2" attributes="0"/>
                           </Group>
@@ -109,7 +109,7 @@
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="btnGuardarReserva" min="-2" pref="42" max="-2" attributes="0"/>
-                  <Component id="btnActualizarReservas" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnMostrarReservas" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="44" max="32767" attributes="0"/>
           </Group>
@@ -156,6 +156,9 @@
           </StringArray>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tipoEventoActionPerformed"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
@@ -248,13 +251,16 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarReservaActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnActualizarReservas">
+    <Component class="javax.swing.JButton" name="btnMostrarReservas">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial" size="13" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Mostrar reservas"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMostrarReservasActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="nombreClienteLabel">
       <Properties>
