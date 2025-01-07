@@ -221,6 +221,16 @@ public class ReservaSalonDialog extends javax.swing.JDialog {
         reserva.setNumeroDias((Integer)numeroDias.getValue());
         reserva.setNecesitaHabitaciones(necesitaHabitaciones.isSelected());
 
+        // Manejo especial para necesitaHabitaciones y numeroDias
+        String selectedType = (String) tipoEvento.getSelectedItem();
+        if ("Congreso".equals(selectedType)) {
+            reserva.setNecesitaHabitaciones(true);
+            reserva.setNumeroDias((Integer)numeroDias.getValue());
+        } else {
+            reserva.setNecesitaHabitaciones(false);
+            reserva.setNumeroDias(0); // Establecer a 0 cuando no está seleccionado
+        }
+
         // Guardar la reserva en un ArrayList
         if (reservas == null) {
             reservas = new ArrayList<>();
@@ -234,13 +244,13 @@ public class ReservaSalonDialog extends javax.swing.JDialog {
     private void btnMostrarReservasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarReservasActionPerformed
         StringBuilder sb = new StringBuilder();
         for (Reserva r : reservas) {
-            sb.append("Cliente: ").append(r.getNombreCliente()).append("\n");
+            sb.append("Cliente: ").append(r.getNombreCliente()).append(", ");
             sb.append("Teléfono: ").append(r.getTelefonoCliente()).append("\n");
-            sb.append("Fecha: ").append(r.getFechaEvento()).append("\n");
+            sb.append("Fecha: ").append(r.getFechaEvento()).append(", ");
             sb.append("Tipo de evento: ").append(r.getTipoEvento()).append("\n");
-            sb.append("Número de personas: ").append(r.getNumeroPersonas()).append("\n");
+            sb.append("Número de personas: ").append(r.getNumeroPersonas()).append(", ");
             sb.append("Tipo de cocina: ").append(r.getTipoCocina()).append("\n");
-            sb.append("Número de días: ").append(r.getNumeroDias()).append("\n");
+            sb.append("Número de días: ").append(r.getNumeroDias()).append(", ");
             sb.append("Necesita habitaciones: ").append(r.isNecesitaHabitaciones()).append("\n\n");
         }
         JOptionPane.showMessageDialog(this, sb.toString(), "Reservas", JOptionPane.INFORMATION_MESSAGE);
