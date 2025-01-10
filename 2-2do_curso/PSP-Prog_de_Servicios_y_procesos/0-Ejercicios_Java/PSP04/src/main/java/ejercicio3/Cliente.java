@@ -72,7 +72,7 @@ public class Cliente {
                     System.out.println(mensaje);
                     String comando = scanner.next();
                     out.writeUTF(comando);
-                    System.out.println(comando);
+                    //System.out.println(comando);
                     
                     switch(comando) {
                         case "ls":

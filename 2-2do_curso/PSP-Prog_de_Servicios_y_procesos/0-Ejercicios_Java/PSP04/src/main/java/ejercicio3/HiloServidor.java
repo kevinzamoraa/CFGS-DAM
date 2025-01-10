@@ -67,13 +67,13 @@ public class HiloServidor extends Thread {
             if(usuario.equals("kevin") && password.equals("secreta")) {
                 
                 out.writeBoolean(true);
-                
-                out.writeUTF("Introduce un comando (ls/get/exit)");
-                String comando = in.readUTF().trim();
-                
+                           
                 boolean salir = false;
                 
                 while(!salir) {
+                    
+                    out.writeUTF("Introduce un comando (ls/get/exit)");
+                    String comando = in.readUTF().trim();
                     
                     switch(comando) {
                         case "ls":
@@ -107,7 +107,7 @@ public class HiloServidor extends Thread {
                             * creación de un nuevo objeto 'File' pasándole el parámetro 'ruta'.
                             * @param ruta
                             */
-                           File f = new File(ruta);
+                           File f = new File("./ficheros/" + ruta);
 
                            /** 
                             * Sentencia condicional 'if else/si sino' para comprovar si existe 
@@ -128,7 +128,7 @@ public class HiloServidor extends Thread {
                                 * variable 'br' es la encargada de establecer la conexión con 
                                 * el fichero a leer y poder proceder así con su lectura.
                                 */
-                               BufferedReader br = new BufferedReader(new FileReader(ruta));
+                               BufferedReader br = new BufferedReader(new FileReader("./ficheros/" + ruta));
 
                                /** 
                                 * Creamos e inicializamos las variables linea y contenido de 
@@ -169,11 +169,6 @@ public class HiloServidor extends Thread {
                                for (int i = 0; i < contenidoFichero.length; i++) {
                                    out.writeByte(contenidoFichero[i]);
                                }
-
-                               /** 
-                                * Cerramos la conexión 
-                                */
-                               sc.close();
 
                            } else {
                                /** 
