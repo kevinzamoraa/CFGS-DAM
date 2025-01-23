@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * *****************************************************************************
@@ -90,6 +92,7 @@ class ServidorHTTP {
         printWriter.println(Mensajes.lineaInicial_OK);
         printWriter.println(Paginas.primeraCabecera);
         printWriter.println("Content-Length: " + html.length() + 1);
+        printWriter.println("Date: " + LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME));
         printWriter.println("\n");
         printWriter.println(html);
       } //si corresponde a la página del Quijote
@@ -99,6 +102,7 @@ class ServidorHTTP {
         printWriter.println(Mensajes.lineaInicial_OK);
         printWriter.println(Paginas.primeraCabecera);
         printWriter.println("Content-Length: " + html.length() + 1);
+        printWriter.println("Date: " + LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME));
         printWriter.println("\n");
         printWriter.println(html);
       } //en cualquier otro caso
@@ -108,6 +112,7 @@ class ServidorHTTP {
         printWriter.println(Mensajes.lineaInicial_NotFound);
         printWriter.println(Paginas.primeraCabecera);
         printWriter.println("Content-Length: " + html.length() + 1);
+        printWriter.println("Date: " + LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME));
         printWriter.println("\n");
         printWriter.println(html);
       }
