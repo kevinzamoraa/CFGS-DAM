@@ -12,7 +12,7 @@ public class Paginas {
           "Content-Type:text/html;charset=UTF-8";
   //contenido index
   public static final String html_index = "<html>"
-          + "<head><title>index</title></head>"
+          + "<head><title>index</title><link rel=\"icon\" href=\"data:image/x-icon;,\"></head>"
           + "<body>"
           + "<h1>¡Enhorabuena!</h1>"
           + "<p>Tu servidor HTTP mínimo funciona correctamente</p>"
@@ -20,7 +20,7 @@ public class Paginas {
           + "</html>";
   //contenido quijote
   public static final String html_quijote = "<html>"
-          + "<head><title>quijote</title></head>"
+          + "<head><title>quijote</title><link rel=\"icon\" href=\"data:image/x-icon;,\"></head>"
           + "<body>"
           + "<h1>Así comienza el Quijote</h1>"
           + "<p>En un lugar de la Mancha, de cuyo nombre no quiero "
@@ -41,7 +41,7 @@ public class Paginas {
           + "</html>";
   //contenido noEncontrado
   public static final String html_noEncontrado = "<html>"
-          + "<head><title>noEncontrado</title></head>"
+          + "<head><title>noEncontrado</title><link rel=\"icon\" href=\"data:image/x-icon;,\"></head>"
           + "<body>"
           + "<h1>¡ERROR! Página no encontrada</h1>"
           + "<p>La página que solicitaste no existe en nuestro "
