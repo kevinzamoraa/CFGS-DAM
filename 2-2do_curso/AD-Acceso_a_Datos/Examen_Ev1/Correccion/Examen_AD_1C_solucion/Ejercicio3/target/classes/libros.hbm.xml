@@ -1,0 +1,20 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="tarea3.Libros" table="libros">
+        <id name="idLibro" column="id_libro">
+            <generator class="native" />
+        </id>
+        <property name="titulo" />
+        <property name="autor" />
+        <property name="genero" />
+        <property name="anioPublicacion" column="anio_publicacion" />
+        <property name="disponible" />
+
+        <set name="prestamos" inverse="true" cascade="all">
+            <key column="id_libro" />
+            <one-to-many class="tarea3.Prestamos" />
+        </set>
+    </class>
+</hibernate-mapping>
+
