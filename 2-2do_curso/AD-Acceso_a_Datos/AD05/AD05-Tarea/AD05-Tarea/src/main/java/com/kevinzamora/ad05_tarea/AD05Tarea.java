@@ -11,6 +11,7 @@ package com.kevinzamora.ad05_tarea;
 public class AD05Tarea {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        MenuPrincipal menuPrincipalObj = new MenuPrincipal();
+        menuPrincipalObj.mostrarMenu();
     }
 }

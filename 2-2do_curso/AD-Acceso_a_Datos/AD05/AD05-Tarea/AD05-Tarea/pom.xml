@@ -5,6 +5,14 @@
     <artifactId>AD05-Tarea</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>org.fudaa.com.db4o</groupId>
+            <artifactId>db4o-java5</artifactId>
+            <version>5.5</version>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>21</maven.compiler.release>
