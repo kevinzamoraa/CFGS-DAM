@@ -1,4 +1,4 @@
-CONNECT SYSTEM/admin@OracleDB;
+CONNECT SYSTEM
 
 -- 1. Definir un tipo/TYPE varray de dimensión 3 para contener los teléfonos
 -- Este tipo varray permite almacenar hasta 3 números de teléfono para cada cliente
