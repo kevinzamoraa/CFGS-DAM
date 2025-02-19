@@ -233,6 +233,12 @@ public class Principal extends javax.swing.JFrame {
         entradaNombre.setText("");
         entradaApellidos.setText("");
         entradaDomicilio.setText("");
+        mujerRB.setEnabled(true);
+        hombreRB.setEnabled(true);
+        mujerRB.setSelected(false);
+        hombreRB.setSelected(false);
+        aspNetChB.setSelected(false);
+        qtDesignerChB.setSelected(false);
     }//GEN-LAST:event_btnBorrarActionPerformed
 
     private void btnMostrarRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarRegistroActionPerformed
@@ -291,9 +297,11 @@ public class Principal extends javax.swing.JFrame {
         if (alumnos == null) {
             alumnos = new ArrayList<>();
         }
-        alumnos.add(alumno);
-
-        JOptionPane.showMessageDialog(this, "Alumno guardado correctamente.");
+        
+        if(validateSave()) {
+            alumnos.add(alumno);
+            JOptionPane.showMessageDialog(this, "Alumno guardado correctamente.");
+        }
     }//GEN-LAST:event_btnEnviarActionPerformed
 
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
@@ -302,9 +310,10 @@ public class Principal extends javax.swing.JFrame {
          la tecla presionada, para así cerrar o no la aplicación mediante un 
         condicional IF
         */
-        JOptionPane.showMessageDialog(this, "¿Desea cerrar la aplicación? "
+        JOptionPane.showMessageDialog(this, "Se va a cerrar la aplicación. "
                 + "Pulsa el boton 'OK' para salir");  
         dispose();
+        System.exit(0);
         /* TODO: Terminar el proceso de la aplicación cuando esta se cierra 
         mediante el botón */
     }//GEN-LAST:event_btnCerrarActionPerformed
@@ -361,6 +370,26 @@ public class Principal extends javax.swing.JFrame {
                 new Principal().setVisible(true);
             }
         });
+    }
+    
+    public boolean validateSave() {
+        boolean isCorrect = false;
+        if(entradaApellidos.getText().equals("")) {
+            isCorrect = false;
+            JOptionPane.showMessageDialog(null, "Campo requerido");
+            entradaApellidos.requestFocus();
+        } else if(entradaDomicilio.getText().equals("")) {
+            isCorrect = false;
+            JOptionPane.showMessageDialog(null, "Campo requerido");
+            entradaDomicilio.requestFocus();
+        } else if(entradaNombre.getText().equals("")) {
+            isCorrect = false;
+            JOptionPane.showMessageDialog(null, "Campo requerido");
+            entradaNombre.requestFocus();
+        } else {
+            isCorrect = true;
+        }
+        return isCorrect;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
