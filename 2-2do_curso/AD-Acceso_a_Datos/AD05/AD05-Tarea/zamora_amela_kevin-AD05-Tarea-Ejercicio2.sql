@@ -1,12 +1,19 @@
-CONNECT SYSTEM
+-- Primero, borrar los tipos en el orden correcto para evitar dependencias
+DROP TYPE VENTA FORCE;
+DROP TYPE LINEA_VENTA_TABLA;
+DROP TYPE LINEA_VENTA FORCE;
+DROP TYPE PRODUCTO FORCE;
+DROP TYPE CLIENTE FORCE;
+DROP TYPE DIRECCION;
+DROP TYPE TELEFONOS_VARRAY;
 
 -- 1. Definir un tipo/TYPE varray de dimensión 3 para contener los teléfonos
 -- Este tipo varray permite almacenar hasta 3 números de teléfono para cada cliente
-CREATE TYPE TELEFONOS_VARRAY AS VARRAY(3) OF VARCHAR2(15);
+CREATE OR REPLACE TYPE TELEFONOS_VARRAY AS VARRAY(3) OF VARCHAR2(15);
 
 -- 2. Crear los tipos dirección, cliente, producto y línea de venta
 -- Definición del tipo dirección que contendrá los datos de ubicación
-CREATE TYPE DIRECCION AS OBJECT (
+CREATE OR REPLACE TYPE DIRECCION AS OBJECT (
     direccion VARCHAR2(50),
     poblacion VARCHAR2(50),
     codPostal NUMBER(5),
@@ -14,7 +21,7 @@ CREATE TYPE DIRECCION AS OBJECT (
 );
 
 -- Definición del tipo cliente que incluye todos sus datos personales y de contacto
-CREATE TYPE CLIENTE AS OBJECT (
+CREATE OR REPLACE TYPE CLIENTE AS OBJECT (
     id NUMBER,
     nombre VARCHAR2(50),
     direccion DIRECCION,
@@ -22,16 +29,16 @@ CREATE TYPE CLIENTE AS OBJECT (
     nif VARCHAR2(9)
 );
 
--- Definición del tipo producto con sus características básicas
-CREATE TYPE PRODUCTO AS OBJECT (
+-- 3. Definición del tipo producto con sus características básicas
+CREATE OR REPLACE TYPE PRODUCTO AS OBJECT (
     id NUMBER,
     descripcion VARCHAR2(80),
     pvp NUMBER,
     stockActual NUMBER
 );
 
--- Definición del tipo línea de venta que relaciona productos con cantidades
-CREATE TYPE LINEA_VENTA AS OBJECT (
+-- 4. Definición del tipo línea de venta que relaciona productos con cantidades
+CREATE OR REPLACE TYPE LINEA_VENTA AS OBJECT (
     idVenta NUMBER,
     numeroLinea NUMBER,
     producto REF PRODUCTO,
@@ -40,11 +47,11 @@ CREATE TYPE LINEA_VENTA AS OBJECT (
 
 -- 3. Crear un tipo tabla anidada para contener las líneas de una venta
 -- Este tipo permite almacenar múltiples líneas de venta para cada venta
-CREATE TYPE LINEA_VENTA_TABLA AS TABLE OF LINEA_VENTA;
+CREATE OR REPLACE TYPE LINEA_VENTA_TABLA AS TABLE OF LINEA_VENTA;
 
 -- 4. Crear un tipo venta para los datos de las ventas
 -- Este tipo incluye todas las propiedades necesarias para una venta completa
-CREATE TYPE VENTA AS OBJECT (
+CREATE OR REPLACE TYPE VENTA AS OBJECT (
     id NUMBER,
     cliente REF CLIENTE,
     fechaVenta DATE,
@@ -55,25 +62,31 @@ CREATE TYPE VENTA AS OBJECT (
 
 -- 5. Crear el cuerpo/BODY del tipo VENTA
 -- Implementación de las funciones miembro para calcular totales y contar líneas
-CREATE TYPE BODY VENTA AS
+CREATE OR REPLACE TYPE BODY VENTA AS
     MEMBER FUNCTION total_venta RETURN NUMBER IS
         total NUMBER := 0;
         linea LINEA_VENTA;
     BEGIN
-        FOR i IN 1..SELF.lineas.COUNT LOOP
-            linea := SELF.lineas(i);
-            total := total + linea.cantidad * linea.producto.pvp;
-        END LOOP;
+        IF SELF.lineas IS NOT NULL THEN
+            FOR i IN 1..SELF.lineas.COUNT LOOP
+                linea := SELF.lineas(i);
+                total := total + linea.cantidad * linea.producto.pvp;
+            END LOOP;
+        END IF;
         RETURN total;
     END total_venta;
     
     MEMBER FUNCTION num_lineas RETURN NUMBER IS
     BEGIN
-        RETURN SELF.lineas.COUNT;
+        RETURN NVL(SELF.lineas.COUNT, 0);
     END num_lineas;
 END;
 
 -- 6. Crear las tablas objeto-relacional
+-- Tabla para almacenar las direcciones --
+CREATE TABLE DIRECCIONES_OBJ OF DIRECCION (
+    direccion PRIMARY KEY
+);
 -- Tabla para almacenar los clientes con sus datos
 CREATE TABLE CLIENTES_OBJ OF CLIENTE (
     id PRIMARY KEY,
@@ -91,27 +104,44 @@ CREATE TABLE VENTAS_OBJ OF VENTA (
 );
 
 -- 7. Insertar dos clientes y cinco productos
--- Insertar primer cliente
-INSERT INTO CLIENTES_OBJ VALUES (
-    CLIENTE(
-        1,
-        'Ana García',
-        DIRECCION('Calle Principal 1', 'Madrid', 28001, 'Madrid'),
-        TELEFONOS_VARRAY('912345678', '913456789', '912345679'),
-        '12345678A'
-    )
+-- Insertar datos de prueba
+INSERT INTO DIRECCIONES_OBJ VALUES (
+    DIRECCION('Calle Principal 1', 'Madrid', 28001, 'Madrid')
+);
+INSERT INTO DIRECCIONES_OBJ VALUES (
+    DIRECCION('Avenida Central 2', 'Barcelona', 08002, 'Barcelona')
 );
 
--- Insertar segundo cliente
-INSERT INTO CLIENTES_OBJ VALUES (
-    CLIENTE(
-        2,
-        'Carlos López',
-        DIRECCION('Avenida Central 2', 'Barcelona', 08002, 'Barcelona'),
-        TELEFONOS_VARRAY('934567890', '935678901', '934567891'),
-        '23456789B'
-    )
-);
+-- Insertar clientes
+DECLARE
+    dir_ref REF DIRECCION;
+BEGIN
+    SELECT REF(d) INTO dir_ref FROM DIRECCIONES_OBJ d WHERE d.direccion = 'Calle Principal 1';
+    INSERT INTO CLIENTES_OBJ VALUES (
+        CLIENTE(
+            1,
+            'Ana García',
+            dir_ref,
+            TELEFONOS_VARRAY('912345678', '913456789', '912345679'),
+            '12345678A'
+        )
+    );
+END;
+
+DECLARE
+    dir_ref REF DIRECCION;
+BEGIN
+    SELECT REF(d) INTO dir_ref FROM DIRECCIONES_OBJ d WHERE d.direccion = 'Avenida Central 2';
+    INSERT INTO CLIENTES_OBJ VALUES (
+        CLIENTE(
+            2,
+            'Carlos López',
+            dir_ref,
+            TELEFONOS_VARRAY('934567890', '935678901', '934567891'),
+            '23456789B'
+        )
+    );
+END;
 
 -- Insertar productos
 INSERT INTO PRODUCTOS_OBJ VALUES (
@@ -247,9 +277,4 @@ EXCEPTION
         DBMS_OUTPUT.PUT_LINE('Venta no encontrada');
     WHEN OTHERS THEN
         DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
-END;
-
--- Para probar el procedimiento --
-BEGIN
-    mostrar_venta(1);
 END;
