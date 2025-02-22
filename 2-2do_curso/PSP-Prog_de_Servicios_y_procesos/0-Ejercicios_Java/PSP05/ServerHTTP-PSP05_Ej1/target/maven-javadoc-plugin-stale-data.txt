@@ -1,0 +1,48 @@
+-J-Duser.language=
+-J-Duser.country=
+@options
+@packages
+-encoding
+'UTF-8'
+-protected
+--release
+21
+-sourcepath
+'/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP05/ServerHTTP-PSP05_Ej1/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2025. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP05/ServerHTTP-PSP05_Ej1/target/reports/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'ServerHTTP-PSP05_Ej1 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'ServerHTTP-PSP05_Ej1 1.0-SNAPSHOT API'
+PaquetePrincipal
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP05/ServerHTTP-PSP05_Ej1/src/main/java = 1740263094880
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP05/ServerHTTP-PSP05_Ej1/target/reports/apidocs/allclasses-index.html = 1740263295827
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP05/ServerHTTP-PSP05_Ej1/target/reports/apidocs/allpackages-index.html = 1740263295831
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP05/ServerHTTP-PSP05_Ej1/target/reports/apidocs/constant-values.html = 1740263295788
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP05/ServerHTTP-PSP05_Ej1/target/reports/apidocs/copy.svg = 1740263295896
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP05/ServerHTTP-PSP05_Ej1/target/reports/apidocs/element-list = 1740263295751
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP05/ServerHTTP-PSP05_Ej1/target/reports/apidocs/help-doc.html = 1740263295877
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP05/ServerHTTP-PSP05_Ej1/target/reports/apidocs/index-all.html = 1740263295854
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP05/ServerHTTP-PSP05_Ej1/target/reports/apidocs/index.html = 1740263295868
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP05/ServerHTTP-PSP05_Ej1/target/reports/apidocs/link.svg = 1740263295901
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP05/ServerHTTP-PSP05_Ej1/target/reports/apidocs/member-search-index.js = 1740263295838
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP05/ServerHTTP-PSP05_Ej1/target/reports/apidocs/module-search-index.js = 1740263295833
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP05/ServerHTTP-PSP05_Ej1/target/reports/apidocs/overview-tree.html = 1740263295813
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP05/ServerHTTP-PSP05_Ej1/target/reports/apidocs/package-search-index.js = 1740263295835
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP05/ServerHTTP-PSP05_Ej1/target/reports/apidocs/script.js = 1740263295891
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP05/ServerHTTP-PSP05_Ej1/target/reports/apidocs/search-page.js = 1740263295912
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP05/ServerHTTP-PSP05_Ej1/target/reports/apidocs/search.html = 1740263295861
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP05/ServerHTTP-PSP05_Ej1/target/reports/apidocs/search.js = 1740263295907
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP05/ServerHTTP-PSP05_Ej1/target/reports/apidocs/stylesheet.css = 1740263295885
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP05/ServerHTTP-PSP05_Ej1/target/reports/apidocs/tag-search-index.js = 1740263295840
+/media/kzdesigner/ssd2/Repos/CFGS-DAM/2-2do_curso/PSP-Prog_de_Servicios_y_procesos/0-Ejercicios_Java/PSP05/ServerHTTP-PSP05_Ej1/target/reports/apidocs/type-search-index.js = 1740263295836
