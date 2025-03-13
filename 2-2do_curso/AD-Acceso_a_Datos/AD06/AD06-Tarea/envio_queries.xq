@@ -1,17 +1,17 @@
 (: Configuración básica para consultas XPath en envio.xml :)
 
-(: Declaración de namespace para eXist-db *)
+(: Declaración de namespace para eXist-db :)
 declare namespace exist = "http://exist.sourceforge.net/NS/exist";
 
-(: Importación del módulo de eXist para consultas XPath *)
+(: Importación del módulo de eXist para consultas XPath :)
 import module namespace xpath = "http://exist.sourceforge.net/NS/exist";
 
-(: Función principal para ejecutar las consultas *)
+(: Función principal para ejecutar las consultas :)
 declare function local:ejecutar-consultas() {
-    (: Obtener el documento XML *)
+    (: Obtener el documento XML :)
     let $doc := doc("xml/envio.xml")
     
-    (: Ejecutar las consultas XPath del ejercicio 1 *)
+    (: Ejecutar las consultas XPath del ejercicio 1 :)
     let $consulta1 := $doc/envio/poliza/asegurado[1],
         $consulta2 := $doc/envio/poliza/asegurado[1][count(garantia) > 2],
         $consulta3 := $doc/envio/poliza/asegurado[garantia/tipo = 'Dental'],
@@ -23,7 +23,7 @@ declare function local:ejecutar-consultas() {
         $consulta9 := sum($doc/envio/poliza/asegurado/garantia[@vigor = 'S']/capital),
         $consulta10 := $doc/envio/poliza[asegurado/garantia/capital = '80000']
     
-    (: Retornar los resultados en un formato estructurado *)
+    (: Retornar los resultados en un formato estructurado :)
     return <resultados>
         <consulta numero="1">
             <titulo>Primer asegurado de cada póliza</titulo>
@@ -68,5 +68,5 @@ declare function local:ejecutar-consultas() {
     </resultados>
 };
 
-(: Ejecutar la función principal *)
+(: Ejecutar la función principal :)
 local:ejecutar-consultas()
