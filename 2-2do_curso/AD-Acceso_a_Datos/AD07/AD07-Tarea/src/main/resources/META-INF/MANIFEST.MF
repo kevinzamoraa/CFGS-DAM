@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Created-By: 1.8 (Oracle Corporation)
+Name: com/ejemplos/sensortemperatura/
+Specification-Title: SensorTemperatura JavaBean
+Specification-Version: 1.0
+Implementation-Version: 1.0
