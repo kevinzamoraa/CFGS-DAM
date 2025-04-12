@@ -14,12 +14,6 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-    
-    <dependency>
-        <groupId>com.ejemplos.sensortemperatura</groupId>
-        <artifactId>sensortemperatura</artifactId>
-        <version>1.0-SNAPSHOT</version>
-    </dependency>
   </dependencies>
     
     <build>

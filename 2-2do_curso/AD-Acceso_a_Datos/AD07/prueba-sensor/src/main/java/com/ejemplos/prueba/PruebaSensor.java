@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.ejemplos.prueba;
-import com.kevinzamora.ad07_tarea.SensorTemperatura;
+import com.ejemplos.prueba.SensorTemperatura;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
