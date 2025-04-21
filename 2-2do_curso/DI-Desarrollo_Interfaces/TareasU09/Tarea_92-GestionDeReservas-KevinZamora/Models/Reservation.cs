@@ -15,7 +15,7 @@ namespace GestionReservas.Models
 
         public override string ToString()
         {
-            return $"{ContactName} ({Phone}) - {EventType} el {EventDate.ToShortDateString()} para {NumberOfPeople} personas. Cocina: {FoodType}. Jornadas: {Days}, Habitaciones: {(RequiresRooms ? "Sí" : "No")}";
+            return $"{EventDate:dd/MM/yyyy} - {EventType} - {ContactName} ({NumberOfPeople} personas)";
         }
     }
 }

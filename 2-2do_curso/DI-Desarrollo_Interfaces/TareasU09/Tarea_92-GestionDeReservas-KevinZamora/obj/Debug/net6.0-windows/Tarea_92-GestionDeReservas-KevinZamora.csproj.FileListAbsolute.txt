@@ -1,0 +1,15 @@
+C:\Users\Kevin\Downloads\Tarea_92-GestionDeReservas-KevinZamora\obj\Debug\net6.0-windows\Tarea_92-GestionDeReservas-KevinZamora.csproj.AssemblyReference.cache
+C:\Users\Kevin\Downloads\Tarea_92-GestionDeReservas-KevinZamora\obj\Debug\net6.0-windows\Tarea_92-GestionDeReservas-KevinZamora.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kevin\Downloads\Tarea_92-GestionDeReservas-KevinZamora\obj\Debug\net6.0-windows\Tarea_92-GestionDeReservas-KevinZamora.AssemblyInfoInputs.cache
+C:\Users\Kevin\Downloads\Tarea_92-GestionDeReservas-KevinZamora\obj\Debug\net6.0-windows\Tarea_92-GestionDeReservas-KevinZamora.AssemblyInfo.cs
+C:\Users\Kevin\Downloads\Tarea_92-GestionDeReservas-KevinZamora\obj\Debug\net6.0-windows\Tarea_92-GestionDeReservas-KevinZamora.csproj.CoreCompileInputs.cache
+C:\Users\Kevin\Downloads\Tarea_92-GestionDeReservas-KevinZamora\bin\Debug\net6.0-windows\Tarea_92-GestionDeReservas-KevinZamora.exe
+C:\Users\Kevin\Downloads\Tarea_92-GestionDeReservas-KevinZamora\bin\Debug\net6.0-windows\Tarea_92-GestionDeReservas-KevinZamora.deps.json
+C:\Users\Kevin\Downloads\Tarea_92-GestionDeReservas-KevinZamora\bin\Debug\net6.0-windows\Tarea_92-GestionDeReservas-KevinZamora.runtimeconfig.json
+C:\Users\Kevin\Downloads\Tarea_92-GestionDeReservas-KevinZamora\bin\Debug\net6.0-windows\Tarea_92-GestionDeReservas-KevinZamora.dll
+C:\Users\Kevin\Downloads\Tarea_92-GestionDeReservas-KevinZamora\bin\Debug\net6.0-windows\Tarea_92-GestionDeReservas-KevinZamora.pdb
+C:\Users\Kevin\Downloads\Tarea_92-GestionDeReservas-KevinZamora\obj\Debug\net6.0-windows\Tarea_92-GestionDeReservas-KevinZamora.dll
+C:\Users\Kevin\Downloads\Tarea_92-GestionDeReservas-KevinZamora\obj\Debug\net6.0-windows\refint\Tarea_92-GestionDeReservas-KevinZamora.dll
+C:\Users\Kevin\Downloads\Tarea_92-GestionDeReservas-KevinZamora\obj\Debug\net6.0-windows\Tarea_92-GestionDeReservas-KevinZamora.pdb
+C:\Users\Kevin\Downloads\Tarea_92-GestionDeReservas-KevinZamora\obj\Debug\net6.0-windows\Tarea_92-GestionDeReservas-KevinZamora.genruntimeconfig.cache
+C:\Users\Kevin\Downloads\Tarea_92-GestionDeReservas-KevinZamora\obj\Debug\net6.0-windows\ref\Tarea_92-GestionDeReservas-KevinZamora.dll
