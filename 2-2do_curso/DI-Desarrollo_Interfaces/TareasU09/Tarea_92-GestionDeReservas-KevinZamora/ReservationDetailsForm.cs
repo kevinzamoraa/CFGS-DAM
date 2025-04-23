@@ -36,22 +36,34 @@ namespace GestionReservas
             this.StartPosition = FormStartPosition.CenterParent;
             this.BackColor = Color.White;
 
-            var panel = new TableLayoutPanel
+            var mainLayout = new TableLayoutPanel
             {
                 Dock = DockStyle.Fill,
-                AutoScroll = true,
+                ColumnCount = 2,
+                RowCount = 1,
+                AutoSize = true,
+                Padding = new Padding(20),
+            };
+            mainLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70));
+            mainLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30));
+
+            // Panel de detalles (labels y botones)
+            var detailPanel = new TableLayoutPanel
+            {
+                Dock = DockStyle.Top,
+                AutoSize = true,
                 ColumnCount = 1,
                 RowCount = 0,
-                Padding = new Padding(40, 20, 40, 20),
+                Margin = new Padding(10),
             };
 
             var imageBox = new PictureBox
             {
-                Location = new Point(420, 15),
-                Size = new Size(80, 80),
+                Location = new Point(100, 15),
+                Size = new Size(160, 160),
                 SizeMode = PictureBoxSizeMode.StretchImage,
                 BorderStyle = BorderStyle.FixedSingle,
-                Margin = new Padding(20, 10, 0, 20),
+                Margin = new Padding(20, 10, 20, 20),
                 Anchor = AnchorStyles.Left
             };
             imageBox.Paint += (s, e) =>
@@ -68,16 +80,15 @@ namespace GestionReservas
             {
                 imageBox.Image = Image.FromFile(reservation.ProfileImagePath);
             }
-            panel.Controls.Add(imageBox);
 
             void AddLabel(string text)
             {
-                panel.Controls.Add(new Label
+                detailPanel.Controls.Add(new Label
                 {
                     Text = text,
                     AutoSize = true,
                     Font = new Font("Segoe UI", 10),
-                    Margin = new Padding(45, 5, 5, 5),
+                    Margin = new Padding(10, 5, 5, 5),
                 });
             }
 
@@ -124,12 +135,18 @@ namespace GestionReservas
                 AutoSize = true
             };
             deleteButton.Click += DeleteButton_Click;
-
+            
             buttonPanel.Controls.Add(editButton);
             buttonPanel.Controls.Add(deleteButton);
-            panel.Controls.Add(buttonPanel);
+            detailPanel.Controls.Add(buttonPanel);
 
-            Controls.Add(panel);
+            // Añadir ambos paneles al layout principal
+            mainLayout.Controls.Add(detailPanel, 0, 0);
+            mainLayout.Controls.Add(imageBox, 1, 0);
+            buttonPanel.Dock = DockStyle.Bottom;
+
+            // Agregar al formulario
+            Controls.Add(mainLayout);
         }
 
         private void EditButton_Click(object sender, EventArgs e)
