@@ -11,11 +11,13 @@ namespace GestionReservas
         private List<Reservation> reservations = new List<Reservation>();
         private ListBox reservationListBox;
         private Button openDialogButton;
+        private PictureBox previewImageBox;
+
 
         public MainForm()
         {
             this.Text = "Gestión de Reservas - Salón Caribe";
-            this.Size = new Size(700, 500);
+            this.Size = new Size(600, 450);
             this.StartPosition = FormStartPosition.CenterScreen;
 
             openDialogButton = new Button
@@ -24,6 +26,7 @@ namespace GestionReservas
                 Location = new Point(20, 20),
                 BackColor = Color.DarkViolet,
                 ForeColor = Color.White,
+                Font = new Font("Segoe UI", 11, FontStyle.Bold),
                 AutoSize = true
             };
             openDialogButton.Click += OpenDialogButton_Click;
@@ -31,10 +34,23 @@ namespace GestionReservas
             reservationListBox = new ListBox
             {
                 Location = new Point(20, 70),
-                Size = new Size(640, 360),
+                Size = new Size(545, 320),
                 Font = new Font("Segoe UI", 10)
             };
             reservationListBox.DoubleClick += ReservationListBox_DoubleClick;
+
+            Label titleLabel = new Label
+            {
+                Text = "📋 Lista de Reservas",
+                Font = new Font("Segoe UI", 14, FontStyle.Bold),
+                Location = new Point(200, 50),
+                AutoSize = true
+            };
+            Controls.Add(titleLabel);
+
+            // y baja la listbox para que no se solape
+            reservationListBox.Location = new Point(20, 80);
+            
             Controls.Add(openDialogButton);
             Controls.Add(reservationListBox);
         }
@@ -48,6 +64,7 @@ namespace GestionReservas
                     Reservation newReservation = dialog.ReservationData;
                     reservations.Add(newReservation);
                     reservationListBox.Items.Add(newReservation.ToString());
+                    RefreshReservationList();
                 }
             }
         }
@@ -58,10 +75,12 @@ namespace GestionReservas
             if (index >= 0 && index < reservations.Count)
             {
                 var selectedReservation = reservations[index];
+
                 var detailsForm = new ReservationDetailsForm(selectedReservation, this, index);
                 detailsForm.ShowDialog();
             }
         }
+
 
         public void RefreshReservationList()
         {

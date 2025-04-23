@@ -21,6 +21,9 @@ namespace GestionReservas
         private Button saveButton;
         private Button showReservationsButton;
         public Reservation ReservationData { get; private set; }
+        private PictureBox imageBox;
+        private Button uploadImageButton;
+        private string imagePath = null;
 
         public ReservationDialog()
         {
@@ -28,7 +31,7 @@ namespace GestionReservas
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.StartPosition = FormStartPosition.CenterParent;
             this.BackColor = Color.White;
-            this.Size = new Size(450, 500);
+            this.Size = new Size(600, 450);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
 
@@ -37,41 +40,82 @@ namespace GestionReservas
             // Crear instancia de ToolTip
             ToolTip tooltip = new ToolTip();
 
-            Label nameLabel = new Label { Text = "Nombre:", Location = new Point(10, 20) };
-            nameTextBox = new TextBox { Location = new Point(150, 20), Width = 200 };
+            // Imagen
+            imageBox = new PictureBox
+            {
+                Location = new Point(420, 15),
+                Size = new Size(80, 80),
+                SizeMode = PictureBoxSizeMode.StretchImage,
+                BorderStyle = BorderStyle.FixedSingle
+            };
+            imageBox.Paint += (s, e) =>
+            {
+                using (var pen = new Pen(Color.LightGray))
+                {
+                    pen.Alignment = System.Drawing.Drawing2D.PenAlignment.Inset;
+                    e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                    e.Graphics.DrawEllipse(pen, 1, 1, imageBox.Width - 3, imageBox.Height - 3);
+                }
+            };
+            ImageHelper.MakeCircularPictureBox(imageBox);  // aplicar máscara circular
+            Controls.Add(imageBox);
+
+            // Botón para subir imagen
+            uploadImageButton = new Button
+            {
+                Text = "Subir Imagen",
+                Location = new Point(420, 100),
+                AutoSize = true
+            };
+            uploadImageButton.Click += (s, e) =>
+            {
+                using (OpenFileDialog openFileDialog = new OpenFileDialog())
+                {
+                    openFileDialog.Filter = "Imágenes (*.jpg;*.jpeg;*.png)|*.jpg;*.jpeg;*.png";
+                    if (openFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        imagePath = openFileDialog.FileName;
+                        imageBox.Image = Image.FromFile(imagePath);
+                    }
+                }
+            };
+            Controls.Add(uploadImageButton);
+
+            Label nameLabel = new Label { Text = "Nombre:", Location = new Point(60, 20) };
+            nameTextBox = new TextBox { Location = new Point(200, 20), Width = 200 };
             tooltip.SetToolTip(nameTextBox, "Introduce el nombre de contacto");
 
-            Label phoneLabel = new Label { Text = "Teléfono:", Location = new Point(10, 60) };
-            phoneTextBox = new TextBox { Location = new Point(150, 60), Width = 200 };
+            Label phoneLabel = new Label { Text = "Teléfono:", Location = new Point(60, 60) };
+            phoneTextBox = new TextBox { Location = new Point(200, 60), Width = 200 };
             tooltip.SetToolTip(phoneTextBox, "Introduce el número de contacto");
 
-            Label dateLabel = new Label { Text = "Fecha del evento:", Location = new Point(10, 100) };
-            eventDatePicker = new DateTimePicker { Location = new Point(150, 100) };
+            Label dateLabel = new Label { Text = "Fecha del evento:", Location = new Point(60, 100) };
+            eventDatePicker = new DateTimePicker { Location = new Point(200, 100) };
             tooltip.SetToolTip(eventDatePicker, "Selecciona la fecha del evento");
 
-            Label typeLabel = new Label { Text = "Tipo de evento:", Location = new Point(10, 140) };
-            typeComboBox = new ComboBox { Location = new Point(150, 140), DropDownStyle = ComboBoxStyle.DropDownList };
+            Label typeLabel = new Label { Text = "Tipo de evento:", Location = new Point(60, 140) };
+            typeComboBox = new ComboBox { Location = new Point(200, 140), DropDownStyle = ComboBoxStyle.DropDownList };
             typeComboBox.Items.AddRange(new[] { "Banquete", "Jornada", "Congreso" });
             typeComboBox.SelectedIndexChanged += TypeComboBox_SelectedIndexChanged;
             tooltip.SetToolTip(typeComboBox, "Selecciona el tipo de evento");
 
-            Label peopleLabel = new Label { Text = "Núm. personas:", Location = new Point(10, 180) };
-            peopleNumeric = new NumericUpDown { Location = new Point(150, 180), Minimum = 1, Maximum = 1000 };
+            Label peopleLabel = new Label { Text = "Núm. personas:", Location = new Point(60, 180) };
+            peopleNumeric = new NumericUpDown { Location = new Point(200, 180), Minimum = 1, Maximum = 1000 };
             tooltip.SetToolTip(peopleNumeric, "Introduce la cantidad estimada de personas");
 
-            Label foodLabel = new Label { Text = "Tipo de cocina:", Location = new Point(10, 220) };
-            foodComboBox = new ComboBox { Location = new Point(150, 220), DropDownStyle = ComboBoxStyle.DropDownList };
+            Label foodLabel = new Label { Text = "Tipo de cocina:", Location = new Point(60, 220) };
+            foodComboBox = new ComboBox { Location = new Point(200, 220), DropDownStyle = ComboBoxStyle.DropDownList };
             foodComboBox.Items.AddRange(new[] { "Bufé", "Carta", "Cita con el chef", "No precisa" });
             tooltip.SetToolTip(foodComboBox, "Selecciona el tipo de comida");
 
-            Label daysLabel = new Label { Text = "Núm. de días:", Location = new Point(10, 260) };
-            daysNumeric = new NumericUpDown { Location = new Point(150, 260), Minimum = 1, Maximum = 30, Enabled = false };
+            Label daysLabel = new Label { Text = "Núm. de días:", Location = new Point(60, 260) };
+            daysNumeric = new NumericUpDown { Location = new Point(200, 260), Minimum = 1, Maximum = 30, Enabled = false };
             tooltip.SetToolTip(daysNumeric, "Número de días/jornadas (solo para congresos)");
 
             roomCheckBox = new CheckBox
             {
                 Text = "¿Requiere habitaciones?",
-                Location = new Point(150, 300),
+                Location = new Point(200, 300),
                 AutoSize = true,
                 MaximumSize = new Size(250, 0),
                 Enabled = false
@@ -81,17 +125,21 @@ namespace GestionReservas
             saveButton = new Button
             {
                 Text = "Guardar reserva",
-                Location = new Point(150, 340),
+                Location = new Point(160, 340),
                 BackColor = Color.DarkViolet,
-                ForeColor = Color.White
+                ForeColor = Color.White,
+                Font = new Font("Segoe UI", 11, FontStyle.Bold),
+                AutoSize = true
             };
             saveButton.Click += SaveButton_Click;
 
             showReservationsButton = new Button
             {
                 Text = "Ver reservas",
-                Location = new Point(270, 340),
-                BackColor = Color.LightGray
+                Location = new Point(320, 340),
+                BackColor = Color.LightGray,
+                Font = new Font("Segoe UI", 11, FontStyle.Bold),
+                AutoSize = true
             };
             showReservationsButton.Click += (s, e) =>
             {
@@ -147,7 +195,18 @@ namespace GestionReservas
                 RequiresRooms = roomCheckBox.Enabled && roomCheckBox.Checked
             };
 
-            ReservationData = reservation;
+            ReservationData = new Reservation
+            {
+                ContactName = nameTextBox.Text,
+                Phone = phoneTextBox.Text,
+                EventDate = eventDatePicker.Value,
+                EventType = typeComboBox.SelectedItem.ToString(),
+                NumberOfPeople = (int)peopleNumeric.Value,
+                FoodType = foodComboBox.SelectedItem.ToString(),
+                Days = (int)daysNumeric.Value,
+                RequiresRooms = roomCheckBox.Checked,
+                ProfileImagePath = imagePath
+            };
             reservations.Add(reservation);
 
             MessageBox.Show("¡Reserva guardada con éxito!", "Confirmación");
@@ -165,6 +224,12 @@ namespace GestionReservas
             foodComboBox.SelectedItem = reservation.FoodType;
             daysNumeric.Value = reservation.Days;
             roomCheckBox.Checked = reservation.RequiresRooms;
+
+            if (!string.IsNullOrEmpty(reservation.ProfileImagePath) && System.IO.File.Exists(reservation.ProfileImagePath))
+            {
+                imageBox.Image = Image.FromFile(reservation.ProfileImagePath);
+                imagePath = reservation.ProfileImagePath;
+            }
         }
 
         public void CopyFrom(Reservation other)

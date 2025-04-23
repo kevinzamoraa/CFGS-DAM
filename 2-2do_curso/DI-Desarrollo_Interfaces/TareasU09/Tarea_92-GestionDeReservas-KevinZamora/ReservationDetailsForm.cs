@@ -32,7 +32,7 @@ namespace GestionReservas
         private void InitializeForm()
         {
             this.Text = "Detalles de la Reserva";
-            this.Size = new Size(420, 450);
+            this.Size = new Size(600, 450);
             this.StartPosition = FormStartPosition.CenterParent;
             this.BackColor = Color.White;
 
@@ -42,8 +42,33 @@ namespace GestionReservas
                 AutoScroll = true,
                 ColumnCount = 1,
                 RowCount = 0,
-                Padding = new Padding(20),
+                Padding = new Padding(40, 20, 40, 20),
             };
+
+            var imageBox = new PictureBox
+            {
+                Location = new Point(420, 15),
+                Size = new Size(80, 80),
+                SizeMode = PictureBoxSizeMode.StretchImage,
+                BorderStyle = BorderStyle.FixedSingle,
+                Margin = new Padding(20, 10, 0, 20),
+                Anchor = AnchorStyles.Left
+            };
+            imageBox.Paint += (s, e) =>
+            {
+                using (var pen = new Pen(Color.LightGray))
+                {
+                    pen.Alignment = System.Drawing.Drawing2D.PenAlignment.Inset;
+                    e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                    e.Graphics.DrawEllipse(pen, 1, 1, imageBox.Width - 3, imageBox.Height - 3);
+                }
+            };
+            ImageHelper.MakeCircularPictureBox(imageBox);
+            if (!string.IsNullOrEmpty(reservation.ProfileImagePath) && System.IO.File.Exists(reservation.ProfileImagePath))
+            {
+                imageBox.Image = Image.FromFile(reservation.ProfileImagePath);
+            }
+            panel.Controls.Add(imageBox);
 
             void AddLabel(string text)
             {
@@ -52,7 +77,7 @@ namespace GestionReservas
                     Text = text,
                     AutoSize = true,
                     Font = new Font("Segoe UI", 10),
-                    Margin = new Padding(5)
+                    Margin = new Padding(45, 5, 5, 5),
                 });
             }
 
@@ -85,8 +110,8 @@ namespace GestionReservas
                 Text = "✏️ Editar",
                 BackColor = Color.Goldenrod,
                 ForeColor = Color.White,
-                AutoSize = true,
-                Margin = new Padding(10, 0, 10, 0)
+                Font = new Font("Segoe UI", 11, FontStyle.Bold),
+                AutoSize = true
             };
             editButton.Click += EditButton_Click;
 
@@ -95,8 +120,8 @@ namespace GestionReservas
                 Text = "🗑️ Eliminar",
                 BackColor = Color.DarkRed,
                 ForeColor = Color.White,
-                AutoSize = true,
-                Margin = new Padding(10, 0, 10, 0)
+                Font = new Font("Segoe UI", 11, FontStyle.Bold),
+                AutoSize = true
             };
             deleteButton.Click += DeleteButton_Click;
 

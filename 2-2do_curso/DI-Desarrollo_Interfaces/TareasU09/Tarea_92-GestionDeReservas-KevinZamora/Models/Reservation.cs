@@ -4,6 +4,7 @@ namespace GestionReservas.Models
 {
     public class Reservation
     {
+        public string ProfileImagePath { get; set; } = "default.png";
         public string ContactName { get; set; }
         public string Phone { get; set; }
         public DateTime EventDate { get; set; }
