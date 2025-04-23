@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using GestionReservas.Models;
 
@@ -194,6 +195,16 @@ namespace GestionReservas
                 Days = daysNumeric.Enabled ? (int)daysNumeric.Value : 0,
                 RequiresRooms = roomCheckBox.Enabled && roomCheckBox.Checked
             };
+
+            // Ruta de la imagen por defecto (ajusta si está en otra carpeta)
+            string defaultImagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "profile.png");
+
+            // Si no se ha seleccionado ninguna imagen, usar la predeterminada
+            if (string.IsNullOrEmpty(imagePath) || !System.IO.File.Exists(imagePath))
+            {
+                imagePath = defaultImagePath;
+                imageBox.Image = Image.FromFile(imagePath);
+            }
 
             ReservationData = new Reservation
             {

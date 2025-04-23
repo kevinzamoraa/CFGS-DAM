@@ -6,4 +6,9 @@
     <RootNamespace>GestionReservas</RootNamespace>
     <AssemblyName>Tarea_92-GestionDeReservas-KevinZamora</AssemblyName>
   </PropertyGroup>
+  <ItemGroup>
+    <Content Include="Resources\profile.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 </Project>
