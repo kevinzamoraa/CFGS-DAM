@@ -1,5 +1,6 @@
 using System;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using GestionReservas.Models;
 
@@ -61,7 +62,7 @@ namespace GestionReservas
             {
                 Location = new Point(100, 15),
                 Size = new Size(160, 160),
-                SizeMode = PictureBoxSizeMode.StretchImage,
+                SizeMode = PictureBoxSizeMode.Zoom,
                 BorderStyle = BorderStyle.FixedSingle,
                 Margin = new Padding(20, 10, 20, 20),
                 Anchor = AnchorStyles.Left
@@ -76,9 +77,17 @@ namespace GestionReservas
                 }
             };
             ImageHelper.MakeCircularPictureBox(imageBox);
-            if (!string.IsNullOrEmpty(reservation.ProfileImagePath) && System.IO.File.Exists(reservation.ProfileImagePath))
+            try
             {
-                imageBox.Image = Image.FromFile(reservation.ProfileImagePath);
+                if (!string.IsNullOrEmpty(reservation?.ProfileImagePath) && File.Exists(reservation.ProfileImagePath))
+                {
+                    imageBox.Image = Image.FromFile(reservation.ProfileImagePath);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Opcional: registrar error o mostrar mensaje amigable
+                Console.WriteLine("No se pudo cargar la imagen: " + ex.Message);
             }
 
             void AddLabel(string text)
