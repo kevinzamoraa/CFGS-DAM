@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <odoo>
     <record id="view_usuario_form" model="ir.ui.view">
         <field name="name">gestion.usuario.form</field>
@@ -38,3 +39,45 @@
     <menuitem id="gestion_usuario_menu_root" name="Gestión Usuarios"/>
     <menuitem id="gestion_usuario_menu" name="Usuarios" parent="gestion_usuario_menu_root" action="action_usuario"/>
 </odoo>
+=======
+<odoo>
+    <record id="view_usuario_form" model="ir.ui.view">
+        <field name="name">gestion.usuario.form</field>
+        <field name="model">gestion.usuario</field>
+        <field name="arch" type="xml">
+            <form string="Usuario">
+                <sheet>
+                    <group>
+                        <field name="nombre"/>
+                        <field name="email"/>
+                        <field name="idioma"/>
+                        <field name="zona_horaria"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_usuario_tree" model="ir.ui.view">
+        <field name="name">gestion.usuario.tree</field>
+        <field name="model">gestion.usuario</field>
+        <field name="arch" type="xml">
+            <tree string="Usuarios">
+                <field name="nombre"/>
+                <field name="email"/>
+                <field name="idioma"/>
+                <field name="zona_horaria"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_usuario" model="ir.actions.act_window">
+        <field name="name">Usuarios</field>
+        <field name="res_model">gestion.usuario</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="gestion_usuario_menu_root" name="Gestión Usuarios"/>
+    <menuitem id="gestion_usuario_menu" name="Usuarios" parent="gestion_usuario_menu_root" action="action_usuario"/>
+</odoo>
+>>>>>>> fc71c9d72898a25225fc78625a06e724eda4e53c
