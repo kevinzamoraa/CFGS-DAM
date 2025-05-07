@@ -1,0 +1,12 @@
+Initial Problem Diagnosis
+00:00:00 - 00:00:37
+The customer contacted the technician reporting their computer was extremely slow, despite previously being fast.  The technician inquired about the use of antivirus and anti-malware software. The customer admitted to disabling them due to frequent, annoying warnings while browsing the internet. The technician suggested these warnings might have been significant, and the customer requested a repair.
+
+Troubleshooting and Cost Estimate
+00:00:37 - 00:01:09
+The technician explained that if the computer was infected, they would attempt removal.  The technician noted that the difficulty and cost would vary; simple fixes would cost £100, while reformatting and reinstalling the operating system would cost £200. The customer, after expressing concern about the price, agreed to the repair. The technician stated they would contact the customer within a couple of days to arrange pickup.
+
+Call Conclusion
+00:01:21 - 00:01:51
+The call concluded with a thank you from the customer.
+
