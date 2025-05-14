@@ -1,0 +1,37 @@
+    (: Consultas XQuery del ejercicio 2 :)
+
+	(: 1. Títulos de películas dirigidas después del año 2019. :)
+    	- Consulta1 : 
+        for p in doc("peliculas.xml")/peliculas/pelicula
+        where p/año > 2019
+        return  p/titulo,
+
+	(: 2. Listar los actores principales de cada película. :)
+    	- Consulta2 : 
+	for a in doc("peliculas.xml")/peliculas/pelicula/reparto/actor
+        where a/@principal = 'S'
+        return a,
+
+	(: 3. Contar cuántas películas tienen premios. :)
+	- Consulta3 : 
+	for p in doc("peliculas.xml")/peliculas/pelicula
+            where exists( p/premios)
+            return p
+
+	(: 4. Mostrar los títulos y los nombres de los premios de las películas cuyo género 	sea "Ciencia Ficción". :)
+    	- Consulta4 : 
+	for p in doc("peliculas.xml")/peliculas/pelicula
+        where p/@genero = "Ciencia Ficción"
+        return
+            <pelicula>
+                <titulo>{ p/titulo }</titulo>
+                <premios>{ p/premios/premio/nombre }</premios>
+            </pelicula>,
+	
+	(: 5. Listar las películas que tienen más de un actor en el reparto. :)
+	- Consulta5 :
+	for p in doc("peliculas.xml")/peliculas/pelicula
+        where count( p/reparto/actor) > 1
+        return p/titulo
+        
+  
