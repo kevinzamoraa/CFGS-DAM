@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<peliculas>
+    <pelicula genero="Acción">
+        <titulo>Furia Letal</titulo>
+        <director>Pablo Herrera</director>
+        <año>2018</año>
+        <reparto>
+            <actor principal="S">Luis Torres</actor>
+            <actor principal="N">Carla Méndez</actor>
+        </reparto>
+        <premios>
+            <premio>
+                <nombre>Mejor montaje</nombre>
+                <año>2019</año>
+            </premio>
+        </premios>
+    </pelicula>
+
+    <pelicula genero="Drama">
+        <titulo>Sombras del Alma</titulo>
+        <director>Lucía Gómez</director>
+        <año>2021</año>
+        <reparto>
+            <actor principal="S">Elena Ruiz</actor>
+        </reparto>
+    </pelicula>
+
+    <pelicula genero="Ciencia Ficción">
+        <titulo>Horizonte Final</titulo>
+        <director>Mario Ortega</director>
+        <año>2020</año>
+        <reparto>
+            <actor principal="S">Daniel Morales</actor>
+            <actor principal="N">Sandra López</actor>
+            <actor principal="N">Tomás Vargas</actor>
+        </reparto>
+        <premios>
+            <premio>
+                <nombre>Mejores efectos visuales</nombre>
+                <año>2021</año>
+            </premio>
+            <premio>
+                <nombre>Mejor dirección</nombre>
+                <año>2021</año>
+            </premio>
+        </premios>
+    </pelicula>
+
+    <pelicula genero="Comedia">
+        <titulo>Un Café con Extra de Azúcar</titulo>
+        <director>Raquel Sánchez</director>
+        <año>2019</año>
+        <reparto>
+            <actor principal="S">Carmen Torres</actor>
+            <actor principal="N">Iván Díaz</actor>
+        </reparto>
+    </pelicula>
+</peliculas>

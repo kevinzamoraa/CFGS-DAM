@@ -1,0 +1,23 @@
+    (: Consultas XPath del ejercicio 2 :)
+
+	(: 1. Títulos de películas dirigidas después del año 2019. :)
+    - Consulta1 : $doc/peliculas/pelicula[año > 2019]/titulo,
+
+	(: 2. Listar los actores principales de cada película. :)
+    - Consulta2 : $doc/peliculas/pelicula/reparto/actor[@principal = 'S'],
+
+	(: 3. Contar cuántas películas tienen premios. :)
+	
+    - Consulta3 : count($doc/peliculas/pelicula[premios]),
+
+	(: 4. Mostrar los títulos y los nombres de los premios de las películas cuyo género 	sea "Ciencia Ficción". :)
+    - Consulta4 : for $p in $doc/peliculas/pelicula[@genero = 'Ciencia Ficción']
+        return <pelicula>
+            <titulo>{ $p/titulo }</titulo>
+            <premios>{ $p/premios/premio/nombre }</premios>
+        </pelicula>,
+
+	(: 5. Listar las películas que tienen más de un actor en el reparto. :)
+    - Consulta5 := $doc/peliculas/pelicula[count(reparto/actor) > 1]/titulo,
+        
+  
