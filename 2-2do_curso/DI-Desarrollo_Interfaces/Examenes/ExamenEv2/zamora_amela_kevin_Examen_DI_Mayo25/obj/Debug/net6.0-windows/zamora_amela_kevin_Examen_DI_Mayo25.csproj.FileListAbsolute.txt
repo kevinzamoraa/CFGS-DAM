@@ -1,0 +1,15 @@
+C:\Users\Kevin\Desktop\ExamenDI-Mayo25\zamora_amela_kevin_Examen_DI_Mayo25\obj\Debug\net6.0-windows\zamora_amela_kevin_Examen_DI_Mayo25.csproj.AssemblyReference.cache
+C:\Users\Kevin\Desktop\ExamenDI-Mayo25\zamora_amela_kevin_Examen_DI_Mayo25\obj\Debug\net6.0-windows\zamora_amela_kevin_Examen_DI_Mayo25.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kevin\Desktop\ExamenDI-Mayo25\zamora_amela_kevin_Examen_DI_Mayo25\obj\Debug\net6.0-windows\zamora_amela_kevin_Examen_DI_Mayo25.AssemblyInfoInputs.cache
+C:\Users\Kevin\Desktop\ExamenDI-Mayo25\zamora_amela_kevin_Examen_DI_Mayo25\obj\Debug\net6.0-windows\zamora_amela_kevin_Examen_DI_Mayo25.AssemblyInfo.cs
+C:\Users\Kevin\Desktop\ExamenDI-Mayo25\zamora_amela_kevin_Examen_DI_Mayo25\obj\Debug\net6.0-windows\zamora_amela_kevin_Examen_DI_Mayo25.csproj.CoreCompileInputs.cache
+C:\Users\Kevin\Desktop\ExamenDI-Mayo25\zamora_amela_kevin_Examen_DI_Mayo25\bin\Debug\net6.0-windows\zamora_amela_kevin_Examen_DI_Mayo25.exe
+C:\Users\Kevin\Desktop\ExamenDI-Mayo25\zamora_amela_kevin_Examen_DI_Mayo25\bin\Debug\net6.0-windows\zamora_amela_kevin_Examen_DI_Mayo25.deps.json
+C:\Users\Kevin\Desktop\ExamenDI-Mayo25\zamora_amela_kevin_Examen_DI_Mayo25\bin\Debug\net6.0-windows\zamora_amela_kevin_Examen_DI_Mayo25.runtimeconfig.json
+C:\Users\Kevin\Desktop\ExamenDI-Mayo25\zamora_amela_kevin_Examen_DI_Mayo25\bin\Debug\net6.0-windows\zamora_amela_kevin_Examen_DI_Mayo25.dll
+C:\Users\Kevin\Desktop\ExamenDI-Mayo25\zamora_amela_kevin_Examen_DI_Mayo25\bin\Debug\net6.0-windows\zamora_amela_kevin_Examen_DI_Mayo25.pdb
+C:\Users\Kevin\Desktop\ExamenDI-Mayo25\zamora_amela_kevin_Examen_DI_Mayo25\obj\Debug\net6.0-windows\zamora_amela_kevin_Examen_DI_Mayo25.dll
+C:\Users\Kevin\Desktop\ExamenDI-Mayo25\zamora_amela_kevin_Examen_DI_Mayo25\obj\Debug\net6.0-windows\refint\zamora_amela_kevin_Examen_DI_Mayo25.dll
+C:\Users\Kevin\Desktop\ExamenDI-Mayo25\zamora_amela_kevin_Examen_DI_Mayo25\obj\Debug\net6.0-windows\zamora_amela_kevin_Examen_DI_Mayo25.pdb
+C:\Users\Kevin\Desktop\ExamenDI-Mayo25\zamora_amela_kevin_Examen_DI_Mayo25\obj\Debug\net6.0-windows\zamora_amela_kevin_Examen_DI_Mayo25.genruntimeconfig.cache
+C:\Users\Kevin\Desktop\ExamenDI-Mayo25\zamora_amela_kevin_Examen_DI_Mayo25\obj\Debug\net6.0-windows\ref\zamora_amela_kevin_Examen_DI_Mayo25.dll

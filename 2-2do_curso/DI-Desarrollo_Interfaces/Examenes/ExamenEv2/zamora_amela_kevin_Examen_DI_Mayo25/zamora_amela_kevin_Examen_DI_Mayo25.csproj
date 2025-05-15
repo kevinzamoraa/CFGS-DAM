@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <RootNamespace>zamora_amela_kevin_Examen_DI_Mayo25</RootNamespace>
+  </PropertyGroup>
+
+</Project>

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "zamora_amela_kevin_Examen_DI_Mayo25/1.0.0": {
+        "runtime": {
+          "zamora_amela_kevin_Examen_DI_Mayo25.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "zamora_amela_kevin_Examen_DI_Mayo25/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
