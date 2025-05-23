@@ -2,8 +2,8 @@
 {
     'name': 'Gestión de Usuarios',
     'version': '1.0',
-    'author': 'Tu Nombre',
-    'category': 'Herramientas',
+    'author': 'Kevin Zamora',
+    'category': 'Tools',
     'summary': 'Módulo para gestionar usuarios personalizados',
     'depends': ['base'],
     'data': [
