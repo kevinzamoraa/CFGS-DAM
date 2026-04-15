@@ -1,0 +1,206 @@
+Buenos días. Quiero generar un Diagrama de casos de uso acerca de la aplicación para android que estoy elaborando; esta se llama temporis. En este, se deben identificar claramente los actores
+que interactuarán en la aplicación y posteriormente, definir el
+conjunto completo de casos de uso (relacionado a las
+funcionalidades de la aplicación) que se ofrece a los usuarios. Para ello, adjunto la lista de los requisitos funcionales y no funcionales que debe de cumplir nuestra aplicación. Y a su vez, también adjunto una "guia" para elaborar el presente diagrama adecuadamente (la cual ha sido elaborada previamente). ¿Puedes ayudarme?
+
+1. Requisitos Funcionales (RF)
+Los requisitos funcionales definen los servicios que el sistema debe proporcionar y cómo debe
+reaccionar ante entradas particulares.
+ID
+RF-01
+RF-02
+RF-03
+RF-04
+RF-05
+RF-06
+RF-07
+RF-08
+Requisito FuncionalDescripción
+Gestión de Usuarios (Auth)El sistema permitirá el registro,
+inicio de sesión y recuperación
+de contraseña mediante
+“Email/Password” y Google
+“Sign-In” a través de Firebase
+Auth.
+Acceso BiométricoLa aplicación permitirá al
+usuario autenticarse mediante
+huella dactilar o reconocimiento
+facial (Biometric API) tras el
+primer inicio de sesión manual.
+CRUD de TemporizadoresEl usuario podrá crear,
+visualizar (en tiempo real),
+editar y eliminar temporizadores
+personalizados con nombre y
+duración definida.
+Persistencia “Cloud”Todos los datos de los
+temporizadores se sincronizarán
+automáticamente con Firebase
+Firestore para garantizar el
+acceso multidispositivo.
+Gestión de PerfilEl usuario podrá actualizar su
+nombre, descripción y
+fotografía de perfil (almacenada
+en Firebase Storage).
+Visualización AnalíticaEl sistema generará una gráfica
+de contribución anual (heatmap)
+mostrando la actividad por
+meses y días de la semana
+mediante MPAndroidChart.
+Internacionalización (i18n)La interfaz se adaptará
+automáticamente a los idiomas
+configurados (actualmente:
+Castellano, Catalán/Valenciano
+e Inglés), tras que el/la usuario/a
+haya seleccionado la opción que
+prefiera.
+Cierre de Sesión AutomáticoEl sistema detectará la
+inactividad y cerrará la sesión
+tras 30 minutos, notificando al
+usuario por seguridad.
+
+2. Requisitos No Funcionales (RNF)
+Los requisitos no funcionales definen las propiedades del sistema y las restricciones que lo limitan
+(rendimiento, seguridad, usabilidad).
+ID
+RNF-01
+RNF-02
+RNF-03
+RNF-04
+RNF-05
+RNF-06
+RNF-07
+Requisito No
+Funcional
+Accesibilidad
+Universal
+CategoríaDescripción
+UsabilidadLa aplicación permitirá el
+escalado de fuente dinámico
+(hasta 30sp) y el modo de alto
+contraste sin pérdida de
+funcionalidad ni solapamiento
+de elementos.
+Arquitectura MVVMEl código debe seguir el patrón
+Model-View-ViewModel para
+Mantenibilidad
+separar la lógica de negocio de
+la interfaz de usuario.
+Seguridad de DatosSeguridadLas reglas de seguridad de
+Firebase Firestore deben
+impedir que un usuario acceda a
+los documentos
+(temporizadores) de otro
+usuario.
+UXLa interfaz debe reajustar la
+visibilidad de los elementos
+cuando el teclado virtual esté
+desplegado, para evitar la
+ocultación de “inputs” (en
+proceso).
+RendimientoLa sincronización inicial de los
+datos con Firebase tras el
+“login” no debe exceder los 3
+segundos en condiciones
+normales de red (4G/Wi-Fi).
+PortabilidadLa aplicación será compatible
+con dispositivos Android desde
+la versión 7.0 (API 24) en
+adelante.
+Estética/SaludLa aplicación debe implementar
+un tema oscuro nativo que se
+active automáticamente según
+las preferencias del sistema
+operativo.
+
+Guía para la elaboración del diagrama UML:
+Esta tarea, "Casos de Uso", es la representación visual de los requisitos funcionales que definimos en la tarea anterior. Se trata de mostrar quién usa la aplicación (actores) y qué puede hacer con ella.
+
+Para cumplir con la rúbrica de "100%", necesitamos definir bien los actores, incluir las relaciones <<include>> (obligatorias) y <<extend>> (opcionales), y detallar los flujos paso a paso.
+
+Aquí tienes la propuesta técnica para Temporis:
+
+Tarea 06: Casos de Uso
+1. Identificación de Actores
+Usuario (Actor Principal): Persona que utiliza la aplicación para gestionar su tiempo. Puede ser un usuario anónimo (limitado) o autenticado.
+
+Sistema Firebase (Actor Secundario): Proporciona los servicios de autenticación, base de datos y almacenamiento.
+
+Sistema Biométrico del Dispositivo: Hardware/Software del móvil que valida la identidad del usuario.
+
+2. Diagrama de Casos de Uso (Estructura)
+Para el diagrama, los casos de uso se agrupan en torno al Usuario.
+
+Casos principales: "Gestionar Temporizadores", "Autenticarse", "Configurar Perfil", "Visualizar Estadísticas".
+
+Relaciones <<include>>: Para "Gestionar Temporizadores" o "Configurar Perfil", el sistema incluye obligatoriamente "Iniciar Sesión".
+
+Relaciones <<extend>>: El caso "Iniciar Sesión" puede extenderse a "Autenticación Biométrica" (es opcional si el usuario lo activa). El caso "Configurar Accesibilidad" extiende la navegación principal.
+
+3. Especificación Detallada de Casos de Uso Críticos
+He seleccionado los dos procesos más vitales para el funcionamiento de Temporis:
+
+CU-01: Gestión de Temporizadores (CRUD)
+Descripción: Permite al usuario crear y manipular sus contadores.
+
+Actores: Usuario, Firebase Firestore.
+
+Precondiciones: El usuario debe haber iniciado sesión (Auth válido).
+
+Flujo Principal:
+
+El usuario accede a la vista de Temporizadores.
+
+El usuario pulsa el botón "Nuevo Temporizador".
+
+El usuario introduce nombre y minutos.
+
+El sistema valida los datos y los envía a Firestore.
+
+La lista se actualiza en tiempo real.
+
+Postcondiciones: El temporizador queda guardado y es persistente en la nube.
+
+CU-02: Autenticación de Usuario (Multimodal)
+Descripción: Acceso seguro al sistema mediante correo o métodos avanzados.
+
+Actores: Usuario, Firebase Auth, Sistema Biométrico.
+
+Precondiciones: La aplicación debe estar instalada y tener conexión a internet.
+
+Flujo Principal:
+
+El usuario abre la aplicación.
+
+El sistema muestra opciones de Login (Email o Google).
+
+El usuario introduce credenciales o selecciona cuenta de Google.
+
+El sistema valida con Firebase.
+
+Flujo Alternativo (Extensión Biométrica):
+2a. Si el usuario activó la biometría previamente, el sistema lanza el BiometricPrompt.
+2b. El usuario coloca su huella o escanea su rostro.
+2c. Si es válido, se salta el paso de introducir contraseña manual.
+
+Postcondiciones: El usuario accede al Dashboard y se genera un token de sesión (caducidad 1h).
+
+CU-03: Ajuste de Accesibilidad Dinámica
+Descripción: Personalización de la interfaz en tiempo real.
+
+Actores: Usuario.
+
+Precondiciones: Ninguna (accesible desde el menú de configuración).
+
+Flujo Principal:
+
+El usuario navega a "Accesibilidad".
+
+El usuario desliza el slider de "Tamaño de fuente".
+
+El sistema recalcula el contexto (Configuration) y aplica el tamaño a todos los TextViews.
+
+El usuario activa "Alto contraste".
+
+El sistema cambia la paleta de colores de la UI.
+
+Postcondiciones: Los ajustes se guardan en SharedPreferences para futuras sesiones.
