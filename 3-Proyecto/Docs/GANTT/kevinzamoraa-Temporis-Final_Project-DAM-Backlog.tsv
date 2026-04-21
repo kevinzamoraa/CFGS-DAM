@@ -1,0 +1,14 @@
+Title	URL	Assignees	Status	Linked pull requests	Sub-issues progress	Priority	Estimate	Size	Labels	Sprint
+Categorización de las actividades	https://github.com/kevinzamoraa/Temporis-Final_Project-DAM/issues/11		New issues							
+Estadísticas avanzadas	https://github.com/kevinzamoraa/Temporis-Final_Project-DAM/issues/12		New issues							
+Reorganización automática de los diferentes contadores (Manteniendo siempre los más recientes primero)	https://github.com/kevinzamoraa/Temporis-Final_Project-DAM/issues/10	kevinzamoraa	Product Backlog			P1	5	M	enhancement	Sprint 3
+Realizar pruebas (Pruevas Unitarias, de Integración y Funcionales)	https://github.com/kevinzamoraa/Temporis-Final_Project-DAM/issues/13		In progress			P0	5	M		Sprint 3
+Seguir “testeando/probando” las diferentes funcionalidadesSeguir “testeando/probando” las diferentes funcionalidades	https://github.com/kevinzamoraa/Temporis-Final_Project-DAM/issues/8		In progress			P1	5	M	testing	Sprint 2
+Habilitar acceso y funcionalidad a la función “borrar” del CRUD de “User”	https://github.com/kevinzamoraa/Temporis-Final_Project-DAM/issues/7	kevinzamoraa	In review			P0	5	M	technical debt	Sprint 2
+Características de accesibilidad / Navegación simplificada	https://github.com/kevinzamoraa/Temporis-Final_Project-DAM/issues/5	kevinzamoraa	In review			P0	5	M	enhancement	Sprint 2
+Estadísticas básicas de uso / Seguimiento de progreso hacia objetivos	https://github.com/kevinzamoraa/Temporis-Final_Project-DAM/issues/6	kevinzamoraa	In review			P1	5	M	enhancement	Sprint 2
+Ajustes generales - Personalización de elementos visuales de la interfaz gráfica	https://github.com/kevinzamoraa/Temporis-Final_Project-DAM/issues/9	kevinzamoraa	In review			P2	5	M	enhancement	Sprint 2
+Reparación del CRUD de “User” y de la Conexión con la Base de Datos utilizada	https://github.com/kevinzamoraa/Temporis-Final_Project-DAM/issues/1	kevinzamoraa	Done			P0	5	M	technical debt	Sprint 1
+Reestructuración de la interfaz gráfica	https://github.com/kevinzamoraa/Temporis-Final_Project-DAM/issues/3	kevinzamoraa	Done			P0	3	S	enhancement	Sprint 1
+Creación y diseño de las nuevas vistas/secciones (Páginas: Inicio, Seguimiento y Accesibilidad)	https://github.com/kevinzamoraa/Temporis-Final_Project-DAM/issues/4		Done			P0	5	M	enhancement	Sprint 2
+Reparación del “límite de Scroll Vertical” (en la lista de los contadores) - Modificación de la apariencia de cada tarjeta (de cada contador) y mejora de la ubicación de las funciones CRUD	https://github.com/kevinzamoraa/Temporis-Final_Project-DAM/issues/2	kevinzamoraa	Done			P1	5	M	technical debt	Sprint 1
