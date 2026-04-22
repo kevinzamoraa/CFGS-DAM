@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://schema.omg.org/spec/UML/2.1">
+  <xmi:Documentation exporter="umbrello uml modeller 2.38.5 (Applications 23.08.5) http://umbrello.kde.org" exporterVersion="2.0.4"/>
+  <uml:Model xmi:id="m1" name="Modelo UML">
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="folder" name="folder"/>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="dataType" name="dataType"/>
+    <packagedElement xmi:type="uml:Model" xmi:id="Logical_View" name="Logical View">
+      <uml:Package xmi:id="Datatypes" name="Datatypes" stereotype="folder">
+        <packagedElement xmi:type="uml:DataType" xmi:id="u6hASln5KwQJF" name="char" stereotype="dataType"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="uYTeYK0HWbDMF" name="int" stereotype="dataType"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="uV61zqzgNmFb2" name="float" stereotype="dataType"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="uXHWvtGndBuCt" name="double" stereotype="dataType"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="uy3NSWJGMb1BW" name="bool" stereotype="dataType"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="ucNGVYuQuZkRO" name="string" stereotype="dataType"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="uGq8FXsnINmoc" name="unsigned char" stereotype="dataType"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="up1eDoEo0RITV" name="signed char" stereotype="dataType"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="uq0tDF6siWdZi" name="unsigned int" stereotype="dataType"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="uEB7WiG7s8RkH" name="signed int" stereotype="dataType"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="ua7XgBnRuThAl" name="short int" stereotype="dataType"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="uAZcJZeUxrqdx" name="unsigned short int" stereotype="dataType"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="uIZbrUcSDHPa3" name="signed short int" stereotype="dataType"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="u5LExGaeHJVWr" name="long int" stereotype="dataType"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="u4DrUdBdgVHsv" name="signed long int" stereotype="dataType"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="uG55X8Jk96D7C" name="unsigned long int" stereotype="dataType"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="ue0pkpXnqP2lp" name="long double" stereotype="dataType"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="uFeTIdKTxCXF5" name="wchar_t" stereotype="dataType"/>
+      </uml:Package>
+      <packagedElement xmi:type="uml:Class" xmi:id="uoFq43m8t7cPf" name="User.java">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="ufhWUmhI5NBe5" name="username" visibility="private" type="ucNGVYuQuZkRO"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="uWcNKJdbLSh02" name="displayName" visibility="private" type="ucNGVYuQuZkRO"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="uN1Blqjrm52yk" name="email" visibility="private" type="ucNGVYuQuZkRO"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="uwHz6nKisrnLo" name="password" visibility="private" type="ucNGVYuQuZkRO"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="u6LA045OrJs9j" name="profilePhotoUrl" visibility="private" type="ucNGVYuQuZkRO"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="udzfMv8EyrAGZ" name="QrCode" visibility="private" type="ucNGVYuQuZkRO"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="uS4XafU8A7FC5" name="uid" visibility="private" type="ucNGVYuQuZkRO"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="uESbvrokxU1E1" name="GettersSetters"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="utkdT6Ks7FpRN" name="toString"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="uuLY2EtfkGTAV" name="constructorFirebase"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="uId4wuxmHhovD" name="constructorConParametros"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="uYNHhvXD9431L" name="Timer.java">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="u9kS6r7BU1gR5" name="id" visibility="private" type="uYTeYK0HWbDMF"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="uT6AuPcqJauMu" name="name" visibility="private" type="ucNGVYuQuZkRO"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="uEaFJsXXe04rL" name="duration" visibility="private" type="uYTeYK0HWbDMF"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="ulF3DTrSKV48G" name="isActive" visibility="private" type="uy3NSWJGMb1BW"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="uMs0YABFzs6Qi" name="createdAt" visibility="private"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="uxbJKGglgFZgq" name="uid" visibility="private" type="ucNGVYuQuZkRO"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="uSjtKafePGI7R" name="constructorVacio"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="uOfG5MzYbISgp" name="constructorConParametros"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="uVhnahrH1U9Pb" name="gettersYsetters"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="uyeY6tGpUyJPy" name="toString"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="u0aWjrn1Qx4qt" name="hashCode"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="uGqcpWQuM2EMt" name="TimeRegister.java">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="urjdS683VuDmW" name="id" visibility="private" type="ucNGVYuQuZkRO"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="uSmHoGTugl5sW" name="date" visibility="private" type="ue0pkpXnqP2lp"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="ubdDrM9U36ekP" name="duration" visibility="private" type="uYTeYK0HWbDMF"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="uo9I0m7lln3ym" name="category" visibility="private" type="ucNGVYuQuZkRO"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="uIEoLNSZ20G91" name="description" visibility="private" type="ucNGVYuQuZkRO"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="uidg4rlG5eQz7" name="counterId" visibility="private" type="ucNGVYuQuZkRO"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="uSu0GK7pw4Kqm" name="constructorValoresPorDefecto"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="uitOhwNtIHPHO" name="constructorConParametros"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="uMb9oJR6DYWIa" name="getters"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="ubPlLifXaTu5t" name="setters"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="u45lX6JrmLMNP" name="isValid"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="ulXfSgVmUksY3" name="toMap"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="uMLyybTiF7yjU" name="Post.kt">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="uMILbBByYbyD4" name="id" visibility="private" type="ucNGVYuQuZkRO"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="uuaWxHpULG16F" name="title" visibility="private" type="ucNGVYuQuZkRO"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="uPRwu70XlO7kJ" name="content" visibility="private" type="ucNGVYuQuZkRO"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="ueEuOuaSGC4Fd" name="imageUrl" visibility="private" type="ucNGVYuQuZkRO"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="umxTrRLslJUYb" name="webUrl" visibility="private" type="ucNGVYuQuZkRO"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="uYbPenGVCKtQS" name="createdAt" visibility="private" type="ue0pkpXnqP2lp"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="uXNTHxkKhGK9o" name="@Keep data class Post()"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="uyQlesDmaDPcN" name="">
+        <ownedEnd xmi:type="uml:AssociationEnd" xmi:id="uC22co94OXkUi" name="" type="uoFq43m8t7cPf" aggregation="none" isNavigable="true" changeability="changeable"/>
+        <ownedEnd xmi:type="uml:AssociationEnd" xmi:id="uRybqSG80tabH" name="" type="uYNHhvXD9431L" aggregation="none" isNavigable="true" changeability="changeable"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="uekdRbqXK5CEm" name="" client="uYNHhvXD9431L" supplier="uGqcpWQuM2EMt"/>
+      <xmi:Extension extender="umbrello">
+        <diagrams resolution="96">
+          <diagram xmi.id="up2dh2KcSLbtp" name="diagrama de clases" type="1" documentation="" backgroundcolor="#ffffff" fillcolor="#ffffc0" font="Ubuntu,10,-1,5,50,0,0,0,0,0" griddotcolor="#d3d3d3" linecolor="#990000" linewidth="0" textcolor="#000000" usefillcolor="1" showattribassocs="1" showatts="1" showattsig="1" showops="1" showopsig="1" showpackage="1" showpubliconly="0" showscope="1" showstereotype="2" localid="-1" showgrid="0" snapgrid="0" snapcsgrid="0" snapx="25" snapy="25" zoom="100" canvasheight="800" canvaswidth="1100" isopen="1">
+            <widgets>
+              <classwidget xmi.id="uGqcpWQuM2EMt" localid="uzusKm32LfwZH" textcolor="#000000" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#ffffc0" font="Ubuntu,10,-1,5,50,0,0,0,0,0" autoresize="1" x="670" y="42" width="208" height="195" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601"/>
+              <classwidget xmi.id="uoFq43m8t7cPf" localid="uujQhbIiBip6s" textcolor="#000000" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#ffffc0" font="Ubuntu,10,-1,5,50,0,0,0,0,0" autoresize="1" x="13" y="51" width="188" height="180" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601"/>
+              <classwidget xmi.id="uYNHhvXD9431L" localid="uZqebFb8T3Lye" textcolor="#000000" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#ffffc0" font="Ubuntu,10,-1,5,50,0,0,0,0,0" autoresize="1" x="344" y="50" width="188" height="180" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601"/>
+              <classwidget xmi.id="uMLyybTiF7yjU" localid="uJW6CnYXZWzuR" textcolor="#000000" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#ffffc0" font="Ubuntu,10,-1,5,50,0,0,0,0,0" autoresize="1" x="16" y="297" width="168" height="120" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601"/>
+            </widgets>
+            <messages/>
+            <associations>
+              <assocwidget xmi.id="uekdRbqXK5CEm" localid="u5VsZi3NB5SF7" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu,10,-1,5,50,0,0,0,0,0" autoresize="1" seqnum="" type="502" widgetaid="uYNHhvXD9431L" widgetbid="uGqcpWQuM2EMt" indexa="0" totalcounta="0" indexb="0" totalcountb="0">
+                <linepath layout="Direct">
+                  <startpoint startx="532" starty="139.86"/>
+                  <endpoint endx="670" endy="139.655"/>
+                </linepath>
+              </assocwidget>
+              <assocwidget xmi.id="uyQlesDmaDPcN" localid="uA9rBpq9ScliX" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu,10,-1,5,50,0,0,0,0,0" autoresize="1" seqnum="" type="503" widgetaid="uoFq43m8t7cPf" widgetbid="uYNHhvXD9431L" indexa="0" totalcounta="0" indexb="0" totalcountb="0">
+                <linepath layout="Direct">
+                  <startpoint startx="201" starty="140.716"/>
+                  <endpoint endx="344" endy="140.284"/>
+                </linepath>
+              </assocwidget>
+            </associations>
+          </diagram>
+        </diagrams>
+      </xmi:Extension>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Model" xmi:id="Use_Case_View" name="Use Case View"/>
+    <packagedElement xmi:type="uml:Model" xmi:id="Component_View" name="Component View"/>
+    <packagedElement xmi:type="uml:Model" xmi:id="Deployment_View" name="Deployment View"/>
+    <packagedElement xmi:type="uml:Model" xmi:id="Entity_Relationship_Model" name="Entity Relationship Model"/>
+  </uml:Model>
+  <xmi:Extension extender="umbrello">
+    <docsettings viewid="up2dh2KcSLbtp" documentation="" uniqueid="uERdxgJHqILju"/>
+    <listview>
+      <listitem id="Views" type="800" open="1">
+        <listitem id="Entity_Relationship_Model" type="836" open="1"/>
+        <listitem id="Use_Case_View" type="802" open="1"/>
+        <listitem id="Component_View" type="821" open="1"/>
+        <listitem id="Deployment_View" type="827" open="1"/>
+        <listitem id="Logical_View" type="801" open="1">
+          <listitem id="up2dh2KcSLbtp" type="807" label="diagrama de clases" open="0"/>
+          <listitem id="uMLyybTiF7yjU" type="813" open="1">
+            <listitem id="uXNTHxkKhGK9o" type="815" open="0"/>
+            <listitem id="uPRwu70XlO7kJ" type="814" open="0"/>
+            <listitem id="uYbPenGVCKtQS" type="814" open="0"/>
+            <listitem id="uMILbBByYbyD4" type="814" open="0"/>
+            <listitem id="ueEuOuaSGC4Fd" type="814" open="0"/>
+            <listitem id="uuaWxHpULG16F" type="814" open="0"/>
+            <listitem id="umxTrRLslJUYb" type="814" open="0"/>
+          </listitem>
+          <listitem id="uYNHhvXD9431L" type="813" open="1">
+            <listitem id="uOfG5MzYbISgp" type="815" open="0"/>
+            <listitem id="uSjtKafePGI7R" type="815" open="0"/>
+            <listitem id="uMs0YABFzs6Qi" type="814" open="0"/>
+            <listitem id="uEaFJsXXe04rL" type="814" open="0"/>
+            <listitem id="uVhnahrH1U9Pb" type="815" open="0"/>
+            <listitem id="u0aWjrn1Qx4qt" type="815" open="0"/>
+            <listitem id="u9kS6r7BU1gR5" type="814" open="0"/>
+            <listitem id="ulF3DTrSKV48G" type="814" open="0"/>
+            <listitem id="uT6AuPcqJauMu" type="814" open="0"/>
+            <listitem id="uyeY6tGpUyJPy" type="815" open="0"/>
+            <listitem id="uxbJKGglgFZgq" type="814" open="0"/>
+          </listitem>
+          <listitem id="uGqcpWQuM2EMt" type="813" open="1">
+            <listitem id="uo9I0m7lln3ym" type="814" open="0"/>
+            <listitem id="uitOhwNtIHPHO" type="815" open="0"/>
+            <listitem id="uSu0GK7pw4Kqm" type="815" open="0"/>
+            <listitem id="uidg4rlG5eQz7" type="814" open="0"/>
+            <listitem id="uSmHoGTugl5sW" type="814" open="0"/>
+            <listitem id="uIEoLNSZ20G91" type="814" open="0"/>
+            <listitem id="ubdDrM9U36ekP" type="814" open="0"/>
+            <listitem id="uMb9oJR6DYWIa" type="815" open="0"/>
+            <listitem id="urjdS683VuDmW" type="814" open="0"/>
+            <listitem id="u45lX6JrmLMNP" type="815" open="0"/>
+            <listitem id="ubPlLifXaTu5t" type="815" open="0"/>
+            <listitem id="ulXfSgVmUksY3" type="815" open="0"/>
+          </listitem>
+          <listitem id="Datatypes" type="830" open="0">
+            <listitem id="ue0pkpXnqP2lp" type="829" open="0"/>
+            <listitem id="u5LExGaeHJVWr" type="829" open="0"/>
+            <listitem id="ua7XgBnRuThAl" type="829" open="0"/>
+            <listitem id="up1eDoEo0RITV" type="829" open="0"/>
+            <listitem id="uEB7WiG7s8RkH" type="829" open="0"/>
+            <listitem id="u4DrUdBdgVHsv" type="829" open="0"/>
+            <listitem id="uIZbrUcSDHPa3" type="829" open="0"/>
+            <listitem id="ucNGVYuQuZkRO" type="829" open="0"/>
+            <listitem id="uGq8FXsnINmoc" type="829" open="0"/>
+            <listitem id="uq0tDF6siWdZi" type="829" open="0"/>
+            <listitem id="uG55X8Jk96D7C" type="829" open="0"/>
+            <listitem id="uAZcJZeUxrqdx" type="829" open="0"/>
+            <listitem id="uFeTIdKTxCXF5" type="829" open="0"/>
+          </listitem>
+          <listitem id="uoFq43m8t7cPf" type="813" open="1">
+            <listitem id="uId4wuxmHhovD" type="815" open="0"/>
+            <listitem id="uuLY2EtfkGTAV" type="815" open="0"/>
+            <listitem id="uWcNKJdbLSh02" type="814" open="0"/>
+            <listitem id="uN1Blqjrm52yk" type="814" open="0"/>
+            <listitem id="uESbvrokxU1E1" type="815" open="0"/>
+            <listitem id="uwHz6nKisrnLo" type="814" open="0"/>
+            <listitem id="u6LA045OrJs9j" type="814" open="0"/>
+            <listitem id="udzfMv8EyrAGZ" type="814" open="0"/>
+            <listitem id="utkdT6Ks7FpRN" type="815" open="0"/>
+            <listitem id="uS4XafU8A7FC5" type="814" open="0"/>
+            <listitem id="ufhWUmhI5NBe5" type="814" open="0"/>
+          </listitem>
+        </listitem>
+      </listitem>
+    </listview>
+    <codegeneration>
+      <codegenerator language="C++">
+        <sourcecode id="uESbvrokxU1E1" value="// Getters y setters&#10;&#10;    public String getUid() { return uid; }&#10;&#10;    public void setUid(String uid) { this.uid = uid; }&#10;&#10;    public String getUsername() { return username; }&#10;&#10;    public void setUsername(String username) { this.username = username; }&#10;&#10;    public String getEmail() { return email; }&#10;&#10;    public void setEmail(String email) { this.email = email; }&#10;&#10;    public String getDisplayName() { return displayName; }&#10;&#10;    public void setDisplayName(String displayName) { this.displayName = displayName; }&#10;&#10;    public String getProfilePhotoUrl() { return profilePhotoUrl; }&#10;&#10;    public void setProfilePhotoUrl(String profilePhotoUrl) { this.profilePhotoUrl = profilePhotoUrl; }&#10;&#10;    public String getPassword() { return password; }&#10;&#10;    public void setPassword(String password) { this.password = password; }&#10;&#10;    public String getQrCode() { return QrCode; }&#10;&#10;    public void setQrCode(String qrCode) { this.QrCode = qrCode; }&#10;&#10;    public int getRol() { return rol; }&#10;&#10;    public void setRol(int rol) { this.rol = rol; }"/>
+        <sourcecode id="utkdT6Ks7FpRN" value="@Override&#10;    public String toString() {&#10;        return &quot;User{&quot; +&#10;                &quot;username='&quot; + username + '\'' +&#10;                &quot;displayName='&quot; + displayName + '\'' +&#10;                &quot;, email='&quot; + email + '\'' +&#10;                &quot;, password='&quot; + password + '\'' +&#10;                &quot;, profilePhotoUrl='&quot; + profilePhotoUrl + '\'' +&#10;                &quot;, QrCode='&quot; + QrCode + '\'' +&#10;                &quot;, uid=&quot; + uid +&#10;                &quot;, rol=&quot; + rol &#10;                '}';&#10;    }"/>
+        <sourcecode id="uuLY2EtfkGTAV" value="public User() {&#10;        this.username = &quot;&quot;;&#10;        this.displayName = &quot;&quot;;&#10;        this.email = &quot;&quot;;&#10;        this.password = &quot;&quot;;&#10;        this.profilePhotoUrl = &quot;&quot;;&#10;        this.QrCode = &quot;&quot;;&#10;        this.uid = &quot;&quot;;&#10;        this.rol = 0;&#10;    }"/>
+        <sourcecode id="uId4wuxmHhovD" value="public User(String uid, String username, String email, String displayName, String profilePhotoUrl) {&#10;        this.uid = uid;&#10;        this.username = username;&#10;        this.email = email;&#10;        this.displayName = displayName;&#10;        this.profilePhotoUrl = profilePhotoUrl;&#10;    }"/>
+        <sourcecode id="uSjtKafePGI7R" value="public Timer() {&#10;&#10;    }"/>
+        <sourcecode id="uOfG5MzYbISgp" value="public Timer(String id, String name, int duration, boolean isActive, Timestamp createdAt, String uid) {&#10;        this.id = id;&#10;        this.name = name;&#10;        this.duration = duration;&#10;        this.isActive = isActive;&#10;        this.createdAt = createdAt;&#10;        this.uid = uid;&#10;    }"/>
+        <sourcecode id="uVhnahrH1U9Pb" value="public String getId() {&#10;        return id;&#10;    }&#10;&#10;    public String getName() {&#10;        return name;&#10;    }&#10;&#10;    public int getDuration() {&#10;        return duration;&#10;    }&#10;&#10;    public boolean isActive() {&#10;        return isActive;&#10;    }&#10;&#10;    public Timestamp getCreatedAt() {&#10;        return createdAt;&#10;    }&#10;    public String getUid() {&#10;        return uid;&#10;    }&#10;&#10;&#10;    public void setId(String id) {&#10;        this.id = id;&#10;    }&#10;&#10;    public void setName(String name) {&#10;        this.name = name;&#10;    }&#10;&#10;    public void setUid(String uid) {&#10;        this.uid = uid;&#10;    }&#10;&#10;&#10;    public void setDuration(int duration) {&#10;        this.duration = duration;&#10;    }&#10;&#10;    public void setActive(boolean active) {&#10;        isActive = active;&#10;    }&#10;&#10;    public void setCreatedAt(Timestamp createdAt) {&#10;        this.createdAt = createdAt;&#10;    }"/>
+        <sourcecode id="uyeY6tGpUyJPy" value="@Override&#10;    public boolean equals(Object o) {&#10;        if (this == o) return true;&#10;        if (!(o instanceof Timer)) return false;&#10;        Timer timer = (Timer) o;&#10;        return duration == timer.duration &amp;&amp;&#10;                isActive == timer.isActive &amp;&amp;&#10;                Objects.equals(id, timer.id) &amp;&amp;&#10;                Objects.equals(name, timer.name) &amp;&amp;&#10;                Objects.equals(createdAt, timer.createdAt) &amp;&amp;&#10;                Objects.equals(uid, timer.uid);&#10;    }"/>
+        <sourcecode id="u0aWjrn1Qx4qt" value="@Override&#10;    public int hashCode() {&#10;        return Objects.hash(id, name, duration, isActive, createdAt, uid);&#10;    }"/>
+        <sourcecode id="uSu0GK7pw4Kqm" value="public TimeRegister() {&#10;        this.id = &quot;&quot;;&#10;        this.date = 0L;&#10;        this.duration = 0;&#10;        this.category = &quot;&quot;;&#10;        this.description = &quot;&quot;;&#10;        this.counterId = null;&#10;    }"/>
+        <sourcecode id="uitOhwNtIHPHO" value="public TimeRegister(String id, long date, int duration, String category, String description, String counterId) {&#10;        this.id = id;&#10;        this.date = date;&#10;        this.duration = duration;&#10;        this.category = category;&#10;        this.description = description;&#10;        this.counterId = counterId;&#10;    }"/>
+        <sourcecode id="uMb9oJR6DYWIa" value="public String getId() { return id; }&#10;    public long getDate() { return date; }&#10;    public int getDuration() { return duration; }&#10;    public String getCategory() { return category; }&#10;    public String getDescription() { return description; }&#10;    public String getCounterId() { return counterId; }"/>
+        <sourcecode id="ubPlLifXaTu5t" value="public void setId(String id) { this.id = id; }&#10;    public void setDate(long date) { this.date = date; }&#10;    public void setDuration(int duration) { this.duration = duration; }&#10;    public void setCategory(String category) { this.category = category; }&#10;    public void setDescription(String description) { this.description = description; }&#10;    public void setCounterId(String counterId) { this.counterId = counterId; }"/>
+        <sourcecode id="u45lX6JrmLMNP" value="public boolean isValid() {&#10;        return id != null &amp;&amp; !id.isEmpty() &amp;&amp;&#10;                date &gt; 0L &amp;&amp;&#10;                duration &gt;= 0;&#10;    }"/>
+        <sourcecode id="ulXfSgVmUksY3" value="public Map&lt;String, Object&gt; toMap() {&#10;        Map&lt;String, Object&gt; map = new HashMap&lt;&gt;();&#10;        map.put(&quot;id&quot;, id);&#10;        map.put(&quot;date&quot;, date);&#10;        map.put(&quot;duration&quot;, duration);&#10;        map.put(&quot;category&quot;, category);&#10;        map.put(&quot;description&quot;, description);&#10;&#10;        if (counterId != null) {&#10;            map.put(&quot;counterId&quot;, counterId);&#10;        }&#10;&#10;        return map;&#10;    }"/>
+        <sourcecode id="uXNTHxkKhGK9o" value="import com.google.firebase.Timestamp&#10;import androidx.annotation.Keep&#10;&#10;@Keep&#10;data class Post(&#10;    var id: String? = null,&#10;    val title: String = &quot;&quot;,&#10;    val content: String = &quot;&quot;,&#10;    val imageUrl: String = &quot;&quot;,&#10;    val webUrl: String = &quot;&quot;,&#10;    val createdAt: Timestamp? = null&#10;)"/>
+      </codegenerator>
+    </codegeneration>
+  </xmi:Extension>
+</xmi:XMI>
