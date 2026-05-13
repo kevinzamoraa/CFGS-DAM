@@ -1,0 +1,98 @@
+Disculpa Gemini, pero aún no podemos darlas por cerradas. 
+
+- Tengo el tablero kanban, tal y como se muestra en una de las capturas, y me gustaría añadir un cuarto "sprint", para así utilizarlo para realizar la documentación (que ya estamos elaborando) y también los "tests" que tenemos pendientes.
+
+- Quiero revisar las dos tareas en desarrollo, tratando de mejorarlas, añadiendo también todas las incidencias abordadas y solucionadas anteriormente. Tendremos que hacer memoria. Te adjunto todos los mensajes, de los commits realizados, para que puedas ayudarme:
+-- init repo / Initialize Android App Project
+-- init feature / creating Kotlin app entities
+-- in progress / adding and configuring Firebase services on app
+-- in progress / fixing Firebase configuration and connection
+-- in progress / enabling app's code parts
+-- in progress - fixing issues / adding missing imports
+-- in progress / rebasing project and fixing issues
+-- in progress - fixing issues / fixing and enabling app's functions
+-- in progress / solving import issues
+-- in progress / solving issues
+-- in progress / fixing login and compilation issues
+-- in progress / enabling application login functionalities / Login with Google it's running
+-- upload files / adding assets and updating app's logo
+-- upload files / adding assets and updating app's logo / missing files
+-- in progress / solving logout issues
+-- in progress / fixing issues
+-- in progress / developing timers functionalities
+-- partial feature / we can create timers, but we can't manage this ones yet
+-- in progress / fixing issues / fixed Timer's Delete function
+-- feature / enabled function / playing timer duration
+-- ixed details / User Profile View's Title
+-- update files / launcher icons
+-- fixed feature / pausing selected timer
+-- in progress / fixing issues / adding profile details
+-- in progress / fixing profile dashboard/view
+-- in progress / fixing profile dashboard/view #1
+-- in progress / improving profile dashboard/view
+-- in progress / improving and fixing profile dashboard/view / we cannot modify showed user's data and update on firebase
+-- in progress / fixing logout button issues / dysfunction persistence
+-- upload files / app screenshots
+-- upload files / Android APK
+-- in progress - feature / fixing login and register layout's styles
+-- in progress / solving user profile data issues
+-- feature / update .APK file
+-- upload files / app screenshots
+-- sort repo / delete initial project's files
+-- Merge branch 'develop'
+-- reset main branch
+-- upload develop branch project
+-- in progress - partial feature - to fix / restructuring user's interface and adding functionalities
+-- in progress - partial feature - to fix / restructuring user's interface and adding functionalities
+-- feature / changed application icon
+-- partial feature / cofigured splash screen
+-- feature / Adding posts imported from Firebase Firestore to the home view
+-- in progress - feature / adding settings view and enabling its options and redirections
+-- in progress / partial feature - to fix / enabling user profile editing
+-- feature / fixed user's profile update function - CRUD
+-- fixed detail / added missing Toast (messages) / && / added feature (tested function): the logout function is now working
+-- feature / redefined timers page's structure and stylised its appearance /
+TODO: Improve deletion alert popup's style
+-- in progress - adding files and features / developing Statistics View and its Functionality
+-- feature - in progress / sprint 1 && 2 / reorganized graphical interface, initialized views and partial implementation of its functionalities / added use statistics view and its functionalities
+-- in progress / adding accesibility functionalities
+-- partial feature / accessibility / adding high contrast mode
+-- styling / redefining and adjusting existing theme's styles
+-- fixed issue / restoring profile image functionality
+-- ajustment / changing size unit from "dp" to "sp"
+-- in progress / developing accessibility options / enabling functionalities
+-- in progress / developing accessibility options / enabling functionalities / adding missing elements
+-- in progress / implementing funcitonalities
+-- in progress - to fix / implementing functionalities and improving other ones / fixing issues
+-- in progress - fixing / issues with text translation and maybe something more
+-- in progress / fixing functionalities / trying to solve a fatal error when we intend to access to accessibility view #1
+-- in progress / fixing functionalities / trying to solve a fatal error when we intend to access to accessibility view #2
+-- fixed issue / slider value and fatal error as result / restored crashed app
+-- in progress / trying to solve dark mode fatal error on the following views: home, timers, and app info
+-- in progress / solving dark mode fatal error on the following views: home, timers and app-info
+-- fixed feature / Dark Mode
+-- in progress / solving Google account auth issues
+-- in progress / debbuging auth error / checking error code / it was and error regarded with SHA-1
+-- in progress / debbuging auth error / checking error code / trying to solve error 10
+-- in progress / debbuged auth error / the issue was in some "strings.xml" files
+-- fixed feature / organized and completed "strings.xml" files
+-- added feature / enabled to change the user's profile image
+-- in progress - adding new features / User Account / Auth: Fixing Login and Register Functionalities
+-- fixed feature / Login and Register functionalities are function / TODO: Try to recover the user password
+-- in progress - fixing feature / solving slider fatal error
+-- Fixed feature / Solved slider error / Font size is now updating correctly
+-- in progress - added feature / solving biometrical auth issue && generating APK file
+-- in progress - to fix / solving login issue / unable to log in to session
+-- in progress - to fix / solving login issue / unable to log in to session #1
+-- in progress - fixed auth / solved login issue / able again to login to session TODO: Solve appeared redirection to home just after applying some change using Accessibility view options
+-- Delete APKs-Installables/Temporis_v2.0.0.apk
+-- ixed app MVP version's functionalities / Temporis_v2.0.0
+-- Merge branch 'sprint2-tofixV31' of https://github.com/kevinzamoraa/Temporis-Final_Project-DAM into sprint2-tofixV31
+-- adding installer file / current version / Temporis_v2.0.0
+-- in progress - added feature / improvement && attempting to resolve the issue /: adding string translations and maintaining a bug in the timers view / input forms (for creating and updating) cannot be viewed without first closing or minimising the keyboard (TODO)
+-- feature - solving styles / adding release 2.0.0 files / translate strings and new statistics view graph
+-- update file / Temporis_v2.0.0.apk
+-- fixed feature / modified styles / 'enabling' title on the three modes: light, dark and high contrast
+-- fixed feature / modified styles / rounded buttons in all three modes: light, dark and high contrast
+Si necesitas más información, estaría genial que pudieras inspeccionar el contenido de los diferentes "commits". Muchas gracias por todo.
+
