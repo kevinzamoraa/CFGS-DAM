@@ -1,0 +1,1673 @@
+Commits
+Branch selector
+User selector
+Datepicker
+Commit History
+Commits on May 23, 2026
+
+    Merge pull request #28 from kevinzamoraa/sonar-testing
+
+kevinzamoraa
+kevinzamoraa
+authored
+last week
+·
+fixed feature / build.gradle.kts files / Sonar config / Replace sonar.projectKey with the actual SonarCloud identifier
+kevinzamoraa
+kevinzamoraa
+committed
+last week
+·
+fixed feature / build.gradle.kts (:app and root files) / solving issues with Sonar config
+kevinzamoraa
+kevinzamoraa
+committed
+last week
+·
+fixed feature / build.gradle.kts (root) / unify and centralise SonarQube configuration in the root directory to avoid conflicts
+kevinzamoraa
+kevinzamoraa
+committed
+last week
+·
+fixed feature / build.gradle.kts (root) / resolving Sonar paths using the absolute projectDir in subprojects
+kevinzamoraa
+kevinzamoraa
+committed
+last week
+·
+fixed feature / build.gradle.kts (app) / delete Sonar config
+kevinzamoraa
+kevinzamoraa
+committed
+last week
+·
+Update android-ci.yml
+kevinzamoraa
+kevinzamoraa
+authored
+last week
+·
+
+Commits on May 22, 2026
+
+    fixed feature / build.gradle.kts (root) / Restructure property injection into subprojects for Sonar
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    last week
+    ·
+
+Update android-ci.yml
+kevinzamoraa
+kevinzamoraa
+authored
+last week
+·
+fixed feature / build.gradle.kts (:app and root files) / Apply the Sonar plugin locally in :app to resolve analysis dependencies
+kevinzamoraa
+kevinzamoraa
+committed
+last week
+·
+Update android-ci.yml
+kevinzamoraa
+kevinzamoraa
+authored
+last week
+·
+fixed feature / build.gradle.kts (root) / Unify the Sonar runner at the root using the dynamic subproject configurator
+kevinzamoraa
+kevinzamoraa
+committed
+last week
+·
+Update android-ci.yml
+kevinzamoraa
+kevinzamoraa
+authored
+last week
+·
+fixed feature / build.gradle.kts (root) / Unify global sonar properties and configure the target task in the pipeline
+kevinzamoraa
+kevinzamoraa
+committed
+last week
+·
+Update android-ci.yml
+kevinzamoraa
+kevinzamoraa
+authored
+last week
+·
+fixed feature / build.gradle.kts (:app and root) / correctly separate settings directives and reorganise sonar properties
+kevinzamoraa
+kevinzamoraa
+committed
+last week
+·
+fixed feature / unify and centralise SonarQube configuration in the root directory to avoid conflicts
+kevinzamoraa
+kevinzamoraa
+committed
+last week
+·
+fixed feature / modifying build.gradle.kts (:app) and build.gradle.kts (root)
+kevinzamoraa
+kevinzamoraa
+committed
+last week
+·
+fixed feature / modifying build.gradle.kts (:app) and build.gradle.kts (root)
+kevinzamoraa
+kevinzamoraa
+committed
+last week
+·
+Update android-ci.yml
+kevinzamoraa
+kevinzamoraa
+authored
+last week
+·
+
+Commits on May 21, 2026
+
+    fixed feature / modifying build.gradle.kts (:app) and build.gradle.kts (root)
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    last week
+    ·
+
+fixed feature / build.gradle.kts / modifying code / solving Sonar importation issues and reestoring Sonar configuration from 'develop-testing-tofix' branch, which passed successfully all the process
+kevinzamoraa
+kevinzamoraa
+committed
+last week
+·
+Update android-ci.yml
+kevinzamoraa
+kevinzamoraa
+authored
+last week
+·
+fixed feature / build.gradle.kts / modifying code / solving Sonar importation issues and reestoring Sonar configuration from 'develop-testing-tofix' branch, which passed successfully all the process
+kevinzamoraa
+kevinzamoraa
+committed
+last week
+·
+Update android-ci.yml
+kevinzamoraa
+kevinzamoraa
+authored
+last week
+·
+fixed feature / build.gradle.kts / solving Sonar importation issues and reestoring Sonar configuration from 'develop-testing-tofix' branch, which passed successfully all the process
+kevinzamoraa
+kevinzamoraa
+committed
+last week
+·
+Update android-ci.yml
+kevinzamoraa
+kevinzamoraa
+authored
+last week
+·
+fixed feature / build.gradle.kts / Sonar token
+kevinzamoraa
+kevinzamoraa
+committed
+last week
+·
+fixed feature / build.gradle.kts / Sonar config
+kevinzamoraa
+kevinzamoraa
+committed
+last week
+·
+Update android-ci.yml
+kevinzamoraa
+kevinzamoraa
+authored
+last week
+·
+fixed feature / build.gradle.kts / Set the native xmlReportPaths in the Sonar block to prevent a JaCoCo NPE
+kevinzamoraa
+kevinzamoraa
+committed
+last week
+·
+fixed feature / build.gradle.kts / Add skipCompile in Sonar to prevent a NullPointerException with JaCoCo
+kevinzamoraa
+kevinzamoraa
+committed
+last week
+·
+Update android-ci.yml
+kevinzamoraa
+kevinzamoraa
+authored
+last week
+·
+fixed feature / build.gradle.kts / refine the resolution strategy for play-services-measurement
+kevinzamoraa
+kevinzamoraa
+committed
+last week
+·
+fixed feature / build.gradle.kts / Force downgrade of play-services-measurement to avoid Kotlin 2.1.0 metadata in CI
+kevinzamoraa
+kevinzamoraa
+committed
+last week
+·
+
+Branch selector
+User selector
+Datepicker
+Commit History
+Commits on May 21, 2026
+
+    fixed feature / build.gradle.kts / enforce a strict resolution strategy for Firebase dependencies in the test environment
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    last week
+    ·
+
+fixed feature / fixing Firebase modules's versions to ensure SonarQube compatibility in remote
+kevinzamoraa
+kevinzamoraa
+committed
+last week
+·
+Update android-ci.yml
+kevinzamoraa
+kevinzamoraa
+authored
+last week
+·
+
+Commits on May 20, 2026
+
+    fixed feature / build.gradle.kts and AndroidManifest.xml ajustment / solving Sonar and Github Actions issues
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    2 weeks ago
+    ·
+
+fixed feature / solving issues in RegisterFragment.kt and ProfileFragment.kt
+kevinzamoraa
+kevinzamoraa
+committed
+2 weeks ago
+·
+update build.gradle.kts (app) / changing the location of sonar config
+kevinzamoraa
+kevinzamoraa
+committed
+2 weeks ago
+·
+Update android-ci.yml
+kevinzamoraa
+kevinzamoraa
+authored
+2 weeks ago
+·
+fixed feature / build.gradle.kts files / revert to sonarqube classic id v4.4.1 with decoupled properties to bypass gradle 8.13 limitations
+kevinzamoraa
+kevinzamoraa
+committed
+2 weeks ago
+·
+fixed feature / build.gradle.kts / remove manual sonar paths to prevent gradle 8.13 string cast exception
+kevinzamoraa
+kevinzamoraa
+committed
+2 weeks ago
+·
+fixed feature / build.gradle.kts / resolve sync issue by restoring sonar 4.4.1 and decoupling paths
+kevinzamoraa
+kevinzamoraa
+committed
+2 weeks ago
+·
+fixed feature / build.gradle.kts / use native Gradle files() collections for sonar paths to resolve cast exception
+kevinzamoraa
+kevinzamoraa
+committed
+2 weeks ago
+·
+fixed feature / build.gradle.kts / restore stable sonar v4.4.1 and use comma-separated strings for paths
+kevinzamoraa
+kevinzamoraa
+committed
+2 weeks ago
+·
+fixed feature / build.gradle.kts / pass sonar paths as collections to prevent string cast crash
+kevinzamoraa
+kevinzamoraa
+committed
+2 weeks ago
+·
+fixed feature / build.gradle.kts / override sonar android provider with static properties to bypass gradle 8.13 bean injection
+kevinzamoraa
+kevinzamoraa
+committed
+2 weeks ago
+·
+fixed feature / build.gradle.kts / restore sonar v4.4 with static paths to guarantee gradle 8.13 compatibility
+kevinzamoraa
+kevinzamoraa
+committed
+2 weeks ago
+·
+Update android-ci.yml
+kevinzamoraa
+kevinzamoraa
+authored
+2 weeks ago
+·
+Update android-ci.yml / fixed feature / isolate sonar task execution into a separate step to completely bypass gradle 8.13 bean crash
+kevinzamoraa
+kevinzamoraa
+authored
+2 weeks ago
+·
+Update android-ci.yml
+kevinzamoraa
+kevinzamoraa
+authored
+2 weeks ago
+·
+fixed feature / Sonar / modifying build.gradle.kts file / enforce skipCompile directly in gradle properties to bypass sonarqube bean crash
+kevinzamoraa
+kevinzamoraa
+committed
+2 weeks ago
+·
+fixed feature / isolate Robolectric SQLite modes per test class to resolve TimerRepositoryTest failure / ajust Sonar configuration in build.gradle.kts file
+kevinzamoraa
+kevinzamoraa
+committed
+2 weeks ago
+·
+Update android-ci.yml
+kevinzamoraa
+kevinzamoraa
+authored
+2 weeks ago
+·
+
+Commits on May 19, 2026
+
+    Update android-ci.yml
+    kevinzamoraa
+    kevinzamoraa
+    authored
+    2 weeks ago
+    ·
+
+Update android-ci.yml
+kevinzamoraa
+kevinzamoraa
+authored
+2 weeks ago
+·
+fixed feature / mock firestore in PostRepositoryTest to prevent background threading crash
+kevinzamoraa
+kevinzamoraa
+committed
+2 weeks ago
+·
+
+Commits on May 18, 2026
+
+    update file - fixing issues / modifying Sonar and Github Actions configuration into "build.gradle.kts" file / solving issues
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    2 weeks ago
+    ·
+
+update file - fixing issues / modifying sonar configuration into "build.gradle.kts" file / solving issues
+kevinzamoraa
+kevinzamoraa
+committed
+2 weeks ago
+·
+update file - fixing issues / modifying sonar configuration into "build.gradle.kts" file / solving issues
+kevinzamoraa
+kevinzamoraa
+committed
+2 weeks ago
+·
+Update android-ci.yml
+kevinzamoraa
+kevinzamoraa
+authored
+2 weeks ago
+·
+update file - fixing issues / modifying sonar configuration into "build.gradle.kts" file / solving issues
+kevinzamoraa
+kevinzamoraa
+committed
+2 weeks ago
+·
+Update android-ci.yml
+kevinzamoraa
+kevinzamoraa
+authored
+2 weeks ago
+·
+Update android-ci.yml
+kevinzamoraa
+kevinzamoraa
+authored
+2 weeks ago
+·
+update file - fixing issues / modifying sonar configuration into "build.gradle.kts" file / solving issues
+kevinzamoraa
+kevinzamoraa
+committed
+2 weeks ago
+·
+update file - fixing issues / modifying sonar configuration into "build.gradle.kts" file / solving issues
+kevinzamoraa
+kevinzamoraa
+committed
+2 weeks ago
+·
+Update android-ci.yml
+kevinzamoraa
+kevinzamoraa
+authored
+2 weeks ago
+·
+fixed feature / all (85) unit tests are passing propperly / solved issues when running MainActivityTest.kt and TimerRepositoryTest.kt files's test cases
+kevinzamoraa
+kevinzamoraa
+committed
+2 weeks ago
+·
+
+Datepicker
+Commit History
+Commits on May 17, 2026
+
+    in progress - fixing unit test issues / Solving PostRepository, TimerRepository and LoginActivity Test Cases
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    2 weeks ago
+    ·
+    in progress - fixing unit test issues / solving major build.gradle.kts issues / dependencies importation error && solved GeneralSettingsFragment Test Cases
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    2 weeks ago
+    ·
+
+Commits on May 16, 2026
+
+    update file - fixing issues / modifying sonar configuration into "build.gradle.kts" file / solving issues #2
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    2 weeks ago
+    ·
+    update file - fixing issues / modifying sonar configuration into "build.gradle.kts" file / solving issues #1
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    2 weeks ago
+    ·
+
+Commits on May 15, 2026
+
+    update file - fixing issues / modifying sonar configuration into "build.gradle.kts" file
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    2 weeks ago
+    ·
+
+Commits on May 14, 2026
+
+    update file - fixing issues / modifying sonar configuration into "build.gradle.kts" file
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    2 weeks ago
+    ·
+    Update android-ci.yml
+    kevinzamoraa
+    kevinzamoraa
+    authored
+    2 weeks ago
+    ·
+    Merge pull request #27 from kevinzamoraa/fix-sonar-final
+    kevinzamoraa
+    kevinzamoraa
+    authored
+    2 weeks ago
+    ·
+    update file - fixing issues / modifying sonar configuration into "build.gradle.kts" file
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    2 weeks ago
+    ·
+    Update android-ci.yml
+    kevinzamoraa
+    kevinzamoraa
+    authored
+    2 weeks ago
+    ·
+    update file - fixing issues / modifying sonar configuration into "build.gradle.kts" file
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    2 weeks ago
+    ·
+    Update android-ci.yml
+    kevinzamoraa
+    kevinzamoraa
+    authored
+    2 weeks ago
+    ·
+    feature / updated gradle
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    2 weeks ago
+    update file - fixing issues / modifying sonar configuration into "build.gradle.kts" file
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    2 weeks ago
+    ·
+    Update android-ci.yml
+    kevinzamoraa
+    kevinzamoraa
+    authored
+    2 weeks ago
+    ·
+    update file - fixing issues / modifying sonar configuration into "build.gradle.kts" file
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    2 weeks ago
+    ·
+    Update android-ci.yml
+    kevinzamoraa
+    kevinzamoraa
+    authored
+    2 weeks ago
+    ·
+    update file - fixing issues / modifying sonar configuration into "build.gradle.kts" file
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    2 weeks ago
+    ·
+    Update android-ci.yml
+    kevinzamoraa
+    kevinzamoraa
+    authored
+    2 weeks ago
+    ·
+    Merge branch 'main' of https://github.com/kevinzamoraa/Temporis-Final_Project-DAM
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    2 weeks ago
+    ·
+    update file - fixing issues / modifying sonar configuration into "build.gradle.kts" file
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    2 weeks ago
+    Merge pull request #26 from kevinzamoraa/kevinzamoraa-patch-3
+
+kevinzamoraa
+kevinzamoraa
+authored
+2 weeks ago
+·
+Update android-ci.yml
+kevinzamoraa
+kevinzamoraa
+authored
+2 weeks ago
+·
+
+Commits on May 13, 2026
+
+    Update android-ci.yml
+    kevinzamoraa
+    kevinzamoraa
+    authored
+    3 weeks ago
+    ·
+
+Update android-ci.yml
+kevinzamoraa
+kevinzamoraa
+authored
+3 weeks ago
+·
+fixed feature / solving merge conflicts
+kevinzamoraa
+kevinzamoraa
+committed
+3 weeks ago
+·
+Merge branch 'main' of https://github.com/kevinzamoraa/Temporis-Final_Project-DAM
+kevinzamoraa
+kevinzamoraa
+committed
+3 weeks ago
+·
+update file - fixing issues / modifying sonar configuration into "build.gradle.kts" file
+kevinzamoraa
+kevinzamoraa
+committed
+3 weeks ago
+Merge pull request #23 from kevinzamoraa/sonar-testing
+kevinzamoraa
+kevinzamoraa
+authored
+3 weeks ago
+·
+update file - fixing issues / modifying sonar configuration into "build.gradle.kts" file
+kevinzamoraa
+kevinzamoraa
+committed
+3 weeks ago
+·
+Update android-ci.yml
+kevinzamoraa
+kevinzamoraa
+authored
+3 weeks ago
+·
+Merge branch 'main' into sonar-testing
+kevinzamoraa
+kevinzamoraa
+authored
+3 weeks ago
+·
+update file - fixing issues / modifying sonar configuration into "build.gradle.kts" file
+kevinzamoraa
+kevinzamoraa
+committed
+3 weeks ago
+·
+update file - fixing issues / modifying sonar configuration into "build.gradle.kts" file
+kevinzamoraa
+kevinzamoraa
+committed
+3 weeks ago
+·
+Update android-ci.yml
+kevinzamoraa
+kevinzamoraa
+authored
+3 weeks ago
+·
+
+Datepicker
+Commit History
+Commits on May 13, 2026
+
+    update file - fixing issues / modifying sonar configuration into "build.gradle.kts" file
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    3 weeks ago
+    ·
+    Update android-ci.yml
+    kevinzamoraa
+    kevinzamoraa
+    authored
+    3 weeks ago
+    ·
+    update file - fixing issues / modifying sonar configuration into "build.gradle.kts" file
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    3 weeks ago
+    ·
+    update file - fixing issues / modifying sonar configuration into "build.gradle.kts" file
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    3 weeks ago
+    ·
+    Update android-ci.yml
+    kevinzamoraa
+    kevinzamoraa
+    authored
+    3 weeks ago
+    ·
+    update file - fixing issues / modifying sonar configuration into "build.gradle.kts" file
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    3 weeks ago
+    ·
+    Update android-ci.yml
+    kevinzamoraa
+    kevinzamoraa
+    authored
+    3 weeks ago
+    ·
+    Update android-ci.yml
+    kevinzamoraa
+    kevinzamoraa
+    authored
+    3 weeks ago
+    ·
+    Update android-ci.yml
+    kevinzamoraa
+    kevinzamoraa
+    authored
+    3 weeks ago
+    ·
+    Update android-ci.yml
+    kevinzamoraa
+    kevinzamoraa
+    authored
+    3 weeks ago
+    ·
+    fixed feature / ajust sonar settings
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    3 weeks ago
+    ·
+    Update android-ci.yml
+    kevinzamoraa
+    kevinzamoraa
+    authored
+    3 weeks ago
+    ·
+    Merge branch 'sonar-testing' of https://github.com/kevinzamoraa/Temporis-Final_Project-DAM into sonar-testing
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    3 weeks ago
+    ·
+    fixed feature / Uploaded LoginActivity Test Case
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    3 weeks ago
+    Update android-ci.yml
+    kevinzamoraa
+    kevinzamoraa
+    authored
+    3 weeks ago
+    ·
+    Update android-ci.yml
+    kevinzamoraa
+    kevinzamoraa
+    authored
+    3 weeks ago
+    ·
+    Update android-ci.yml
+    kevinzamoraa
+    kevinzamoraa
+    authored
+    3 weeks ago
+    ·
+    in progress / Sonar Qube / solving LoginActivity.kt issues
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    3 weeks ago
+
+Commits on May 11, 2026
+
+    in progress / solving LoginActivity.kt issues
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    3 weeks ago
+    in progress / solving LoginActivity.kt issues
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    3 weeks ago
+
+Commits on May 10, 2026
+
+    Merge pull request #22 from kevinzamoraa/develop-testing-tofix
+
+kevinzamoraa
+kevinzamoraa
+authored
+3 weeks ago
+·
+Update android-ci.yml
+kevinzamoraa
+kevinzamoraa
+authored
+3 weeks ago
+·
+update file - fixing issues / modifying sonar configuration into "build.gradle.kts" file
+kevinzamoraa
+kevinzamoraa
+committed
+3 weeks ago
+·
+Merge pull request #21 from kevinzamoraa/develop-testing-tofix
+kevinzamoraa
+kevinzamoraa
+authored
+3 weeks ago
+·
+Update android-ci.yml
+kevinzamoraa
+kevinzamoraa
+authored
+3 weeks ago
+·
+update file - fixing issues / modifying sonar configuration into "build.gradle.kts" file
+kevinzamoraa
+kevinzamoraa
+committed
+3 weeks ago
+·
+
+Commits on May 9, 2026
+
+    Update android-ci.yml
+    kevinzamoraa
+    kevinzamoraa
+    authored
+    3 weeks ago
+    ·
+
+Merge branch 'develop-testing-tofix' of https://github.com/kevinzamoraa/Temporis-Final_Project-DAM into develop-testing-tofix
+kevinzamoraa
+kevinzamoraa
+committed
+3 weeks ago
+·
+update file - fixing issues / modifying sonar configuration into "build.gradle.kts" file
+kevinzamoraa
+kevinzamoraa
+committed
+3 weeks ago
+Update android-ci.yml
+kevinzamoraa
+kevinzamoraa
+authored
+3 weeks ago
+·
+update file - fixing issues / modifying sonar configuration into "build.gradle.kts" file
+kevinzamoraa
+kevinzamoraa
+committed
+3 weeks ago
+·
+
+Commits on May 8, 2026
+
+    update file / modifying sonar configuration into "build.gradle.kts" file
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    3 weeks ago
+    ·
+
+Update android-ci.yml
+kevinzamoraa
+kevinzamoraa
+authored
+3 weeks ago
+·
+Merge branch 'develop-testing-tofix' of https://github.com/kevinzamoraa/Temporis-Final_Project-DAM into develop-testing-tofix
+kevinzamoraa
+kevinzamoraa
+committed
+3 weeks ago
+·
+update file / modifying sonar configuration into "build.gradle.kts" file
+kevinzamoraa
+kevinzamoraa
+committed
+3 weeks ago
+
+Datepicker
+Commit History
+Commits on May 8, 2026
+
+    Update android-ci.yml
+    kevinzamoraa
+    kevinzamoraa
+    authored
+    3 weeks ago
+    ·
+    Merge branch 'develop-testing-tofix' of https://github.com/kevinzamoraa/Temporis-Final_Project-DAM into develop-testing-tofix
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    3 weeks ago
+    ·
+    update file / modifying sonar configuration into "build.gradle.kts" file
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    3 weeks ago
+    Update android-ci.yml
+    kevinzamoraa
+    kevinzamoraa
+    authored
+    3 weeks ago
+    ·
+    update file / adding sonar configuration into "build.gradle.kts" file
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    3 weeks ago
+    ·
+    Merge branch 'develop-testing-tofix' of https://github.com/kevinzamoraa/Temporis-Final_Project-DAM into develop-testing-tofix
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    3 weeks ago
+    partial feature / Accessibility Fragment Unit Test
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    3 weeks ago
+
+Commits on May 7, 2026
+
+    Merge pull request #20 from kevinzamoraa/develop-testing-tofix
+    kevinzamoraa
+    kevinzamoraa
+    authored
+    3 weeks ago
+    ·
+    Update android-ci.yml
+    kevinzamoraa
+    kevinzamoraa
+    authored
+    3 weeks ago
+    ·
+    Create android-ci.yml
+    kevinzamoraa
+    kevinzamoraa
+    authored
+    3 weeks ago
+    ·
+    in progress - partial feature / solving gradle issues when we try to run all the test cases with coverage
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    3 weeks ago
+
+Commits on May 6, 2026
+
+    partial feature / Main Activity Unit Test
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    last month
+
+Commits on May 3, 2026
+
+    in progress - partial feature / Session Lifecycle Manager Unit Tests
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    28 days ago
+    in progress - partial feature / Splash Screen Unit Tests
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    28 days ago
+    in progress - partial feature / Time Register Unit Tests
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    28 days ago
+
+Commits on May 2, 2026
+
+    In progress - Partially functional / Troubleshooting unit tests / They run successfully when they are executed individually, but they fail when they run with coverage
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    29 days ago
+    in progress - partial feature / Timer Adapter Unit Tests
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    29 days ago
+    in progress - partial feature / Post Adapter Unit Tests
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    29 days ago
+
+Commits on May 1, 2026
+
+    in progress / solving unit test errors / LoginActivityTest.kt
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    30 days ago
+
+Commits on Apr 30, 2026
+
+    in progress - to fix / increasing coverance and enabling TimerAdapterTest's Unit Tests
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on May 1
+    in progress - partial feature / TimerRepository, Post and PostRepository Unit Tests
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 30
+    partial feature / Timer Unit Tests
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 30
+
+Commits on Apr 29, 2026
+
+    in progress - partial feature / Timer Unit Tests
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 30
+    in progress - partial feature / UserRepository Unit Tests
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 30
+    in progress - partial feature / User Unit Tests
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 29
+    fixing feature - in progress / SplashScreen
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 29
+    Merge pull request #19 from kevinzamoraa/develop
+    kevinzamoraa
+    kevinzamoraa
+    authored
+    on Apr 29
+    upload .APK file (release Temporis v2.1.0)
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 29
+    fixed feature && uploading .APK file (release Temporis v2.1.0) / enabling automatic biometric auth when login view has been loaded
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 29
+    feature / Temporis v2.1.0 / MVP version / ready for production and also for implementing tests
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 29
+
+Commits on Apr 27, 2026
+
+    improved feature / added TalkBack configuration links and fixed some translation strings
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 28
+
+Commits on Apr 25, 2026
+
+    fixed feature / modified styles / rounded buttons in all three modes: light, dark and high contrast
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 25
+    fixed feature / modified styles / 'enabling' title on the three modes: light, dark and high contrast
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 25
+
+Commits on Apr 10, 2026
+
+    Update README.md
+    kevinzamoraa
+    kevinzamoraa
+    authored
+    on Apr 11
+
+Merge pull request #16 from kevinzamoraa/develop
+kevinzamoraa
+kevinzamoraa
+authored
+on Apr 11
+
+Datepicker
+Commit History
+Commits on Apr 10, 2026
+
+    update file / Temporis_v2.0.0.apk
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 11
+    Merge pull request #15 from kevinzamoraa/develop
+    kevinzamoraa
+    kevinzamoraa
+    authored
+    on Apr 11
+    feature - solving styles / adding release 2.0.0 files / translate strings and new statistics view graph
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 10
+    in progress - added feature / improvement && attempting to resolve the issue /: adding string translations and maintaining a bug in the timers view / input forms (for creating and updating) cannot …
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 10
+
+Commits on Apr 9, 2026
+
+    Update README.md
+    kevinzamoraa
+    kevinzamoraa
+    authored
+    on Apr 9
+    Merge pull request #14 from kevinzamoraa/develop
+    kevinzamoraa
+    kevinzamoraa
+    authored
+    on Apr 9
+    adding installer file / current version / Temporis_v2.0.0
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 9
+    Merge branch 'sprint2-tofixV31' of https://github.com/kevinzamoraa/Temporis-Final_Project-DAM into sprint2-tofixV31
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 9
+    fixed app MVP version's functionalities / Temporis_v2.0.0
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 9
+    Delete APKs-Installables/Temporis_v2.0.0.apk
+    kevinzamoraa
+    kevinzamoraa
+    authored
+    on Apr 9
+    in progress - fixed auth / solved login issue / able again to login to session TODO: Solve appeared redirection to home just after applying some change using Accessibility view options
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 9
+    in progress - to fix / solving login issue / unable to log in to session #1
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 9
+    in progress - to fix / solving login issue / unable to log in to session
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 9
+    Update README.md
+    kevinzamoraa
+    kevinzamoraa
+    authored
+    on Apr 9
+
+Commits on Apr 8, 2026
+
+    Initialized README.md
+    kevinzamoraa
+    kevinzamoraa
+    authored
+    on Apr 8
+    in progress - added feature / solving biometrical auth issue && generating APK file
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 8
+    Fixed feature / Solved slider error / Font size is now updating correctly
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 8
+    in progress - fixing feature / solving slider fatal error
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 8
+    fixed feature / Login and Register functionalities are function / TODO: Try to recover the user password
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 8
+    in progress - adding new features / User Account / Auth: Fixing Login and Register Functionalities
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 8
+    added feature / enabled to change the user's profile image
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 8
+
+Commits on Apr 7, 2026
+
+    fixed feature / organized and completed "strings.xml" files
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 8
+    in progress / debbuged auth error / the issue was in some "strings.xml" files
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 8
+    in progress / debbuging auth error / checking error code / trying to solve error 10
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 7
+    in progress / debbuging auth error / checking error code / it was and error regarded with SHA-1
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 7
+    in progress / solving Google account auth issues
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 7
+
+Commits on Apr 6, 2026
+
+    fixed feature / Dark Mode
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 6
+    in progress / solving dark mode fatal error on the following views: home, timers and app-info
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 6
+    in progress / trying to solve dark mode fatal error on the following views: home, timers, and app info
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 6
+    fixed issue / slider value and fatal error as result / restored crashed app
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 6
+    in progress / fixing functionalities / trying to solve a fatal error when we intend to access to accessibility view #2
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 6
+    in progress / fixing functionalities / trying to solve a fatal error when we intend to access to accessibility view #1
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 6
+    in progress - fixing / issues with text translation and maybe something more
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 6
+    in progress - to fix / implementing functionalities and improving other ones / fixing issues
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 6
+    in progress / implementing funcitonalities
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 6
+
+Datepicker
+Commit History
+Commits on Apr 4, 2026
+
+    in progress / developing accessibility options / enabling functionalities / adding missing elements
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 5
+    in progress / developing accessibility options / enabling functionalities
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 5
+    ajustment / changing size unit from "dp" to "sp"
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 5
+    fixed issue / restoring profile image functionality
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 4
+    styling / redefining and adjusting existing theme's styles
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 4
+
+Commits on Apr 3, 2026
+
+    partial feature / accessibility / adding high contrast mode
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 3
+    in progress / adding accesibility functionalities
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 3
+    feature - in progress / sprint 1 && 2 / reorganized graphical interface, initialized views and partial implementation of its functionalities / added use statistics view and its functionalities
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 3
+    in progress - adding files and features / developing Statistics View and its Functionality
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 3
+    feature / redefined timers page's structure and stylised its appearance /
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 3
+
+Commits on Apr 2, 2026
+
+    fixed detail / added missing Toast (messages) / && / added feature (tested function): the logout function is now working
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 3
+    feature / fixed user's profile udate function - CRUD
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 3
+    in progress / partial feature - to fix / enabling user profile editing
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 2
+    in progress - feature / adding settings view and enabling its options and redirections
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 2
+    feature / Adding posts imported from Firebase Firestore to the home view
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 2
+
+Commits on Apr 1, 2026
+
+    partial feature / cofigured splash screen
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 1
+    feature / changed application icon
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 1
+
+Commits on Mar 19, 2026
+
+    in progress - partial feature - to fix / restructuring user's interface and adding functionalities
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Mar 19
+    in progress - partial feature - to fix / restructuring user's interface and adding functionalities
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Mar 19
+
+Commits on May 7, 2025
+
+    upload develop branch project
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on May 7, 2025
+    reset main branch
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on May 7, 2025
+
+Commits on Apr 25, 2025
+
+    Merge branch 'develop'
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 25, 2025
+
+Commits on Apr 24, 2025
+
+    sort repo / delete initial project's files
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 24, 2025
+    upload files / app screenshots
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 24, 2025
+    feature / update .APK file
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 24, 2025
+    in progress / solving user profile data issues
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 24, 2025
+    in progress - feature / fixing login and register layout's styles
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 24, 2025
+    upload files / Android APK
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 24, 2025
+    upload files / app screenshots
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 24, 2025
+
+Commits on Apr 21, 2025
+
+    in progress / fixing logout button issues / dysfunction persistence
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 21, 2025
+
+Commits on Apr 20, 2025
+
+    in progress / improving and fixing profile dashboard/view / we cannot modify showed user's data and update on firebase
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 20, 2025
+    in progress / improving profile dashboard/view
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 20, 2025
+    in progress / fixing profile dashboard/view #1
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 20, 2025
+    in progress / fixing profile dashboard/view
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 20, 2025
+
+Commits on Apr 19, 2025
+
+    in progress / fixing issues / adding profile details
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 19, 2025
+
+Datepicker
+Commit History
+Commits on Apr 18, 2025
+
+    fixed feature / pausing selected timer
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 18, 2025
+    update files / launcher icons
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 18, 2025
+    fixed details / User Profile View's Title
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 18, 2025
+    feature / enabled function / playing timer duration
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 18, 2025
+    in progress / fixing issues / fixed Timer's Delete function
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 18, 2025
+    partial feature / we can create timers, but we can't manage this ones yet
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 18, 2025
+    in progress / developing timers functionalities
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 18, 2025
+    in progress / fixing issues
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 18, 2025
+    in progress / solving logout issues
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 18, 2025
+
+Commits on Apr 17, 2025
+
+    upload files / adding assets and updating app's logo / missing files
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 17, 2025
+    upload files / adding assets and updating app's logo
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 17, 2025
+    in progress / enabling application login functionalities / Login with Google it's running
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 17, 2025
+    in progress / fixing login and compilation issues
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 17, 2025
+
+Commits on Apr 16, 2025
+
+    in progress / solving issues
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 16, 2025
+    in progress / solving import issues
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 16, 2025
+
+Commits on Apr 3, 2025
+
+    in progress - fixing issues / fixing and enabling app's functions
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 3, 2025
+    in progress / rebasing project and fixing issues
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Apr 3, 2025
+
+Commits on Mar 30, 2025
+
+    in progress - fixing issues / adding missing imports
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Mar 31, 2025
+
+Commits on Mar 28, 2025
+
+    in progress / enabling app's code parts
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Mar 29, 2025
+
+Commits on Mar 27, 2025
+
+    in progress / fixing Firebase configuration and connection
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Mar 27, 2025
+
+Commits on Mar 20, 2025
+
+    in progress / adding and configuring Firebase services on app
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Mar 20, 2025
+
+Commits on Feb 20, 2025
+
+    init feature / creating Kotlin app entities
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Feb 20, 2025
+
+Commits on Feb 13, 2025
+
+    init repo / Initialize Android App Project
+    kevinzamoraa
+    kevinzamoraa
+    committed
+    on Feb 13, 2025
