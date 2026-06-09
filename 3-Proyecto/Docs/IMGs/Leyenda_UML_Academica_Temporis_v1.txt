@@ -1,0 +1,1 @@
+Versión UML académica adaptada a Firebase Firestore, MVVM y las clases reales del proyecto Temporis.

@@ -1,0 +1,216 @@
+@startuml
+
+title TEMPORIS - UML 2.5 CLASS DIAGRAM (MVVM + FIREBASE)
+
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+
+skinparam package {
+    BorderColor #4F81BD
+}
+
+skinparam class {
+    BackgroundColor #F8F9FA
+    BorderColor #4F81BD
+    ArrowColor #404040
+}
+
+skinparam interface {
+    BackgroundColor #FFF7E6
+    BorderColor #D9A300
+}
+
+'=========================================================
+' PRESENTATION LAYER
+'=========================================================
+
+package "presentation" #DCEEFF {
+
+class LoginActivity {
+    +onCreate()
+    +login()
+}
+
+class HomeActivity {
+    +onCreate()
+    +loadDashboard()
+}
+
+class TimerActivity {
+    +startTimer()
+    +stopTimer()
+    +saveExecution()
+}
+
+}
+
+'=========================================================
+' VIEWMODEL LAYER
+'=========================================================
+
+package "viewmodel" #DFF2E1 {
+
+class AuthViewModel {
+    +login(email,password)
+    +register()
+    +logout()
+}
+
+class HomeViewModel {
+    +loadPosts()
+    +loadStatistics()
+}
+
+class TimerViewModel {
+    +getTimers()
+    +createTimer()
+    +deleteTimer()
+    +saveLog()
+}
+
+}
+
+'=========================================================
+' REPOSITORY LAYER
+'=========================================================
+
+package "repository" #FFF2CC {
+
+interface TimerRepository {
+    +getTimersFromUser(userId)
+    +saveLog(log)
+    +createTimer(timer)
+}
+
+class TimerRepositoryImpl {
+    -firestore : FirebaseFirestore
+}
+
+TimerRepositoryImpl ..|> TimerRepository
+
+}
+
+'=========================================================
+' DOMAIN / MODEL LAYER
+'=========================================================
+
+package "model" #FDE9E7 {
+
+class UserModel <<data class>> {
+
+    +id : String
+    +name : String
+    +email : String
+    +createdAt : Timestamp
+
+    +toMap()
+}
+
+class TimerModel <<data class>> {
+
+    +id : String
+    +title : String
+    +durationSeconds : Long
+    +category : String
+    +isAccessibleMode : Boolean
+    +lastTriggered : Timestamp
+
+    +toMap()
+}
+
+class LogModel <<data class>> {
+
+    +id : String
+    +userId : String
+    +counterId : String
+    +totalExecutionTime : Long
+    +completedAt : Timestamp
+    +deviceMetadata : String
+
+    +toMap()
+}
+
+class Post <<@Keep Data Class>> {
+
+    +id : String
+    +title : String
+    +content : String
+    +publishDate : Timestamp
+    +author : String
+
+    +toMap()
+}
+
+}
+
+'=========================================================
+' FIREBASE
+'=========================================================
+
+package "firebase" #E8E8E8 {
+
+class FirebaseAuth
+
+class FirebaseFirestore
+
+class UsersCollection {
+    /users/{userId}
+}
+
+class TimersSubcollection {
+    /users/{userId}/timers/{timerId}
+}
+
+class LogsCollection {
+    /logs/{logId}
+}
+
+class PostsCollection {
+    /posts/{postId}
+}
+
+}
+
+'=========================================================
+' PRESENTATION -> VIEWMODEL
+'=========================================================
+
+LoginActivity --> AuthViewModel
+HomeActivity --> HomeViewModel
+TimerActivity --> TimerViewModel
+
+'=========================================================
+' VIEWMODEL -> REPOSITORY
+'=========================================================
+
+AuthViewModel ..> FirebaseAuth : authentication
+
+HomeViewModel --> TimerRepository
+TimerViewModel --> TimerRepository
+
+'=========================================================
+' REPOSITORY -> FIRESTORE
+'=========================================================
+
+TimerRepositoryImpl --> FirebaseFirestore
+
+'=========================================================
+' ENTITY RELATIONS
+'=========================================================
+
+UserModel "1" --> "0..*" TimerModel : owns
+
+TimerModel "1" --> "0..*" LogModel : generates
+
+'=========================================================
+' PERSISTENCE MAPPING
+'=========================================================
+
+UsersCollection ..> UserModel
+TimersSubcollection ..> TimerModel
+LogsCollection ..> LogModel
+PostsCollection ..> Post
+
+@enduml
