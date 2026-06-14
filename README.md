@@ -51,7 +51,7 @@ Como complemento estratégico al ciclo formativo y con el objetivo de dominar es
 ## 👤 Autor
 
 **Kevin Zamora Amela**  
-*Técnico Superior en Automatización y Robótica Industrial | Desarrollador de Aplicaciones Multiplataforma | Futuro estudiante del Grado en Ingeniería Informática o del nuevo Grado en Desarrollo y pruebas de Software ((Interuniversitario: UOC, OUNL, UNED)).*
+*Técnico Superior en Automatización y Robótica Industrial | Desarrollador de Aplicaciones Multiplataforma | Futuro estudiante del Grado en Ingeniería Informática o del nuevo Grado en Desarrollo y Pruebas de Software ((Interuniversitario: UOC, OUNL, UNED)).*
 
 *   **LinkedIn:** [kevin-zamora-webdev](https://www.linkedin.com/in/kevin-zamora-webdev/)
 *   **GitHub:** [@kevinzamoraa](https://github.com/kevinzamoraa)
